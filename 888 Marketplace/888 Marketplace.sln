@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "888 Marketplace", "888 Marketplace\888 Marketplace.csproj", "{68A6B28C-A91C-4EC4-8E8C-96D6082DDBFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "888MarketplaceApp", "888MarketplaceApp.csproj", "{E5CDF776-79B2-4E7B-98AC-2DF560201846}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{68A6B28C-A91C-4EC4-8E8C-96D6082DDBFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68A6B28C-A91C-4EC4-8E8C-96D6082DDBFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68A6B28C-A91C-4EC4-8E8C-96D6082DDBFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68A6B28C-A91C-4EC4-8E8C-96D6082DDBFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5CDF776-79B2-4E7B-98AC-2DF560201846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5CDF776-79B2-4E7B-98AC-2DF560201846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5CDF776-79B2-4E7B-98AC-2DF560201846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5CDF776-79B2-4E7B-98AC-2DF560201846}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B467EB3F-F0B9-4F88-80C7-DCC6BBC07FA5}
+		SolutionGuid = {19A8B0FF-4076-41C6-804D-B2CEC2083B17}
 	EndGlobalSection
 EndGlobal
