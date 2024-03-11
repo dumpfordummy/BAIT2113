@@ -13,5 +13,9 @@ namespace _888MarketplaceApp.Views
         {
 
         }
+        protected void LogIn(object sender, EventArgs e)
+        {
+
+        }
     }
 }

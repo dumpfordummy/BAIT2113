@@ -15,10 +15,10 @@ namespace _888MarketplaceApp
             routes.EnableFriendlyUrls(settings);
 
             routes.MapPageRoute(
-            "Default",
-            "{view}",
-            "~/Views/{view}.aspx"
-        );
+                "Default",
+                "{view}",
+                "~/Views/{view}.aspx"
+            );
         }
     }
 }
