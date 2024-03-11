@@ -11,7 +11,7 @@ namespace _888MarketplaceApp.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            RegisterHyperLink.NavigateUrl = "~/register";
         }
         protected void LogIn(object sender, EventArgs e)
         {
