@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _888Marketplace.Model.DataAccess;
+using _888MarketplaceApp.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +15,7 @@ namespace _888MarketplaceApp.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterHyperLink.NavigateUrl = "~/register";
+
         }
         protected void LogIn(object sender, EventArgs e)
         {

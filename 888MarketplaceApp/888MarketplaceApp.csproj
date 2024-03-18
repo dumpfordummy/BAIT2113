@@ -239,6 +239,10 @@
       <Project>{a9f7a26d-2704-4807-ae14-b8708c4e7d80}</Project>
       <Name>888MarketplaceApp.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\888MarketplaceApp.Presenter\888MarketplaceApp.Presenter.csproj">
+      <Project>{1e08c713-d99c-4fda-9045-b2f302ab98fc}</Project>
+      <Name>888MarketplaceApp.Presenter</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

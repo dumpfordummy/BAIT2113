@@ -23,39 +23,35 @@ namespace _888Marketplace.Model.DataAccess
             _administrators = db.Administrators;
         }
 
-        public Task<List<Buyer>> GetBuyersAsync()
+        public async Task<List<Buyer>> GetBuyersAsync()
         {
-            var result = _buyers.ToListAsync();
+            var result = await _buyers.ToListAsync();
             return result;
         }
 
-        public Task<List<Seller>> GetSellersAsync()
+        public async Task<List<Seller>> GetSellersAsync()
         {
-            var result = _sellers.ToListAsync();
+            var result = await _sellers.ToListAsync();
             return result;
         }
 
-        public Task<List<Administrator>> GetAdministratorsAsync()
+        public async Task<List<Administrator>> GetAdministratorsAsync()
         {
-            var result = _administrators.ToListAsync();
+            var result = await _administrators.ToListAsync();
             return result;
         }
 
-        public Task<Buyer> GetBuyerAsync(int id)
+        public async Task<IUser> GetUserAsync(IUser user)
         {
-            var result = _buyers.FindAsync(id);
-            return result;
-        }
-
-        public Task<Seller> GetSellerAsync(int id)
-        {
-            var result = _sellers.FindAsync(id);
-            return result;
-        }
-
-        public Task<Administrator> GetAdministratorAsync(int id)
-        {
-            var result = _administrators.FindAsync(id);
+            IUser result = await _buyers.FindAsync(user.Id);
+            if (result == null)
+            {
+                result = await _sellers.FindAsync(user.Id);
+                if(result == null)
+                {
+                    result = await _administrators.FindAsync(user.Id);
+                }
+            }
             return result;
         }
     }

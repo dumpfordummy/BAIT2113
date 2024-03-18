@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _888Marketplace.Model.DataAccess
 {
-    public class CategoryData : ICategoryData
+    public class CategoryData
     {
         private readonly MarketplaceDb _db;
         private readonly DbSet<Category> _categories;
@@ -29,9 +29,16 @@ namespace _888Marketplace.Model.DataAccess
             return result;
         }
 
+        //public Category CreateCategory(Category category)
+        //{
+        //    return _categories.Add(category);
+        //}
+
         public Category CreateCategory(Category category)
         {
-            return _categories.Add(category);
+            var result = _categories.Add(category);
+            _db.SaveChanges();
+            return result;
         }
 
         public void UpdateCategory(Category category)
@@ -40,9 +47,12 @@ namespace _888Marketplace.Model.DataAccess
 
             if (target != null)
             {
-                target = category;
+                target.Name = category.Name;
+                target.Description = category.Description;
                 _db.SaveChanges();
             }
         }
+
+
     }
 }
