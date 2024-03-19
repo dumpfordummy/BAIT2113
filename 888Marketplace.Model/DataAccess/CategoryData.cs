@@ -29,11 +29,6 @@ namespace _888Marketplace.Model.DataAccess
             return result;
         }
 
-        //public Category CreateCategory(Category category)
-        //{
-        //    return _categories.Add(category);
-        //}
-
         public Category CreateCategory(Category category)
         {
             var result = _categories.Add(category);
