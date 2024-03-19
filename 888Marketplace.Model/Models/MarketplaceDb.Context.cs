@@ -25,8 +25,6 @@ namespace _888MarketplaceApp.Core.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Administrator> Administrators { get; set; }
-        public virtual DbSet<Buyer> Buyers { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Delivery> Deliveries { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
@@ -34,7 +32,7 @@ namespace _888MarketplaceApp.Core.Models
         public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Product_Order> Product_Order { get; set; }
-        public virtual DbSet<Seller> Sellers { get; set; }
         public virtual DbSet<ShippingMethod> ShippingMethods { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

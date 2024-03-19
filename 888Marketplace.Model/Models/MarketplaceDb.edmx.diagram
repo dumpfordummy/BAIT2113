@@ -5,22 +5,24 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4dbba55c2afa49d7b79bb64d71e8ffcc" Name="Diagram1">
-        <EntityTypeShape EntityType="DBModel.Administrator" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Buyer" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.Category" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.Delivery" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.Order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.Payment" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.PaymentMethod" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.Product" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Product_Order" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Seller" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Product_Order" Width="1.5" PointX="7.625" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.ShippingMethod" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <AssociationConnector Association="DBModel.FK_Order_BuyerId" ManuallyRouted="false" />
         <AssociationConnector Association="DBModel.FK_Delivery_ShippingMethodId" ManuallyRouted="false" />
         <AssociationConnector Association="DBModel.FK_Order_DeliveryId" ManuallyRouted="false" />
         <AssociationConnector Association="DBModel.FK_Order_PaymentId" ManuallyRouted="false" />
         <AssociationConnector Association="DBModel.FK_Payment_PaymentMethodId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBModel.User" Width="1.5" PointX="0.75" PointY="4.125" />
+        <AssociationConnector Association="DBModel.FK_Order_BuyerId1" />
+        <AssociationConnector Association="DBModel.FK_Product_SellerId" />
+        <AssociationConnector Association="DBModel.FK_Product_CategoryId" />
+        <AssociationConnector Association="DBModel.FK_Product_Order_OrderId" />
+        <AssociationConnector Association="DBModel.FK_Product_Order_ProductId" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

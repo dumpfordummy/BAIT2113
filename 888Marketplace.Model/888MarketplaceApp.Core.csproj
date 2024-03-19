@@ -68,12 +68,6 @@
     <Compile Include="DataAccess\CategoryData.cs" />
     <Compile Include="DataAccess\ICategoryData.cs" />
     <Compile Include="DataAccess\UserData.cs" />
-    <Compile Include="Models\Administrator.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Buyer.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Category.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
@@ -111,10 +105,10 @@
     <Compile Include="Models\Product_Order.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Seller.cs">
+    <Compile Include="Models\ShippingMethod.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShippingMethod.cs">
+    <Compile Include="Models\User.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,31 +6,9 @@ using System.Threading.Tasks;
 
 namespace _888MarketplaceApp.Core.Models
 {
-    public interface IUser
-    {
-        int Id { get; set; }
-        string Username { get; set; }
-        string Email { get; set; }
-        string PasswordHash { get; set; }
-        DateTime DateCreated { get; set; }
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string Phone { get; set; }
-    }
-
-    public partial class Administrator : IUser
+    public partial class User
     {
 
-    }
-
-    public partial class Buyer : IUser
-    {
-
-    }
-
-    public partial class Seller : IUser
-    {
-        DateTime IUser.DateCreated { get; set; }
     }
 
     public partial class Category

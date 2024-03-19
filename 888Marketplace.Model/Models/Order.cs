@@ -14,6 +14,12 @@ namespace _888MarketplaceApp.Core.Models
     
     public partial class Order
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Order()
+        {
+            this.Product_Order = new HashSet<Product_Order>();
+        }
+    
         public int Id { get; set; }
         public System.DateTime Date { get; set; }
         public double Amount { get; set; }
@@ -22,8 +28,10 @@ namespace _888MarketplaceApp.Core.Models
         public int PaymentId { get; set; }
         public int DeliveryId { get; set; }
     
-        public virtual Buyer Buyer { get; set; }
         public virtual Delivery Delivery { get; set; }
         public virtual Payment Payment { get; set; }
+        public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product_Order> Product_Order { get; set; }
     }
 }
