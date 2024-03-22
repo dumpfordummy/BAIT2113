@@ -13,5 +13,10 @@ namespace _888MarketplaceApp.Views
         {
 
         }
+
+        protected void RegisterUser(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" href="/Content/App/Login/login.css">
     <link rel="stylesheet" href="/Content/icomoon.css">
-    <script src="/Scripts/App/Login/login.js"></script>
+    <script src="/Scripts/App/Account/login.js"></script>
 </asp:Content>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="body">
@@ -48,19 +48,20 @@
                                     <asp:CheckBox runat="server" ID="RememberMe" Checked="true" />
                                     <div class="control__indicator"></div>
                                 </div>
-                                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+                                <span class="ml-auto">
+                                    <asp:HyperLink ID="Forgot" CssClass="forgot-pass" runat="server" NavigateUrl="/Forgot">Forgot Password</asp:HyperLink></span>
                             </div>
 
                             <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn text-white btn-block btn-primary" />
+
+                            <div class="not-member">
+                                <span>Not a member? </span>
+                                <asp:HyperLink ID="Register" runat="server" NavigateUrl="/Register">Register</asp:HyperLink>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
-
-
-
 </asp:Content>

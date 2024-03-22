@@ -239,3 +239,7 @@ input[type="submit"].btn-block {
 .btn:hover {
     text-decoration: none;
 }
+
+.not-member {
+    margin-top: 10px;
+}
