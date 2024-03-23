@@ -9,16 +9,18 @@ DROP TABLE [dbo].[Product]
 DROP TABLE [dbo].[User]
 
 CREATE TABLE [dbo].[User] (
-    [Id]           INT                IDENTITY (1, 1) NOT NULL,
-    [Username]     VARCHAR(50)               NOT NULL,
-    [Email]        VARCHAR(50)               NOT NULL,
-    [PasswordHash] VARCHAR(MAX)               NOT NULL,
-    [DateCreated]  DATETIME2 NOT NULL,
-    [Role]         VARCHAR(50)               NOT NULL,
-    [FirstName]    VARCHAR(50)               NOT NULL,
-    [LastName]     VARCHAR(50)               NOT NULL,
-    [Phone]        VARCHAR(50)               NOT NULL,
-    [Address]      VARCHAR(MAX)               NOT NULL,
+    [Id]           INT           IDENTITY (1, 1) NOT NULL,
+    [Username]     VARCHAR (50)  NOT NULL,
+    [Email]        VARCHAR (50)  NOT NULL,
+    [PasswordHash] VARCHAR (MAX) NOT NULL,
+    [DateCreated]  DATETIME2 (7) NOT NULL,
+    [Role]         VARCHAR (50)  NOT NULL,
+    [FirstName]    VARCHAR (50)  NOT NULL,
+    [LastName]     VARCHAR (50)  NOT NULL,
+    [Phone]        VARCHAR (50)  NOT NULL,
+    [Address]      VARCHAR (MAX) NOT NULL,
+    [VerificationToken] VARCHAR(50) NULL, 
+    [VerificationExpire] DATETIME2 NULL, 
     CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

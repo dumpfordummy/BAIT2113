@@ -172,7 +172,7 @@
     <Content Include="Scripts\mixitup.min.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Views\Default.aspx" />
+    <Content Include="Views\Forgot.aspx" />
     <Content Include="Views\LandingPage.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\Register.aspx" />
@@ -198,12 +198,12 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Views\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Views\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\LandingPage.aspx.cs">
       <DependentUpon>LandingPage.aspx</DependentUpon>

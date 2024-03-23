@@ -99,6 +99,8 @@
           <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="varchar(max)" Nullable="false" />
+          <Property Name="VerificationToken" Type="varchar" MaxLength="50" />
+          <Property Name="VerificationExpire" Type="datetime2" Precision="7" />
         </EntityType>
         <Association Name="FK_Delivery_ShippingMethodId">
           <End Role="ShippingMethod" Type="Self.ShippingMethod" Multiplicity="1" />
@@ -466,6 +468,8 @@
           <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Orders" Relationship="DBModel.FK_Order_BuyerId1" FromRole="User" ToRole="Order" />
           <NavigationProperty Name="Products" Relationship="DBModel.FK_Product_SellerId" FromRole="User" ToRole="Product" />
+          <Property Name="VerificationToken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VerificationExpire" Type="DateTime" Precision="7" />
         </EntityType>
         <Association Name="FK_Order_BuyerId1">
           <End Type="DBModel.User" Role="User" Multiplicity="1" />
@@ -623,6 +627,8 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="DBModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="VerificationExpire" ColumnName="VerificationExpire" />
+                <ScalarProperty Name="VerificationToken" ColumnName="VerificationToken" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
