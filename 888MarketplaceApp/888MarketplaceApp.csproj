@@ -155,6 +155,8 @@
     <Content Include="Content\Images\Admin\favicon.png" />
     <Content Include="Content\Images\Admin\logo-mini.svg" />
     <Content Include="Content\Images\Admin\logo.svg" />
+    <Content Include="Content\Images\HomePage\logo_tp.png" />
+    <Content Include="Content\Images\HomePage\logo.png" />
     <Content Include="Scripts\App\Account\forgotpassword.js" />
     <Content Include="Scripts\App\Admin\chart.js" />
     <Content Include="Scripts\App\Admin\dashboard.js" />

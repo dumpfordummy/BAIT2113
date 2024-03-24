@@ -35,7 +35,6 @@ body {
 	height: 100%;
 	font-family: "Cairo", sans-serif;
 	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
 }
 
 h1,
@@ -2900,11 +2899,9 @@ ol {
 	letter-spacing: 2px;
 }
 
-/*--------------------------------- Responsive Media Quaries -----------------------------*/
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1800px) {
 	.container {
-		max-width: 1170px;
+		max-width: 1620px;
 	}
 }
 
