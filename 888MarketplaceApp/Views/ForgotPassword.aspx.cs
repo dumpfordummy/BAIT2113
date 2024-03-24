@@ -7,9 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace _888MarketplaceApp.Views
 {
-    public partial class Forgot : System.Web.UI.Page
+    public partial class ForgotPassword : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SendVerification(object sender, EventArgs e)
         {
 
         }

@@ -3,7 +3,7 @@
 <asp:Content runat="server" ID="HeadContent" ContentPlaceHolderID="head">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/Content/App/Login/login.css">
+    <link rel="stylesheet" href="/Content/App/Login/style.css">
     <link rel="stylesheet" href="/Content/icomoon.css">
     <script src="/Scripts/App/Account/register.js"></script>
 </asp:Content>

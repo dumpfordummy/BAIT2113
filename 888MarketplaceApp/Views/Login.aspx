@@ -3,7 +3,7 @@
 <asp:Content runat="server" ID="HeadContent" ContentPlaceHolderID="head">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/Content/App/Login/login.css">
+    <link rel="stylesheet" href="/Content/App/Login/style.css">
     <link rel="stylesheet" href="/Content/icomoon.css">
     <script src="/Scripts/App/Account/login.js"></script>
 </asp:Content>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
-                                <asp:TextBox runat="server" ID="Password" CssClass="form-control" />
+                                <asp:TextBox runat="server" ID="Password" CssClass="form-control" TextMode="Password" />
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
                             </div>
 
@@ -54,7 +54,7 @@
 
                             <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn text-white btn-block btn-primary" />
 
-                            <div class="not-member">
+                            <div class="alt-url">
                                 <span>Not a member? </span>
                                 <asp:HyperLink ID="Register" runat="server" NavigateUrl="/Register">Register</asp:HyperLink>
                             </div>
