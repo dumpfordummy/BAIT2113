@@ -1,11 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="_888MarketplaceApp.Views.ForgotPassword" %>
 
-<asp:Content runat="server" ID="HeadContent" ContentPlaceHolderID="head">
-    <link rel="stylesheet" href="/Content/App/Login/style.css">
-    <script src="/Scripts/App/Account/forgotpassword.js"></script>
-</asp:Content>
-
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="body">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="homeBody">
     <div class="content">
         <div class="container">
             <div class="row">
@@ -37,4 +32,5 @@
             </div>
         </div>
     </div>
+    <script src="/Scripts/App/Account/forgotpassword.js"></script>
 </asp:Content>

@@ -1,26 +1,18 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="_888MarketplaceApp.Views.Register" %>
 
-<asp:Content runat="server" ID="HeadContent" ContentPlaceHolderID="head">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/Content/App/Login/style.css">
-    <link rel="stylesheet" href="/Content/icomoon.css">
-    <script src="/Scripts/App/Account/register.js"></script>
-</asp:Content>
-
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="body">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="homeBody">
     <div class="content">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 order-md-2">
-                    <img src="/Content/Images/login-bg.svg" alt="Image" class="img-fluid">
+                    <img src="/Content/Images/login-bg.svg" alt="Image" class="img-fluid" />
                 </div>
                 <div class="col-md-6 contents">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <div class="mb-4">
-                                <h3>Sign In to <strong>Colorlib</strong></h3>
-                                <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+                                <h3>Create An Account</h3>
+                                <p class="mb-4">Sign up an account to start purchasing on 888 Marketplace</p>
                             </div>
                             <asp:PlaceHolder runat="server" ID="PlaceHolder1" Visible="false">
                                 <p class="text-danger">
@@ -84,4 +76,5 @@
             </div>
         </div>
     </div>
+    <script src="/Scripts/App/Account/register.js"></script>
 </asp:Content>
