@@ -42,13 +42,31 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.Image imgLogo;
 
         /// <summary>
-        /// homeBody control.
+        /// lnkFeedback control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder homeBody;
+        protected global::System.Web.UI.WebControls.HyperLink lnkFeedback;
+
+        /// <summary>
+        /// lnkContact control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkContact;
+
+        /// <summary>
+        /// bodyContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder bodyContent;
 
         /// <summary>
         /// lnkLogoFooter control.

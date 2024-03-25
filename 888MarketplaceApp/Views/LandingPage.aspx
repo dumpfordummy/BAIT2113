@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LandingPage.aspx.cs" Inherits="_888MarketplaceApp.Views.LandingPage" MasterPageFile="~/Views/Site.Master" %>
 
-<asp:Content runat="server" ID="bodyContent" ContentPlaceHolderID="homeBody">    
+<asp:Content runat="server" ID="bodyCT" ContentPlaceHolderID="bodyContent">    
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">

@@ -23,13 +23,11 @@
     <link rel="stylesheet" href="/Content/css/slicknav.min.css" type="text/css" />
     <link rel="stylesheet" href="/Content/icomoon.css" />
     <link rel="stylesheet" href="/Content/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/App/admin/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/Content/App/admin/vendors/ti-icons/css/themify-icons.css" />
 
 </head>
 
 <body>
-    <form runat="server">
-
     <!-- Header Section Begin -->
     <header class="header">
         <div class="header__top">
@@ -65,8 +63,9 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="/">Home</a></li>
-                            <li><a href="#">Shop</a></li>
+                            <li class="active"><asp:HyperLink ID="lnkFeedback" runat="server">Feedback</asp:HyperLink></li>
+                            <li><asp:HyperLink ID="lnkContact" runat="server">Contact Us</asp:HyperLink></li>
+                            <!--
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="#">Shop Details</a></li>
@@ -75,8 +74,7 @@
                                     <li><a href="#">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
+                            -->
                         </ul>
                     </nav>
                 </div>
@@ -94,7 +92,7 @@
     </header>
     <!-- Header Section End -->
 
-    <asp:ContentPlaceHolder ID="homeBody" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="bodyContent" runat="server"></asp:ContentPlaceHolder>
 
     <!-- Footer Section Begin -->
     <footer class="footer spad">
@@ -152,7 +150,6 @@
     </footer>
     <!-- Footer Section End -->
     
-    </form>
     <!-- Scripts -->
     <script src="/Scripts/jquery-3.7.0.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
