@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="_888MarketplaceApp.Views.Site1" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="_888MarketplaceApp.Views.Site1" %>
 
 <%@ Import Namespace="System.Web.Optimization" %>
 <!DOCTYPE html>
@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="/Content/css/slicknav.min.css" type="text/css" />
     <link rel="stylesheet" href="/Content/icomoon.css" />
     <link rel="stylesheet" href="/Content/css/style.css" type="text/css" />
-
 </head>
 
 <body>

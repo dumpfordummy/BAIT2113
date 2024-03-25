@@ -1,24 +1,7 @@
 ﻿<%--<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="AdminDashboard.aspx.cs" Inherits="_888MarketplaceApp.Views.AdminDashboard" %>
 
 
-<asp:Content runat="server" ID="HeadContent" ContentPlaceHolderID="head">
-    <!-- Required meta tags -->
-
-    <title>Admin</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="/Content/App/admin/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="/Content/App/admin/vendors/base/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="/Content/App/admin/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
-
-</asp:Content>
-
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="body">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="homeBody">
     <div class="container-scroller">
 
 
