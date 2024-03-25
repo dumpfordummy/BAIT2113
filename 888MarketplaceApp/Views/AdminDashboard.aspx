@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="AdminDashboard.aspx.cs" Inherits="_888MarketplaceApp.Views.AdminDashboard" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="AdminDashboard.aspx.cs" Inherits="_888MarketplaceApp.Views.AdminDashboard" %>
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="homeBody">
@@ -450,6 +450,3 @@
     <script src="/Scripts/App/Admin/dashboard.js"></script>
     <!-- End custom js for this page-->
 </asp:Content>
-
-
---%>
