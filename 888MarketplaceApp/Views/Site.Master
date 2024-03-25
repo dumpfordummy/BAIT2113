@@ -3,58 +3,157 @@
 <%@ Import Namespace="System.Web.Optimization" %>
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %></title>
     <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet" />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/css/elegant-icons.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/css/nice-select.css" type="text/css" /> 
+    <link rel="stylesheet" href="/Content/css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/css/style.css" type="text/css" />
+</head>
+
+<body>
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> 888market@email.com</li>
+                                <li>Free Shipping for all Order over RM99</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__auth">
+                                <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Views/Login.aspx"><i class="fa fa-user"></i> Login</asp:HyperLink>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <asp:HyperLink ID="lnkLogo" runat="server" NavigateUrl="~/Views/LandingPage.aspx">
+                            <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Content/Images/HomePage/logo.png" />
+                        </asp:HyperLink>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="#">Shop Details</a></li>
+                                    <li><a href="#">Shoping Cart</a></li>
+                                    <li><a href="#">Check Out</a></li>
+                                    <li><a href="#">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">item: <span>$0.00</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <asp:ContentPlaceHolder ID="homeBody" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <asp:HyperLink ID="lnkLogoFooter" runat="server" NavigateUrl="~/Views/LandingPage.aspx">
+                                <asp:Image ID="imgLogoFooter" runat="server" ImageUrl="~/Content/Images/HomePage/logo_tp.png" />
+                            </asp:HyperLink>
+                        </div>
+                        <ul>
+                            <li>Phone: +6012 3456789</li>
+                            <li>Email: 888market@email.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>                   
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Our Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your e-mail">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text">
+                            <p>
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+                            </p>
+                        </div>
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt="" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Scripts -->
     <script src="/Scripts/jquery-3.7.0.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
     <script src="/Scripts/App/global.js" defer></script>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body>
-    <form runat="server">
-
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Application name</a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home2</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home3</a></li>
-                    </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="navbar-nav navbar-right">
-                                <li><a runat="server" class="nav-link" href="/register">Register</a></li>
-                                <li><a runat="server" class="nav-link" href="/login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="navbar-nav navbar-right">
-                                <li><a runat="server" class="nav-link" href="~/">Account</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" CssClass="nav-link" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
-                </div>
-            </div>
-        </nav>
-
-        <div class="body-content">
-            <asp:ContentPlaceHolder ID="body" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+    <script src="/Scripts/jquery.nice-select.min.js"></script>
+    <script src="/Scripts/jquery-ui.min.js"></script>
+    <script src="/Scripts/jquery.slicknav.js"></script>
+    <script src="/Scripts/mixitup.min.js"></script>
+    <script src="/Scripts/owl.carousel.min.js"></script>
+    <script src="/Scripts/main.js"></script>
 </body>
 </html>

@@ -1,93 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LandingPage.aspx.cs" Inherits="_888MarketplaceApp.Views.LandingPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LandingPage.aspx.cs" Inherits="_888MarketplaceApp.Views.LandingPage" MasterPageFile="~/Views/Site.Master" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="UTF-8" />
-    <meta name="description" content="888 Marketplace" />
-    <meta name="keywords" content="888, marketplace, selling, buying" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>888 Marketplace</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet" />
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/css/elegant-icons.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/css/nice-select.css" type="text/css" /> 
-    <link rel="stylesheet" href="/Content/css/jquery-ui.min.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/css/owl.carousel.min.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/css/slicknav.min.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/css/style.css" type="text/css" />
-</head>
-
-<body>
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> 888market@email.com</li>
-                                <li>Free Shipping for all Order over RM99</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__auth">
-                                <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Views/Login.aspx"><i class="fa fa-user"></i> Login</asp:HyperLink>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <asp:HyperLink ID="lnkLogo" runat="server" NavigateUrl="~/Views/LandingPage.aspx">
-                            <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Content/Images/HomePage/logo.png" />
-                        </asp:HyperLink>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                            <li class="active"><a href="/">Home</a></li>
-                            <li><a href="#">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="#">Shop Details</a></li>
-                                    <li><a href="#">Shoping Cart</a></li>
-                                    <li><a href="#">Check Out</a></li>
-                                    <li><a href="#">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>$0.00</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header Section End -->
-
+<asp:Content runat="server" ID="bodyContent" ContentPlaceHolderID="homeBody">    
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
@@ -121,7 +34,7 @@
                                     All Categories
                                     <span class="arrow_carrot-down"></span>
                                 </div>
-                                <input type="text" placeholder="What do yo u need?">
+                                <input type="text" placeholder="What are you looking for?">
                                 <button type="submit" class="site-btn">SEARCH</button>
                             </form>
                         </div>
@@ -131,7 +44,7 @@
                             </div>
                             <div class="hero__search__phone__text">
                                 <h5>+6012 3456789</h5>
-                                <span>Support 09:00 - 22:00 (Malaysia)</span>
+                                <span>Support 09:00 - 22:00 (MY)</span>
                             </div>
                         </div>
                     </div>
@@ -552,71 +465,4 @@
         </div>
     </section>
     <!-- Latest Product Section End -->
-
-    <!-- Footer Section Begin -->
-    <footer class="footer spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <asp:HyperLink ID="lnkLogoFooter" runat="server" NavigateUrl="~/Views/LandingPage.aspx">
-                                <asp:Image ID="imgLogoFooter" runat="server" ImageUrl="~/Content/Images/HomePage/logo_tp.png" />
-                            </asp:HyperLink>
-                        </div>
-                        <ul>
-                            <li>Phone: +6012 3456789</li>
-                            <li>Email: 888market@email.com</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>                   
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Services</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
-
-    <!-- Js Plugins -->
-    <script src="/Scripts/jquery-3.7.0.min.js"></script>
-    <script src="/Scripts/bootstrap.min.js"></script>
-    <script src="/Scripts/jquery.nice-select.min.js"></script>
-    <script src="/Scripts/jquery-ui.min.js"></script>
-    <script src="/Scripts/jquery.slicknav.js"></script>
-    <script src="/Scripts/mixitup.min.js"></script>
-    <script src="/Scripts/owl.carousel.min.js"></script>
-    <script src="/Scripts/main.js"></script>
-
-</body>
-</html>
+</asp:Content>
