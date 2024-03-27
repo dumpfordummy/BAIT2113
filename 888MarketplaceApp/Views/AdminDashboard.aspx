@@ -36,7 +36,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/charts/chartjs.html">
+                        <a class="nav-link" href="AdminChart.aspx">
                             <i class="ti-pie-chart menu-icon"></i>
                             <span class="menu-title">Charts</span>
                         </a>
@@ -84,7 +84,7 @@
                         <div class="col-md-12 grid-margin">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h4 class="font-weight-bold mb-0">RoyalUI Dashboard</h4>
+                                    <h4 class="font-weight-bold mb-0">Admin Dashboard</h4>
                                 </div>
                                 <div>
                                     <button type="button" class="btn btn-primary btn-icon-text btn-rounded">
