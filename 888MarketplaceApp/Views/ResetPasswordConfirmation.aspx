@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="ResetPasswordConfirmation.aspx.cs" Inherits="_888MarketplaceApp.Views.ResetPasswordConfirmation" %>
 
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="homeBody">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="bodyContent">
     <div class="content">
         <div class="container">
             <div class="row">

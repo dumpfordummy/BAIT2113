@@ -3463,6 +3463,36 @@ ol {
 	}
 }
 
+.centered {
+	text-align: center;
+	vertical-align: middle;
+	padding-bottom:30px;
+	
+}
+	.centered * {
+		margin: 15px 0;
+	}
+
+	.centered .profileImg {
+		border-radius: 50%;
+		width: 200px;
+		height: 200px;
+	}
+
+.accountForm {
+	width: 1200px;
+}
+
+.max-width {
+	width: 100% !important;
+}
+
+.center-form {
+	justify-content: center; /* Horizontally center-align child elements */
+	align-items: center; /* Vertically center-align child elements */
+	display: block ruby;
+	padding:1.5rem 2.5rem 1.5rem 20% !important;
+}
 /*#region login.css*/
 @media (max-width: 991.98px) {
 	.content .bg {
@@ -17766,6 +17796,34 @@ fieldset:disabled .btn {
 .card-title {
 	margin-bottom: 0.5rem;
 }
+
+.card-title-border {
+	border-bottom: 0.0625rem solid #efefef;
+	padding: 1.125rem 0;
+}
+
+.card-title-strong {
+	color: #333;
+	font-size: 1.125rem;
+	font-weight: 500;
+	line-height: 1.5rem;
+	margin: 0;
+	text-transform: capitalize;
+}
+
+.card-title-description {
+	color: #787878;
+	margin-bottom: 0;
+	font-size: 0.875rem;
+	font-weight: 500;
+	margin-top: 5px;
+}
+
+.card-content {
+	margin-top: 30px;
+}
+
+
 
 .card-subtitle {
 	margin-top: -0.25rem;

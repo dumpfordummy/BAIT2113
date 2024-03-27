@@ -28,44 +28,48 @@
 </head>
 
 <body>
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i>888market@email.com</li>
-                                <li>Free Shipping for all Order over RM99</li>
-                            </ul>
+    <form runat="server">
+
+        <!-- Header Section Begin -->
+        <header class="header">
+            <div class="header__top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="header__top__left">
+                                <ul>
+                                    <li><i class="fa fa-envelope"></i>888market@email.com</li>
+                                    <li>Free Shipping for all Order over RM99</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__auth">
-                                <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Views/Login.aspx"><i class="fa fa-user"></i> Login</asp:HyperLink>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="header__top__right">
+                                <div class="header__top__right__auth">
+                                    <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Views/Login.aspx"><i class="fa fa-user"></i> Login</asp:HyperLink>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <asp:HyperLink ID="lnkLogo" runat="server" NavigateUrl="~/Views/LandingPage.aspx">
-                            <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Content/Images/HomePage/logo.png" />
-                        </asp:HyperLink>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="header__logo">
+                            <asp:HyperLink ID="lnkLogo" runat="server" NavigateUrl="~/Views/LandingPage.aspx">
+                                <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Content/Images/HomePage/logo.png" />
+                            </asp:HyperLink>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                            <li class="active"><asp:HyperLink ID="lnkFeedback" runat="server">Feedback</asp:HyperLink></li>
-                            <li><asp:HyperLink ID="lnkContact" runat="server">Contact Us</asp:HyperLink></li>
-                            <!--
+                    <div class="col-lg-6">
+                        <nav class="header__menu">
+                            <ul>
+                                <li class="active">
+                                    <asp:HyperLink ID="lnkFeedback" runat="server">Feedback</asp:HyperLink></li>
+                                <li>
+                                    <asp:HyperLink ID="lnkContact" runat="server">Contact Us</asp:HyperLink></li>
+                                <!--
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="#">Shop Details</a></li>
@@ -75,81 +79,83 @@
                                 </ul>
                             </li>
                             -->
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i><span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i><span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>$0.00</span></div>
+                            </ul>
+                        </nav>
                     </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header Section End -->
-
-    <asp:ContentPlaceHolder ID="bodyContent" runat="server"></asp:ContentPlaceHolder>
-
-    <!-- Footer Section Begin -->
-    <footer class="footer spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <asp:HyperLink ID="lnkLogoFooter" runat="server" NavigateUrl="~/Views/LandingPage.aspx">
-                                <asp:Image ID="imgLogoFooter" runat="server" ImageUrl="~/Content/Images/HomePage/logo_tp.png" />
-                            </asp:HyperLink>
+                    <div class="col-lg-3">
+                        <div class="header__cart">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-heart"></i><span>1</span></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-bag"></i><span>3</span></a></li>
+                            </ul>
+                            <div class="header__cart__price">item: <span>$0.00</span></div>
                         </div>
-                        <ul>
-                            <li>Phone: +6012 3456789</li>
-                            <li>Email: 888market@email.com</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Services</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your e-mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text">
-                            <p>
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                                All rights reserved
-                            </p>
+        </header>
+        <!-- Header Section End -->
+
+        <asp:ContentPlaceHolder ID="bodyContent" runat="server"></asp:ContentPlaceHolder>
+
+        <!-- Footer Section Begin -->
+        <footer class="footer spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="footer__about">
+                            <div class="footer__about__logo">
+                                <asp:HyperLink ID="lnkLogoFooter" runat="server" NavigateUrl="~/Views/LandingPage.aspx">
+                                    <asp:Image ID="imgLogoFooter" runat="server" ImageUrl="~/Content/Images/HomePage/logo_tp.png" />
+                                </asp:HyperLink>
+                            </div>
+                            <ul>
+                                <li>Phone: +6012 3456789</li>
+                                <li>Email: 888market@email.com</li>
+                            </ul>
                         </div>
-                        <div class="footer__copyright__payment">
-                            <img src="img/payment-item.png" alt="" /></div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                        <div class="footer__widget">
+                            <h6>Useful Links</h6>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Our Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer__widget">
+                            <h6>Join Our Newsletter Now</h6>
+                            <p>Get E-mail updates about our latest shop and special offers.</p>
+                            <form action="#">
+                                <input type="text" placeholder="Enter your e-mail">
+                                <button type="submit" class="site-btn">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__copyright">
+                            <div class="footer__copyright__text">
+                                <p>
+                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                    All rights reserved
+                                </p>
+                            </div>
+                            <div class="footer__copyright__payment">
+                                <img src="img/payment-item.png" alt="" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
-    
+        </footer>
+        <!-- Footer Section End -->
+    </form>
+
     <!-- Scripts -->
     <script src="/Scripts/jquery-3.7.0.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
