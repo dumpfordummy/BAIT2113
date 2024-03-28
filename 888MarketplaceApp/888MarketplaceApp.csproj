@@ -116,6 +116,7 @@
     <Content Include="Content\App\admin\vendors\chart.js\Chart.min.js" />
     <Content Include="Content\App\admin\vendors\ti-icons\css\themify-icons.css" />
     <Content Include="Content\App\admin\vendors\ti-icons\fonts\themify.svg" />
+    <Content Include="Content\css\register-confirmation.css" />
     <Content Include="Content\Images\Admin\auth\lockscreen-bg.jpg" />
     <Content Include="Content\Images\Admin\auth\login-bg.jpg" />
     <Content Include="Content\Images\Admin\auth\register-bg.jpg" />
@@ -308,6 +309,7 @@
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\MyPurchases.aspx" />
     <Content Include="Views\Register.aspx" />
+    <Content Include="Views\RegisterConfirmation.aspx" />
     <Content Include="Views\ResetPassword.aspx" />
     <Content Include="Views\ResetPasswordConfirmation.aspx" />
     <Content Include="Web.config" />
@@ -401,6 +403,13 @@
     </Compile>
     <Compile Include="Views\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterConfirmation.aspx.cs">
+      <DependentUpon>RegisterConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterConfirmation.aspx.designer.cs">
+      <DependentUpon>RegisterConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
