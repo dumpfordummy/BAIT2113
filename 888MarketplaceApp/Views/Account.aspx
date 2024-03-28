@@ -17,13 +17,13 @@
                                     </a>
                                     <div class="collapse" id="auth">
                                         <ul class="nav flex-column sub-menu">
-                                            <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="#">Change Password</a></li>
+                                            <li class="nav-item"><a class="nav-link nav-link-active" href="/Account">Profile</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="/ChangePassword">Change Password</a></li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="/Mypurchases">
                                         <i class="ti-view-list-alt menu-icon"></i>
                                         <span class="menu-title">My Purchase</span>
                                     </a>
@@ -37,8 +37,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title-border">
-                                        <p class="card-title-strong">My Profile</p>
-                                        <div class="card-title-description">Browse and manage your account</div>
+                                        <p class="card-title-strong">My Account</p>
+                                        <div class="card-title-description">Browse and manage your profile</div>
                                     </div>
                                     <div class="card-content">
                                         <table class="card-table" style="width: 100%;">

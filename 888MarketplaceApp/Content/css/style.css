@@ -17798,7 +17798,6 @@ fieldset:disabled .btn {
 }
 
 .card-title-border {
-	border-bottom: 0.0625rem solid #efefef;
 	padding: 1.125rem 0;
 }
 
@@ -17820,7 +17819,8 @@ fieldset:disabled .btn {
 }
 
 .card-content {
-	margin-top: 30px;
+	border-top: 0.0625rem solid #efefef;
+	padding-top: 20px;
 }
 
 
@@ -27580,6 +27580,10 @@ dl {
 			background: transparent;
 		}
 
+.nav-link-active {
+	color: #000000 !important;
+}
+
 /* style for off-canvas menu*/
 @media screen and (max-width: 991px) {
 	.sidebar-offcanvas {
@@ -28158,3 +28162,87 @@ dl {
 }
 
 /*#endregion */
+
+
+.order-information {
+	display: flex; /* Use flexbox */
+}
+
+.order-item {
+	border-top: 0.0625rem solid #efefef;
+	margin-top: 15px;
+	padding-top: 15px;
+	display: flex; /* Use flexbox */
+	align-items: center; /* Center items vertically */
+}
+
+.order-item-result {
+	border-top: 0.0625rem solid #efefef;
+	margin-top: 15px;
+	padding-top: 15px;
+}
+
+.itemImg {
+	flex: 0 0 auto; /* Don't allow shrinking or growing */
+	margin-right: 10px; /* Add margin for spacing */
+}
+
+.itemContent {
+	flex: 1; /* Allow growing */
+	display: flex;
+	justify-content: space-between;
+}
+
+.itemDetails {
+	display: grid;
+	grid-template-columns: auto;
+	grid-row-gap: 5px;
+}
+
+.itemTitle,
+.itemDescription,
+.itemCategory,
+.itemQuantity {
+	margin-bottom: 5px;
+}
+
+.totalItemsPrice {
+	margin-left: auto;
+}
+
+.purchaseItem {
+	max-width: 100%; /* Ensure image doesn't exceed container width */
+}
+
+.StatusName {
+	flex: 1; /* Take up available space */
+}
+
+.StatusDescription {
+	flex: 1; /* Take up available space */
+	text-align: right; /* Align text to the right */
+}
+
+.order-item-result {
+	display: flex;
+	justify-content: flex-end; /* Align items to the right */
+}
+
+.orderTotalText,
+.orderTotalValue {
+	margin-left: 10px; /* Add spacing between the elements if needed */
+}
+
+.order-item-action {
+	display: flex;
+	justify-content: flex-end; /* Align items to the right */
+	margin: 15px;
+}
+
+.btn-primary-green {
+	background-color: #38d39f;
+}
+
+	.btn-primary-green:hover {
+		background-color: #31ad84;
+	}
