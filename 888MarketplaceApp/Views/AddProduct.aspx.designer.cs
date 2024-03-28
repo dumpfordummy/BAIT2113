@@ -11,88 +11,106 @@ namespace _888MarketplaceApp.Views
 {
 
 
-    public partial class Site1
+    public partial class AddProduct
     {
 
         /// <summary>
-        /// lnkLogin control.
+        /// imageUpl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkLogin;
+        protected global::System.Web.UI.WebControls.FileUpload imageUpl;
 
         /// <summary>
-        /// lnkLogo control.
+        /// lblPdtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkLogo;
+        protected global::System.Web.UI.WebControls.Label lblPdtName;
 
         /// <summary>
-        /// imgLogo control.
+        /// txtPdtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgLogo;
+        protected global::System.Web.UI.WebControls.TextBox txtPdtName;
 
         /// <summary>
-        /// lnkFeedback control.
+        /// lblPdtDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkFeedback;
+        protected global::System.Web.UI.WebControls.Label lblPdtDesc;
 
         /// <summary>
-        /// lnkContact control.
+        /// txtPdtDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkContact;
+        protected global::System.Web.UI.WebControls.TextBox txtPdtDesc;
 
         /// <summary>
-        /// bodyContent control.
+        /// lblPdtPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder bodyContent;
+        protected global::System.Web.UI.WebControls.Label lblPdtPrice;
 
         /// <summary>
-        /// lnkLogoFooter control.
+        /// inPdtNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkLogoFooter;
+        protected global::System.Web.UI.WebControls.TextBox inPdtNo;
 
         /// <summary>
-        /// imgLogoFooter control.
+        /// lblPdtQty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgLogoFooter;
+        protected global::System.Web.UI.WebControls.Label lblPdtQty;
 
         /// <summary>
-        /// btnSubscribe control.
+        /// inPdtQty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnSubscribe;
+        protected global::System.Web.UI.WebControls.TextBox inPdtQty;
+
+        /// <summary>
+        /// lblPdtCatg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPdtCatg;
+
+        /// <summary>
+        /// selPdtCatg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect selPdtCatg;
     }
 }

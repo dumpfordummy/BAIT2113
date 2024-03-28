@@ -300,6 +300,7 @@
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Account.aspx" />
+    <Content Include="Views\AddProduct.aspx" />
     <Content Include="Views\AdminChart.aspx" />
     <Content Include="Views\AdminDashboard.aspx" />
     <Content Include="Views\ChangePassword.aspx" />
@@ -340,6 +341,13 @@
     </Compile>
     <Compile Include="Views\Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminChart.aspx.cs">
       <DependentUpon>AdminChart.aspx</DependentUpon>
