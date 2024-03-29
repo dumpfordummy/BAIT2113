@@ -104,6 +104,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\705_tin_bottle.jpg" />
+    <Content Include="Images\black_rubber_bottle.jpg" />
+    <Content Include="Images\black_shoe_1.jpg" />
+    <Content Include="Images\brown_shoe_1.jpg" />
+    <Content Include="Images\green_bottle.jpg" />
+    <Content Include="Images\grey_suit_1.jpg" />
+    <Content Include="Images\knitted_1.jpg" />
+    <Content Include="Images\metal_bottle.jpg" />
+    <Content Include="Images\orange_shoe_1.jpg" />
+    <Content Include="Images\orange_shoe_2.jpg" />
+    <Content Include="Images\red_shoe.jpg" />
     <Content Include="Views\AdminTable.aspx" />
     <Content Include="App_Data\888DB.mdf" />
     <Content Include="App_Data\888DB_log.ldf">
@@ -310,6 +321,7 @@
     <Content Include="Views\LandingPage.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\MyPurchases.aspx" />
+    <Content Include="Views\Product.aspx" />
     <Content Include="Views\Register.aspx" />
     <Content Include="Views\RegisterConfirmation.aspx" />
     <Content Include="Views\ResetPassword.aspx" />
@@ -412,6 +424,13 @@
     </Compile>
     <Compile Include="Views\MyPurchases.aspx.designer.cs">
       <DependentUpon>MyPurchases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
