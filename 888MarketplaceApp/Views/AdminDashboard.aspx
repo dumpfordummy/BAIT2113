@@ -3,8 +3,6 @@
 
 <asp:Content runat="server" ID="bodyCT" ContentPlaceHolderID="bodyContent">
     <div class="container-scroller">
-
-
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <!-- partial:partials/_sidebar.html -->
@@ -17,62 +15,21 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                            <i class="ti-palette menu-icon"></i>
-                            <span class="menu-title">UI Elements</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-basic">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/forms/basic_elements.html">
-                            <i class="ti-layout-list-post menu-icon"></i>
-                            <span class="menu-title">Form elements</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="AdminChart.aspx">
                             <i class="ti-pie-chart menu-icon"></i>
                             <span class="menu-title">Charts</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/tables/basic-table.html">
+                        <a class="nav-link" href="AdminTable.aspx">
                             <i class="ti-view-list-alt menu-icon"></i>
                             <span class="menu-title">Tables</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/icons/themify.html">
-                            <i class="ti-star menu-icon"></i>
-                            <span class="menu-title">Icons</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                        <a class="nav-link" href="AdminTable.aspx">
                             <i class="ti-user menu-icon"></i>
-                            <span class="menu-title">User Pages</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="auth">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="pages/samples/login.html">Login </a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/samples/login-2.html">Login 2 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/samples/register.html">Register </a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/samples/register-2.html">Register 2 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/samples/lock-screen.html">Lockscreen </a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="documentation/documentation.html">
-                            <i class="ti-write menu-icon"></i>
-                            <span class="menu-title">Documentation</span>
+                            <span class="menu-title">Profile</span>
                         </a>
                     </li>
                 </ul>
@@ -101,7 +58,7 @@
                                     <p class="card-title text-md-center text-xl-left">Sales</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">34040</h3>
-                                        <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                        <i class="ti-shopping-cart icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
                                     <p class="mb-0 mt-2 text-danger">0.12% <span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
@@ -113,7 +70,7 @@
                                     <p class="card-title text-md-center text-xl-left">Revenue</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">47033</h3>
-                                        <i class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                        <i class="ti-money icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
                                     <p class="mb-0 mt-2 text-danger">0.47% <span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
@@ -125,7 +82,7 @@
                                     <p class="card-title text-md-center text-xl-left">Downloads</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">40016</h3>
-                                        <i class="ti-agenda icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                        <i class="ti-server icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
                                     <p class="mb-0 mt-2 text-success">64.00%<span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
@@ -137,7 +94,7 @@
                                     <p class="card-title text-md-center text-xl-left">Returns</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">61344</h3>
-                                        <i class="ti-layers-alt icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                        <i class="ti-rocket icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
                                     <p class="mb-0 mt-2 text-success">23.00%<span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
@@ -208,7 +165,7 @@
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>User</th>
+                                                    <th>Product ID</th>
                                                     <th>Product</th>
                                                     <th>Sale</th>
                                                     <th>Status</th>
@@ -216,46 +173,39 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>Jacob</td>
+                                                    <td>P1000</td>
                                                     <td>Photoshop</td>
                                                     <td class="text-danger">28.76% <i class="ti-arrow-down"></i></td>
                                                     <td>
                                                         <label class="badge badge-danger">Pending</label></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Messsy</td>
+                                                    <td>P1001</td>
                                                     <td>Flash</td>
                                                     <td class="text-danger">21.06% <i class="ti-arrow-down"></i></td>
                                                     <td>
                                                         <label class="badge badge-warning">In progress</label></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>John</td>
+                                                    <td>P1002</td>
                                                     <td>Premier</td>
                                                     <td class="text-danger">35.00% <i class="ti-arrow-down"></i></td>
                                                     <td>
                                                         <label class="badge badge-info">Fixed</label></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Peter</td>
+                                                    <td>P1003</td>
                                                     <td>After effects</td>
                                                     <td class="text-success">82.00% <i class="ti-arrow-up"></i></td>
                                                     <td>
                                                         <label class="badge badge-success">Completed</label></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Dave</td>
+                                                    <td>P1004</td>
                                                     <td>53275535</td>
                                                     <td class="text-success">98.05% <i class="ti-arrow-up"></i></td>
                                                     <td>
                                                         <label class="badge badge-warning">In progress</label></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Messsy</td>
-                                                    <td>Flash</td>
-                                                    <td class="text-danger">21.06% <i class="ti-arrow-down"></i></td>
-                                                    <td>
-                                                        <label class="badge badge-info">Fixed</label></td>
                                                 </tr>
                                             </tbody>
                                         </table>

@@ -104,6 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\AdminTable.aspx" />
     <Content Include="App_Data\888DB.mdf" />
     <Content Include="App_Data\888DB_log.ldf">
       <DependentUpon>888DB.mdf</DependentUpon>
@@ -316,6 +317,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\AdminTable.aspx.cs">
+      <DependentUpon>AdminTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminTable.aspx.designer.cs">
+      <DependentUpon>AdminTable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
