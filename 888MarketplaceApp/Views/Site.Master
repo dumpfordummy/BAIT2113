@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="/Content/fonts/icomoon.css" />
     <link rel="stylesheet" href="/Content/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/Content/App/admin/vendors/ti-icons/css/themify-icons.css" />
-
+    <asp:ContentPlaceHolder ID="adminTemporaryPlaceholder" runat="server"></asp:ContentPlaceHolder>
 </head>
 
 <body>

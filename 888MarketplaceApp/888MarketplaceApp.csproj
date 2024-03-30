@@ -104,6 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\adminTemp.css" />
     <Content Include="Images\705_tin_bottle.jpg" />
     <Content Include="Images\black_rubber_bottle.jpg" />
     <Content Include="Images\black_shoe_1.jpg" />
@@ -315,6 +316,7 @@
     <Content Include="Views\AddProduct.aspx" />
     <Content Include="Views\AdminChart.aspx" />
     <Content Include="Views\AdminDashboard.aspx" />
+    <Content Include="Views\AllProduct.aspx" />
     <Content Include="Views\ChangePassword.aspx" />
     <Content Include="Views\Default.aspx" />
     <Content Include="Views\ForgotPassword.aspx" />
@@ -382,6 +384,13 @@
     </Compile>
     <Compile Include="Views\AdminDashboard.aspx.designer.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AllProduct.aspx.cs">
+      <DependentUpon>AllProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AllProduct.aspx.designer.cs">
+      <DependentUpon>AllProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>

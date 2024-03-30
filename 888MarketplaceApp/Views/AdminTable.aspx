@@ -1,5 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="AdminTable.aspx.cs" Inherits="_888MarketplaceApp.AdminTable" %>
 
+<asp:Content runat="server" ID="Content1" ContentPlaceHolderID="adminTemporaryPlaceholder">
+    <link rel="stylesheet" href="/Content/css/adminTemp.css" type="text/css" />
+</asp:Content>
+
 <asp:Content runat="server" ID="bodyCT" ContentPlaceHolderID="bodyContent">
     <div class="container-scroller">
 
