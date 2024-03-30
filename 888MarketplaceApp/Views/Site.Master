@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="/Content/fonts/icomoon.css" />
     <link rel="stylesheet" href="/Content/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/Content/App/admin/vendors/ti-icons/css/themify-icons.css" />
+
     <asp:ContentPlaceHolder ID="adminTemporaryPlaceholder" runat="server"></asp:ContentPlaceHolder>
 </head>
 
@@ -159,7 +160,7 @@
     <!-- Scripts -->
     <script src="/Scripts/jquery-3.7.0.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
-    <script src="/Scripts/App/global.js" defer></script>
+    <script src="/Scripts/App/global.js"></script>
     <script src="/Scripts/jquery.nice-select.min.js"></script>
     <script src="/Scripts/jquery-ui.min.js"></script>
     <script src="/Scripts/jquery.slicknav.js"></script>
