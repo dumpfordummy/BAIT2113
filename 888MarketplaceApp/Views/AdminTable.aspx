@@ -31,7 +31,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="AdminTable.aspx">
+                        <a class="nav-link" href="Account.aspx">
                             <i class="ti-user menu-icon"></i>
                             <span class="menu-title">Profile</span>
                         </a>
@@ -46,10 +46,6 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="font-weight-bold mb-0">Product Listing Table</h3>
-
-
-                                        <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-
 
                                     <div class="table-responsive">
                                         <table class="table table-hover">

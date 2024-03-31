@@ -123,7 +123,6 @@
     </Content>
     <Content Include="App_Data\SQLTableInit.sql" />
     <Content Include="Content\App\admin\style.css" />
-    <Content Include="Content\App\admin\Components\_sidebar.html" />
     <Content Include="Content\App\admin\vendors\base\vendor.bundle.base.css" />
     <Content Include="Content\App\admin\vendors\base\vendor.bundle.base.js" />
     <Content Include="Content\App\admin\vendors\chart.js\Chart.min.js" />

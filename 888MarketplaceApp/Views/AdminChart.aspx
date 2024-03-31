@@ -30,7 +30,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="AdminTable.aspx">
+                        <a class="nav-link" href="Account.aspx">
                             <i class="ti-user menu-icon"></i>
                             <span class="menu-title">Profile</span>
                         </a>
