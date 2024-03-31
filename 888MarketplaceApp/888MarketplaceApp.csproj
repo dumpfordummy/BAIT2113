@@ -318,6 +318,7 @@
     <Content Include="Views\AllProduct.aspx" />
     <Content Include="Views\ChangePassword.aspx" />
     <Content Include="Views\Default.aspx" />
+    <Content Include="Views\EditProduct.aspx" />
     <Content Include="Views\ForgotPassword.aspx" />
     <Content Include="Views\LandingPage.aspx" />
     <Content Include="Views\Login.aspx" />
@@ -404,6 +405,13 @@
     </Compile>
     <Compile Include="Views\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>

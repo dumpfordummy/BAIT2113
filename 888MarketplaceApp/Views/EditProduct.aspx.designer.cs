@@ -11,35 +11,17 @@ namespace _888MarketplaceApp.Views
 {
 
 
-    public partial class Product
+    public partial class EditProduct
     {
 
         /// <summary>
-        /// imgPdt control.
+        /// upPdtImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgPdt;
-
-        /// <summary>
-        /// imgBtnPdt1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgBtnPdt1;
-
-        /// <summary>
-        /// imgBtnPdt2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgBtnPdt2;
+        protected global::System.Web.UI.WebControls.Image upPdtImg;
 
         /// <summary>
         /// lblPdtName control.
@@ -51,6 +33,33 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.Label lblPdtName;
 
         /// <summary>
+        /// txtPdtName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPdtName;
+
+        /// <summary>
+        /// lblPdtDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPdtDesc;
+
+        /// <summary>
+        /// txtPdtDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPdtDesc;
+
+        /// <summary>
         /// lblPdtPrice control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPdtPrice;
+
+        /// <summary>
+        /// inPdtNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox inPdtNo;
 
         /// <summary>
         /// lblPdtQty control.
@@ -76,5 +94,23 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox inPdtQty;
+
+        /// <summary>
+        /// lblPdtCatg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPdtCatg;
+
+        /// <summary>
+        /// selPdtCatg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect selPdtCatg;
     }
 }

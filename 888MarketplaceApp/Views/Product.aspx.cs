@@ -13,5 +13,11 @@ namespace _888MarketplaceApp.Views
         {
 
         }
+
+        protected void imgBtnPdt_Click(object sender, ImageClickEventArgs e)
+        {
+            string imgUrl = sender.GetType().GetProperty("ImageUrl").GetValue(sender).ToString();
+            imgPdt.ImageUrl = imgUrl;
+        }
     }
 }
