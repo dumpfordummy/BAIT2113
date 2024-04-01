@@ -30,12 +30,6 @@
                             <span class="menu-title">Tables</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Account.aspx">
-                            <i class="ti-user menu-icon"></i>
-                            <span class="menu-title">Profile</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
             <!-- partial -->
@@ -45,9 +39,11 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="font-weight-bold mb-0">Product Listing Table</h3>
-
-                                    <div class="table-responsive">
+                                    <div>
+                                    <h3 class="font-weight-bold mb-0">Product Listing Table</h3>                           
+                                    <asp:TextBox ID="TextBox1" runat="server" Height="16px" OnTextChanged="TextBox1_TextChanged" Width="273px" BorderColor="Black">Search Product</asp:TextBox>
+                                    </div>
+                                        <div class="table-responsive">
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
@@ -113,7 +109,7 @@
     <!-- page-body-wrapper ends -->
     </div>
 
-        <!-- plugins:js -->
+    <!-- plugins:js -->
     <script src="/Content/App/admin/vendors/base/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page-->

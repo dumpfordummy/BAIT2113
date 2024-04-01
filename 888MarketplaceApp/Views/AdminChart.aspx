@@ -29,12 +29,6 @@
                             <span class="menu-title">Tables</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Account.aspx">
-                            <i class="ti-user menu-icon"></i>
-                            <span class="menu-title">Profile</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
             <!-- partial -->
@@ -90,19 +84,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
+                            <div class="col-lg-12 grid-margin grid-margin-lg-0 stretch-card">
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Pie chart</h4>
                                         <canvas id="pieChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Scatter chart</h4>
-                                        <canvas id="scatterChart"></canvas>
                                     </div>
                                 </div>
                             </div>

@@ -30,12 +30,6 @@
                             <span class="menu-title">Tables</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Account.aspx">
-                            <i class="ti-user menu-icon"></i>
-                            <span class="menu-title">Profile</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
             <!-- partial -->
@@ -56,7 +50,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3 grid-margin stretch-card">
+                        <div class="col-md-4 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-title text-md-center text-xl-left">Sales (RM)</p>
@@ -68,7 +62,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 grid-margin stretch-card">
+                        <div class="col-md-4 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-title text-md-center text-xl-left">Revenue (RM)</p>
@@ -80,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 grid-margin stretch-card">
+                        <div class="col-md-4 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-title text-md-center text-xl-left">Total Product Listed</p>
@@ -88,18 +82,6 @@
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">50</h3>
                                         <i class="ti-server icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <p class="card-title text-md-center text-xl-left">Total Orders</p>
-                                    <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">301</h3>
-                                        <i class="ti-rocket icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
-                                    </div>
-                                    <p class="mb-0 mt-2 text-success">23.00%<span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
                             </div>
                         </div>
@@ -240,7 +222,7 @@
                                                     <div class="table-responsive mb-3 mb-md-0">
                                                         <table class="table table-borderless report-table">
                                                             <tr>
-                                                                <td class="text-muted">Illinois</td>
+                                                                <td class="text-muted">Meat Product</td>
                                                                 <td class="w-100 px-0">
                                                                     <div class="progress progress-md mx-4">
                                                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
@@ -251,7 +233,7 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="text-muted">Washington</td>
+                                                                <td class="text-muted">Sea Food Product</td>
                                                                 <td class="w-100 px-0">
                                                                     <div class="progress progress-md mx-4">
                                                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
@@ -262,7 +244,7 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="text-muted">Mississippi</td>
+                                                                <td class="text-muted">Vegetable Product</td>
                                                                 <td class="w-100 px-0">
                                                                     <div class="progress progress-md mx-4">
                                                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
@@ -273,7 +255,7 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="text-muted">California</td>
+                                                                <td class="text-muted">Fruits Product</td>
                                                                 <td class="w-100 px-0">
                                                                     <div class="progress progress-md mx-4">
                                                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
@@ -284,7 +266,7 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="text-muted">Maryland</td>
+                                                                <td class="text-muted">Others</td>
                                                                 <td class="w-100 px-0">
                                                                     <div class="progress progress-md mx-4">
                                                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
@@ -292,17 +274,6 @@
                                                                 </td>
                                                                 <td>
                                                                     <h5 class="font-weight-bold mb-0">553</h5>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-muted">Alaska</td>
-                                                                <td class="w-100 px-0">
-                                                                    <div class="progress progress-md mx-4">
-                                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <h5 class="font-weight-bold mb-0">912</h5>
                                                                 </td>
                                                             </tr>
                                                         </table>
