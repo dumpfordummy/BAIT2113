@@ -3,11 +3,11 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="bodyContent">
     <div class="container-scroller">
         <div class="container-fluid page-body-wrapper">
-            <div class="main-panel max-width">
-                <div class="content-wrapper center-form">
+            <div class="acc-main-panel max-width">
+                <div class="acc-content-wrapper center-form">
 
                     <div class="nav-panel">
-                        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                        <nav class="acc-sidebar acc-sidebar-offcanvas" id="sidebar">
                             <ul class="nav">
                                 <li class="nav-item">
                                     <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
@@ -17,7 +17,7 @@
                                     </a>
                                     <div class="collapse" id="auth">
                                         <ul class="nav flex-column sub-menu">
-                                            <li class="nav-item"><a class="nav-link nav-link-active" href="/Account">Profile</a></li>
+                                            <li class="nav-item"><a class="nav-link acc-nav-link-active" href="/Account">Profile</a></li>
                                             <li class="nav-item"><a class="nav-link" href="/ChangePassword">Change Password</a></li>
                                         </ul>
                                     </div>
