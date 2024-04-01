@@ -18,6 +18,8 @@
         .footer{
             font-family: "Cairo", sans-serif !important;
         }
+
+        a { text-decoration: none !important; }
     </style>
     <!-- Hero Section Begin -->
     <section class="hero">
@@ -30,17 +32,13 @@
                             <span>All departments</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            <li><a href="#">Shoes</a></li>
+                            <li><a href="#">Clothing & Apparel</a></li>
+                            <li><a href="#">Electronic Devices</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Hats</a></li>
+                            <li><a href="#">Watches</a></li>
+                            <li><a href="#">Snacks</a></li>
                         </ul>
                     </div>
                 </div>
@@ -60,10 +58,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+                    <div class="hero__item set-bg" data-setbg="../Images/orange_shoe_1.jpg" style="background-size: 100% 100%;">
                         <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
+                            <span>LATEST DESIGN</span>
+                            <h2>AMIBAS NUKE 3 <br />STRE4MLIN3</h2>
                             <p>Free Pickup and Delivery Available</p>
                             <a href="#" class="primary-btn">SHOP NOW</a>
                         </div>
@@ -81,17 +79,17 @@
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
-                            <h5><a href="#">Fresh Fruit</a></h5>
+                            <h5><a href="#">Shoes</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg">
-                            <h5><a href="#">Dried Fruit</a></h5>
+                            <h5><a href="#">Shirts</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg">
-                            <h5><a href="#">Vegetables</a></h5>
+                            <h5><a href="#">Pants</a></h5>
                         </div>
                     </div>
                 </div>
@@ -111,71 +109,71 @@
                     <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Oranges</li>
-                            <li data-filter=".fresh-meat">Fresh Meat</li>
-                            <li data-filter=".vegetables">Vegetables</li>
-                            <li data-filter=".fastfood">Fastfood</li>
+                            <li data-filter=".tshirt">T-Shirts</li>
+                            <li data-filter=".shoes">Shoes</li>
+                            <li data-filter=".pants">Pants</li>
+                            <li data-filter=".hats">Hats</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row featured__filter">
-                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix tshirt">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg" >
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
+                                <li><a href="#"><i class="fa fa-trash"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Product Name</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix hats">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-2.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
+                                <li><a href="#"><i class="fa fa-trash"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Product Name</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix shoes">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-3.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
+                                <li><a href="#"><i class="fa fa-trash"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Product Name</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix shoes">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-4.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
+                                <li><a href="#"><i class="fa fa-trash"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="#">Product Name</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
@@ -219,7 +217,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Product Name</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -231,7 +229,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Product Name</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -250,7 +248,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Product Name</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -262,7 +260,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Product Name</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -281,7 +279,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Product Name</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
@@ -293,7 +291,7 @@
                                         <img src="img/latest-product/lp-1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6>Product Name</h6>
                                         <span>$30.00</span>
                                     </div>
                                 </a>
