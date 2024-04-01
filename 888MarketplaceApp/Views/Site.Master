@@ -21,10 +21,12 @@
     <link rel="stylesheet" href="/Content/css/jquery-ui.min.css" type="text/css" />
     <link rel="stylesheet" href="/Content/css/owl.carousel.min.css" type="text/css" />
     <link rel="stylesheet" href="/Content/css/slicknav.min.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/icomoon.css" />
+    <link rel="stylesheet" href="/Content/fonts/icomoon.css" />
     <link rel="stylesheet" href="/Content/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/Content/App/admin/vendors/ti-icons/css/themify-icons.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
+    <asp:ContentPlaceHolder ID="adminTemporaryPlaceholder" runat="server"></asp:ContentPlaceHolder>
 </head>
 
 <body>
@@ -63,24 +65,16 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <nav class="header__menu">
+                        <!-- <nav class="header__menu">
                             <ul>
                                 <li class="active">
                                     <asp:HyperLink ID="lnkFeedback" runat="server">Feedback</asp:HyperLink></li>
                                 <li>
                                     <asp:HyperLink ID="lnkContact" runat="server">Contact Us</asp:HyperLink></li>
-                                <!--
-                            <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="#">Shop Details</a></li>
-                                    <li><a href="#">Shoping Cart</a></li>
-                                    <li><a href="#">Check Out</a></li>
-                                    <li><a href="#">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            -->
                             </ul>
+                            
                         </nav>
+                        -->
                     </div>
                     <div class="col-lg-3">
                         <div class="header__cart">
@@ -88,6 +82,7 @@
                                 <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Views/Wishlist.aspx"><i class="fa fa-heart"></i><span>3</span></asp:HyperLink></li>
                                 <li><asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/Views/Cart.aspx"><i class="fa fa-shopping-bag"></i><span>3</span></asp:HyperLink></li>
                             </ul>
+                            &nbsp;&nbsp;&nbsp;
                             <div class="header__cart__price">item: <span>$0.00</span></div>
                         </div>
                     </div>
@@ -115,24 +110,15 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                        <div class="footer__widget">
-                            <h6>Useful Links</h6>
-                            <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Our Services</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
+                   
+                    <div class="col-lg-4 col-md-12 offset-md-2">
                         <div class="footer__widget">
                             <h6>Join Our Newsletter Now</h6>
                             <p>Get E-mail updates about our latest shop and special offers.</p>
-                            <form action="#">
-                                <input type="text" placeholder="Enter your e-mail">
-                                <button type="submit" class="site-btn">Subscribe</button>
-                            </form>
+                            <div>
+                                <input type="text" placeholder="Enter your e-mail" />
+                                <button id="btnSubscribe" type="submit" class="site-btn" runat="server" >Subscribe</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,9 +143,7 @@
     </form>
 
     <!-- Scripts -->
-    <script src="/Scripts/jquery-3.7.0.min.js"></script>
-    <script src="/Scripts/bootstrap.min.js"></script>
-    <script src="/Scripts/App/global.js" defer></script>
+    <script src="/Scripts/App/global.js"></script>
     <script src="/Scripts/jquery.nice-select.min.js"></script>
     <script src="/Scripts/jquery-ui.min.js"></script>
     <script src="/Scripts/jquery.slicknav.js"></script>

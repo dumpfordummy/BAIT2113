@@ -15,6 +15,15 @@ namespace _888MarketplaceApp.Views
     {
 
         /// <summary>
+        /// adminTemporaryPlaceholder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder adminTemporaryPlaceholder;
+
+        /// <summary>
         /// lnkLogin control.
         /// </summary>
         /// <remarks>
@@ -103,5 +112,14 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgLogoFooter;
+
+        /// <summary>
+        /// btnSubscribe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnSubscribe;
     }
 }
