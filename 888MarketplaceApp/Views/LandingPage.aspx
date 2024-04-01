@@ -60,8 +60,8 @@
                     </div>
                     <div class="hero__item set-bg" data-setbg="../Images/orange_shoe_1.jpg" style="background-size: 100% 100%;">
                         <div class="hero__text">
-                            <span>LATEST DESIGN</span>
-                            <h2>AMIBAS NUKE 3 <br />STRE4MLIN3</h2>
+                            <span style="color: #ff7400;">LATEST DESIGN</span>
+                            <h2>AMIBAS NUKE 5 <br />STRE4MLIN3</h2>
                             <p>Free Pickup and Delivery Available</p>
                             <a href="#" class="primary-btn">SHOP NOW</a>
                         </div>
