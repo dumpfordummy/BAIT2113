@@ -98,15 +98,6 @@
                                 </div>
                                 <div class="card border-right-0 border-left-0 border-bottom-0">
                                     <div class="d-flex justify-content-center justify-content-md-end">
-                                        <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
-                                                <a class="dropdown-item" href="#">January - March</a>
-                                                <a class="dropdown-item" href="#">March - June</a>
-                                                <a class="dropdown-item" href="#">June - August</a>
-                                                <a class="dropdown-item" href="#">August - November</a>
-                                            </div>
-                                        </div>
                                         <button class="btn btn-lg btn-outline-light text-primary rounded-0 border-0 d-none d-md-block" type="button" onclick="AdminChart.aspx">View all </button>
                                     </div>
                                 </div>
@@ -145,51 +136,58 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-title mb-0">Top Products</p>
-                                    <div class="table-responsive">
+                                        <div class="table-responsive">
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
+                                                    <th>No</th>
                                                     <th>Product ID</th>
-                                                    <th>Product</th>
-                                                    <th>Sale</th>
-                                                    <th>Status</th>
+                                                    <th>Product Name</th>
+                                                    <th>Price (RM)</th>
+                                                    <th>Quantity</th>
+                                                    <th>Edit</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
+                                                    <td>1</td>
                                                     <td>P1000</td>
-                                                    <td>Photoshop</td>
-                                                    <td class="text-danger">28.76% <i class="ti-arrow-down"></i></td>
-                                                    <td>
-                                                        <label class="badge badge-danger">Pending</label></td>
+                                                    <td>Twisties Cheddar Cheese 60g</td>
+                                                    <td>5.00</td>
+                                                    <td>10</td>
+                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
                                                 </tr>
                                                 <tr>
+                                                    <td>2</td>
                                                     <td>P1001</td>
-                                                    <td>Flash</td>
-                                                    <td class="text-danger">21.06% <i class="ti-arrow-down"></i></td>
-                                                    <td>
-                                                        <label class="badge badge-warning">In progress</label></td>
+                                                    <td>Nike AirForce</td>
+                                                    <td>305.00</td>
+                                                    <td>2</td>
+                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
                                                 </tr>
                                                 <tr>
+                                                    <td>3</td>
                                                     <td>P1002</td>
-                                                    <td>Premier</td>
-                                                    <td class="text-danger">35.00% <i class="ti-arrow-down"></i></td>
-                                                    <td>
-                                                        <label class="badge badge-info">Fixed</label></td>
+                                                    <td>Team Victor T-Shirt (Black)</td>
+                                                    <td>50.00</td>
+                                                    <td class="text-danger">1</td>
+                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
                                                 </tr>
                                                 <tr>
+                                                    <td>4</td>
                                                     <td>P1003</td>
-                                                    <td>After effects</td>
-                                                    <td class="text-success">82.00% <i class="ti-arrow-up"></i></td>
-                                                    <td>
-                                                        <label class="badge badge-success">Completed</label></td>
+                                                    <td>Apple Watch Series 9 Aluminium Case with Sport Band GPS Only</td>
+                                                    <td >1898.00 </td>
+                                                    <td>20</td>
+                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
                                                 </tr>
                                                 <tr>
+                                                    <td>5</td>
                                                     <td>P1004</td>
-                                                    <td>53275535</td>
-                                                    <td class="text-success">98.05% <i class="ti-arrow-up"></i></td>
-                                                    <td>
-                                                        <label class="badge badge-warning">In progress</label></td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td >80.00 </td>
+                                                    <td>12</td>
+                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
                                                 </tr>
                                             </tbody>
                                         </table>
