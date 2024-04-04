@@ -1,13 +1,14 @@
-﻿DROP TABLE [dbo].[Order]
+﻿DROP TABLE [dbo].[Product_Order]
+DROP TABLE [dbo].[Order]
 DROP TABLE [dbo].[Delivery]
 DROP TABLE [dbo].[Payment]
+DROP TABLE [dbo].[Product]
+DROP TABLE [dbo].[User]
 DROP TABLE [dbo].[ShippingMethod]
 DROP TABLE [dbo].[PaymentMethod]
 DROP TABLE [dbo].[Category]
-DROP TABLE [dbo].[Product_Order]
-DROP TABLE [dbo].[Product]
-DROP TABLE [dbo].[User]
 DROP TABLE [dbo].[Userrole]
+DROP TABLE [dbo].[Review]
 
 
 
@@ -36,6 +37,14 @@ CREATE TABLE [dbo].[ShippingMethod] (
     [Name]        VARCHAR(50) NOT NULL,
     [Description] VARCHAR(150) NOT NULL,
     CONSTRAINT [PK_ShippingMethod] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Review]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[Rating] TINYINT NOT NULL,
+    [Content] TEXT NOT NULL,
+	CONSTRAINT CHK_Rating CHECK ([Rating] >= 1 AND [Rating] <= 5)
 );
 
 CREATE TABLE [dbo].[User] (
@@ -108,7 +117,17 @@ CREATE TABLE [dbo].[Product_Order] (
     [OrderId]   INT NOT NULL,
     [ProductId] INT NOT NULL,
     [Quantity]  INT NOT NULL,
+    [ReviewId] INT NULL, 
     CONSTRAINT [PK_Product_Order] PRIMARY KEY CLUSTERED ([OrderId] ASC, [ProductId] ASC),
     CONSTRAINT [FK_Product_Order_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [dbo].[Order] ([Id]),
     CONSTRAINT [FK_Product_Order_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [dbo].[Product] ([Id])
 );
+
+ALTER TABLE [dbo].[Product_Order] WITH CHECK ADD CONSTRAINT [FK_ReviewId] FOREIGN KEY([ReviewId])
+	REFERENCES [dbo].[Review] ([Id])
+	ON UPDATE CASCADE
+	ON DELETE CASCADE;
+GO
+
+ALTER TABLE [dbo].[Product_Order] CHECK CONSTRAINT [FK_ReviewId];
+GO

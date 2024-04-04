@@ -58,12 +58,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="../Images/orange_shoe_1.jpg" style="background-size: 100% 100%;">
+                    <div class="hero__item set-bg" data-setbg="../Images/orange_shoe_banner.jpg" style="background-size: 100% 100%;">
                         <div class="hero__text">
                             <span style="color: #ff7400;">LATEST DESIGN</span>
                             <h2>AMIBAS NUKE 5 <br />STRE4MLIN3</h2>
                             <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <asp:HyperLink runat="server" CssClass="primary-btn" Text="SHOP NOW" NavigateUrl="~/Views/AllProduct.aspx"></asp:HyperLink>
                         </div>
                     </div>
                 </div>
@@ -78,17 +78,17 @@
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
+                        <div class="categories__item set-bg" data-setbg="../Images/red_shoe.jpg">
                             <h5><a href="#">Shoes</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg">
+                        <div class="categories__item set-bg" data-setbg="../Images/grey_suit.jpg">
                             <h5><a href="#">Shirts</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg">
+                        <div class="categories__item set-bg" data-setbg="../Images/black_pants.jpg">
                             <h5><a href="#">Pants</a></h5>
                         </div>
                     </div>
@@ -109,18 +109,18 @@
                     <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".tshirt">T-Shirts</li>
+                            <li data-filter=".bottle">Bottles</li>
                             <li data-filter=".shoes">Shoes</li>
                             <li data-filter=".pants">Pants</li>
-                            <li data-filter=".hats">Hats</li>
+                            <li data-filter=".clothes">Clothes</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row featured__filter">
-                <div class="col-lg-3 col-md-4 col-sm-6 mix tshirt">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix bottle">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg" >
+                        <div class="featured__item__pic set-bg" data-setbg="../Images/705_tin_bottle.jpg" >
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
@@ -133,9 +133,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix hats">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix bottle">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-2.jpg">
+                        <div class="featured__item__pic set-bg" data-setbg="../Images/black_rubber_bottle.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
+                                <li><a href="#"><i class="fa fa-trash"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Product Name</a></h6>
+                            <h5>$30.00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix clothes">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="../Images/knitted_1.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
@@ -150,22 +165,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix shoes">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-3.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
-                                <li><a href="#"><i class="fa fa-trash"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Product Name</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix shoes">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-4.jpg">
+                        <div class="featured__item__pic set-bg" data-setbg="../Images/black_shoe_1.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
@@ -184,25 +184,6 @@
     </section>
     <!-- Featured Section End -->
 
-    <!-- Banner Begin -->
-    <div class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="banner__pic">
-                        <img src="img/banner/banner-1.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="banner__pic">
-                        <img src="img/banner/banner-2.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Banner End -->
-
     <!-- Latest Product Section Begin -->
     <section class="latest-product spad">
         <div class="container">
@@ -214,7 +195,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="../Images/brown_shoe_1.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Product Name</h6>
@@ -226,7 +207,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="../Images/green_bottle.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Product Name</h6>
@@ -245,7 +226,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="../Images/orange_shoe_2.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Product Name</h6>
@@ -257,7 +238,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="../Images/short_jeans.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Product Name</h6>
@@ -276,7 +257,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="../Images/red_shoe.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Product Name</h6>
@@ -288,7 +269,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                        <img src="../Images/metal_bottle.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Product Name</h6>

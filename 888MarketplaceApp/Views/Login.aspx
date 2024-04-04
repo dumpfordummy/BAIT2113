@@ -41,7 +41,7 @@
                                     <div class="control__indicator"></div>
                                 </div>
                                 <span class="ml-auto">
-                                    <asp:HyperLink ID="Forgot" CssClass="forgot-pass" runat="server" NavigateUrl="/Forgot">Forgot Password</asp:HyperLink></span>
+                                    <asp:HyperLink ID="Forgot" CssClass="forgot-pass" runat="server" NavigateUrl="/Forgotpassword">Forgot Password</asp:HyperLink></span>
                             </div>
 
                             <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn text-white btn-block btn-primary" />

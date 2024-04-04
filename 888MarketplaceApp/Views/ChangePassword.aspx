@@ -18,7 +18,7 @@
                                     <div class="collapse" id="auth">
                                         <ul class="nav flex-column sub-menu">
                                             <li class="nav-item"><a class="nav-link" href="/Account">Profile</a></li>
-                                            <li class="nav-item"><a class="nav-link acc-nav-link-active" href="/ChangePassword">Change Password</a></li>
+                                            <li class="nav-item acc-nav-item-active"><a class="nav-link acc-nav-link-active" href="/ChangePassword">Change Password</a></li>
                                         </ul>
                                     </div>
                                 </li>

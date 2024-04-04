@@ -17,8 +17,10 @@ namespace _888MarketplaceApp.Core.Models
         public int OrderId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
+        public Nullable<int> ReviewId { get; set; }
     
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
+        public virtual Review Review { get; set; }
     }
 }

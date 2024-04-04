@@ -23,8 +23,8 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Mypurchases">
-                                        <i class="ti-view-list-alt menu-icon"></i>
+                                    <a class="nav-link acc-nav-item-active acc-nav-link-active" href="/Mypurchases">
+                                        <i class="ti-view-list-alt menu-icon acc-nav-link-active"></i>
                                         <span class="menu-title">My Purchase</span>
                                     </a>
                                 </li>

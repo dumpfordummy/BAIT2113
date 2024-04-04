@@ -16,12 +16,10 @@
     <link rel="stylesheet" href="/Content/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="/Content/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="/Content/css/elegant-icons.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/css/nice-select.css" type="text/css" />
     <link rel="stylesheet" href="/Content/css/jquery-ui.min.css" type="text/css" />
     <link rel="stylesheet" href="/Content/css/owl.carousel.min.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/css/slicknav.min.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/fonts/icomoon.css" />
-    <link rel="stylesheet" href="/Content/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/icomoon.css" />
+    <link rel="stylesheet" href="/Content/css/mainStyle.css" type="text/css" />
     <link rel="stylesheet" href="/Content/App/admin/vendors/ti-icons/css/themify-icons.css" />
 
     <asp:ContentPlaceHolder ID="adminTemporaryPlaceholder" runat="server"></asp:ContentPlaceHolder>
@@ -63,16 +61,6 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <!-- <nav class="header__menu">
-                            <ul>
-                                <li class="active">
-                                    <asp:HyperLink ID="lnkFeedback" runat="server">Feedback</asp:HyperLink></li>
-                                <li>
-                                    <asp:HyperLink ID="lnkContact" runat="server">Contact Us</asp:HyperLink></li>
-                            </ul>
-                            
-                        </nav>
-                        -->
                     </div>
                     <div class="col-lg-3">
                         <div class="header__cart">
@@ -114,7 +102,7 @@
                             <h6>Join Our Newsletter Now</h6>
                             <p>Get E-mail updates about our latest shop and special offers.</p>
                             <div>
-                                <input type="text" placeholder="Enter your e-mail" />
+                                <asp:TextBox ID="txtEmailSub" placeholder="Enter your e-mail" runat="server"></asp:TextBox>
                                 <button id="btnSubscribe" type="submit" class="site-btn" runat="server" >Subscribe</button>
                             </div>
                         </div>
@@ -130,7 +118,7 @@
                                 </p>
                             </div>
                             <div class="footer__copyright__payment">
-                                <img src="img/payment-item.png" alt="" />
+                                <img src="/img/payment-item.png" alt="" />
                             </div>
                         </div>
                     </div>
@@ -144,9 +132,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="/Scripts/bootstrap.min.js"></script> <!-- account page ui need this -->
     <script src="/Scripts/App/global.js"></script>
-    <script src="/Scripts/jquery.nice-select.min.js"></script>
     <script src="/Scripts/jquery-ui.min.js"></script>
-    <script src="/Scripts/jquery.slicknav.js"></script>
     <script src="/Scripts/mixitup.min.js"></script>
     <script src="/Scripts/owl.carousel.min.js"></script>
     <script src="/Scripts/main.js"></script>

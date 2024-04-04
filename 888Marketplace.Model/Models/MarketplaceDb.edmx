@@ -50,7 +50,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Description" Type="varchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
@@ -75,6 +75,15 @@
           <Property Name="OrderId" Type="int" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="ReviewId" Type="int" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Rating" Type="tinyint" Nullable="false" />
+          <Property Name="Content" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="ShippingMethod">
           <Key>
@@ -216,6 +225,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ReviewId">
+          <End Role="Review" Type="Self.Review" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Product_Order" Type="Self.Product_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Review">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product_Order">
+              <PropertyRef Name="ReviewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_User_Userrole">
           <End Role="Userrole" Type="Self.Userrole" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -236,6 +259,7 @@
           <EntitySet Name="PaymentMethod" EntityType="Self.PaymentMethod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product_Order" EntityType="Self.Product_Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShippingMethod" EntityType="Self.ShippingMethod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Userrole" EntityType="Self.Userrole" Schema="dbo" store:Type="Tables" />
@@ -274,6 +298,10 @@
           <AssociationSet Name="FK_Product_SellerId" Association="Self.FK_Product_SellerId">
             <End Role="User" EntitySet="User" />
             <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReviewId" Association="Self.FK_ReviewId">
+            <End Role="Review" EntitySet="Review" />
+            <End Role="Product_Order" EntitySet="Product_Order" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Userrole" Association="Self.FK_User_Userrole">
             <End Role="Userrole" EntitySet="Userrole" />
@@ -338,7 +366,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Payments" Relationship="Self.FK_Payment_PaymentMethodId" FromRole="PaymentMethod" ToRole="Payment" />
         </EntityType>
@@ -369,6 +397,8 @@
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="DBModel.FK_Product_Order_OrderId" FromRole="Product_Order" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="DBModel.FK_Product_Order_ProductId" FromRole="Product_Order" ToRole="Product" />
+          <Property Name="ReviewId" Type="Int32" />
+          <NavigationProperty Name="Review" Relationship="DBModel.FK_ReviewId" FromRole="Product_Order" ToRole="Review" />
         </EntityType>
         <EntityType Name="ShippingMethod">
           <Key>
@@ -478,6 +508,11 @@
             <End Role="Userrole" EntitySet="Userroles" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
+          <EntitySet Name="Reviews" EntityType="DBModel.Review" />
+          <AssociationSet Name="FK_ReviewId" Association="DBModel.FK_ReviewId">
+            <End Role="Review" EntitySet="Reviews" />
+            <End Role="Product_Order" EntitySet="Product_Order" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="User">
           <Key>
@@ -579,6 +614,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Rating" Type="Byte" Nullable="false" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product_Order" Relationship="DBModel.FK_ReviewId" FromRole="Review" ToRole="Product_Order" />
+        </EntityType>
+        <Association Name="FK_ReviewId">
+          <End Type="DBModel.Review" Role="Review" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBModel.Product_Order" Role="Product_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Review">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product_Order">
+              <PropertyRef Name="ReviewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -656,6 +714,7 @@
           <EntitySetMapping Name="Product_Order">
             <EntityTypeMapping TypeName="DBModel.Product_Order">
               <MappingFragment StoreEntitySet="Product_Order">
+                <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
@@ -693,6 +752,15 @@
             <EntityTypeMapping TypeName="DBModel.Userrole">
               <MappingFragment StoreEntitySet="Userrole">
                 <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="DBModel.Review">
+              <MappingFragment StoreEntitySet="Review">
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
