@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\adminTemp.css" />
+    <Content Include="Content\css\adminTemp2.css" />
     <Content Include="Images\705_tin_bottle.jpg" />
     <Content Include="Images\black_rubber_bottle.jpg" />
     <Content Include="Images\black_shoe_1.jpg" />
