@@ -14,17 +14,13 @@
                             <span>All departments</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            <li><a href="#">Shoes</a></li>
+                            <li><a href="#">Clothing & Apparel</a></li>
+                            <li><a href="#">Electronic Devices</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Hats</a></li>
+                            <li><a href="#">Watches</a></li>
+                            <li><a href="#">Snacks</a></li>
                         </ul>
                     </div>
                 </div>
@@ -94,10 +90,10 @@
                                 <tr>
                                     <td class="shoping__cart__item">
                                         <img src="img/cart/cart-1.jpg" alt="">
-                                        <h5>Vegetable’s Package</h5>
+                                        <h5>Camera Lens Kit</h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        $55.00
+                                        $110.00
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
@@ -116,7 +112,7 @@
                                 <tr>
                                     <td class="shoping__cart__item">
                                         <img src="img/cart/cart-2.jpg" alt="">
-                                        <h5>Fresh Garden Vegetable</h5>
+                                        <h5>Shoe Cleaning Kit</h5>
                                     </td>
                                     <td class="shoping__cart__price">
                                         $39.00
@@ -138,7 +134,7 @@
                                 <tr>
                                     <td class="shoping__cart__item">
                                         <img src="img/cart/cart-3.jpg" alt="">
-                                        <h5>Organic Bananas</h5>
+                                        <h5>Backpack LTT</h5>
                                     </td>
                                     <td class="shoping__cart__price">
                                         $69.00
@@ -184,8 +180,8 @@
                     <div class="shoping__checkout">
                         <h5>Cart Total</h5>
                         <ul>
-                            <li>Subtotal <span>$454.98</span></li>
-                            <li>Total <span>$454.98</span></li>
+                            <li>Subtotal <span>$219.89</span></li>
+                            <li>Total <span>$219.89</span></li>
                         </ul>
                         <asp:HyperLink ID="lnkChkOut" class="primary-btn" NavigateUrl="~/Views/Checkout.aspx" runat="server">PROCEED TO CHECKOUT</asp:HyperLink>
                     </div>

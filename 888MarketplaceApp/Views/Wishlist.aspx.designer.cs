@@ -11,7 +11,7 @@ namespace _888MarketplaceApp.Views
 {
 
 
-    public partial class Cart
+    public partial class Wishlist
     {
 
         /// <summary>

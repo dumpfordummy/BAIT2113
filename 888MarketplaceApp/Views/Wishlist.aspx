@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="Wishlist.aspx.cs" Inherits="_888MarketplaceApp.Views.Cart" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="Wishlist.aspx.cs" Inherits="_888MarketplaceApp.Views.Wishlist" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="bodyContent">
  <!-- Hero Section Begin -->
@@ -90,11 +90,11 @@
                         <tbody>
                             <tr>
                                 <td class="shoping__cart__item">
-                                    <img src="img/cart/cart-1.jpg" alt="">
-                                    <h5>Vegetable’s Package</h5>
+                                    <img src="./Images/black_shoe_1.jpg" alt="">
+                                    <h5>AMIBAS NUKE 5 STRE4MLIN3</h5>
                                 </td>
                                 <td class="shoping__cart__price">
-                                    $55.00
+                                    $110.00
                                 </td>
                                 <td class="shoping__cart__quantity">
                                     <div class="quantity">
@@ -113,10 +113,10 @@
                             <tr>
                                 <td class="shoping__cart__item">
                                     <img src="img/cart/cart-2.jpg" alt="">
-                                    <h5>Fresh Garden Vegetable</h5>
+                                    <h5>Canon 5D MKIV</h5>
                                 </td>
                                 <td class="shoping__cart__price">
-                                    $39.00
+                                    $399.00
                                 </td>
                                 <td class="shoping__cart__quantity">
                                     <div class="quantity">
@@ -126,7 +126,7 @@
                                     </div>
                                 </td>
                                 <td class="shoping__cart__total">
-                                    $39.99
+                                    $399.99
                                 </td>
                                 <td class="shoping__cart__item__close">
                                     <span class="icon_close"></span>
@@ -135,10 +135,10 @@
                             <tr>
                                 <td class="shoping__cart__item">
                                     <img src="img/cart/cart-3.jpg" alt="">
-                                    <h5>Organic Bananas</h5>
+                                    <h5>Fanatec CSL DD</h5>
                                 </td>
                                 <td class="shoping__cart__price">
-                                    $69.00
+                                    $999.00
                                 </td>
                                 <td class="shoping__cart__quantity">
                                     <div class="quantity">
@@ -148,7 +148,7 @@
                                     </div>
                                 </td>
                                 <td class="shoping__cart__total">
-                                    $69.99
+                                    $999.99
                                 </td>
                                 <td class="shoping__cart__item__close">
                                     <span class="icon_close"></span>
