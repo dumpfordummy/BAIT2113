@@ -23,6 +23,8 @@
         <AssociationConnector Association="DBModel.FK_Product_CategoryId" />
         <AssociationConnector Association="DBModel.FK_Product_Order_OrderId" />
         <AssociationConnector Association="DBModel.FK_Product_Order_ProductId" />
+        <EntityTypeShape EntityType="DBModel.Userrole" Width="1.5" PointX="3" PointY="7.5" />
+        <AssociationConnector Association="DBModel.FK_User_Userrole" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

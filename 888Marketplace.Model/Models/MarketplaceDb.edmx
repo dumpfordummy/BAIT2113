@@ -22,7 +22,6 @@
           <Property Name="Status" Type="tinyint" Nullable="false" />
           <Property Name="Date" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="ShippingMethodId" Type="tinyint" Nullable="false" />
-          <Property Name="TrackingId" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="EstimatedDeliveryDate" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
@@ -83,7 +82,7 @@
           </Key>
           <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -94,13 +93,20 @@
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PasswordHash" Type="varchar(max)" Nullable="false" />
           <Property Name="DateCreated" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Userrole" Type="int" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="varchar(max)" Nullable="false" />
           <Property Name="VerificationToken" Type="varchar" MaxLength="50" />
           <Property Name="VerificationExpire" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Userrole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <Association Name="FK_Delivery_ShippingMethodId">
           <End Role="ShippingMethod" Type="Self.ShippingMethod" Multiplicity="1" />
@@ -210,6 +216,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_User_Userrole">
+          <End Role="Userrole" Type="Self.Userrole" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Userrole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Userrole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DBModelStoreContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Delivery" EntityType="Self.Delivery" Schema="dbo" store:Type="Tables" />
@@ -220,6 +238,7 @@
           <EntitySet Name="Product_Order" EntityType="Self.Product_Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShippingMethod" EntityType="Self.ShippingMethod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Userrole" EntityType="Self.Userrole" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Delivery_ShippingMethodId" Association="Self.FK_Delivery_ShippingMethodId">
             <End Role="ShippingMethod" EntitySet="ShippingMethod" />
             <End Role="Delivery" EntitySet="Delivery" />
@@ -256,6 +275,10 @@
             <End Role="User" EntitySet="User" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
+          <AssociationSet Name="FK_User_Userrole" Association="Self.FK_User_Userrole">
+            <End Role="Userrole" EntitySet="Userrole" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -279,7 +302,6 @@
           <Property Name="Status" Type="Byte" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="ShippingMethodId" Type="Byte" Nullable="false" />
-          <Property Name="TrackingId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EstimatedDeliveryDate" Type="DateTime" Nullable="false" Precision="7" />
           <NavigationProperty Name="ShippingMethod" Relationship="Self.FK_Delivery_ShippingMethodId" FromRole="Delivery" ToRole="ShippingMethod" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Order_DeliveryId" FromRole="Delivery" ToRole="Order" />
@@ -354,7 +376,7 @@
           </Key>
           <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Deliveries" Relationship="Self.FK_Delivery_ShippingMethodId" FromRole="ShippingMethod" ToRole="Delivery" />
         </EntityType>
         <Association Name="FK_Delivery_ShippingMethodId">
@@ -451,6 +473,11 @@
             <End Role="Product" EntitySet="Products" />
             <End Role="Product_Order" EntitySet="Product_Order" />
           </AssociationSet>
+          <EntitySet Name="Userroles" EntityType="DBModel.Userrole" />
+          <AssociationSet Name="FK_User_Userrole" Association="DBModel.FK_User_Userrole">
+            <End Role="Userrole" EntitySet="Userroles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="User">
           <Key>
@@ -461,7 +488,6 @@
           <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PasswordHash" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="Role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -470,6 +496,8 @@
           <NavigationProperty Name="Products" Relationship="DBModel.FK_Product_SellerId" FromRole="User" ToRole="Product" />
           <Property Name="VerificationToken" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="VerificationExpire" Type="DateTime" Precision="7" />
+          <Property Name="Userrole" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Userrole1" Relationship="DBModel.FK_User_Userrole" FromRole="User" ToRole="Userrole" />
         </EntityType>
         <Association Name="FK_Order_BuyerId1">
           <End Type="DBModel.User" Role="User" Multiplicity="1" />
@@ -531,6 +559,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Userrole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Role" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Users" Relationship="DBModel.FK_User_Userrole" FromRole="Userrole" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_User_Userrole">
+          <End Type="DBModel.Userrole" Role="Userrole" Multiplicity="1" />
+          <End Type="DBModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Userrole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Userrole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -554,7 +602,6 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="ShippingMethodId" ColumnName="ShippingMethodId" />
-                <ScalarProperty Name="TrackingId" ColumnName="TrackingId" />
                 <ScalarProperty Name="EstimatedDeliveryDate" ColumnName="EstimatedDeliveryDate" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -627,17 +674,25 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="DBModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Userrole" ColumnName="Userrole" />
                 <ScalarProperty Name="VerificationExpire" ColumnName="VerificationExpire" />
                 <ScalarProperty Name="VerificationToken" ColumnName="VerificationToken" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
                 <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Userroles">
+            <EntityTypeMapping TypeName="DBModel.Userrole">
+              <MappingFragment StoreEntitySet="Userrole">
+                <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

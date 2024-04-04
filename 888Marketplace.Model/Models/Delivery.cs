@@ -25,7 +25,6 @@ namespace _888MarketplaceApp.Core.Models
         public byte Status { get; set; }
         public System.DateTime Date { get; set; }
         public byte ShippingMethodId { get; set; }
-        public string TrackingId { get; set; }
         public System.DateTime EstimatedDeliveryDate { get; set; }
     
         public virtual ShippingMethod ShippingMethod { get; set; }
