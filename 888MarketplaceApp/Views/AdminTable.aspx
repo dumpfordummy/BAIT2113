@@ -65,7 +65,10 @@
                                                     <td>Twisties Cheddar Cheese 60g</td>
                                                     <td>5.00</td>
                                                     <td>10</td>
-                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
+                                                    <td>
+                                                        <asp:Button ID="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button ID="btnBan" runat="server" Text="Ban" />
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
@@ -73,15 +76,21 @@
                                                     <td>Nike AirForce</td>
                                                     <td>305.00</td>
                                                     <td>2</td>
-                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView"  runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
                                                     <td>P1002</td>
                                                     <td>Team Victor T-Shirt (Black)</td>
                                                     <td>50.00</td>
-                                                    <td class="text-danger">1</td>
-                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>4</td>
@@ -89,7 +98,10 @@
                                                     <td>Apple Watch Series 9 Aluminium Case with Sport Band GPS Only</td>
                                                     <td >1898.00 </td>
                                                     <td>20</td>
-                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>5</td>
@@ -97,7 +109,10 @@
                                                     <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
                                                     <td >80.00 </td>
                                                     <td>12</td>
-                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>

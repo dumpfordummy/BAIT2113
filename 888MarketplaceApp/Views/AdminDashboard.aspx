@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="AdminDashboard.aspx.cs" Inherits="_888MarketplaceApp.Views.AdminDashboard" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="adminTemporaryPlaceholder">
-    <link rel="stylesheet" href="/Content/css/adminTemp.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/css/adminTemp2.css" type="text/css" />
 </asp:Content>
 
 
@@ -50,10 +50,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 grid-margin stretch-card">
+                        <div class="col-md-3 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="card-title text-md-center text-xl-left">Sales (RM)</p>
+                                    <p class="card-title text-md-center text-xl-left">Total Gross Merchandise Volume</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">8888</h3>
                                         <i class="ti-shopping-cart icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
@@ -62,10 +62,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 grid-margin stretch-card">
+                        <div class="col-md-3 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="card-title text-md-center text-xl-left">Revenue (RM)</p>
+                                    <p class="card-title text-md-center text-xl-left">Total Product Sold (RM)</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">5123</h3>
                                         <i class="ti-money icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 grid-margin stretch-card">
+                        <div class="col-md-3 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-title text-md-center text-xl-left">Total Product Listed</p>
@@ -82,6 +82,19 @@
                                         <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">50</h3>
                                         <i class="ti-server icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
+                                    <p class="mb-0 mt-2 text-success">+ 1 Product <span class="text-black ms-1"><small>(30 days)</small></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-title text-md-center text-xl-left">Total number of Existing User</p>
+                                    <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">200</h3>
+                                        <i class="ti-server icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                                    </div>
+                                    <p class="mb-0 mt-2 text-success">+ 20 Users <span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
                             </div>
                         </div>
@@ -90,16 +103,8 @@
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="card-title">Sales details</p>
-                                    <p class="text-muted font-weight-light">Looking up the specifics of the sales of the meat and vegetable products. To ascertain the preferences of the clients</p>
-                                    <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
-
-                                    <canvas id="sales-chart"></canvas>
-                                </div>
-                                <div class="card border-right-0 border-left-0 border-bottom-0">
-                                    <div class="d-flex justify-content-center justify-content-md-end">
-                                        <button class="btn btn-lg btn-outline-light text-primary rounded-0 border-0 d-none d-md-block" type="button" onclick="AdminChart.aspx">View all </button>
-                                    </div>
+                                    <h4 class="card-title">Doughnut chart</h4>
+                                    <canvas id="doughnutChart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +141,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-title mb-0">Top Products</p>
-                                        <div class="table-responsive">
+                                    <div class="table-responsive">
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
@@ -145,7 +150,7 @@
                                                     <th>Product Name</th>
                                                     <th>Price (RM)</th>
                                                     <th>Quantity</th>
-                                                    <th>Edit</th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -155,7 +160,6 @@
                                                     <td>Twisties Cheddar Cheese 60g</td>
                                                     <td>5.00</td>
                                                     <td>10</td>
-                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
@@ -163,31 +167,27 @@
                                                     <td>Nike AirForce</td>
                                                     <td>305.00</td>
                                                     <td>2</td>
-                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
                                                     <td>P1002</td>
                                                     <td>Team Victor T-Shirt (Black)</td>
                                                     <td>50.00</td>
-                                                    <td class="text-danger">1</td>
-                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
+                                                    <td>1</td>
                                                 </tr>
                                                 <tr>
                                                     <td>4</td>
                                                     <td>P1003</td>
                                                     <td>Apple Watch Series 9 Aluminium Case with Sport Band GPS Only</td>
-                                                    <td >1898.00 </td>
+                                                    <td>1898.00 </td>
                                                     <td>20</td>
-                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>5</td>
                                                     <td>P1004</td>
                                                     <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
-                                                    <td >80.00 </td>
+                                                    <td>80.00 </td>
                                                     <td>12</td>
-                                                    <td><button>Update</button>&nbsp<button>Delete</button></td>
                                                 </tr>
                                             </tbody>
                                         </table>
