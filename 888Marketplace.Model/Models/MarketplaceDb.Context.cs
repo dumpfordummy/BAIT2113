@@ -34,5 +34,6 @@ namespace _888MarketplaceApp.Core.Models
         public virtual DbSet<Product_Order> Product_Order { get; set; }
         public virtual DbSet<ShippingMethod> ShippingMethods { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Userrole> Userroles { get; set; }
     }
 }

@@ -26,17 +26,18 @@ namespace _888MarketplaceApp.Core.Models
         public string Email { get; set; }
         public string PasswordHash { get; set; }
         public System.DateTime DateCreated { get; set; }
-        public string Role { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
         public string VerificationToken { get; set; }
         public Nullable<System.DateTime> VerificationExpire { get; set; }
+        public int Userrole { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
+        public virtual Userrole Userrole1 { get; set; }
     }
 }
