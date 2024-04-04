@@ -111,8 +111,25 @@
                             </form> 
                             <div id="payment-info-buttons-container" class="col-12 buttons py-1 mt-3 px-0">
                                 <asp:HyperLink ID="Back" class="site-btn" NavigateUrl="~/Views/Checkout.aspx" runat="server">Back</asp:HyperLink> 
-                                <asp:HyperLink ID="Continue" type="submit" class="site-btn" NavigateUrl="~/Views/PaymentSuccess.aspx" runat="server">Continue</asp:HyperLink>
-                                <span id="payment-info-please-wait" class="please-wait" style="display: none;">Loading next step...</span>
+                                <asp:HyperLink ID="Continue" data-bs-toggle="modal" data-bs-target="#paymentSuccessModal" class="site-btn" NavigateUrl="~/Views/PaymentSuccess.aspx" runat="server">Continue</asp:HyperLink>
+
+                                <div class="modal fade" id="paymentSuccessModal" tabindex="-1" aria-labelledby="paymentSuccessModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="paymentSuccessModalLabel">Payment Successful</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        Congratulations! Your payment was successful.
+                                      </div>
+                                      <div class="modal-footer">
+                                        <asp:HyperLink ID="HyperLink1" class="site-btn" NavigateUrl="~/Views/LandingPage.aspx" runat="server">Close</asp:HyperLink>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
