@@ -7,9 +7,7 @@
 
 <asp:Content runat="server" ID="bodyCT" ContentPlaceHolderID="bodyContent">
     <div class="container-scroller">
-        <!-- partial -->
         <div class="container-fluid page-body-wrapper">
-            <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
@@ -32,7 +30,6 @@
                     </li>
                 </ul>
             </nav>
-            <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
@@ -267,8 +264,6 @@
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
-
-                <!-- partial -->
             </div>
             <!-- main-panel ends -->
         </div>

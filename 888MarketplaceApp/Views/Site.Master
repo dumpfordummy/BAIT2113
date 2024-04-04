@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/Content/css/elegant-icons.css" type="text/css" />
     <link rel="stylesheet" href="/Content/css/jquery-ui.min.css" type="text/css" />
     <link rel="stylesheet" href="/Content/css/owl.carousel.min.css" type="text/css" />
-    <link rel="stylesheet" href="/Content/fonts/icomoon.css" />
+    <link rel="stylesheet" href="/Content/icomoon.css" />
     <link rel="stylesheet" href="/Content/css/mainStyle.css" type="text/css" />
     <link rel="stylesheet" href="/Content/App/admin/vendors/ti-icons/css/themify-icons.css" />
 
@@ -118,7 +118,7 @@
                                 </p>
                             </div>
                             <div class="footer__copyright__payment">
-                                <img src="img/payment-item.png" alt="" />
+                                <img src="/img/payment-item.png" alt="" />
                             </div>
                         </div>
                     </div>

@@ -7,7 +7,7 @@
 
     controlIndicators.forEach(function (control) {
         control.addEventListener('click', function() {
-            var element = document.getElementById("body_RememberMe");
+            var element = document.getElementById("bodyContent_RememberMe");
             element.checked = !element.checked;
         })
     });

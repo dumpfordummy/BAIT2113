@@ -100,16 +100,40 @@
     <Compile Include="DataAccess\CategoryData.cs" />
     <Compile Include="DataAccess\ICategoryData.cs" />
     <Compile Include="DataAccess\UserData.cs" />
-    <Compile Include="Models\Userrole.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Services\EmailSender.cs" />
     <Compile Include="Models\Category.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Delivery.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payment.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentMethod.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_Order.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Review.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShippingMethod.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Userrole.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Services\EmailSender.cs" />
     <Compile Include="Models\MarketplaceDb.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,27 +150,6 @@
       <DependentUpon>MarketplaceDb.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\MarketplaceModels.cs" />
-    <Compile Include="Models\Order.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Payment.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PaymentMethod.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Product.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Product_Order.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ShippingMethod.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\VerificationTokenManager.cs" />
   </ItemGroup>
