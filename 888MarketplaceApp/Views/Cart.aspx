@@ -102,7 +102,7 @@
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="1">
+                                                <asp:TextBox runat="server" type="text" value="1" ID="TextBox2"/>
                                             </div>
                                         </div>
                                     </td>
@@ -124,7 +124,7 @@
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="1">
+                                                <asp:TextBox runat="server" type="text" value="1" ID="qty"/>
                                             </div>
                                         </div>
                                     </td>
@@ -146,7 +146,7 @@
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="1">
+                                                <asp:TextBox runat="server" type="text" value="1" ID="TextBox1"/>
                                             </div>
                                         </div>
                                     </td>
@@ -165,9 +165,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shoping__cart__btns">
-                        <a href="#" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
-                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
-                            Upadate Cart</a>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Views/LandingPage.aspx" Text="CONTINUE SHOPPING" CssClass="primary-btn cart-btn" />
+                        <asp:Button runat="server" NavigateUrl="" Text="Update Cart" CssClass="primary-btn cart-btn cart-btn-right" />
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -175,8 +174,8 @@
                         <div class="shoping__discount">
                             <h5>Discount Codes</h5>
                             <form action="#">
-                                <input type="text" placeholder="Enter your coupon code">
-                                <button type="submit" class="site-btn">APPLY COUPON</button>
+                                <asp:TextBox runat="server" ID="Coupon" placeholder="Enter your coupon code" CssClass="form-control" />
+                                <asp:Button runat="server" Text="APPLY COUPON" CssClass="site-btn" ForeColor="White" />
                             </form>
                         </div>
                     </div>

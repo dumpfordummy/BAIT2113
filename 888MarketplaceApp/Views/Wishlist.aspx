@@ -73,162 +73,89 @@
 
     <!-- Shoping Cart Section Begin -->
     <section class="shoping-cart spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <div class="card-body"><form action="" id="co-payment-info-form"><div id="checkout-payment-info-load"><div class="checkout-data"><div class="col-12 px-0"><!----> <div class="section payment-info"><div class="info"><div class="container">
-    <div class="row align-items-center mb-3">
-        <div class="col-md-4 col-12 text-md-right">
-            <label class="col-form-label" for="CardholderName">Cardholder name:</label>
-        </div>
-        <div class="col-md-4 col-12 text-right">
-            <input class="form-control" autofocus="autofocus" type="text" data-val="true" data-val-required="Enter cardholder name" id="CardholderName" name="CardholderName" value="">
-            <span class="field-validation-valid" data-valmsg-for="CardholderName" data-valmsg-replace="true"></span>
-        </div>
-    </div>
-
-    <div class="row align-items-center mb-3">
-        <div class="col-md-4 col-12 text-md-right">
-            <label class="col-form-label" for="CardNumber">Card number:</label>
-        </div>
-        <div class="col-md-4 col-12 text-right">
-            <input class="form-control" autofocus="autofocus" type="text" data-val="true" data-val-creditcard="Wrong card number" id="CardNumber" name="CardNumber" value="">
-            <span class="field-validation-valid" data-valmsg-for="CardNumber" data-valmsg-replace="true"></span>
-        </div>
-    </div>
-
-    <div class="row align-items-center mb-3">
-        <div class="col-md-4 col-12 text-md-right">
-            <label class="col-form-label" for="ExpireMonth">Expiration date:</label>
-        </div>
-        <div class="col-md-4 col-12 text-right d-md-flex input-group">
-            <select class="form-control col-md-6 col-12" data-val="true" data-val-required="Expire month is required" id="ExpireMonth" name="ExpireMonth"><option value="1">01</option>
-<option value="2">02</option>
-<option value="3">03</option>
-<option value="4">04</option>
-<option value="5">05</option>
-<option value="6">06</option>
-<option value="7">07</option>
-<option value="8">08</option>
-<option value="9">09</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-</select>
-            <select class="form-control col-md-6 col-12" data-val="true" data-val-required="Expire year is required" id="ExpireYear" name="ExpireYear"><option value="2024">2024</option>
-<option value="2025">2025</option>
-<option value="2026">2026</option>
-<option value="2027">2027</option>
-<option value="2028">2028</option>
-<option value="2029">2029</option>
-<option value="2030">2030</option>
-<option value="2031">2031</option>
-<option value="2032">2032</option>
-<option value="2033">2033</option>
-<option value="2034">2034</option>
-<option value="2035">2035</option>
-<option value="2036">2036</option>
-<option value="2037">2037</option>
-<option value="2038">2038</option>
-</select>
-        </div>
-    </div>
-
-    <div class="row align-items-center mb-3">
-        <div class="col-md-4 col-12 text-md-right">
-            <label class="col-form-label" for="CardCode">Card code:</label>
-        </div>
-        <div class="col-md-4 col-12 text-right">
-            <input class="form-control" autofocus="autofocus" type="text" data-val="true" data-val-regex="Wrong card code" data-val-regex-pattern="^[0-9]{3,4}$" id="CardCode" name="CardCode" value="">
-            <span class="field-validation-valid" data-valmsg-for="CardCode" data-valmsg-replace="true"></span>
-        </div>
-    </div>
-</div>
-</div></div></div></div></div></form> <div id="payment-info-buttons-container" class="col-12 buttons py-1 mt-3 px-0"><a href="#" id="back-payment_info" class="btn btn-secondary">Back</a> <input type="button" value="Continue" class="btn btn-info payment-info-next-step-button"> <span id="payment-info-please-wait" class="please-wait" style="display: none;">Loading next step...</span></div></div>
-
-
-                    <div class="shoping__cart__table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="shoping__product">Products</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-1.jpg" alt="">
-                                        <h5>Vegetable’s Package</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        $55.00
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shoping__cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="shoping__product">Products</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="shoping__cart__item">
+                                    <img src="img/cart/cart-1.jpg" alt="">
+                                    <h5>Vegetable’s Package</h5>
+                                </td>
+                                <td class="shoping__cart__price">
+                                    $55.00
+                                </td>
+                                <td class="shoping__cart__quantity">
+                                    <div class="quantity">
+                                        <div class="pro-qty">
+                                            <asp:TextBox runat="server" type="text" value="1" ID="TextBox2"/>
                                         </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                        $110.00
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-2.jpg" alt="">
-                                        <h5>Fresh Garden Vegetable</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        $39.00
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
+                                    </div>
+                                </td>
+                                <td class="shoping__cart__total">
+                                    $110.00
+                                </td>
+                                <td class="shoping__cart__item__close">
+                                    <span class="icon_close"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="shoping__cart__item">
+                                    <img src="img/cart/cart-2.jpg" alt="">
+                                    <h5>Fresh Garden Vegetable</h5>
+                                </td>
+                                <td class="shoping__cart__price">
+                                    $39.00
+                                </td>
+                                <td class="shoping__cart__quantity">
+                                    <div class="quantity">
+                                        <div class="pro-qty">
+                                            <asp:TextBox runat="server" type="text" value="1" ID="qty"/>
                                         </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                        $39.99
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-3.jpg" alt="">
-                                        <h5>Organic Bananas</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        $69.00
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
+                                    </div>
+                                </td>
+                                <td class="shoping__cart__total">
+                                    $39.99
+                                </td>
+                                <td class="shoping__cart__item__close">
+                                    <span class="icon_close"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="shoping__cart__item">
+                                    <img src="img/cart/cart-3.jpg" alt="">
+                                    <h5>Organic Bananas</h5>
+                                </td>
+                                <td class="shoping__cart__price">
+                                    $69.00
+                                </td>
+                                <td class="shoping__cart__quantity">
+                                    <div class="quantity">
+                                        <div class="pro-qty">
+                                            <asp:TextBox runat="server" type="text" value="1" ID="TextBox1"/>
                                         </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                        $69.99
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                                    </div>
+                                </td>
+                                <td class="shoping__cart__total">
+                                    $69.99
+                                </td>
+                                <td class="shoping__cart__item__close">
+                                    <span class="icon_close"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
