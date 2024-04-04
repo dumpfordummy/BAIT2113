@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddProduct.aspx.cs" Inherits="_888MarketplaceApp.Views.AddProduct" MasterPageFile="~/Views/Site.Master" ClientIDMode="Static" %>
 
 <asp:Content runat="server" ID="bodyCT" ContentPlaceHolderID="bodyContent">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <div class="container">
         <h2 class="m-3 fw-bolder" style="color: #38d39f">Add a product</h2>
@@ -11,7 +10,7 @@
                     <div class="form-group">
                         <h5 class="fw-bold mb-2">Product Images</h5>
                         <img id="imgPdt" src="#" style="display: none" /><br/>
-                        <asp:FileUpload ID="imageUpl" runat="server" onchange="updateImage()" />
+                        <asp:FileUpload ID="imageUpl" runat="server" onchange="updateImage(event)" />
                     </div>
                 </div>
             </div>
@@ -47,18 +46,14 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        imageUpl.onchange = evt => {
-            const [file] = imageUpl.files;
-            if (file) {
-                imgPdt.src = URL.createObjectURL(file);
-            }
-        };
+        function updateImage(event) {
+            const file = event.target.files[0];
 
-        function updateImage() {
-            var elem = document.getElementById("imgPdt");
-            elem.style.display = "block";
+            let url = window.URL.createObjectURL(file);
+
+            document.getElementById("imgPdt").src = url;
+            document.getElementById("imgPdt").style.display = "block";
         };
         
     </script>

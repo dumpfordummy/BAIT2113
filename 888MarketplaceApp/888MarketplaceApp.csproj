@@ -106,17 +106,20 @@
   <ItemGroup>
     <Content Include="Content\css\adminTemp2.css" />
     <Content Include="Images\705_tin_bottle.jpg" />
+    <Content Include="Images\black_pants.jpg" />
     <Content Include="Images\black_rubber_bottle.jpg" />
     <Content Include="Images\black_shoe_1.jpg" />
     <Content Include="Images\breadcrumb.jpg" />
     <Content Include="Images\brown_shoe_1.jpg" />
     <Content Include="Images\green_bottle.jpg" />
-    <Content Include="Images\grey_suit_1.jpg" />
+    <Content Include="Images\grey_suit.jpg" />
     <Content Include="Images\knitted_1.jpg" />
     <Content Include="Images\metal_bottle.jpg" />
     <Content Include="Images\orange_shoe_1.jpg" />
     <Content Include="Images\orange_shoe_2.jpg" />
+    <Content Include="Images\orange_shoe_banner.jpg" />
     <Content Include="Images\red_shoe.jpg" />
+    <Content Include="Images\short_jeans.jpg" />
     <Content Include="Views\AdminTable.aspx" />
     <Content Include="App_Data\888DB.mdf" />
     <Content Include="App_Data\888DB_log.ldf">
@@ -209,8 +212,7 @@
     <Content Include="Content\css\jquery-ui.min.css" />
     <Content Include="Content\css\nice-select.css" />
     <Content Include="Content\css\owl.carousel.min.css" />
-    <Content Include="Content\css\slicknav.min.css" />
-    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\mainStyle.css" />
     <Content Include="Content\fonts\ElegantIcons.svg" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -307,7 +309,6 @@
     <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.nice-select.min.js" />
-    <Content Include="Scripts\jquery.slicknav.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\mixitup.min.js" />
     <Content Include="Scripts\owl.carousel.min.js" />

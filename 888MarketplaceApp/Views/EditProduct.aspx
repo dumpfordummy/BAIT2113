@@ -13,7 +13,6 @@
             float: right;
         }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <div class="container">
         <h2 class="m-3 fw-bolder" style="color: #38d39f">Edit product</h2>
@@ -26,7 +25,9 @@
                             <div style="float: right;">
                                 <button class="imgDelBtn" type="submit" name="delImage" value="~/Images/red_shoe.jpg"><i class="fa fa-close" style="font-size: 20px;"></i></button>
                             </div>
-                            <asp:Image ID="upPdtImg" runat="server" ImageUrl="~/Images/red_shoe.jpg" style="max-width: 250px; max-height: 250px;" />
+                            <asp:Image ID="upPdtImg" runat="server" ImageUrl="~/Images/red_shoe.jpg" style="max-width: 90%; max-height: 100%;" />
+                        <img id="imgPdt" src="#" style="display: none" /><br/>
+                        <asp:FileUpload ID="imageUpl" runat="server" onchange="updateImage(event)" />
                         </div>                        
                     </div>
                 </div>
@@ -50,7 +51,7 @@
                     </div>
                     <div class="form-group mt-3">
                         <asp:Label ID="lblPdtCatg" runat="server" Text="Category: " ></asp:Label>
-                        <select id="selPdtCatg" runat="server" class="form-control mt-2">
+                        <select id="selPdtCatg" runat="server" class="form-control mt-2" style="width: 25%; appearance: auto">
                             <option>Clothing & Apparel</option>
                             <option>Electronic Devices/Accessories</option>
                         </select>
@@ -64,5 +65,17 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function updateImage(event) {
+            const file = event.target.files[0];
+
+            let url = window.URL.createObjectURL(file);
+
+            document.getElementById("imgPdt").src = url;
+            document.getElementById("imgPdt").style.display = "block";
+        };
+        
+    </script>
+
+
 </asp:Content>
