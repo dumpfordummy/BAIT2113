@@ -128,19 +128,19 @@
                                 <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page</p>
                                 <div class="checkout__input__checkbox">
                                     <label for="payment">
-                                        Check Payment
+                                        Paypal
                                         <input type="checkbox" id="payment">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="checkout__input__checkbox">
                                     <label for="paypal">
-                                        Paypal
+                                        Credit Card
                                         <input type="checkbox" id="paypal">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <button type="submit" class="site-btn">PLACE ORDER</button>
+                                <asp:HyperLink ID="PlaceOrd" type="submit" class="site-btn" NavigateUrl="~/Views/Payment.aspx" runat="server">PLACE ORDER</asp:HyperLink>
                             </div>
                         </div>
                     </div>
