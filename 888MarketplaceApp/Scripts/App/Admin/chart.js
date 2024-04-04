@@ -5,7 +5,7 @@ $(function() {
    */
   'use strict';
   var data = {
-    labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+      labels: ["Cash", "Debit Card", "Digital Wallet", "Online FPX", "Credit Card"],
     datasets: [{
       label: '# of Votes',
       data: [10, 19, 3, 5, 2, 3],
@@ -80,7 +80,7 @@ $(function() {
   };
   var doughnutPieData = {
     datasets: [{
-      data: [30, 40, 30],
+      data: [30, 40, 30,20,10],
       backgroundColor: [
         'rgba(255, 99, 132, 0.5)',
         'rgba(54, 162, 235, 0.5)',
@@ -101,9 +101,11 @@ $(function() {
 
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
-      'Pink',
-      'Blue',
-      'Yellow',
+      'Shoes',
+      'Hat',
+      'Electronic Device',
+      'Snacks',
+      'Watches'
     ]
   };
   var doughnutPieOptions = {
@@ -114,7 +116,7 @@ $(function() {
     }
   };
   var areaData = {
-    labels: ["2013", "2014", "2015", "2016", "2017"],
+    labels: ["Cash", "Debit Card", "Digital Wallet", "Online FPX", "Credit Card"],
     datasets: [{
       label: '# of Votes',
       data: [12, 19, 3, 5, 2, 3],

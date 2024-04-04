@@ -40,8 +40,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div>
-                                        <h3 class="font-weight-bold mb-0" style="width: 50%; display: inline-block;">Product Listing Table</h3>
-                                        <asp:TextBox CssClas="searchTxt" runat="server">Search Product</asp:TextBox>
+                                        <h3 class="font-weight-bold mb-0" style="width: 55%; display: inline-block;">Product Listing Table</h3>
+                                        <asp:TextBox CssClas="searchTxt" runat="server" Style="margin-left: 20%;">Search Product</asp:TextBox>
                                         <asp:Button CssClass="btn btnGreen btn-icon-text btn-rounded" runat="server" Text="Search" />
 
 
@@ -105,6 +105,116 @@
                                                 </tr>
                                                 <tr>
                                                     <td>5</td>
+                                                    <td>P1004</td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td>80.00 </td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>P1004</td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td>80.00 </td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>P1004</td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td>80.00 </td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>P1004</td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td>80.00 </td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>P1004</td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td>80.00 </td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>P1004</td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td>80.00 </td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>11</td>
+                                                    <td>P1004</td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td>80.00 </td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12</td>
+                                                    <td>P1004</td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td>80.00 </td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>13</td>
+                                                    <td>P1004</td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td>80.00 </td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>14</td>
+                                                    <td>P1004</td>
+                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
+                                                    <td>80.00 </td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>15</td>
                                                     <td>P1004</td>
                                                     <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
                                                     <td>80.00 </td>

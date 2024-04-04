@@ -103,18 +103,18 @@
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Doughnut chart</h4>
+                                    <h4 class="card-title">Product Categories</h4>
                                     <canvas id="doughnutChart"></canvas>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 grid-margin stretch-card">
-                                                            <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Pie chart</h4>
-                                        <canvas id="pieChart"></canvas>
-                                    </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Categories Popularity</h4>
+                                    <canvas id="pieChart"></canvas>
                                 </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -201,47 +201,47 @@
                                                     <div class="table-responsive mb-3 mb-md-0">
                                                         <table class="table table-borderless report-table">
                                                             <tr>
-                                                                <td class="text-muted">Meat Product</td>
+                                                                <td class="text-muted">Hat Product</td>
                                                                 <td class="w-100 px-0">
                                                                     <div class="progress progress-md mx-4">
                                                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <h5 class="font-weight-bold mb-0">524</h5>
+                                                                    <h5 class="font-weight-bold mb-0">24</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="text-muted">Sea Food Product</td>
+                                                                <td class="text-muted">Eletronice Devices Product</td>
                                                                 <td class="w-100 px-0">
                                                                     <div class="progress progress-md mx-4">
                                                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <h5 class="font-weight-bold mb-0">722</h5>
+                                                                    <h5 class="font-weight-bold mb-0">22</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="text-muted">Vegetable Product</td>
+                                                                <td class="text-muted">Shoes Product</td>
                                                                 <td class="w-100 px-0">
                                                                     <div class="progress progress-md mx-4">
                                                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <h5 class="font-weight-bold mb-0">173</h5>
+                                                                    <h5 class="font-weight-bold mb-0">73</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="text-muted">Fruits Product</td>
+                                                                <td class="text-muted">Snacks Product</td>
                                                                 <td class="w-100 px-0">
                                                                     <div class="progress progress-md mx-4">
                                                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <h5 class="font-weight-bold mb-0">945</h5>
+                                                                    <h5 class="font-weight-bold mb-0">95</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -252,7 +252,7 @@
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <h5 class="font-weight-bold mb-0">553</h5>
+                                                                    <h5 class="font-weight-bold mb-0">53</h5>
                                                                 </td>
                                                             </tr>
                                                         </table>
