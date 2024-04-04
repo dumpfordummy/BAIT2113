@@ -800,7 +800,7 @@ ol {
 
 .latest-product {
 	padding-top: 80px;
-	padding-bottom: 0;
+	padding-bottom: 80px;
 }
 
 .latest-product__text h4 {
@@ -869,7 +869,7 @@ ol {
 	}
 
 /*---------------------
-Sidebar
+	Sidebar
 -----------------------*/
 
 .sidebar__item {
