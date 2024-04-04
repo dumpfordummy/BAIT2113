@@ -186,9 +186,9 @@
                                     <div class="row">
                                         <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-center">
                                             <div class="ml-xl-4">
-                                                <h1>33500</h1>
+                                                <h1>500</h1>
                                                 <h3 class="font-weight-light mb-xl-4">Sales</h3>
-                                                <p class="text-muted mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                                                <p class="text-muted mb-2 mb-xl-0">The total number of sessions within the date range in 2024. It is the period time of the customers' order purchase categories </p>
                                             </div>
                                         </div>
                                         <div class="col-md-12 col-xl-9">
@@ -208,7 +208,7 @@
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <h5 class="font-weight-bold mb-0">24</h5>
+                                                                    <h5 class="font-weight-bold mb-0">17</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -219,7 +219,7 @@
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <h5 class="font-weight-bold mb-0">22</h5>
+                                                                    <h5 class="font-weight-bold mb-0">5</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -230,7 +230,7 @@
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <h5 class="font-weight-bold mb-0">73</h5>
+                                                                    <h5 class="font-weight-bold mb-0">23</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -241,7 +241,7 @@
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <h5 class="font-weight-bold mb-0">95</h5>
+                                                                    <h5 class="font-weight-bold mb-0">10</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -252,7 +252,7 @@
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <h5 class="font-weight-bold mb-0">53</h5>
+                                                                    <h5 class="font-weight-bold mb-0">8</h5>
                                                                 </td>
                                                             </tr>
                                                         </table>
