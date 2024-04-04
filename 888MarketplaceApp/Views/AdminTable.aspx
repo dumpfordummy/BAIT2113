@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="AdminTable.aspx.cs" Inherits="_888MarketplaceApp.AdminTable" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="adminTemporaryPlaceholder">
-    <link rel="stylesheet" href="/Content/css/adminTemp.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/css/adminTemp2.css" type="text/css" />
 </asp:Content>
 
 <asp:Content runat="server" ID="bodyCT" ContentPlaceHolderID="bodyContent">
@@ -40,13 +40,13 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div>
-                                    <h3 class="font-weight-bold mb-0" style="width: 50%; display: inline-block;">Product Listing Table</h3>                           
-                                    <asp:TextBox ID="TextBox1" runat="server" Height="25px" Width="20%" BorderColor="Black" style="margin-left: 20%;">Search Product</asp:TextBox>
-                                    <button>Search</button>
+                                        <h3 class="font-weight-bold mb-0" style="width: 50%; display: inline-block;">Product Listing Table</h3>
+                                        <asp:TextBox CssClas="searchTxt" runat="server">Search Product</asp:TextBox>
+                                        <asp:Button CssClass="btn btnGreen btn-icon-text btn-rounded" runat="server" Text="Search" />
 
 
                                     </div>
-                                        <div class="table-responsive">
+                                    <div class="table-responsive">
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
@@ -77,7 +77,7 @@
                                                     <td>305.00</td>
                                                     <td>2</td>
                                                     <td>
-                                                        <asp:Button CssClass="btnView"  runat="server" Text="View" />&nbsp
+                                                        <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
                                                         <asp:Button CssClass="btnBan" runat="server" Text="Ban" />
                                                     </td>
                                                 </tr>
@@ -96,7 +96,7 @@
                                                     <td>4</td>
                                                     <td>P1003</td>
                                                     <td>Apple Watch Series 9 Aluminium Case with Sport Band GPS Only</td>
-                                                    <td >1898.00 </td>
+                                                    <td>1898.00 </td>
                                                     <td>20</td>
                                                     <td>
                                                         <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
@@ -107,7 +107,7 @@
                                                     <td>5</td>
                                                     <td>P1004</td>
                                                     <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
-                                                    <td >80.00 </td>
+                                                    <td>80.00 </td>
                                                     <td>12</td>
                                                     <td>
                                                         <asp:Button CssClass="btnView" runat="server" Text="View" />&nbsp
@@ -116,6 +116,12 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        <div class="product__pagination">
+                                            <a href="#">1</a>
+                                            <a href="#">2</a>
+                                            <a href="#">3</a>
+                                            <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

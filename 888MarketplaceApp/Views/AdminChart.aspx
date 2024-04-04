@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="AdminChart.aspx.cs" Inherits="_888MarketplaceApp.Views.AdminChart" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="adminTemporaryPlaceholder">
-    <link rel="stylesheet" href="/Content/css/adminTemp.css" type="text/css" />
+    <link rel="stylesheet" href="/Content/css/adminTemp2.css" type="text/css" />
 </asp:Content>
 
 <asp:Content runat="server" ID="bodyCT" ContentPlaceHolderID="bodyContent">
@@ -41,7 +41,7 @@
                                     <h4 class="font-weight-bold mb-0">Chart Sales Report</h4>
                                 </div>
                                 <div>
-                                    <button type="button" class="btn btn-primary btn-icon-text btn-rounded" onclick="window.print()">
+                                    <button type="button" class="btn btnGreen btn-icon-text btn-rounded">
                                         <i class="ti-printer btn-icon-prepend"></i>Print
                                     </button>
                                 </div>
@@ -69,8 +69,8 @@
                             <div class="col-lg-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Area chart</h4>
-                                        <canvas id="areaChart"></canvas>
+                                        <h4 class="card-title">Pie chart</h4>
+                                        <canvas id="pieChart"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -79,16 +79,6 @@
                                     <div class="card-body">
                                         <h4 class="card-title">Doughnut chart</h4>
                                         <canvas id="doughnutChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 grid-margin grid-margin-lg-0 stretch-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Pie chart</h4>
-                                        <canvas id="pieChart"></canvas>
                                     </div>
                                 </div>
                             </div>
