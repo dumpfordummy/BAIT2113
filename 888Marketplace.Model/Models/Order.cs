@@ -27,11 +27,13 @@ namespace _888MarketplaceApp.Core.Models
         public int BuyerId { get; set; }
         public int PaymentId { get; set; }
         public int DeliveryId { get; set; }
+        public Nullable<int> VoucherId { get; set; }
     
         public virtual Delivery Delivery { get; set; }
         public virtual Payment Payment { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Order> Product_Order { get; set; }
+        public virtual Voucher Voucher { get; set; }
     }
 }

@@ -100,6 +100,12 @@
     <Compile Include="DataAccess\CategoryData.cs" />
     <Compile Include="DataAccess\ICategoryData.cs" />
     <Compile Include="DataAccess\UserData.cs" />
+    <Compile Include="Models\Cart.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart_Product.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Category.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
@@ -131,6 +137,15 @@
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Userrole.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Voucher.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Wishlist.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Wishlist_Product.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\EmailSender.cs" />

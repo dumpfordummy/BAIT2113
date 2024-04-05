@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="DBModel.Payment" Width="1.5" PointX="5" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.PaymentMethod" Width="1.5" PointX="3.125" PointY="9.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.Product" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.Product_Order" Width="1.5" PointX="7.375" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Product_Order" Width="1.5" PointX="7.375" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.ShippingMethod" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="DBModel.FK_Delivery_ShippingMethodId" ManuallyRouted="false" />
         <AssociationConnector Association="DBModel.FK_Order_DeliveryId" ManuallyRouted="false" />
@@ -27,6 +27,18 @@
         <AssociationConnector Association="DBModel.FK_User_Userrole" />
         <EntityTypeShape EntityType="DBModel.Review" Width="1.5" PointX="11.25" PointY="8.75" />
         <AssociationConnector Association="DBModel.FK_ReviewId" />
+        <EntityTypeShape EntityType="DBModel.Cart" Width="1.5" PointX="9.375" PointY="10.875" />
+        <EntityTypeShape EntityType="DBModel.Cart_Product" Width="1.5" PointX="10" PointY="4.5" />
+        <EntityTypeShape EntityType="DBModel.Voucher" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="DBModel.Wishlist" Width="1.5" PointX="7.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DBModel.Wishlist_Product" Width="1.5" PointX="12" PointY="5.125" />
+        <AssociationConnector Association="DBModel.FK_Cart_Product_CartId" />
+        <AssociationConnector Association="DBModel.FK_Cart_Product_ProductId" />
+        <AssociationConnector Association="DBModel.FK_Order_VoucherId" />
+        <AssociationConnector Association="DBModel.FK_Wishlist_Product_ProductId" />
+        <AssociationConnector Association="DBModel.FK_Wishlist_Product_WishlistId" />
+        <AssociationConnector Association="DBModel.FK_Cart_BuyerId" />
+        <AssociationConnector Association="DBModel.FK_Wishlist_BuyerId" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

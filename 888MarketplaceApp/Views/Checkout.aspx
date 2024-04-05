@@ -91,13 +91,16 @@
                             <div class="row">
                                 <h4>Shipping Methods</h4>
                                 <div class="checkout__input__checkbox">
-                                    <asp:CheckBox runat="server" ID="Delstd" Checked="true" />
-                                    <asp:Label runat="server" AssociatedControlID="Delstd">Standard (1 - 2 weeks)</asp:Label>
-                                   
-                                </div>
-                                <div class="checkout__input__checkbox">
-                                    <asp:CheckBox runat="server" ID="Delexp" Checked="false" />
-                                    <asp:Label runat="server" AssociatedControlID="Delexp">Express (1 - 4 days)</asp:Label>
+                                    <div class="form-group">
+                                        <asp:RadioButton runat="server" ID="radioDeliStd" GroupName="deliMethod" />
+                                        <asp:Label runat="server" AssociatedControlID="radioDeliStd">Standard (1 - 2 weeks)</asp:Label>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:RadioButton runat="server" ID="radioDeliExp" GroupName="deliMethod" />
+                                        <asp:Label runat="server" AssociatedControlID="radioDeliExp">Express (1 - 4 days)</asp:Label>
+                                    </div>
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
@@ -115,12 +118,15 @@
                                 <!--<div class="checkout__order__total">Promo Code <asp:TextBox runat="server" ID="Promo" placeholder="Promo25" CssClass="form-control" /></div>-->
                                 <div class="checkout__order__total">Payment Methods <br />
                                     <div class="checkout__input__checkbox">
-                                        <asp:CheckBox runat="server" ID="CC" Checked="true" />
-                                        <asp:Label runat="server" AssociatedControlID="CC" >Credit Card/Debit Card</asp:Label>
-                                    </div>
-                                    <div class="checkout__input__checkbox">
-                                        <asp:CheckBox runat="server" ID="Paypal" Checked="false" />
-                                        <asp:Label runat="server" AssociatedControlID="Paypal">PayPal</asp:Label>
+                                        <div class="form-group">
+                                            <asp:RadioButton runat="server" ID="radioCard" GroupName="paymentMethod" />
+                                            <asp:Label runat="server" AssociatedControlID="radioCard" >Credit Card/Debit Card</asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:RadioButton runat="server" ID="radioPaypal" GroupName="paymentMethod" />
+                                            <asp:Label runat="server" AssociatedControlID="radioPaypal" >PayPal</asp:Label>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <asp:HyperLink ID="PlaceOrd" type="submit" class="site-btn" NavigateUrl="~/Views/Payment.aspx" runat="server">PLACE ORDER</asp:HyperLink>

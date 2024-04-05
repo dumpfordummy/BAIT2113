@@ -105,22 +105,22 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
-        /// Delstd control.
+        /// radioDeliStd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Delstd;
+        protected global::System.Web.UI.WebControls.RadioButton radioDeliStd;
 
         /// <summary>
-        /// Delexp control.
+        /// radioDeliExp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Delexp;
+        protected global::System.Web.UI.WebControls.RadioButton radioDeliExp;
 
         /// <summary>
         /// Promo control.
@@ -132,22 +132,22 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox Promo;
 
         /// <summary>
-        /// CC control.
+        /// radioCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CC;
+        protected global::System.Web.UI.WebControls.RadioButton radioCard;
 
         /// <summary>
-        /// Paypal control.
+        /// radioPaypal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Paypal;
+        protected global::System.Web.UI.WebControls.RadioButton radioPaypal;
 
         /// <summary>
         /// PlaceOrd control.

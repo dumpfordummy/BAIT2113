@@ -2,20 +2,34 @@
 DROP TABLE [dbo].[Order]
 DROP TABLE [dbo].[Delivery]
 DROP TABLE [dbo].[Payment]
+DROP TABLE [dbo].[Wishlist_Product]
+DROP TABLE [dbo].[Cart_Product]
 DROP TABLE [dbo].[Product]
+DROP TABLE [dbo].[Cart]
+DROP TABLE [dbo].[Wishlist]
 DROP TABLE [dbo].[User]
 DROP TABLE [dbo].[ShippingMethod]
 DROP TABLE [dbo].[PaymentMethod]
 DROP TABLE [dbo].[Category]
 DROP TABLE [dbo].[Userrole]
 DROP TABLE [dbo].[Review]
+DROP TABLE [dbo].[Voucher]
 
 
+CREATE TABLE [dbo].[Voucher]
+(
+	[Id] INT IDENTITY (1, 1) NOT NULL,
+	[Code] CHAR(6) NOT NULL,
+	[Amount] FLOAT,
+    CONSTRAINT [PK_Voucher] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
 
 CREATE TABLE [dbo].[Userrole]
 (
-	[Id] INT NOT NULL PRIMARY KEY,
-	[Role] VARCHAR(20) NOT NULL
+	[Id] INT IDENTITY (1, 1) NOT NULL,
+	[Role] VARCHAR(20) NOT NULL,
+    CONSTRAINT [PK_Userrole] PRIMARY KEY CLUSTERED ([Id] ASC)
+
 );
 
 CREATE TABLE [dbo].[Category] (
@@ -64,6 +78,22 @@ CREATE TABLE [dbo].[User] (
 	CONSTRAINT [FK_User_Userrole] FOREIGN KEY ([Userrole]) REFERENCES [dbo].[Userrole] ([Id])
 );
 
+CREATE TABLE [dbo].[Wishlist]
+(
+	[Id] INT IDENTITY (1, 1) NOT NULL, 
+    [BuyerId] INT NOT NULL,
+    CONSTRAINT [PK_Wishlist] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Wishlist_BuyerId] FOREIGN KEY ([BuyerId]) REFERENCES [dbo].[User] ([Id]),
+);
+
+CREATE TABLE [dbo].[Cart]
+(
+	[Id] INT IDENTITY (1, 1) NOT NULL, 
+    [BuyerId] INT NOT NULL,
+    CONSTRAINT [PK_Cart] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Cart_BuyerId] FOREIGN KEY ([BuyerId]) REFERENCES [dbo].[User] ([Id]),
+);
+
 CREATE TABLE [dbo].[Product] (
     [Id]           INT             IDENTITY (1, 1) NOT NULL,
     [DateCreated]  DATETIME2 (7)   NOT NULL,
@@ -78,6 +108,27 @@ CREATE TABLE [dbo].[Product] (
     CONSTRAINT [FK_Product_SellerId] FOREIGN KEY ([SellerId]) REFERENCES [dbo].[User] ([Id]),
     CONSTRAINT [FK_Product_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [dbo].[Category] ([Id])
 );
+
+CREATE TABLE [dbo].[Wishlist_Product]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[WishlistId] INT NOT NULL,
+	[ProductId] INT NOT NULL,
+	[Quantity] INT NOT NULL,
+	CONSTRAINT [FK_Wishlist_Product_WishlistId] FOREIGN KEY ([WishlistId]) REFERENCES [dbo].[Wishlist] ([Id]),
+	CONSTRAINT [FK_Wishlist_Product_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [dbo].[Product] ([Id])
+);
+
+CREATE TABLE [dbo].[Cart_Product]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[CartId] INT NOT NULL,
+	[ProductId] INT NOT NULL,
+	[Quantity] INT NOT NULL,
+	CONSTRAINT [FK_Cart_Product_CartId] FOREIGN KEY ([CartId]) REFERENCES [dbo].[Cart] ([Id]),
+	CONSTRAINT [FK_Cart_Product_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [dbo].[Product] ([Id])
+);
+
 
 CREATE TABLE [dbo].[Payment] (
     [Id]              INT                IDENTITY (1, 1) NOT NULL,
@@ -100,17 +151,19 @@ CREATE TABLE [dbo].[Delivery] (
 );
 
 CREATE TABLE [dbo].[Order] (
-    [Id]         INT                IDENTITY (1, 1) NOT NULL,
-    [Date]       DATETIME2 NOT NULL,
-    [Amount]     FLOAT (53)         NOT NULL,
-    [Note]       VARCHAR(MAX)               NOT NULL,
-    [BuyerId]    INT                NOT NULL,
-    [PaymentId]  INT                NOT NULL,
-    [DeliveryId] INT                NOT NULL,
+    [Id]         INT           IDENTITY (1, 1) NOT NULL,
+    [Date]       DATETIME2 (7) NOT NULL,
+    [Amount]     FLOAT (53)    NOT NULL,
+    [Note]       VARCHAR (MAX) NOT NULL,
+    [BuyerId]    INT           NOT NULL,
+    [PaymentId]  INT           NOT NULL,
+    [DeliveryId] INT           NOT NULL,
+    [VoucherId] INT NULL, 
     CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Order_BuyerId] FOREIGN KEY ([BuyerId]) REFERENCES [dbo].[User] ([Id]),
     CONSTRAINT [FK_Order_PaymentId] FOREIGN KEY ([PaymentId]) REFERENCES [dbo].[Payment] ([Id]),
-    CONSTRAINT [FK_Order_DeliveryId] FOREIGN KEY ([DeliveryId]) REFERENCES [dbo].[Delivery] ([Id])
+    CONSTRAINT [FK_Order_DeliveryId] FOREIGN KEY ([DeliveryId]) REFERENCES [dbo].[Delivery] ([Id]),
+    CONSTRAINT [FK_Order_VoucherId] FOREIGN KEY ([VoucherId]) REFERENCES [dbo].[Voucher] ([Id])
 );
 
 CREATE TABLE [dbo].[Product_Order] (

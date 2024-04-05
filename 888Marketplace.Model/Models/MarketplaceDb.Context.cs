@@ -36,5 +36,10 @@ namespace _888MarketplaceApp.Core.Models
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Userrole> Userroles { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<Cart_Product> Cart_Product { get; set; }
+        public virtual DbSet<Voucher> Vouchers { get; set; }
+        public virtual DbSet<Wishlist> Wishlists { get; set; }
+        public virtual DbSet<Wishlist_Product> Wishlist_Product { get; set; }
     }
 }

@@ -71,7 +71,7 @@
 
                                                         <div class="row align-items-center mb-3">
                                                             <div class="col-md-4 col-12 text-md-right">
-                                                                <label class="col-form-label" for="CardCode">Card code:</label>
+                                                                <label class="col-form-label" for="CardCode">CVV:</label>
                                                             </div>
                                                             <div class="col-md-4 col-12 text-right">
                                                                 <asp:TextBox runat="server" ID="CardCode" CssClass="form-control" />
@@ -127,4 +127,9 @@
         </div>
     </section>
     <!-- Checkout Section End -->
+    <script>
+        $('#paymentSuccessModal').on('hidden.bs.modal', function () {
+            
+        });
+    </script>
 </asp:Content>

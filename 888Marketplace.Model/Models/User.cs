@@ -19,6 +19,8 @@ namespace _888MarketplaceApp.Core.Models
         {
             this.Orders = new HashSet<Order>();
             this.Products = new HashSet<Product>();
+            this.Carts = new HashSet<Cart>();
+            this.Wishlists = new HashSet<Wishlist>();
         }
     
         public int Id { get; set; }
@@ -39,5 +41,9 @@ namespace _888MarketplaceApp.Core.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
         public virtual Userrole Userrole1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Carts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Wishlist> Wishlists { get; set; }
     }
 }
