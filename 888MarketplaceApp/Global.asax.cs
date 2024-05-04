@@ -25,7 +25,9 @@ namespace _888MarketplaceApp
             var cookies = Request.Cookies;
             if (sessionManager.GetUserLoginState(cookies))
             {
-                sessionManager.RenewSession(cookies[sessionManager.TokenName].Value);
+                var authenticationCookie = sessionManager.RenewSession(cookies[sessionManager.TokenName].Value);
+                Response.Cookies.Add(new HttpCookie(authenticationCookie));
+                
             }
         }
     }

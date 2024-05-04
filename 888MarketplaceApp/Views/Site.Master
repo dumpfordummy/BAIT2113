@@ -46,7 +46,7 @@
                                 <div class="header__top__right__auth">
                                     <% if (IsUserLoggedIn)
                                         { %>
-                                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Account/id=<%# loggedInUser.Username %>"><i class="fa fa-user"></i> Welcome! <%= loggedInUser.Username  %></asp:HyperLink>
+                                        <asp:HyperLink ID="lnkAccount" runat="server"><i class="fa fa-user"></i> Welcome! <%= loggedInUser.Username  %></asp:HyperLink>
                                     <% }
                                         else
                                         { %>

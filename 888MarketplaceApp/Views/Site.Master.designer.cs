@@ -24,13 +24,13 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.ContentPlaceHolder adminTemporaryPlaceholder;
 
         /// <summary>
-        /// HyperLink2 control.
+        /// lnkAccount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        protected global::System.Web.UI.WebControls.HyperLink lnkAccount;
 
         /// <summary>
         /// lnkLogin control.

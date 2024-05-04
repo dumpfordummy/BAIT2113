@@ -113,12 +113,16 @@ namespace _888MarketplaceApp.Helper
         /// <returns>The string to send with 'Set-Cookie' header</returns>
         public string RenewSession(string existingToken)
         {
-            if (!_sessions.TryRemove(existingToken, out var sess))
+            if (!_sessions.TryGetValue(existingToken, out var sess))
                 return "";
-            var newToken = GenerateToken();
+
+            _sessions.TryRemove(existingToken, out _);
+
             sess.Expires = DateTime.UtcNow.Add(_sessionLength);
-            _sessions.TryAdd(newToken, sess);
-            return $"{TokenName}={newToken};{_cookie} Expires={sess.Expires:R}";
+
+            _sessions.TryAdd(existingToken, sess);
+
+            return $"{TokenName}={existingToken};{_cookie} Expires={sess.Expires:R}";
         }
 
         /// <summary>
