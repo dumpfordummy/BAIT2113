@@ -5,10 +5,6 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "888MarketplaceApp", "888MarketplaceApp.csproj", "{8F9B74A3-C43E-4F8F-A2CC-0A8B580E3303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "888MarketplaceApp.Core", "..\888Marketplace.Model\888MarketplaceApp.Core.csproj", "{A9F7A26D-2704-4807-AE14-B8708C4E7D80}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "888MarketplaceApp.Presenter", "..\888MarketplaceApp.Presenter\888MarketplaceApp.Presenter.csproj", "{1E08C713-D99C-4FDA-9045-B2F302AB98FC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{8F9B74A3-C43E-4F8F-A2CC-0A8B580E3303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F9B74A3-C43E-4F8F-A2CC-0A8B580E3303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F9B74A3-C43E-4F8F-A2CC-0A8B580E3303}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9F7A26D-2704-4807-AE14-B8708C4E7D80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9F7A26D-2704-4807-AE14-B8708C4E7D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9F7A26D-2704-4807-AE14-B8708C4E7D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9F7A26D-2704-4807-AE14-B8708C4E7D80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1E08C713-D99C-4FDA-9045-B2F302AB98FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E08C713-D99C-4FDA-9045-B2F302AB98FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E08C713-D99C-4FDA-9045-B2F302AB98FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E08C713-D99C-4FDA-9045-B2F302AB98FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

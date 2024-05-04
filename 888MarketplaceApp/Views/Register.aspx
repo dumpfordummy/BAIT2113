@@ -23,8 +23,7 @@
                             <div class="form-group first">
                                 <asp:Label runat="server" AssociatedControlID="Username">Username</asp:Label>
                                 <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
-                                    CssClass="text-danger" ErrorMessage="The username field is required." />
+                                <asp:CustomValidator ID="usernameValidator" runat="server" ControlToValidate="Username" CssClass="text-danger" ErrorMessage="" OnServerValidate="UsernameValidator" ValidateEmptyText="true"></asp:CustomValidator>
                             </div>
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="Email">Email</asp:Label>
@@ -34,12 +33,12 @@
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
                                 <asp:TextBox runat="server" ID="Password" CssClass="form-control" TextMode="Password" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
+                                <asp:CustomValidator ID="passwordValidator" runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="" OnServerValidate="PasswordValidator" ValidateEmptyText="true"></asp:CustomValidator>
                             </div>
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="ConfirmPassword">Confirm Password</asp:Label>
                                 <asp:TextBox runat="server" ID="ConfirmPassword" CssClass="form-control" TextMode="Password" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword" CssClass="text-danger" ErrorMessage="The Confirm Password field is required." />
+                                <asp:CustomValidator ID="confirmPasswordValidator" runat="server" ControlToValidate="ConfirmPassword" CssClass="text-danger" ErrorMessage="" OnServerValidate="ConfirmPasswordValidator" ValidateEmptyText="true"></asp:CustomValidator>
                             </div>
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="FirstName">First Name</asp:Label>
@@ -54,7 +53,7 @@
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="Phone">Phone Number</asp:Label>
                                 <asp:TextBox runat="server" ID="Phone" CssClass="form-control" TextMode="Phone" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Phone" CssClass="text-danger" ErrorMessage="The Phone Number field is required." />
+                                <asp:CustomValidator ID="phoneValidator" runat="server" ControlToValidate="Phone" CssClass="text-danger" ErrorMessage="" OnServerValidate="PhoneValidator" ValidateEmptyText="true"></asp:CustomValidator>
                             </div>
 
                             <div class="form-group last mb-4">
@@ -63,6 +62,7 @@
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Address" CssClass="text-danger" ErrorMessage="The Address field is required." />
                             </div>
 
+                            <asp:Label runat="server" ID="Result"></asp:Label>
 
                             <asp:Button runat="server" OnClick="RegisterUser" Text="Register" CssClass="btn text-white btn-block btn-primary" />
 

@@ -1,5 +1,4 @@
-﻿using _888Marketplace.Model.DataAccess;
-using _888MarketplaceApp.Core.Models;
+﻿using _888MarketplaceApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

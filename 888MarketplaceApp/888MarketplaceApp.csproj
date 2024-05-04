@@ -51,6 +51,9 @@
     <Reference Include="AspNet.ScriptManager.jQuery, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AspNet.ScriptManager.jQuery.3.7.0\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac, Version=8.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>packages\Autofac.8.0.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -59,6 +62,9 @@
     </Reference>
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
@@ -73,8 +79,40 @@
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.7.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -121,6 +159,16 @@
     <Content Include="Images\orange_shoe_banner.jpg" />
     <Content Include="Images\red_shoe.jpg" />
     <Content Include="Images\short_jeans.jpg" />
+    <Content Include="Models\MarketplaceDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarketplaceDb.edmx</DependentUpon>
+      <LastGenOutput>MarketplaceDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MarketplaceDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarketplaceDb.edmx</DependentUpon>
+      <LastGenOutput>MarketplaceDb.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\AdminTable.aspx" />
     <Content Include="App_Data\888DB.mdf" />
     <Content Include="App_Data\888DB_log.ldf">
@@ -303,6 +351,13 @@
     <Content Include="Content\App\admin\vendors\ti-icons\fonts\themify.eot" />
     <Content Include="Content\App\admin\vendors\ti-icons\fonts\themify.ttf" />
     <Content Include="Content\App\admin\vendors\ti-icons\fonts\themify.woff" />
+    <EntityDeploy Include="Models\MarketplaceDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MarketplaceDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MarketplaceDb.edmx.diagram">
+      <DependentUpon>MarketplaceDb.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -338,6 +393,76 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\CategoryData.cs" />
+    <Compile Include="DataAccess\ICategoryData.cs" />
+    <Compile Include="DataAccess\UserData.cs" />
+    <Compile Include="Helper\PasswordHelper.cs" />
+    <Compile Include="Models\Cart.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart_Product.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Delivery.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarketplaceDb.Context.cs">
+      <DependentUpon>MarketplaceDb.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Models\MarketplaceDb.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Models\MarketplaceDb.Designer.cs">
+      <DependentUpon>MarketplaceDb.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Models\MarketplaceModels.cs" />
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payment.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentMethod.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_Order.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Review.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShippingMethod.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Userrole.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Voucher.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Wishlist.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Wishlist_Product.cs">
+      <DependentUpon>MarketplaceDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Services\EmailSender.cs" />
+    <Compile Include="Services\VerificationTokenManager.cs" />
     <Compile Include="Views\AdminTable.aspx.cs">
       <DependentUpon>AdminTable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -560,16 +685,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\888Marketplace.Model\888MarketplaceApp.Core.csproj">
-      <Project>{a9f7a26d-2704-4807-ae14-b8708c4e7d80}</Project>
-      <Name>888MarketplaceApp.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\888MarketplaceApp.Presenter\888MarketplaceApp.Presenter.csproj">
-      <Project>{1e08c713-d99c-4fda-9045-b2f302ab98fc}</Project>
-      <Name>888MarketplaceApp.Presenter</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

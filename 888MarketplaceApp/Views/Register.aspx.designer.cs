@@ -42,6 +42,15 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox Username;
 
         /// <summary>
+        /// usernameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator usernameValidator;
+
+        /// <summary>
         /// Email control.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,15 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox Password;
 
         /// <summary>
+        /// passwordValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator passwordValidator;
+
+        /// <summary>
         /// ConfirmPassword control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ConfirmPassword;
+
+        /// <summary>
+        /// confirmPasswordValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator confirmPasswordValidator;
 
         /// <summary>
         /// FirstName control.
@@ -96,6 +123,15 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox Phone;
 
         /// <summary>
+        /// phoneValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator phoneValidator;
+
+        /// <summary>
         /// Address control.
         /// </summary>
         /// <remarks>
@@ -103,6 +139,15 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Address;
+
+        /// <summary>
+        /// Result control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Result;
 
         /// <summary>
         /// LoginBtn control.

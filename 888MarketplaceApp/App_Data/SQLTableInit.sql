@@ -184,3 +184,8 @@ GO
 
 ALTER TABLE [dbo].[Product_Order] CHECK CONSTRAINT [FK_ReviewId];
 GO
+
+
+INSERT INTO [dbo].[Userrole] VALUES ('Member');
+INSERT INTO [dbo].[Userrole] VALUES ('Staff');
+INSERT INTO [dbo].[Userrole] VALUES ('Admin');
