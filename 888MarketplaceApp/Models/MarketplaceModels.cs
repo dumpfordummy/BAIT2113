@@ -16,6 +16,30 @@ namespace _888MarketplaceApp.Models
             public static int Staff = 2;
             public static int Admin = 3;
         }
+    
+        public class UserSessionModel
+        {
+            public int UserId;
+            public string Username;
+            public static UserSessionModel empty = new UserSessionModel(-1, "");
+
+            public UserSessionModel(int id, string username)
+            {
+                UserId = id;
+                Username = username;
+            }
+
+            public override bool Equals(object obj)
+            {
+                var x = (UserSessionModel)obj;
+                return UserId == x.UserId && Username == x.Username;
+            }
+
+            public override int GetHashCode()
+            {
+                return this.GetHashCode();
+            }
+        }
     }
 
     public partial class Category

@@ -44,6 +44,8 @@
                                     <asp:HyperLink ID="Forgot" CssClass="forgot-pass" runat="server" NavigateUrl="/Forgotpassword">Forgot Password</asp:HyperLink></span>
                             </div>
 
+                            <asp:Label runat="server" ID="Result"></asp:Label>
+
                             <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn text-white btn-block btn-primary" />
 
                             <div class="alt-url">

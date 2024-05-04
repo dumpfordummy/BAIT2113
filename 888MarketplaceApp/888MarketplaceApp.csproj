@@ -397,6 +397,7 @@
     <Compile Include="DataAccess\ICategoryData.cs" />
     <Compile Include="DataAccess\UserData.cs" />
     <Compile Include="Helper\PasswordHelper.cs" />
+    <Compile Include="Helper\SessionManager.cs" />
     <Compile Include="Models\Cart.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>

@@ -57,7 +57,7 @@ namespace _888MarketplaceApp.Views
             }
             else
             {
-                RegisterFailed();
+                RegisterFailed($"An account for {user.Username} already existed!");
             }
         }
 
@@ -149,18 +149,12 @@ namespace _888MarketplaceApp.Views
 
         public void RegisterSuccess()
         {
-            Result.Text = "Account registered successfully, redirecting to home page";
-            string script = @"<script type='text/javascript'>
-                        setTimeout(function() {
-                            window.location.href = '/';
-                        }, 1000);
-                      </script>";
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "RedirectScript", script);
+            Response.Redirect("/login");
         }
 
-        public void RegisterFailed()
+        public void RegisterFailed(string failMsg)
         {
-            Result.Text = "Account created failed.";
+            Result.Text = failMsg;
         }
     }
 }
