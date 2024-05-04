@@ -1,10 +1,12 @@
-﻿using System;
+﻿using _888MarketplaceApp.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static _888MarketplaceApp.Models.User;
 
 namespace _888MarketplaceApp.Views
 {
@@ -13,6 +15,9 @@ namespace _888MarketplaceApp.Views
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+
+        public bool IsUserLoggedIn = false;
+        public UserSessionModel loggedInUser = UserSessionModel.empty;
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -61,7 +66,13 @@ namespace _888MarketplaceApp.Views
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            var sessionManager = SessionManager.Instance;
 
+            if (sessionManager.GetUserLoginState(Request.Cookies))
+            {
+                IsUserLoggedIn = true;
+                loggedInUser = sessionManager.GetLoggedInUser(Request.Cookies);
+            }
         }
 
         protected void LoggingOut(object sender, LoginCancelEventArgs e)

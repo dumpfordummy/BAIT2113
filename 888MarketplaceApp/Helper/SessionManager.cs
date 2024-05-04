@@ -65,16 +65,10 @@ namespace _888MarketplaceApp.Helper
         }
 
         /// <summary>
-        ///     Returns an expired cookie with the token name. Send with'Set-Cookie' header to make browsers delete the cookie
+        ///     Returns an expired cookie with the token name. Send to make browsers delete the cookie
         /// </summary>
         public string ExpiredCookie { get; }
 
-        /// <summary>
-        ///     Determines if a token is a valid authentication token. Returns session data object through out paramenter if token is valid.
-        /// </summary>
-        /// <param name="token">Token to authenticate</param>
-        /// <param name="data">Session data if token is valid</param>
-        /// <returns>True if token is valid</returns>
         public bool TryAuthenticateToken(string token, out UserSessionModel data)
         {
             if (_sessions.TryGetValue(token, out var s))
@@ -90,10 +84,6 @@ namespace _888MarketplaceApp.Helper
             return false;
         }
 
-        /// <summary>
-        /// Method for creating reasonably secure tokens
-        /// </summary>
-        /// <returns>A cryptographically strong token</returns>
         private string GenerateToken()
         {
             var data = new byte[32];
@@ -107,11 +97,6 @@ namespace _888MarketplaceApp.Helper
         }
         private readonly Random _random = new Random();
 
-        /// <summary>
-        ///     Creates a new session and returns the cookie to send the client with 'Set-Cookie' header.
-        /// </summary>
-        /// <param name="sessionData">Object that represents the session data</param>
-        /// <returns>The string to send with 'Set-Cookie' header</returns>
         public string OpenSession(UserSessionModel sessionData)
         {
             var id = GenerateToken();
@@ -121,7 +106,7 @@ namespace _888MarketplaceApp.Helper
         }
 
         /// <summary>
-        ///     Renews the expiration and token of an active session and returns the cookie to send the client with 'Set-Cookie' header. 
+        ///     Renews the expiration and token of an active session 
         ///     Returns empty string if token invalid
         /// </summary>
         /// <param name="existingToken">The existing authentication token to replace</param>
@@ -160,16 +145,20 @@ namespace _888MarketplaceApp.Helper
             public DateTime Expires { get; set; }
         }
 
-        public bool GetUserLoginState(HttpCookieCollection cookie)
+        public bool GetUserLoginState(HttpCookieCollection cookies)
         {
-            var authToken = cookie[TokenName].Value;
+            if(cookies[TokenName] == null)
+            {
+                return false;
+            }
+            var authToken = cookies[TokenName].Value;
             return TryAuthenticateToken(authToken, out var _);
         }
 
 
-        public UserSessionModel GetLoggedInUser(HttpCookieCollection cookie)
+        public UserSessionModel GetLoggedInUser(HttpCookieCollection cookies)
         {
-            var authToken = cookie[TokenName].Value;
+            var authToken = cookies[TokenName].Value;
             if (TryAuthenticateToken(authToken, out var sessionData))
             {
                 return sessionData;
