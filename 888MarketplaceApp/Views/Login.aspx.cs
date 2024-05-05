@@ -50,8 +50,7 @@ namespace _888MarketplaceApp.Views
         private void LoginSuccess(User user)
         {
             var sessionManager = SessionManager.Instance;
-            var userSession = new UserSessionModel(user.Id, user.Username);
-            string authenticationCookie = sessionManager.OpenSession(userSession);
+            string authenticationCookie = sessionManager.OpenSession(user);
             Response.Cookies.Add(new HttpCookie(authenticationCookie));
             Response.Redirect("/");
         }

@@ -10,36 +10,30 @@ namespace _888MarketplaceApp.Models
 {
     public partial class User
     {
-        public static class UserRole
+        public static User empty = new User();
+
+
+        public bool IsUserMember()
         {
-            public static int Member = 1;
-            public static int Staff = 2;
-            public static int Admin = 3;
+            return Userrole1.Id == Models.Userrole.Member;
         }
-    
-        public class UserSessionModel
+
+        public bool IsUserStaff()
         {
-            public int UserId;
-            public string Username;
-            public static UserSessionModel empty = new UserSessionModel(-1, "");
-
-            public UserSessionModel(int id, string username)
-            {
-                UserId = id;
-                Username = username;
-            }
-
-            public override bool Equals(object obj)
-            {
-                var x = (UserSessionModel)obj;
-                return UserId == x.UserId && Username == x.Username;
-            }
-
-            public override int GetHashCode()
-            {
-                return this.GetHashCode();
-            }
+            return Userrole1.Id == Models.Userrole.Staff;
         }
+
+        public bool IsUserAdmin()
+        {
+            return Userrole1.Id == Models.Userrole.Admin;
+        }
+    }
+
+    public partial class Userrole
+    {
+        public static int Member = 1;
+        public static int Staff = 2;
+        public static int Admin = 3;
     }
 
     public partial class Category

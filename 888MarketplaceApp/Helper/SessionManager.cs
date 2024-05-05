@@ -69,7 +69,7 @@ namespace _888MarketplaceApp.Helper
         /// </summary>
         public string ExpiredCookie { get; }
 
-        public bool TryAuthenticateToken(string token, out UserSessionModel data)
+        public bool TryAuthenticateToken(string token, out User data)
         {
             if (_sessions.TryGetValue(token, out var s))
             {
@@ -80,7 +80,7 @@ namespace _888MarketplaceApp.Helper
                 }
                 _sessions.TryRemove(token, out _);
             }
-            data = default(UserSessionModel);
+            data = default(User);
             return false;
         }
 
@@ -97,7 +97,7 @@ namespace _888MarketplaceApp.Helper
         }
         private readonly Random _random = new Random();
 
-        public string OpenSession(UserSessionModel sessionData)
+        public string OpenSession(User sessionData)
         {
             var id = GenerateToken();
             var exp = DateTime.UtcNow.Add(_sessionLength);
@@ -139,13 +139,13 @@ namespace _888MarketplaceApp.Helper
 
         private class Session
         {
-            internal Session(UserSessionModel UserSessionModel, DateTime exp)
+            internal Session(User User, DateTime exp)
             {
-                SessionData = UserSessionModel;
+                SessionData = User;
                 Expires = exp;
             }
 
-            public UserSessionModel SessionData { get; }
+            public User SessionData { get; }
             public DateTime Expires { get; set; }
         }
 
@@ -160,14 +160,14 @@ namespace _888MarketplaceApp.Helper
         }
 
 
-        public UserSessionModel GetLoggedInUser(HttpCookieCollection cookies)
+        public User GetLoggedInUser(HttpCookieCollection cookies)
         {
             var authToken = cookies[TokenName].Value;
             if (TryAuthenticateToken(authToken, out var sessionData))
             {
                 return sessionData;
             }
-            return UserSessionModel.empty;
+            return User.empty;
         }
     }
 }

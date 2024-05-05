@@ -43,7 +43,7 @@ namespace _888MarketplaceApp.Views
                 LastName = lastName,
                 Phone = phone,
                 Address = address,
-                Userrole = Models.User.UserRole.Member,
+                Userrole = Userrole.Member,
                 DateCreated = DateTime.Now
             };
 

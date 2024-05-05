@@ -33,7 +33,7 @@ namespace _888MarketplaceApp.DataAccess
         /// </summary>
         /// <param name="id"></param>
         /// <returns>return User object if found, otherwise return null</returns>
-        public User GetUser(string id)
+        public User GetUser(int id)
         {
             var result = _users.Find(id);
             return result;

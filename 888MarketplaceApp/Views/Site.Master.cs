@@ -1,4 +1,5 @@
 ﻿using _888MarketplaceApp.Helper;
+using _888MarketplaceApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,6 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using static _888MarketplaceApp.Models.User;
 
 namespace _888MarketplaceApp.Views
 {
@@ -17,7 +17,7 @@ namespace _888MarketplaceApp.Views
         private string _antiXsrfTokenValue;
 
         public bool IsUserLoggedIn = false;
-        public UserSessionModel loggedInUser = UserSessionModel.empty;
+        public User loggedInUser = User.empty;
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -74,7 +74,7 @@ namespace _888MarketplaceApp.Views
                 loggedInUser = sessionManager.GetLoggedInUser(Request.Cookies);
             }
 
-            lnkAccount.NavigateUrl = "~/Account?id=" + loggedInUser.UserId;
+            lnkAccount.NavigateUrl = "~/Views/User/Account";
         }
 
         protected void LoggingOut(object sender, LoginCancelEventArgs e)

@@ -50,7 +50,7 @@
                                     <% }
                                         else
                                         { %>
-                                    <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/login"><i class="fa fa-user"></i> Login</asp:HyperLink>
+                                    <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="/Views/Login.aspx"><i class="fa fa-user"></i> Login</asp:HyperLink>
                                     <% } %>
                                 </div>
                             </div>
@@ -73,9 +73,9 @@
                         <div class="header__cart">
                             <ul>
                                 <li>
-                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Views/Wishlist.aspx"><i class="fa fa-heart"></i><span>3</span></asp:HyperLink></li>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Views/User/Wishlist.aspx"><i class="fa fa-heart"></i><span>3</span></asp:HyperLink></li>
                                 <li>
-                                    <asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/Views/Cart.aspx"><i class="fa fa-shopping-bag"></i><span>3</span></asp:HyperLink></li>
+                                    <asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/Views/User/Cart.aspx"><i class="fa fa-shopping-bag"></i><span>3</span></asp:HyperLink></li>
                             </ul>
                             &nbsp;&nbsp;&nbsp;
                             <div class="header__cart__price">item: <span>$0.00</span></div>

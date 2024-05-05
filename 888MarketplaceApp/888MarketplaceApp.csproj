@@ -169,7 +169,7 @@
       <DependentUpon>MarketplaceDb.edmx</DependentUpon>
       <LastGenOutput>MarketplaceDb.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\AdminTable.aspx" />
+    <Content Include="Views\Admin\AdminTable.aspx" />
     <Content Include="App_Data\888DB.mdf" />
     <Content Include="App_Data\888DB_log.ldf">
       <DependentUpon>888DB.mdf</DependentUpon>
@@ -369,27 +369,28 @@
     <Content Include="Scripts\mixitup.min.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Views\Account.aspx" />
-    <Content Include="Views\AddProduct.aspx" />
-    <Content Include="Views\AdminChart.aspx" />
-    <Content Include="Views\AdminDashboard.aspx" />
+    <Content Include="Views\Unauthorized.aspx" />
+    <Content Include="Views\User\Account.aspx" />
+    <Content Include="Views\User\AddProduct.aspx" />
+    <Content Include="Views\Admin\AdminChart.aspx" />
+    <Content Include="Views\Admin\AdminDashboard.aspx" />
     <Content Include="Views\AllProduct.aspx" />
-    <Content Include="Views\Cart.aspx" />
-    <Content Include="Views\ChangePassword.aspx" />
-    <Content Include="Views\Checkout.aspx" />
+    <Content Include="Views\User\Cart.aspx" />
+    <Content Include="Views\User\ChangePassword.aspx" />
+    <Content Include="Views\User\Checkout.aspx" />
     <Content Include="Views\Default.aspx" />
-    <Content Include="Views\EditProduct.aspx" />
+    <Content Include="Views\User\EditProduct.aspx" />
     <Content Include="Views\ForgotPassword.aspx" />
     <Content Include="Views\LandingPage.aspx" />
     <Content Include="Views\Login.aspx" />
-    <Content Include="Views\MyPurchases.aspx" />
+    <Content Include="Views\User\MyPurchases.aspx" />
     <Content Include="Views\Product.aspx" />
     <Content Include="Views\Register.aspx" />
     <Content Include="Views\RegisterConfirmation.aspx" />
     <Content Include="Views\ResetPassword.aspx" />
     <Content Include="Views\ResetPasswordConfirmation.aspx" />
-    <Content Include="Views\Payment.aspx" />
-    <Content Include="Views\Wishlist.aspx" />
+    <Content Include="Views\User\Payment.aspx" />
+    <Content Include="Views\User\Wishlist.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -464,11 +465,11 @@
     </Compile>
     <Compile Include="Services\EmailSender.cs" />
     <Compile Include="Services\VerificationTokenManager.cs" />
-    <Compile Include="Views\AdminTable.aspx.cs">
+    <Compile Include="Views\Admin\AdminTable.aspx.cs">
       <DependentUpon>AdminTable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\AdminTable.aspx.designer.cs">
+    <Compile Include="Views\Admin\AdminTable.aspx.designer.cs">
       <DependentUpon>AdminTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -490,39 +491,46 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Account.aspx.cs">
+    <Compile Include="Views\Unauthorized.aspx.cs">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Unauthorized.aspx.designer.cs">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\Account.aspx.cs">
       <DependentUpon>Account.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Account.aspx.designer.cs">
+    <Compile Include="Views\User\Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddProduct.aspx.cs">
+    <Compile Include="Views\User\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\AddProduct.aspx.designer.cs">
+    <Compile Include="Views\User\AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\AdminChart.aspx.cs">
+    <Compile Include="Views\Admin\AdminChart.aspx.cs">
       <DependentUpon>AdminChart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\AdminChart.aspx.designer.cs">
+    <Compile Include="Views\Admin\AdminChart.aspx.designer.cs">
       <DependentUpon>AdminChart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\AdminDashboard.aspx.cs">
+    <Compile Include="Views\Admin\AdminDashboard.aspx.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\AdminDashboard.aspx.designer.cs">
+    <Compile Include="Views\Admin\AdminDashboard.aspx.designer.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Cart.aspx.cs">
+    <Compile Include="Views\User\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Cart.aspx.designer.cs">
+    <Compile Include="Views\User\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\AllProduct.aspx.cs">
@@ -532,18 +540,18 @@
     <Compile Include="Views\AllProduct.aspx.designer.cs">
       <DependentUpon>AllProduct.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\ChangePassword.aspx.cs">
+    <Compile Include="Views\User\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\ChangePassword.aspx.designer.cs">
+    <Compile Include="Views\User\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Checkout.aspx.cs">
+    <Compile Include="Views\User\Checkout.aspx.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Checkout.aspx.designer.cs">
+    <Compile Include="Views\User\Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Default.aspx.cs">
@@ -553,11 +561,11 @@
     <Compile Include="Views\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditProduct.aspx.cs">
+    <Compile Include="Views\User\EditProduct.aspx.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\EditProduct.aspx.designer.cs">
+    <Compile Include="Views\User\EditProduct.aspx.designer.cs">
       <DependentUpon>EditProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\ForgotPassword.aspx.cs">
@@ -581,11 +589,11 @@
     <Compile Include="Views\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\MyPurchases.aspx.cs">
+    <Compile Include="Views\User\MyPurchases.aspx.cs">
       <DependentUpon>MyPurchases.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\MyPurchases.aspx.designer.cs">
+    <Compile Include="Views\User\MyPurchases.aspx.designer.cs">
       <DependentUpon>MyPurchases.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Product.aspx.cs">
@@ -630,18 +638,18 @@
     <Compile Include="Views\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Views\Payment.aspx.cs">
+    <Compile Include="Views\User\Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Payment.aspx.designer.cs">
+    <Compile Include="Views\User\Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Wishlist.aspx.cs">
+    <Compile Include="Views\User\Wishlist.aspx.cs">
       <DependentUpon>Wishlist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Wishlist.aspx.designer.cs">
+    <Compile Include="Views\User\Wishlist.aspx.designer.cs">
       <DependentUpon>Wishlist.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
