@@ -28,7 +28,7 @@
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="Email">Email</asp:Label>
                                 <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Email" CssClass="text-danger" ErrorMessage="The Email field is required." />
+                                <asp:RequiredFieldValidator ID="EmailValidator" runat="server" ControlToValidate="Email" CssClass="text-danger" ErrorMessage="The Email field is required." />
                             </div>
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
@@ -43,12 +43,12 @@
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="FirstName">First Name</asp:Label>
                                 <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName" CssClass="text-danger" ErrorMessage="The First Name field is required." />
+                                <asp:RequiredFieldValidator runat="server" ID="FirstNameValidator" ControlToValidate="FirstName" CssClass="text-danger" ErrorMessage="The First Name field is required." />
                             </div>
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="LastName">LastName</asp:Label>
                                 <asp:TextBox runat="server" ID="LastName" CssClass="form-control" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName" CssClass="text-danger" ErrorMessage="The Last Name field is required." />
+                                <asp:RequiredFieldValidator runat="server" ID="LastNameValidator" ControlToValidate="LastName" CssClass="text-danger" ErrorMessage="The Last Name field is required." />
                             </div>
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="Phone">Phone Number</asp:Label>
@@ -59,12 +59,12 @@
                             <div class="form-group last mb-4">
                                 <asp:Label runat="server" AssociatedControlID="Address">Address</asp:Label>
                                 <asp:TextBox runat="server" ID="Address" CssClass="form-control" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Address" CssClass="text-danger" ErrorMessage="The Address field is required." />
+                                <asp:RequiredFieldValidator ID="AddressValidator" runat="server" ControlToValidate="Address" CssClass="text-danger" ErrorMessage="The Address field is required." />
                             </div>
 
-                            <asp:Label runat="server" ID="Result"></asp:Label>
+                            <asp:Label runat="server" ID="Result" CssClass="text-danger"></asp:Label>
 
-                            <asp:Button runat="server" OnClick="RegisterUser" Text="Register" CssClass="btn text-white btn-block btn-primary" />
+                            <asp:Button runat="server" OnClick="RegisterUser" Text="Register" CssClass="btn text-white btn-block btn-primary " />
 
                             <div class="not-member">
                                 <span>Already a member? </span>

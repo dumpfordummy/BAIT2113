@@ -51,7 +51,7 @@ namespace _888MarketplaceApp.Views
 
             User userCreated = userAccess.CreateUser(user);
 
-            if (userCreated != null)
+            if (IsInputValid() && userCreated != null)
             {
                 RegisterSuccess();
             }
@@ -59,6 +59,11 @@ namespace _888MarketplaceApp.Views
             {
                 RegisterFailed($"An account for {user.Username} already existed!");
             }
+        }
+
+        private bool IsInputValid()
+        {
+            return (usernameValidator.IsValid && passwordValidator.IsValid && confirmPasswordValidator.IsValid && phoneValidator.IsValid && AddressValidator.IsValid && EmailValidator.IsValid && FirstNameValidator.IsValid && LastNameValidator.IsValid);
         }
 
         protected void UsernameValidator(object sender, ServerValidateEventArgs e)
@@ -69,9 +74,9 @@ namespace _888MarketplaceApp.Views
                 usernameValidator.ErrorMessage = "The Username field is required";
                 e.IsValid = false;
             }
-            else if (inputValue.Length < 6 || inputValue.Length > 20)
+            else if (inputValue.Length < 4 || inputValue.Length > 20)
             {
-                usernameValidator.ErrorMessage = "Length must be between 6 and 20 characters";
+                usernameValidator.ErrorMessage = "Length must be between 4 and 20 characters";
                 e.IsValid = false;
             }
             else {

@@ -17,13 +17,13 @@
                                     </a>
                                     <div class="collapse" id="auth">
                                         <ul class="nav flex-column sub-menu">
-                                            <li class="nav-item acc-nav-item-active"><a class="nav-link acc-nav-link-active" href="/Account">Profile</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="/ChangePassword">Change Password</a></li>
+                                            <li class="nav-item acc-nav-item-active"><a class="nav-link acc-nav-link-active" href="/Views/User/Account">Profile</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="/Views/User/ChangePassword">Change Password</a></li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Mypurchases">
+                                    <a class="nav-link" href="/Views/User/Mypurchases">
                                         <i class="ti-view-list-alt menu-icon"></i>
                                         <span class="menu-title">My Purchase</span>
                                     </a>
@@ -42,11 +42,12 @@
                                     </div>
                                     <div class="card-content">
                                         <table class="card-table" style="width: 100%;">
+                                            <asp:HiddenField ID="hiddenId" runat="server" />
                                             <tr>
                                                 <td colspan="2" class="centered">
-                                                    <asp:Image CssClass="profileImg" runat="server" ImageUrl="~/Content/Images/Admin/faces/face1.jpg" AlternateText="Example Image" />
+                                                    <asp:Image ID="ProfileAvatar" CssClass="profileImg" runat="server" ImageUrl="~/Content/Images/Admin/faces/face1.jpg" AlternateText="Example Image" />
                                                     <br />
-                                                    <asp:FileUpload ID="FileUploadControl" runat="server" accept="image/*" />
+                                                    <asp:FileUpload ID="ProfileAvatarUpload" runat="server" accept="image/*" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -64,7 +65,7 @@
                                                 </td>
                                                 <td>
                                                     <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Email" CssClass="text-danger" ErrorMessage="The Email field is required." />
+                                                    <asp:RequiredFieldValidator ID="EmailValidator" runat="server" ControlToValidate="Email" CssClass="text-danger" ErrorMessage="The Email field is required." />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -73,7 +74,7 @@
                                                 </td>
                                                 <td>
                                                     <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" />
-                                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName" CssClass="text-danger" ErrorMessage="The First Name field is required." />
+                                                    <asp:RequiredFieldValidator runat="server" ID="FirstNameValidator" ControlToValidate="FirstName" CssClass="text-danger" ErrorMessage="The First Name field is required." />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -82,7 +83,7 @@
                                                 </td>
                                                 <td>
                                                     <asp:TextBox runat="server" ID="LastName" CssClass="form-control" />
-                                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName" CssClass="text-danger" ErrorMessage="The Last Name field is required." />
+                                                    <asp:RequiredFieldValidator runat="server" ID="LastNameValidator" ControlToValidate="LastName" CssClass="text-danger" ErrorMessage="The Last Name field is required." />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -100,11 +101,17 @@
                                                 </td>
                                                 <td>
                                                     <asp:TextBox runat="server" ID="Address" CssClass="form-control" />
-                                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Address" CssClass="text-danger" ErrorMessage="The Address field is required." />
+                                                    <asp:RequiredFieldValidator runat="server" ID="AddressValidator" ControlToValidate="Address" CssClass="text-danger" ErrorMessage="The Address field is required." />
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="2" class="centered">
+                                                    <asp:Label runat="server" ID="Result" CssClass="text-danger"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td class="centered">
                                                     <asp:Button runat="server" OnClick="SubmitEditAccount" Text="Confirm" CssClass="btn text-white btn-block btn-primary" />
                                                 </td>
                                             </tr>

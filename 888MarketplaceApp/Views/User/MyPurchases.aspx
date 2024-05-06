@@ -17,13 +17,13 @@
                                     </a>
                                     <div class="collapse" id="auth">
                                         <ul class="nav flex-column sub-menu">
-                                            <li class="nav-item"><a class="nav-link" href="/Account">Profile</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="/ChangePassword">Change Password</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="/Views/User/Account">Profile</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="/Views/User/ChangePassword">Change Password</a></li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link acc-nav-item-active acc-nav-link-active" href="/Mypurchases">
+                                    <a class="nav-link acc-nav-item-active acc-nav-link-active" href="/Views/User/Mypurchases">
                                         <i class="ti-view-list-alt menu-icon acc-nav-link-active"></i>
                                         <span class="menu-title">My Purchase</span>
                                     </a>

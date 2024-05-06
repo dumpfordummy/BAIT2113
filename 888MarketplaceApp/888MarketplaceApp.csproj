@@ -369,6 +369,7 @@
     <Content Include="Scripts\mixitup.min.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\Error.aspx" />
     <Content Include="Views\Unauthorized.aspx" />
     <Content Include="Views\User\Account.aspx" />
     <Content Include="Views\User\AddProduct.aspx" />
@@ -490,6 +491,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Unauthorized.aspx.cs">
       <DependentUpon>Unauthorized.aspx</DependentUpon>
@@ -688,7 +696,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\Images\UserImage\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

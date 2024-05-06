@@ -17,13 +17,13 @@
                                     </a>
                                     <div class="collapse" id="auth">
                                         <ul class="nav flex-column sub-menu">
-                                            <li class="nav-item"><a class="nav-link" href="/Account">Profile</a></li>
-                                            <li class="nav-item acc-nav-item-active"><a class="nav-link acc-nav-link-active" href="/ChangePassword">Change Password</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="/Views/User/Account">Profile</a></li>
+                                            <li class="nav-item acc-nav-item-active"><a class="nav-link acc-nav-link-active" href="/Views/User/ChangePassword">Change Password</a></li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Mypurchases">
+                                    <a class="nav-link" href="/Views/User/Mypurchases">
                                         <i class="ti-view-list-alt menu-icon"></i>
                                         <span class="menu-title">My Purchase</span>
                                     </a>
@@ -48,7 +48,7 @@
                                                 </td>
                                                 <td>
                                                     <asp:TextBox runat="server" ID="OldPassword" CssClass="form-control" TextMode="Password" />
-                                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="OldPassword" CssClass="text-danger" ErrorMessage="The current password field is required." />
+                                                    <asp:RequiredFieldValidator ID="oldPasswordValidator" runat="server" ControlToValidate="OldPassword" CssClass="text-danger" ErrorMessage="The current password field is required." />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -57,7 +57,7 @@
                                                 </td>
                                                 <td>
                                                     <asp:TextBox runat="server" ID="NewPassword" CssClass="form-control" TextMode="Password" />
-                                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="NewPassword" CssClass="text-danger" ErrorMessage="The new password field is required." />
+                                                    <asp:CustomValidator ID="passwordValidator" runat="server" ControlToValidate="NewPassword" CssClass="text-danger" ErrorMessage="" OnServerValidate="PasswordValidator" ValidateEmptyText="true"></asp:CustomValidator>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -66,7 +66,14 @@
                                                 </td>
                                                 <td>
                                                     <asp:TextBox runat="server" ID="ConfirmPassword" CssClass="form-control" TextMode="Password" />
-                                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword" CssClass="text-danger" ErrorMessage="The Confirm New Password field is required." />
+                                                    <asp:CustomValidator ID="confirmPasswordValidator" runat="server" ControlToValidate="ConfirmPassword" CssClass="text-danger" ErrorMessage="" OnServerValidate="ConfirmPasswordValidator" ValidateEmptyText="true"></asp:CustomValidator>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;
+                                                </td>
+                                                <td>
+                                                    <asp:Label runat="server" ID="Result" CssClass="text-danger"></asp:Label>
                                                 </td>
                                             </tr>
                                             <tr>

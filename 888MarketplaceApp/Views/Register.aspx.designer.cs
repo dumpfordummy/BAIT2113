@@ -60,6 +60,15 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
+        /// EmailValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator EmailValidator;
+
+        /// <summary>
         /// Password control.
         /// </summary>
         /// <remarks>
@@ -105,6 +114,15 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox FirstName;
 
         /// <summary>
+        /// FirstNameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator FirstNameValidator;
+
+        /// <summary>
         /// LastName control.
         /// </summary>
         /// <remarks>
@@ -112,6 +130,15 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox LastName;
+
+        /// <summary>
+        /// LastNameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator LastNameValidator;
 
         /// <summary>
         /// Phone control.
@@ -139,6 +166,15 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Address;
+
+        /// <summary>
+        /// AddressValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator AddressValidator;
 
         /// <summary>
         /// Result control.

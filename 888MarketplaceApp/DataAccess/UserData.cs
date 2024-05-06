@@ -41,7 +41,11 @@ namespace _888MarketplaceApp.DataAccess
 
         public User GetUserByUsername(string username)
         {
-            return  _users.FirstOrDefault(u => u.Username == username);
+            return _users.FirstOrDefault(u => u.Username == username);
+        }
+        public bool IsUsernameExist(string username)
+        {
+            return _users.Any(u => u.Username == username);
         }
 
         /// <summary>
@@ -83,6 +87,28 @@ namespace _888MarketplaceApp.DataAccess
             }
 
             return result;
+        }
+
+        public void UpdateUser(User user)
+        {
+            var target = _users.Find(user.Id);
+
+            if (target != null)
+            {
+                target.Username = user.Username;
+                target.Email = user.Email;
+                target.PasswordHash = user.PasswordHash;
+                target.FirstName = user.FirstName;
+                target.LastName = user.LastName;
+                target.Phone = user.Phone;
+                target.Address = user.Address;
+
+                _db.SaveChanges();
+            } else
+            {
+                
+                throw new Exception("Invalid User");
+            }
         }
     }
 }
