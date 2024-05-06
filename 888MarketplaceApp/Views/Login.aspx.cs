@@ -31,20 +31,28 @@ namespace _888MarketplaceApp.Views
             UserData userAccess = new UserData();
 
             User user = userAccess.GetUserByUsername(username);
-            if(user != null)
-            {
-                bool isPasswordCorrect = PasswordHelper.VerifyHashedPassword(user.PasswordHash, password);
-                if(isPasswordCorrect)
-                {
-                    LoginSuccess(user);
-                } else
-                {
-                    InvalidLogin();
-                }
-            } else
+
+            if (user == null)
             {
                 InvalidLogin();
+                return;
             }
+
+            bool isPasswordCorrect = PasswordHelper.VerifyHashedPassword(user.PasswordHash, password);
+
+            if (!isPasswordCorrect)
+            {
+                InvalidLogin();
+                return;
+            }
+
+            if (!user.AccountVerified)
+            {
+                AccountNotActivated();
+                return;
+            }
+
+            LoginSuccess(user);
         }
 
         private void LoginSuccess(User user)
@@ -53,6 +61,11 @@ namespace _888MarketplaceApp.Views
             string authenticationCookie = sessionManager.OpenSession(user);
             Response.Cookies.Add(new HttpCookie(authenticationCookie));
             Response.Redirect("/");
+        }
+
+        private void AccountNotActivated()
+        {
+            Result.Text = "Please activate your account before login";
         }
 
         private void InvalidLogin()

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="_888MarketplaceApp.Views.Register" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="_888MarketplaceApp.Views.Register" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="bodyContent">
     <div class="content">

@@ -1,6 +1,7 @@
 ﻿using _888MarketplaceApp.DataAccess;
 using _888MarketplaceApp.Helper;
 using _888MarketplaceApp.Models;
+using _888MarketplaceApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure.Design;
@@ -44,7 +45,8 @@ namespace _888MarketplaceApp.Views
                 Phone = phone,
                 Address = address,
                 Userrole = Userrole.Member,
-                DateCreated = DateTime.Now
+                DateCreated = DateTime.Now,
+                AccountVerified = false
             };
 
             UserData userAccess = new UserData();
@@ -53,6 +55,14 @@ namespace _888MarketplaceApp.Views
 
             if (IsInputValid() && userCreated != null)
             {
+                string token = VerificationTokenManager.GenerateToken();
+                string url = $"{Request.Url.GetLeftPart(UriPartial.Authority)}/Views/RegisterConfirmation?id={user.Id}&token={token}";
+                user.VerificationToken = token;
+                user.VerificationExpire = DateTime.Now.AddMinutes(VerificationTokenManager.VerificationExpireMinute);
+                userAccess.UpdateUser(user);
+
+                RegisterAsyncTask(new PageAsyncTask(() => EmailSender.SendForgotVerificationAsync(user, url)));
+
                 RegisterSuccess();
             }
             else
@@ -154,7 +164,7 @@ namespace _888MarketplaceApp.Views
 
         public void RegisterSuccess()
         {
-            Response.Redirect("/login");
+            Result.Text = "A verification email was sent. Please check your email.";
         }
 
         public void RegisterFailed(string failMsg)

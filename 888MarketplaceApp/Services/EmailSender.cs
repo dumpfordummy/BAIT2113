@@ -24,7 +24,7 @@ namespace _888MarketplaceApp.Services
             request.AddParameter("from", "888 Marketplace <hoocy-wm21@student.tarc.edu.my>");
             request.AddParameter("subject", "Forgot password");
             request.AddParameter("to", $"{{\"to\":\"{user.Email}\",\"placeholders\":{{\"fullName\":\"{user.FirstName + user.LastName}\"}}}}");
-            request.AddParameter("text", "Hi {{fullName}}, your 888 Marketplace account password reset link:" + url + "It will expire in 5 minutes.");
+            request.AddParameter("text", "Hi {{fullName}}, your 888 Marketplace account password reset link:" + url + " . It will expire in " + VerificationTokenManager.VerificationExpireMinute + " minutes.");
             RestResponse response = await client.ExecuteAsync(request);
         }
     }

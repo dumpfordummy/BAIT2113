@@ -43,6 +43,12 @@ namespace _888MarketplaceApp.DataAccess
         {
             return _users.FirstOrDefault(u => u.Username == username);
         }
+
+        public User GetUserByEmail(string email)
+        {
+            return _users.FirstOrDefault(u => u.Email == email);
+        }
+
         public bool IsUsernameExist(string username)
         {
             return _users.Any(u => u.Username == username);
@@ -102,7 +108,11 @@ namespace _888MarketplaceApp.DataAccess
                 target.LastName = user.LastName;
                 target.Phone = user.Phone;
                 target.Address = user.Address;
-
+                if(user.VerificationToken != null)
+                {
+                    target.VerificationToken = user.VerificationToken;
+                    target.VerificationExpire = user.VerificationExpire;
+                }
                 _db.SaveChanges();
             } else
             {

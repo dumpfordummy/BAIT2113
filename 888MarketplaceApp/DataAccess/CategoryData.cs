@@ -32,7 +32,7 @@ namespace _888MarketplaceApp.DataAccess
         public Category CreateCategory(Category category)
         {
             var result = _categories.Add(category);
-            _db.SaveChanges();
+            _db.SaveChanges();  
             return result;
         }
 

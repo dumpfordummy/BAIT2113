@@ -32,7 +32,7 @@ namespace _888MarketplaceApp
 
             if (url.StartsWith("/Admin/"))
             {
-                if (!isLoggedIn || !user.IsUserAdmin())
+                if (!isLoggedIn || !user.AccountVerified || !user.IsUserAdmin())
                 {
                     HttpContext.Current.Response.Redirect("/Views/Unauthorized.aspx");
                     return;
@@ -40,7 +40,7 @@ namespace _888MarketplaceApp
             }
             else if (url.StartsWith("/User/"))
             {
-                if (!isLoggedIn || (!user.IsUserAdmin() && !user.IsUserMember()))
+                if (!isLoggedIn || !user.AccountVerified || (!user.IsUserAdmin() && !user.IsUserMember()))
                 {
                     HttpContext.Current.Response.Redirect("/Views/Unauthorized.aspx");
                     return;

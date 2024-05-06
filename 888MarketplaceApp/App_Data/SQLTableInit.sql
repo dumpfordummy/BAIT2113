@@ -187,5 +187,7 @@ GO
 
 
 INSERT INTO [dbo].[Userrole] VALUES ('Member');
-INSERT INTO [dbo].[Userrole] VALUES ('Staff');
 INSERT INTO [dbo].[Userrole] VALUES ('Admin');
+
+DBCC CHECKIDENT ('TestTable', RESEED, 0)
+GO

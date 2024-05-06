@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="_888MarketplaceApp.Views.ForgotPassword" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="_888MarketplaceApp.Views.ForgotPassword" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="bodyContent">
     <div class="content">
@@ -19,10 +19,11 @@
                         <div class="form-group first">
                             <asp:Label runat="server" AssociatedControlID="Email">Email</asp:Label>
                             <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                            <asp:RequiredFieldValidator runat="server" ID="EmailValidator" ControlToValidate="Email"
                                 CssClass="text-danger" ErrorMessage="The Email field is required." />
                         </div>
-
+                        <asp:Label runat="server" ID="Result"></asp:Label>
+                        <br />
                         <asp:Button runat="server" OnClick="SendVerification" Text="Send Verification" CssClass="btn text-white btn-block btn-primary" />
                         <div class="alt-url">
                             <asp:HyperLink ID="back" runat="server" NavigateUrl="/login">Back To Login</asp:HyperLink>

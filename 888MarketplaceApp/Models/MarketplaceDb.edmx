@@ -124,6 +124,7 @@
           <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="varchar(max)" Nullable="false" />
+          <Property Name="AccountVerified" Type="bit" Nullable="false" />
           <Property Name="VerificationToken" Type="varchar" MaxLength="50" />
           <Property Name="VerificationExpire" Type="datetime2" Precision="7" />
         </EntityType>
@@ -730,6 +731,7 @@
           <NavigationProperty Name="Userrole1" Relationship="DBModel.FK_User_Userrole" FromRole="User" ToRole="Userrole" />
           <NavigationProperty Name="Carts" Relationship="DBModel.FK_Cart_BuyerId" FromRole="User" ToRole="Cart" />
           <NavigationProperty Name="Wishlists" Relationship="DBModel.FK_Wishlist_BuyerId" FromRole="User" ToRole="Wishlist" />
+          <Property Name="AccountVerified" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Order_BuyerId1">
           <End Type="DBModel.User" Role="User" Multiplicity="1" />
@@ -1064,6 +1066,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="DBModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="AccountVerified" ColumnName="AccountVerified" />
                 <ScalarProperty Name="Userrole" ColumnName="Userrole" />
                 <ScalarProperty Name="VerificationExpire" ColumnName="VerificationExpire" />
                 <ScalarProperty Name="VerificationToken" ColumnName="VerificationToken" />

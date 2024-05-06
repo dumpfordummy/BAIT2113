@@ -11,13 +11,25 @@
     <form id="form1" runat="server">
         <div class="container justify-content-center">
             <div class="content">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="#38d39f">
-                    <circle cx="12" cy="12" r="11" stroke="#38d39f" stroke-width="2" fill="none" />
-                    <path fill="#38d39f" d="M9 16.17L4.83 12l-1.42 1.41L9 19 20 7l-1.41-1.41z" />
-                </svg>
-                <h2>Account Activation Successful</h2>
-                <p>Your account is activated successfully, click the button below to go back to the home page.</p>
-                <asp:Button runat="server" OnClick="RedirectHome" Text="Back To Home" CssClass="btn text-white btn-primary-green" />
+                <asp:PlaceHolder runat="server" ID="ValidPlaceholder" Visible="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="#38d39f">
+                        <circle cx="12" cy="12" r="11" stroke="#38d39f" stroke-width="2" fill="none" />
+                        <path fill="#38d39f" d="M9 16.17L4.83 12l-1.42 1.41L9 19 20 7l-1.41-1.41z" />
+                    </svg>
+                    <h2>Account Activation Successful</h2>
+                    <p>Your account is activated successfully, click the button below to go back to the home page.</p>
+                    <asp:Button runat="server" OnClick="RedirectHome" Text="Back To Home" CssClass="btn text-white btn-primary-green" />
+                </asp:PlaceHolder>
+
+                <asp:PlaceHolder runat="server" ID="InvalidPlaceholder" Visible="false">
+                        <p class="text-danger">
+                            <asp:Label runat="server" ID="InvalidLabel" CssClass="text-danger">Invalid id or token.</asp:Label>
+                            <br />
+                            <asp:HyperLink NavigateUrl="/" runat="server" Text="Back Home" />
+                        </p>
+                </asp:PlaceHolder>
+
+
             </div>
         </div>
     </form>

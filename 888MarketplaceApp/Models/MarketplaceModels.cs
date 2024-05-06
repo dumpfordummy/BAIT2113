@@ -17,12 +17,6 @@ namespace _888MarketplaceApp.Models
         {
             return Userrole1.Id == Models.Userrole.Member;
         }
-
-        public bool IsUserStaff()
-        {
-            return Userrole1.Id == Models.Userrole.Staff;
-        }
-
         public bool IsUserAdmin()
         {
             return Userrole1.Id == Models.Userrole.Admin;
@@ -32,8 +26,7 @@ namespace _888MarketplaceApp.Models
     public partial class Userrole
     {
         public static int Member = 1;
-        public static int Staff = 2;
-        public static int Admin = 3;
+        public static int Admin = 2;
     }
 
     public partial class Category
