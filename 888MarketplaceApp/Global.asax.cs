@@ -40,7 +40,7 @@ namespace _888MarketplaceApp
             }
             else if (url.StartsWith("/User/"))
             {
-                if (!isLoggedIn || !user.AccountVerified || (!user.IsUserAdmin() && !user.IsUserMember()))
+                if (!isLoggedIn || !user.AccountVerified || (!user.IsUserAdmin() && !user.IsUserCustomer()))
                 {
                     HttpContext.Current.Response.Redirect("/Views/Unauthorized.aspx");
                     return;

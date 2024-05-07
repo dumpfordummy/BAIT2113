@@ -395,9 +395,23 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\CartProductData.cs" />
     <Compile Include="DataAccess\CategoryData.cs" />
-    <Compile Include="DataAccess\ICategoryData.cs" />
+    <Compile Include="DataAccess\ProductOrderData.cs" />
     <Compile Include="DataAccess\UserData.cs" />
+    <Compile Include="DataAccess\VoucherData.cs" />
+    <Compile Include="DataAccess\PaymentMethodData.cs" />
+    <Compile Include="DataAccess\ShippingMethodData.cs" />
+    <Compile Include="DataAccess\ReviewData.cs" />
+    <Compile Include="DataAccess\DeliveryData.cs" />
+    <Compile Include="DataAccess\WishlistData.cs" />
+    <Compile Include="DataAccess\CartData.cs" />
+    <Compile Include="DataAccess\ProductData.cs" />
+    <Compile Include="DataAccess\PaymentData.cs" />
+    <Compile Include="DataAccess\OrderData.cs" />
+    <Compile Include="DataAccess\UserroleData.cs" />
+    <Compile Include="DataAccess\WishlistProductData.cs" />
+    <Compile Include="Helper\DataSeeder.cs" />
     <Compile Include="Helper\PasswordHelper.cs" />
     <Compile Include="Helper\SessionManager.cs" />
     <Compile Include="Models\Cart.cs">

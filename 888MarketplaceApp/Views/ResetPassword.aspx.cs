@@ -23,7 +23,7 @@ namespace _888MarketplaceApp.Views
                     UserData userAccess = new UserData();
                     User user = userAccess.GetUser(id);
 
-                    if (!string.IsNullOrEmpty(user.VerificationToken) && user.VerificationExpire != null && user.VerificationToken.Equals(token) && user.VerificationExpire > DateTime.Now)
+                    if (!string.IsNullOrEmpty(user.VerificationToken) && user.VerificationExpire != null && user.VerificationToken.Equals(token) && user.VerificationExpire > DateTime.Now && user.AccountVerified)
                     {
                         ValidPlaceholder.Visible = true;
                     } else

@@ -23,18 +23,28 @@ namespace _888MarketplaceApp.Views
             UserData userAccess = new UserData();
             User user = userAccess.GetUserByEmail(Email.Text);
 
-            if(user != null)
+            if (user == null)
             {
-                string token = VerificationTokenManager.GenerateToken();
-                string url = $"/Views/ResetPassword?id={user.Id}&token={token}";
-                user.VerificationToken = token;
-                user.VerificationExpire = DateTime.Now.AddMinutes(VerificationTokenManager.VerificationExpireMinute);
-                userAccess.UpdateUser(user);
-
-                RegisterAsyncTask(new PageAsyncTask(() => EmailSender.SendForgotVerificationAsync(user, url)));
+                Result.Text = "Invalid account email";
+                return;
             }
 
+            if(!user.AccountVerified)
+            {
+                Result.Text = "Account not activated. Please activate your account";
+                return;
+            }
+
+            string token = VerificationTokenManager.GenerateToken();
+            string url = $"/Views/ResetPassword?id={user.Id}&token={token}";
+            user.VerificationToken = token;
+            user.VerificationExpire = DateTime.Now.AddMinutes(VerificationTokenManager.VerificationExpireMinute);
+            userAccess.UpdateUser(user);
+
+            RegisterAsyncTask(new PageAsyncTask(() => EmailSender.SendForgotVerificationAsync(user, url)));
             Result.Text = "A verification link has been sent, please check your email";
+
+
         }
     }
 }

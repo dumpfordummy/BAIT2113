@@ -67,14 +67,14 @@ namespace _888MarketplaceApp.DataAccess
                 return null;
             }
 
-            User last = _users.OrderByDescending(u => u.Id).FirstOrDefault();
-            if (last != null)
-            {
-                user.Id = last.Id + 1;
-            } else
-            {
-                user.Id = 1;
-            }
+            //User last = _users.OrderByDescending(u => u.Id).FirstOrDefault();
+            //if (last != null)
+            //{
+            //    user.Id = last.Id + 1;
+            //} else
+            //{
+            //    user.Id = 1;
+            //}
 
             var result = _users.Add(user);
             try

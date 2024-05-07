@@ -35,9 +35,8 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Address" Type="varchar(max)" Nullable="false" />
-          <Property Name="Status" Type="tinyint" Nullable="false" />
           <Property Name="Date" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="ShippingMethodId" Type="tinyint" Nullable="false" />
+          <Property Name="ShippingMethodId" Type="int" Nullable="false" />
           <Property Name="EstimatedDeliveryDate" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
@@ -47,6 +46,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Date" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="Amount" Type="float" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Note" Type="varchar(max)" Nullable="false" />
           <Property Name="BuyerId" Type="int" Nullable="false" />
           <Property Name="PaymentId" Type="int" Nullable="false" />
@@ -80,7 +80,6 @@
           <Property Name="Description" Type="varchar(max)" Nullable="false" />
           <Property Name="Price" Type="float" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
-          <Property Name="ProductImage" Type="varbinary(max)" Nullable="false" />
           <Property Name="SellerId" Type="int" Nullable="false" />
           <Property Name="CategoryId" Type="int" Nullable="false" />
         </EntityType>
@@ -99,14 +98,14 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Rating" Type="tinyint" Nullable="false" />
+          <Property Name="Rating" Type="int" Nullable="false" />
           <Property Name="Content" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="ShippingMethod">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
@@ -486,9 +485,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Status" Type="Byte" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="ShippingMethodId" Type="Byte" Nullable="false" />
+          <Property Name="ShippingMethodId" Type="Int32" Nullable="false" />
           <Property Name="EstimatedDeliveryDate" Type="DateTime" Nullable="false" Precision="7" />
           <NavigationProperty Name="ShippingMethod" Relationship="Self.FK_Delivery_ShippingMethodId" FromRole="Delivery" ToRole="ShippingMethod" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Order_DeliveryId" FromRole="Delivery" ToRole="Order" />
@@ -510,6 +508,7 @@
           <NavigationProperty Name="Product_Order" Relationship="DBModel.FK_Product_Order_OrderId" FromRole="Order" ToRole="Product_Order" />
           <Property Name="VoucherId" Type="Int32" />
           <NavigationProperty Name="Voucher" Relationship="DBModel.FK_Order_VoucherId" FromRole="Order" ToRole="Voucher" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Payment">
           <Key>
@@ -541,7 +540,6 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Price" Type="Double" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="ProductImage" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="SellerId" Type="Int32" Nullable="false" />
           <Property Name="CategoryId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="User" Relationship="DBModel.FK_Product_SellerId" FromRole="Product" ToRole="User" />
@@ -567,7 +565,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Deliveries" Relationship="Self.FK_Delivery_ShippingMethodId" FromRole="ShippingMethod" ToRole="Delivery" />
@@ -818,7 +816,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Rating" Type="Byte" Nullable="false" />
+          <Property Name="Rating" Type="Int32" Nullable="false" />
           <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Product_Order" Relationship="DBModel.FK_ReviewId" FromRole="Review" ToRole="Product_Order" />
         </EntityType>
@@ -989,7 +987,6 @@
               <MappingFragment StoreEntitySet="Delivery">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="ShippingMethodId" ColumnName="ShippingMethodId" />
                 <ScalarProperty Name="EstimatedDeliveryDate" ColumnName="EstimatedDeliveryDate" />
@@ -999,6 +996,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="DBModel.Order">
               <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="VoucherId" ColumnName="VoucherId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
@@ -1038,7 +1036,6 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
                 <ScalarProperty Name="SellerId" ColumnName="SellerId" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
               </MappingFragment>

@@ -22,9 +22,8 @@ namespace _888MarketplaceApp.Models
     
         public int Id { get; set; }
         public string Address { get; set; }
-        public byte Status { get; set; }
         public System.DateTime Date { get; set; }
-        public byte ShippingMethodId { get; set; }
+        public int ShippingMethodId { get; set; }
         public System.DateTime EstimatedDeliveryDate { get; set; }
     
         public virtual ShippingMethod ShippingMethod { get; set; }

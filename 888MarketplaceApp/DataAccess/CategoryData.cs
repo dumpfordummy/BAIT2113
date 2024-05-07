@@ -17,15 +17,21 @@ namespace _888MarketplaceApp.DataAccess
             _categories = _db.Categories;
         }
 
-        public async Task<List<Category>> GetCategoriesAsync()
+        public List<Category> GetCategories()
         {
-            var result = await _categories.ToListAsync();
+            var result = _categories.ToList();
             return result;
         }
 
-        public async Task<Category> GetCategoryAsync(string name)
+        public Category GetCategory(int id)
         {
-            var result = await _categories.FirstOrDefaultAsync(c => c.Name == name);
+            var result = _categories.Find(id);
+            return result;
+        }
+
+        public Category GetCategoryByName(string name)
+        {
+            var result = _categories.FirstOrDefault(c => c.Name == name);
             return result;
         }
 

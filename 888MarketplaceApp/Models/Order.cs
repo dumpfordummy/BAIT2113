@@ -28,6 +28,7 @@ namespace _888MarketplaceApp.Models
         public int PaymentId { get; set; }
         public int DeliveryId { get; set; }
         public Nullable<int> VoucherId { get; set; }
+        public string Status { get; set; }
     
         public virtual Delivery Delivery { get; set; }
         public virtual Payment Payment { get; set; }
