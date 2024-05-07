@@ -1,7 +1,9 @@
 ﻿using _888MarketplaceApp.DataAccess;
 using _888MarketplaceApp.Models;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,7 @@ namespace _888MarketplaceApp.Helper
     public class DataSeeder
     {
 
-        public void Seed()
+        public static void Seed()
         {
             try
             {
@@ -31,31 +33,48 @@ namespace _888MarketplaceApp.Helper
                 SeedDeliveries();
                 SeedOrders();
                 SeedProductOrders();
-            } catch (Exception ex)
-            {
-                Debug.WriteLine(ex.ToString());
-                //throw ex;
             }
-            
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        throw ex;
+                    }
+                }
+            }
         }
 
-        private void SeedUserroles()
+        private static void SeedUserroles()
         {
+            UserroleData dataAccess = new UserroleData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var userRoles = new List<Userrole>
             {
                 new Userrole { Role = "Admin" },
                 new Userrole { Role = "Customer" }
             };
 
-            UserroleData dataAccess = new UserroleData();
             foreach (var userrole in userRoles)
             {
                 dataAccess.CreateUserrole(userrole);
             }
         }
 
-        private void SeedUsers()
+        private static void SeedUsers()
         {
+            UserData dataAccess = new UserData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var users = new List<User>
             {
                 new User
@@ -105,45 +124,60 @@ namespace _888MarketplaceApp.Helper
                 }
             };
 
-            UserData dataAccess = new UserData();
             foreach (var user in users)
             {
                 dataAccess.CreateUser(user);
             }
         }
 
-        private void SeedShippingMethods()
+        private static void SeedShippingMethods()
         {
+            ShippingMethodData dataAccess = new ShippingMethodData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var shippingMethods = new List<ShippingMethod>
             {
                 new ShippingMethod { Name = "Standard", Description = "Standard shipping" },
                 new ShippingMethod { Name = "Express", Description = "Express shipping" }
             };
 
-            ShippingMethodData dataAccess = new ShippingMethodData();
             foreach (var shippingMethod in shippingMethods)
             {
                 dataAccess.CreateShippingMethod(shippingMethod);
             }
         }
 
-        private void SeedCategories()
+        private static void SeedCategories()
         {
+            CategoryData dataAccess = new CategoryData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var categories = new List<Category>
             {
                 new Category { Name = "Electronics", Description = "Electronics products" },
                 new Category { Name = "Clothing", Description = "Clothing products" }
             };
 
-            CategoryData dataAccess = new CategoryData();
             foreach (var category in categories)
             {
                 dataAccess.CreateCategory(category);
             }
         }
 
-        private void SeedProducts()
+        private static void SeedProducts()
         {
+            ProductData dataAccess = new ProductData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var products = new List<Product>
             {
                 new Product
@@ -168,15 +202,20 @@ namespace _888MarketplaceApp.Helper
                 }
             };
 
-            ProductData dataAccess = new ProductData();
             foreach (var product in products)
             {
                 dataAccess.CreateProduct(product);
             }
         }
 
-        private void SeedOrders()
+        private static void SeedOrders()
         {
+            OrderData dataAccess = new OrderData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var orders = new List<Order>
             {
                 new Order
@@ -192,91 +231,121 @@ namespace _888MarketplaceApp.Helper
                 }
             };
 
-            OrderData dataAccess = new OrderData();
             foreach (var order in orders)
             {
-                dataAccess.CreateOrder(order);  
+                dataAccess.CreateOrder(order);
             }
         }
 
-        private void SeedPaymentMethods()
+        private static void SeedPaymentMethods()
         {
+            PaymentMethodData dataAccess = new PaymentMethodData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var paymentMethods = new List<PaymentMethod>
             {
                 new PaymentMethod { Name = "Credit Card", Description = "Payment via credit card" },
                 new PaymentMethod { Name = "PayPal", Description = "Payment via PayPal" }
             };
 
-            PaymentMethodData dataAccess = new PaymentMethodData();
             foreach (var paymentMethod in paymentMethods)
             {
-                dataAccess.CreatePaymentMethod(paymentMethod);  
+                dataAccess.CreatePaymentMethod(paymentMethod);
             }
         }
 
-        private void SeedVouchers()
+        private static void SeedVouchers()
         {
+            VoucherData dataAccess = new VoucherData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var vouchers = new List<Voucher>
             {
                 new Voucher { Code = "VOUCHERRM10", Amount = 10.00 },
                 new Voucher { Code = "VOUCHERRM20", Amount = 20.00 }
             };
 
-            VoucherData dataAccess = new VoucherData();
-            foreach(var voucher in vouchers)
+            foreach (var voucher in vouchers)
             {
                 dataAccess.CreateVoucher(voucher);
             }
         }
 
-        private void SeedWishlists()
+        private static void SeedWishlists()
         {
+            WishlistData dataAccess = new WishlistData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var wishlists = new List<Wishlist>
             {
                 new Wishlist { BuyerId = 2 }
             };
 
-            WishlistData dataAccess = new WishlistData();
-            foreach(var wish in wishlists)
+            foreach (var wish in wishlists)
             {
                 dataAccess.CreateWishlist(wish);
             }
 
         }
 
-        private void SeedReviews()
+        private static void SeedReviews()
         {
+            ReviewData dataAccess = new ReviewData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var reviews = new List<Review>
             {
                 new Review { Rating = 5, Content = "Great product! Very satisfied" },
                 new Review { Rating = 4, Content = "Nice product but a bit unsatisfied!" }
             };
 
-            ReviewData dataAccess = new ReviewData();
             foreach (var review in reviews)
             {
-                dataAccess.CreateReview(review);    
+                dataAccess.CreateReview(review);
             }
         }
 
-        private void SeedCarts()
+        private static void SeedCarts()
         {
+            CartData dataAccess = new CartData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var carts = new List<Cart>
             {
                 new Cart { BuyerId = 2 }
             };
-            CartData dataAccess = new CartData();
-            foreach ( var cart in carts)
+            foreach (var cart in carts)
             {
                 dataAccess.CreateCart(cart);
             }
         }
 
-        private void SeedDeliveries()
+        private static void SeedDeliveries()
         {
+            DeliveryData dataAccess = new DeliveryData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var deliveries = new List<Delivery>
             {
-                new Delivery  
+                new Delivery
                 {
                     Address = "Sample address",
                     Date = DateTime.Now,
@@ -285,15 +354,20 @@ namespace _888MarketplaceApp.Helper
                 }
             };
 
-            DeliveryData dataAccess = new DeliveryData();
             foreach (var delivery in deliveries)
             {
                 dataAccess.CreateDelivery(delivery);
             }
         }
 
-        private void SeedPayment()
+        private static void SeedPayment()
         {
+            PaymentData dataAccess = new PaymentData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var payments = new List<Payment>
             {
                 new Payment
@@ -301,19 +375,24 @@ namespace _888MarketplaceApp.Helper
                     PaymentAmount = 99.99,
                     PaymentDate = DateTime.Now,
                     PaymentMethodId = 1,
-                    
+
                 }
             };
 
-            PaymentData dataAccess = new PaymentData();
             foreach (var payment in payments)
             {
                 dataAccess.CreatePayment(payment);
             }
         }
 
-        private void SeedProductOrders()
+        private static void SeedProductOrders()
         {
+            ProductOrderData dataAccess = new ProductOrderData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var productOrders = new List<Product_Order>
             {
                 new Product_Order
@@ -332,15 +411,20 @@ namespace _888MarketplaceApp.Helper
                 }
             };
 
-            ProductOrderData dataAccess = new ProductOrderData();
             foreach (var productOrder in productOrders)
             {
                 dataAccess.CreateProductOrder(productOrder);
             }
         }
 
-        private void SeedCartProducts()
+        private static void SeedCartProducts()
         {
+            CartProductData dataAccess = new CartProductData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var cartProducts = new List<Cart_Product>
             {
                 new Cart_Product
@@ -357,15 +441,20 @@ namespace _888MarketplaceApp.Helper
                 }
             };
 
-            CartProductData dataAccess = new CartProductData();
             foreach (var cartProduct in cartProducts)
             {
                 dataAccess.CreateCartProduct(cartProduct);
             }
         }
 
-        private void SeedWishlistProducts()
+        private static void SeedWishlistProducts()
         {
+            WishlistProductData dataAccess = new WishlistProductData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
             var wishlistProduct = new List<Wishlist_Product>
             {
                 new Wishlist_Product
@@ -382,7 +471,6 @@ namespace _888MarketplaceApp.Helper
                 }
             };
 
-            WishlistProductData dataAccess = new WishlistProductData();
             foreach (var wish in wishlistProduct)
             {
                 dataAccess.CreateWishlistProduct(wish);

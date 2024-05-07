@@ -44,7 +44,7 @@ namespace _888MarketplaceApp.Views
                 LastName = lastName,
                 Phone = phone,
                 Address = address,
-                Userrole = Userrole.Member,
+                Userrole = Userrole.Customer,
                 DateCreated = DateTime.Now,
                 AccountVerified = false
             };

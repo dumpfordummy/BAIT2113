@@ -11,10 +11,12 @@ namespace _888MarketplaceApp.DataAccess
     {
         private readonly MarketplaceDb _db;
         private readonly DbSet<ShippingMethod> _shippingMethods;
+        public bool hasExistingData;
 
         public ShippingMethodData()
         {
             _db = new MarketplaceDb();
+            hasExistingData = _db.ShippingMethods.Any();
             _shippingMethods = _db.ShippingMethods;
         }
 

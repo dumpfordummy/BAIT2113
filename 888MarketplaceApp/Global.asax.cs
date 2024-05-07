@@ -18,6 +18,7 @@ namespace _888MarketplaceApp
         protected void Application_Start(object sender, EventArgs e)
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            DataSeeder.Seed();
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

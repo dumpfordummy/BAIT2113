@@ -12,9 +12,11 @@ namespace _888MarketplaceApp.DataAccess
     {
         private readonly MarketplaceDb _db;
         private readonly DbSet<Order> _orders;
+        public bool hasExistingData;
         public OrderData()
         {
             _db = new MarketplaceDb();
+            hasExistingData = _db.Orders.Any();
             _orders = _db.Orders;
         }
 

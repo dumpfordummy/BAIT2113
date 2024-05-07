@@ -15,10 +15,12 @@ namespace _888MarketplaceApp.DataAccess
     {
         private readonly MarketplaceDb _db;
         private readonly DbSet<User> _users;
+        public bool hasExistingData;
 
         public UserData()
         {
             _db = new MarketplaceDb();
+            hasExistingData = _db.Users.Any();
             _users = _db.Users;
         }
 
@@ -77,20 +79,8 @@ namespace _888MarketplaceApp.DataAccess
             //}
 
             var result = _users.Add(user);
-            try
-            {
-                _db.SaveChanges();
-            } catch (DbEntityValidationException ex)
-            {
-                foreach (var entityValidationErrors in ex.EntityValidationErrors)
-                {
-                    foreach (var validationError in entityValidationErrors.ValidationErrors)
-                    {
-                        Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
-                        throw ex;
-                    }
-                }
-            }
+            _db.SaveChanges();
+
 
             return result;
         }

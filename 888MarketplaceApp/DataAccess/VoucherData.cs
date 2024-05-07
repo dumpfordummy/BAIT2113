@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -11,9 +13,12 @@ namespace _888MarketplaceApp.DataAccess
     {
         private readonly MarketplaceDb _db;
         private readonly DbSet<Voucher> _vouchers;
+        public bool hasExistingData;
+
         public VoucherData()
         {
             _db = new MarketplaceDb();
+            hasExistingData = _db.Vouchers.Any();
             _vouchers = _db.Vouchers;
         }
 
@@ -38,7 +43,21 @@ namespace _888MarketplaceApp.DataAccess
         public Voucher CreateVoucher(Voucher voucher)
         {
             var result = _vouchers.Add(voucher);
-            _db.SaveChanges();
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                        throw ex;
+                    }
+                }
+            }
             return result;
         }
 

@@ -11,10 +11,12 @@ namespace _888MarketplaceApp.DataAccess
     {
         private readonly MarketplaceDb _db;
         private readonly DbSet<Wishlist> _wishLists;
+        public bool hasExistingData;
 
         public WishlistData()
         {
             _db = new MarketplaceDb();
+            hasExistingData = _db.Wishlists.Any();
             _wishLists = _db.Wishlists;
         }
 

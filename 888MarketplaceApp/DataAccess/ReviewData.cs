@@ -11,9 +11,12 @@ namespace _888MarketplaceApp.DataAccess
     {
         private readonly MarketplaceDb _db;
         private readonly DbSet<Review> _reviews;
+        public bool hasExistingData;
+
         public ReviewData()
         {
             _db = new MarketplaceDb();
+            hasExistingData = _db.Reviews.Any();
             _reviews = _db.Reviews;
         }
 

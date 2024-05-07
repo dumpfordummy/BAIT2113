@@ -16,7 +16,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CartId" Type="int" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
@@ -85,9 +85,9 @@
         </EntityType>
         <EntityType Name="Product_Order">
           <Key>
-            <PropertyRef Name="OrderId" />
-            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderId" Type="int" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
@@ -97,7 +97,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Rating" Type="int" Nullable="false" />
           <Property Name="Content" Type="text" Nullable="false" />
         </EntityType>
@@ -139,7 +139,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Code" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Code" Type="char" MaxLength="15" Nullable="false" />
           <Property Name="Amount" Type="float" />
         </EntityType>
         <EntityType Name="Wishlist">
@@ -153,7 +153,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="WishlistId" Type="int" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
@@ -550,16 +550,16 @@
         </EntityType>
         <EntityType Name="Product_Order">
           <Key>
-            <PropertyRef Name="OrderId" />
-            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="DBModel.FK_Product_Order_OrderId" FromRole="Product_Order" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="DBModel.FK_Product_Order_ProductId" FromRole="Product_Order" ToRole="Product" />
           <Property Name="ReviewId" Type="Int32" />
           <NavigationProperty Name="Review" Relationship="DBModel.FK_ReviewId" FromRole="Product_Order" ToRole="Review" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="ShippingMethod">
           <Key>
@@ -795,7 +795,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Role" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Users" Relationship="DBModel.FK_User_Userrole" FromRole="Userrole" ToRole="User" />
         </EntityType>
@@ -815,7 +815,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Rating" Type="Int32" Nullable="false" />
           <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Product_Order" Relationship="DBModel.FK_ReviewId" FromRole="Review" ToRole="Product_Order" />
@@ -838,7 +838,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="BuyerId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cart_Product" Relationship="DBModel.FK_Cart_Product_CartId" FromRole="Cart" ToRole="Cart_Product" />
           <NavigationProperty Name="User" Relationship="DBModel.FK_Cart_BuyerId" FromRole="Cart" ToRole="User" />
@@ -847,7 +847,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CartId" Type="Int32" Nullable="false" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
@@ -858,8 +858,8 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Code" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="false" />
           <Property Name="Amount" Type="Double" />
           <NavigationProperty Name="Orders" Relationship="DBModel.FK_Order_VoucherId" FromRole="Voucher" ToRole="Order" />
         </EntityType>
@@ -867,7 +867,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="BuyerId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Wishlist_Product" Relationship="DBModel.FK_Wishlist_Product_WishlistId" FromRole="Wishlist" ToRole="Wishlist_Product" />
           <NavigationProperty Name="User" Relationship="DBModel.FK_Wishlist_BuyerId" FromRole="Wishlist" ToRole="User" />
@@ -876,7 +876,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="WishlistId" Type="Int32" Nullable="false" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
@@ -1044,6 +1044,7 @@
           <EntitySetMapping Name="Product_Order">
             <EntityTypeMapping TypeName="DBModel.Product_Order">
               <MappingFragment StoreEntitySet="Product_Order">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />

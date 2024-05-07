@@ -11,10 +11,12 @@ namespace _888MarketplaceApp.DataAccess
     {
         private readonly MarketplaceDb _db;
         private readonly DbSet<Userrole> _userRoles;
+        public bool hasExistingData;
 
         public UserroleData()
         {
             _db = new MarketplaceDb();
+            hasExistingData = _db.Userroles.Any();
             _userRoles = _db.Userroles;
         }
 
