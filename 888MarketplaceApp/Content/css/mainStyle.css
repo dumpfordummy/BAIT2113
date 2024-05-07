@@ -2683,7 +2683,7 @@ input[type="submit"].btn-block {
 	justify-content: center; /* Horizontally center-align child elements */
 	align-items: center; /* Vertically center-align child elements */
 	display: block ruby;
-	padding: 1.5rem 2.5rem 1.5rem 20% !important;
+	padding: 1.5rem 2.5rem 1.5rem 5% !important;
 }
 
 .order-information {
@@ -2733,7 +2733,8 @@ input[type="submit"].btn-block {
 }
 
 .purchaseItem {
-	max-width: 100%; /* Ensure image doesn't exceed container width */
+	width: 200px;
+
 }
 
 .StatusName {
@@ -2795,16 +2796,9 @@ input[type="submit"].btn-block {
 }
 
 .acc-content-wrapper {
-	padding: 1.5rem 2.5rem;
 	width: 100%;
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
-}
-
-@media (max-width: 767px) {
-	.acc-content-wrapper {
-		padding: 1.5rem 1.5rem;
-	}
 }
 
 /* Sidebar */

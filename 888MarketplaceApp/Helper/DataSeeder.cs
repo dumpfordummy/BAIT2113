@@ -15,36 +15,22 @@ namespace _888MarketplaceApp.Helper
 
         public static void Seed()
         {
-            try
-            {
-                SeedVouchers();
-                SeedUserroles();
-                SeedCategories();
-                SeedPaymentMethods();
-                SeedShippingMethods();
-                SeedReviews();
-                SeedUsers();
-                SeedWishlists();
-                SeedCarts();
-                SeedProducts();
-                SeedWishlistProducts();
-                SeedCartProducts();
-                SeedPayment();
-                SeedDeliveries();
-                SeedOrders();
-                SeedProductOrders();
-            }
-            catch (DbEntityValidationException ex)
-            {
-                foreach (var entityValidationErrors in ex.EntityValidationErrors)
-                {
-                    foreach (var validationError in entityValidationErrors.ValidationErrors)
-                    {
-                        Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
-                        throw ex;
-                    }
-                }
-            }
+            SeedVouchers();
+            SeedUserroles();
+            SeedCategories();
+            SeedPaymentMethods();
+            SeedShippingMethods();
+            SeedReviews();
+            SeedUsers();
+            SeedWishlists();
+            SeedCarts();
+            SeedProducts();
+            SeedWishlistProducts();
+            SeedCartProducts();
+            SeedPayment();
+            SeedDeliveries();
+            SeedOrders();
+            SeedProductOrders();
         }
 
         private static void SeedUserroles()
@@ -222,7 +208,7 @@ namespace _888MarketplaceApp.Helper
                 {
                     Date = DateTime.Now,
                     Amount = 199.99,
-                    Note = "Sample order",
+                    Note = Order.CompletedNote,
                     Status = Order.Completed,
                     BuyerId = 3,
                     PaymentId = 1,

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="MyPurchases.aspx.cs" Inherits="_888MarketplaceApp.Views.MyPurchases" %>
+﻿<%@ Page Language="C#" EnableEventValidation="true" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="MyPurchases.aspx.cs" Inherits="_888MarketplaceApp.Views.MyPurchases" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="bodyContent">
     <div class="container-scroller">
@@ -40,155 +40,71 @@
                                         <p class="card-title-strong">My Purchases</p>
                                         <div class="card-title-description">Manage your purchases</div>
                                     </div>
-                                    <div class="card-content">
-                                        <div class="order-information">
-                                            <div class="StatusName">
-                                                <asp:Literal runat="server" Text="To Ship"></asp:Literal>
+
+                                    <asp:Repeater ID="OrderRepeater" runat="server" OnItemDataBound="OrderRepeater_ItemDataBound">
+                                        <ItemTemplate>
+
+                                            <div class="card-content">
+                                                <div class="order-information">
+                                                    <div class="StatusName">
+                                                        <asp:Literal runat="server" Text='<%# Eval("Status")  %>'></asp:Literal>
+
+                                                    </div>
+                                                    <div class="StatusDescription">
+                                                        <asp:Literal runat="server" Text='<%# Eval("Note")  %>'></asp:Literal>
+                                                    </div>
+                                                </div>
+
+                                                <asp:Repeater ID="OrderProductRepeater" runat="server">
+                                                    <ItemTemplate>
+                                                        <div class="order-item">
+                                                            <div class="itemImg">
+                                                                <asp:Image CssClass="purchaseItem" runat="server" ImageUrl='<%# Eval("OrderProductImage")  %>' AlternateText="Example Image" />
+                                                            </div>
+                                                            <div class="itemContent">
+                                                                <div class="itemDetails">
+                                                                    <div class="itemTitle">
+                                                                        <asp:Literal runat="server" Text='<%# Eval("Product.Name")  %>'></asp:Literal>
+                                                                    </div>
+                                                                    <div class="itemDescription">
+                                                                        <asp:Literal runat="server" Text='<%# Eval("Product.Description")  %>'></asp:Literal>
+                                                                    </div>
+                                                                    <div class="itemCategory">
+                                                                        <asp:Literal runat="server" Text='<%# Eval("Product.Category.Name")  %>'></asp:Literal>
+                                                                    </div>
+                                                                    <div class="itemQuantity">
+                                                                        <asp:Literal runat="server" Text='<%# Eval("OrderProductQuantity")  %>'></asp:Literal>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="totalItemsPrice">
+                                                                    <asp:Literal runat="server" Text='<%# Eval("OrderProductAmount")  %>'></asp:Literal>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+
+
+                                                <div class="order-item-result">
+                                                    <div class="orderTotalText">
+                                                        <asp:Literal runat="server" Text="Order Total:"></asp:Literal>
+
+                                                    </div>
+                                                    <div class="orderTotalValue">
+                                                        <asp:Literal runat="server" Text='<%# Eval("Amount")  %>'></asp:Literal>
+
+                                                    </div>
+                                                </div>
+                                                <div class="order-item-action">
+                                                    <asp:Button runat='server' OnClick='CancelOrder' Visible='<%# Eval("Status").ToString() == _888MarketplaceApp.Models.Order.Processing  %>' meta:bind='<% DataBind(); %>' Text='Cancel Order' CssClass='btn text-white btn-primary-green' CommandArgument='<%# Eval("Id")  %>' />
+                                                    <asp:Button runat='server' OnClick='RefundOrder' Visible='<%# Eval("Status").ToString() == _888MarketplaceApp.Models.Order.Completed  %>' meta:bind='<% DataBind(); %>' Text='Refund' CssClass='btn text-white btn-primary-green' CommandArgument='<%# Eval("Id")  %>' />
+                                                    <asp:Button runat='server' OnClick='OrderReceive' Visible='<%# Eval("Status").ToString() == _888MarketplaceApp.Models.Order.Delivering  %>' meta:bind='<% DataBind(); %>' Text='Order Receive' CssClass='btn text-white btn-primary-green' CommandArgument='<%# Eval("Id")  %>'/>
+                                                </div>
 
                                             </div>
-                                            <div class="StatusDescription">
-                                                <asp:Literal runat="server" Text="Your order is being prepared"></asp:Literal>
-                                            </div>
-                                        </div>
-                                        <div class="order-item">
-                                            <div class="itemImg">
-                                                <asp:Image CssClass="purchaseItem" runat="server" ImageUrl="~/Content/Images/Admin/faces/face1.jpg" AlternateText="Example Image" />
-                                            </div>
-                                            <div class="itemContent">
-                                                <div class="itemDetails">
-                                                    <div class="itemTitle">
-                                                        <asp:Literal runat="server" Text="Gaming Laptop 128GB RAM RTX5090 I9-15900k"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemDescription">
-                                                        <asp:Literal runat="server" Text="This is a potato laptop that only able to play roblox"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemCategory">
-                                                        <asp:Literal runat="server" Text="Electronics"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemQuantity">
-                                                        <asp:Literal runat="server" Text="x1"></asp:Literal>
-                                                    </div>
-                                                </div>
-                                                <div class="totalItemsPrice">
-                                                    <asp:Literal runat="server" Text="RM2000.00"></asp:Literal>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="order-item">
-                                            <div class="itemImg">
-                                                <asp:Image CssClass="purchaseItem" runat="server" ImageUrl="~/Content/Images/Admin/faces/face1.jpg" AlternateText="Example Image" />
-                                            </div>
-                                            <div class="itemContent">
-                                                <div class="itemDetails">
-                                                    <div class="itemTitle">
-                                                        <asp:Literal runat="server" Text="Pineapple P15 Pro MAX 1TB Purple"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemDescription">
-                                                        <asp:Literal runat="server" Text="This is a potato phone that only able to play minecraft"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemCategory">
-                                                        <asp:Literal runat="server" Text="Electronics"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemQuantity">
-                                                        <asp:Literal runat="server" Text="x1"></asp:Literal>
-                                                    </div>
-                                                </div>
-                                                <div class="totalItemsPrice">
-                                                    <asp:Literal runat="server" Text="RM3000.00"></asp:Literal>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="order-item-result">
-                                            <div class="orderTotalText">
-                                                <asp:Literal runat="server" Text="Order Total:"></asp:Literal>
 
-                                            </div>
-                                            <div class="orderTotalValue">
-                                                <asp:Literal runat="server" Text="RM5000.00"></asp:Literal>
-
-                                            </div>
-                                        </div>
-                                        <div class="order-item-action">
-                                            <%--<asp:Button runat="server" OnClick="RateOrder" Text="Rate" CssClass="btn text-white btn-primary-green" />--%>
-                                            <asp:Button runat="server" OnClick="CancelOrder" Text="Cancel Order" CssClass="btn text-white btn-primary-green" />
-                                            <%--<asp:Button runat="server" OnClick="OrderReceive" Text="Order Receive" CssClass="btn text-white btn-primary-green" />--%>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-content">
-                                        <div class="order-information">
-                                            <div class="StatusName">
-                                                <asp:Literal runat="server" Text="To Ship"></asp:Literal>
-
-                                            </div>
-                                            <div class="StatusDescription">
-                                                <asp:Literal runat="server" Text="Your order is being prepared"></asp:Literal>
-                                            </div>
-                                        </div>
-                                        <div class="order-item">
-                                            <div class="itemImg">
-                                                <asp:Image CssClass="purchaseItem" runat="server" ImageUrl="~/Content/Images/Admin/faces/face1.jpg" AlternateText="Example Image" />
-                                            </div>
-                                            <div class="itemContent">
-                                                <div class="itemDetails">
-                                                    <div class="itemTitle">
-                                                        <asp:Literal runat="server" Text="Gaming Laptop 128GB RAM RTX5090 I9-15900k"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemDescription">
-                                                        <asp:Literal runat="server" Text="This is a potato laptop that only able to play roblox"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemCategory">
-                                                        <asp:Literal runat="server" Text="Electronics"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemQuantity">
-                                                        <asp:Literal runat="server" Text="x1"></asp:Literal>
-                                                    </div>
-                                                </div>
-                                                <div class="totalItemsPrice">
-                                                    <asp:Literal runat="server" Text="RM2000.00"></asp:Literal>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="order-item">
-                                            <div class="itemImg">
-                                                <asp:Image CssClass="purchaseItem" runat="server" ImageUrl="~/Content/Images/Admin/faces/face1.jpg" AlternateText="Example Image" />
-                                            </div>
-                                            <div class="itemContent">
-                                                <div class="itemDetails">
-                                                    <div class="itemTitle">
-                                                        <asp:Literal runat="server" Text="Pineapple P15 Pro MAX 1TB Purple"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemDescription">
-                                                        <asp:Literal runat="server" Text="This is a potato phone that only able to play minecraft"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemCategory">
-                                                        <asp:Literal runat="server" Text="Electronics"></asp:Literal>
-                                                    </div>
-                                                    <div class="itemQuantity">
-                                                        <asp:Literal runat="server" Text="x1"></asp:Literal>
-                                                    </div>
-                                                </div>
-                                                <div class="totalItemsPrice">
-                                                    <asp:Literal runat="server" Text="RM3000.00"></asp:Literal>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="order-item-result">
-                                            <div class="orderTotalText">
-                                                <asp:Literal runat="server" Text="Order Total:"></asp:Literal>
-
-                                            </div>
-                                            <div class="orderTotalValue">
-                                                <asp:Literal runat="server" Text="RM5000.00"></asp:Literal>
-
-                                            </div>
-                                        </div>
-                                        <div class="order-item-action">
-                                            <%--<asp:Button runat="server" OnClick="RateOrder" Text="Rate" CssClass="btn text-white btn-primary-green" />--%>
-                                            <asp:Button runat="server" OnClick="CancelOrder" Text="Cancel Order" CssClass="btn text-white btn-primary-green" />
-                                            <%--<asp:Button runat="server" OnClick="OrderReceive" Text="Order Receive" CssClass="btn text-white btn-primary-green" />--%>
-                                        </div>
-                                    </div>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </div>
                             </div>
                         </div>

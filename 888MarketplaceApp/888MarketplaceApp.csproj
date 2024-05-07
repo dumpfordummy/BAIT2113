@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\adminTemp2.css" />
+    <Content Include="Content\Images\UserImage\3.jpg" />
     <Content Include="Images\705_tin_bottle.jpg" />
     <Content Include="Images\black_pants.jpg" />
     <Content Include="Images\black_rubber_bottle.jpg" />
@@ -711,7 +712,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Images\UserImage\" />
+    <Folder Include="Content\Images\ProductImage\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

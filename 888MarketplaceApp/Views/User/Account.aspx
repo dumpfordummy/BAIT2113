@@ -45,7 +45,7 @@
                                             <asp:HiddenField ID="hiddenId" runat="server" />
                                             <tr>
                                                 <td colspan="2" class="centered">
-                                                    <asp:Image ID="ProfileAvatar" CssClass="profileImg" runat="server" ImageUrl="~/Content/Images/Admin/faces/face1.jpg" AlternateText="Example Image" />
+                                                    <asp:Image ID="ProfileAvatar" CssClass="profileImg" runat="server" AlternateText="Example Image" />
                                                     <br />
                                                     <asp:FileUpload ID="ProfileAvatarUpload" runat="server" accept="image/*" />
                                                 </td>

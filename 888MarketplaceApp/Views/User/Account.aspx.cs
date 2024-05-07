@@ -115,6 +115,12 @@ namespace _888MarketplaceApp.Views
         {
             UserData userAccess = new UserData();
             int id;
+
+            if (!IsInputValid())
+            {
+                return;
+            }
+
             if(!int.TryParse(hiddenId.Value, out id)) {
                 Session["ErrorMessage"] = "Failed to parse id from string to int";
                 Response.Redirect("~/Views/Error.aspx");

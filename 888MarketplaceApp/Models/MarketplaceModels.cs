@@ -42,10 +42,15 @@ namespace _888MarketplaceApp.Models
     public partial class Order
     {
         public static string Processing = "Processing";
+        public static string ProcessingNote = "We are processing your order";
         public static string Delivering = "Delivering";
+        public static string DeliveringNote = "Your order is on the way";
         public static string Completed = "Completed";
+        public static string CompletedNote = "Your order is completed";
         public static string Refunded = "Refunded";
+        public static string RefundedNote = "Your order is refunded";
         public static string Canceled = "Canceled";
+        public static string CanceledNote = "Your order is canceled";
     }
 
     public partial class Payment
@@ -60,6 +65,7 @@ namespace _888MarketplaceApp.Models
 
     public partial class Product
     {
+        public string ProductCategory;
 
     }
 
