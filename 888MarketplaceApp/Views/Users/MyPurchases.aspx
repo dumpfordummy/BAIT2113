@@ -59,7 +59,7 @@
                                                     <ItemTemplate>
                                                         <div class="order-item">
                                                             <div class="itemImg">
-                                                                <asp:Image CssClass="purchaseItem" runat="server" ImageUrl='<%# Eval("OrderProductImage")  %>' AlternateText="Example Image" />
+                                                                <asp:Image CssClass="purchaseItem" runat="server" ImageUrl='<%# Eval("OrderProductImage")  %>' />
                                                             </div>
                                                             <div class="itemContent">
                                                                 <div class="itemDetails">

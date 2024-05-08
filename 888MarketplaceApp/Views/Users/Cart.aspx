@@ -43,7 +43,7 @@
                                         <asp:HiddenField runat="server" ID="ProductId" Value='<%# Eval("Product.Id") %>' />
                                         <tr>
                                             <td class="shoping__cart__item">
-                                                <img src="img/cart/cart-2.jpg" alt="">
+                                                <asp:Image CssClass="purchaseItem" runat="server" ImageUrl='<%# Eval("ImagePath")  %>' />
                                                 <h5><%# Eval("Product.Name") %></h5>
                                             </td>
                                             <td class="shoping__cart__price">

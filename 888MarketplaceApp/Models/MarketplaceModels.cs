@@ -67,6 +67,24 @@ namespace _888MarketplaceApp.Models
     {
         public string ProductCategory;
 
+        public List<string> GetImagePathList()
+        {
+            List<string> imagePaths = new List<string>();
+
+            if (!string.IsNullOrEmpty(ImagePaths))
+            {
+                string[] paths = ImagePaths.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (string path in paths)
+                {
+                    string trimmedPath = path.Trim();
+
+                    imagePaths.Add(trimmedPath);
+                }
+            }
+
+            return imagePaths;
+        }
     }
 
     public partial class Product_Order

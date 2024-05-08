@@ -24,6 +24,7 @@ namespace _888MarketplaceApp.Views
                 var customWishlistProductsDataSource = userWishlist.Wishlist_Product.Select(wp => new
                 {
                     wp.Product,
+                    ImagePath = wp.Product.GetImagePathList()[0],
                     WishlistQuantity = wp.Quantity,
                     WishlistAmount = "RM" + (wp.Product.Price * wp.Quantity).ToString()
                 }).ToList();

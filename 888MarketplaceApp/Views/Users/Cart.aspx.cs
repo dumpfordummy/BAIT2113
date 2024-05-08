@@ -29,6 +29,7 @@ namespace _888MarketplaceApp.Views
             var customCartProductsDataSource = userCartInDb.Cart_Product.Select(cp => new
             {
                 cp.Product,
+                ImagePath = cp.Product.GetImagePathList()[0],
                 CartQuantity = cp.Quantity,
                 CartAmount = "RM" + (cp.Product.Price * cp.Quantity).ToString()
             }).ToList();

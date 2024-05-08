@@ -41,7 +41,7 @@ namespace _888MarketplaceApp.Views
                 var customOrderProductsDataSource = order.Product_Order.Select(po => new
                 {
                     po.Product,
-                    OrderProductImage = $"~/Content/Images/ProductImage/{po.Product.Id}.jpg",
+                    OrderProductImage = po.Product.GetImagePathList()[0],
                     OrderProductQuantity = "x" + po.Quantity.ToString(),
                     OrderProductAmount = po.Quantity * po.Product.Price
                 }).ToList();
