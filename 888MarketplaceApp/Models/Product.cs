@@ -41,7 +41,7 @@ namespace _888MarketplaceApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Wishlist_Product> Wishlist_Product { get; set; }
 
-        public List<string> ResolveImagePaths()
+        public List<string> GetImagePathList()
         {
             List<string> imagePaths = new List<string>();
 
