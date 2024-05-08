@@ -74,7 +74,7 @@ namespace _888MarketplaceApp.Views
                 loggedInUser = sessionManager.GetLoggedInUser(Request.Cookies);
             }
 
-            lnkAccount.NavigateUrl = "~/Views/User/Account";
+            lnkAccount.NavigateUrl = "~/Views/Users/Account";
         }
 
         protected void LoggingOut(object sender, LoginCancelEventArgs e)

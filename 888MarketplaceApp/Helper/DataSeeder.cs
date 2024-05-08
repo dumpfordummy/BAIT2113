@@ -275,7 +275,9 @@ namespace _888MarketplaceApp.Helper
 
             var wishlists = new List<Wishlist>
             {
-                new Wishlist { BuyerId = 2 }
+                new Wishlist { BuyerId = 1 },
+                new Wishlist { BuyerId = 2 },
+                new Wishlist { BuyerId = 3 }
             };
 
             foreach (var wish in wishlists)
@@ -315,7 +317,9 @@ namespace _888MarketplaceApp.Helper
 
             var carts = new List<Cart>
             {
-                new Cart { BuyerId = 2 }
+                new Cart { BuyerId = 1 },
+                new Cart { BuyerId = 2 },
+                new Cart { BuyerId = 3 }
             };
             foreach (var cart in carts)
             {
@@ -417,13 +421,13 @@ namespace _888MarketplaceApp.Helper
             {
                 new Cart_Product
                 {
-                    CartId = 1,
+                    CartId = 3,
                     ProductId = 1,
-                    Quantity = 1
+                    Quantity = 2
                 },
                 new Cart_Product
                 {
-                    CartId = 1,
+                    CartId = 3,
                     ProductId = 2,
                     Quantity = 1
                 }
@@ -447,15 +451,15 @@ namespace _888MarketplaceApp.Helper
             {
                 new Wishlist_Product
                 {
-                    WishlistId = 1,
+                    WishlistId = 3,
                     ProductId = 1,
                     Quantity = 1
                 },
                 new Wishlist_Product
                 {
-                    WishlistId = 1,
+                    WishlistId = 3,
                     ProductId = 2,
-                    Quantity = 1
+                    Quantity = 2
                 }
             };
 

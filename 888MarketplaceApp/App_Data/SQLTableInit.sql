@@ -94,18 +94,21 @@ CREATE TABLE [dbo].[Cart]
 );
 
 CREATE TABLE [dbo].[Product] (
-    [Id]           INT             IDENTITY (1, 1) NOT NULL,
-    [DateCreated]  DATETIME2 (7)   NOT NULL,
-    [Name]         VARCHAR (50)    NOT NULL,
-    [Description]  VARCHAR (MAX)   NOT NULL,
-    [Price]        FLOAT (53)      NOT NULL,
-    [Quantity]     INT             NOT NULL,
-    [SellerId]     INT             NOT NULL,
-    [CategoryId]   INT             NOT NULL,
+    [Id]          INT           IDENTITY (1, 1) NOT NULL,
+    [DateCreated] DATETIME2 (7) NOT NULL,
+    [Name]        VARCHAR (50)  NOT NULL,
+    [Description] VARCHAR (MAX) NOT NULL,
+    [Price]       FLOAT (53)    NOT NULL,
+    [Quantity]    INT           NOT NULL,
+    [SellerId]    INT           NOT NULL,
+    [CategoryId]  INT           NOT NULL,
+    [ImagePaths] VARCHAR(MAX) NOT NULL, 
     CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Product_SellerId] FOREIGN KEY ([SellerId]) REFERENCES [dbo].[User] ([Id]),
     CONSTRAINT [FK_Product_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [dbo].[Category] ([Id])
 );
+
+
 
 CREATE TABLE [dbo].[Wishlist_Product] (
     [Id]         INT IDENTITY (1, 1) NOT NULL,

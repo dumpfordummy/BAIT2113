@@ -46,7 +46,7 @@
                                 <div class="header__top__right__auth">
                                     <% if (IsUserLoggedIn)
                                         { %>
-                                        <asp:HyperLink ID="lnkAccount" runat="server"><i class="fa fa-user"></i> Welcome! <%= loggedInUser.Username  %></asp:HyperLink>
+                                    <asp:HyperLink ID="lnkAccount" runat="server"><i class="fa fa-user"></i> Welcome! <%= loggedInUser.Username  %></asp:HyperLink>
                                     <% }
                                         else
                                         { %>
@@ -58,6 +58,8 @@
                     </div>
                 </div>
             </div>
+            <% if (IsUserLoggedIn)
+                { %>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
@@ -73,16 +75,23 @@
                         <div class="header__cart">
                             <ul>
                                 <li>
-                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Views/User/Wishlist.aspx"><i class="fa fa-heart"></i><span>3</span></asp:HyperLink></li>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Views/Users/Wishlist.aspx"><i class="fa fa-heart"></i><span>3</span></asp:HyperLink></li>
                                 <li>
-                                    <asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/Views/User/Cart.aspx"><i class="fa fa-shopping-bag"></i><span>3</span></asp:HyperLink></li>
+                                    <asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/Views/Users/Cart.aspx"><i class="fa fa-shopping-bag"></i><span>3</span></asp:HyperLink></li>
                             </ul>
                             &nbsp;&nbsp;&nbsp;
-                            <div class="header__cart__price">item: <span>$0.00</span></div>
+                <div class="header__cart__price">item: <span>$0.00</span></div>
                         </div>
                     </div>
                 </div>
             </div>
+            <% }
+                else
+                { %>
+
+            <div style="margin-bottom:50px"></div>
+
+            <% } %>
         </header>
         <!-- Header Section End -->
 

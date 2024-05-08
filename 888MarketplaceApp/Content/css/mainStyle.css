@@ -621,14 +621,14 @@ ol {
 
 .breadcrumb__text h2 {
 	font-size: 46px;
-	color: #ffffff;
+	/*color: #ffffff;*/
 	font-weight: 700;
 }
 
 .breadcrumb__option a {
 	display: inline-block;
 	font-size: 16px;
-	color: #ffffff;
+	/*color: #ffffff;*/
 	font-weight: 700;
 	margin-right: 20px;
 	position: relative;
@@ -647,7 +647,7 @@ ol {
 .breadcrumb__option span {
 	display: inline-block;
 	font-size: 16px;
-	color: #ffffff;
+	/*color: #ffffff;*/
 }
 
 /*---------------------
@@ -3016,4 +3016,17 @@ input[type="submit"].btn-block {
 
 .content {
 	min-height: 70vh;
+}
+
+.color-blue {
+	color: #0d6efd !important;
+}
+
+.btn-reset {
+	background: none;
+	border: none;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+	padding: 0;
 }

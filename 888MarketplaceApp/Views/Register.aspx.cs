@@ -35,7 +35,7 @@ namespace _888MarketplaceApp.Views
             string address = Address.Text;
             string passwordHash = PasswordHelper.HashPassword(password);
 
-            User user = new User
+            Models.User user = new Models.User
             {
                 Username = username,
                 Email = email,
@@ -51,7 +51,7 @@ namespace _888MarketplaceApp.Views
 
             UserData userAccess = new UserData();
 
-            User userCreated = userAccess.CreateUser(user);
+            Models.User userCreated = userAccess.CreateUser(user);
 
             if (IsInputValid() && userCreated != null)
             {

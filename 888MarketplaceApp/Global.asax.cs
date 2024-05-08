@@ -39,7 +39,7 @@ namespace _888MarketplaceApp
                     return;
                 }
             }
-            else if (url.StartsWith("/User/"))
+            else if (url.StartsWith("/Users/"))
             {
                 if (!isLoggedIn || !user.AccountVerified || (!user.IsUserAdmin() && !user.IsUserCustomer()))
                 {
