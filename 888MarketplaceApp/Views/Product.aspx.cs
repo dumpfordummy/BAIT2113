@@ -1,4 +1,5 @@
 ﻿using _888MarketplaceApp.DataAccess;
+using _888MarketplaceApp.Helper;
 using _888MarketplaceApp.Models;
 using System;
 using System.Collections.Generic;
@@ -23,12 +24,16 @@ namespace _888MarketplaceApp.Views
                     Models.Product product = pd.GetProduct(int.Parse(productID));
                     lblPdtName.Text = product.Name;
                     lblPdtPrice.Text += product.Price.ToString("0.00");
-                    lblPdtQty.Text += product.Quantity.ToString();
+                    lblStockQty.Text += product.Quantity.ToString();
+                    pdtDesc.InnerText = product.Description;
+                    purchaseQtyVal.MaximumValue = product.Quantity.ToString();
 
                     List<string> imgPathList = product.GetImagePathList();
                     imgPdt.ImageUrl = imgPathList[0];
                     imgBtnRepeater.DataSource = imgPathList;
                     imgBtnRepeater.DataBind();
+
+                    prgPdtMap.InnerText = "Category > " + product.Category.Name + "> " + product.Name;
 
                     ReviewData rd = new ReviewData();
                     List<Review> reviewsList = rd.GetReviews();
@@ -58,6 +63,27 @@ namespace _888MarketplaceApp.Views
         {
             string imgUrl = sender.GetType().GetProperty("ImageUrl").GetValue(sender).ToString();
             imgPdt.ImageUrl = imgUrl;
+        }
+
+        protected void AddProductToCart()
+        {
+            string productID = Request.QueryString["id"];
+
+            CartData cartData = new CartData();
+            CartProductData cpData = new CartProductData();
+
+            SessionManager session = SessionManager.Instance;
+            User user = session.GetLoggedInUser(Request.Cookies);
+
+            Models.Cart cart = cartData.GetCartByBuyerId(user.Id);
+
+            Cart_Product cartProd = new Cart_Product {
+                CartId = cart.Id,
+                ProductId = int.Parse(productID),
+                Quantity = int.Parse(inPurchaseQty.Text)
+            };
+
+            cpData.CreateCartProduct(cartProd);
         }
     }
 }

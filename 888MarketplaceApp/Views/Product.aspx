@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="_888MarketplaceApp.Views.Product" MasterPageFile="~/Views/Site.Master" ClientIDMode="Static" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="_888MarketplaceApp.Views.Product" MasterPageFile="~/Views/Site.Master" ClientIDMode="Static" EnableViewState="true" %>
 
 <asp:Content runat="server" ID="bodyCT" ContentPlaceHolderID="bodyContent">
     <style>
@@ -42,7 +42,7 @@
 
     <div class="container">
         <div class="row">
-            <p class="ps-3 fw-bold">Category > Shoes > <%# Eval("Name") %></p>
+            <p runat="server" id="prgPdtMap" class="ps-3 fw-bold"></p>
         </div>
         <div class="card mb-4">
             <div class="row">
@@ -66,14 +66,25 @@
                     <div class="form-group">
                         <br />
                         <br />
-                        <asp:Label ID="lblPdtQty" runat="server" Text="Stock (Unit): "></asp:Label>
+                        <asp:Label ID="lblStockQty" runat="server" Text="Stock (Unit): "></asp:Label>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="lblPurchaseQty" runat="server" Text="Quantity (Unit): "></asp:Label>
+                        <asp:TextBox ID="inPurchaseQty" runat="server" CssClass="form-control mt-2" type="number" min="1" max='' step="1" Style="width: 30%; display: inline"></asp:TextBox>
+                        <br />
+                        <asp:RangeValidator runat="server" ID="purchaseQtyVal" ControlToValidate="inPurchaseQty" Type="Integer"
+                            ErrorMessage="Invalid input number. Input is unrealistic or exceeding stock quantity."
+                            MinimumValue="1" ForeColor="Red"></asp:RangeValidator>
+                    </div>
+                    <div class="form-group mt-5">
+                        <asp:Button runat="server" OnClick="AddProductToCart" Text="Add to Cart" CssClass="btn btn-primary" />
                     </div>
                 </div>
 
                 <hr class="mx-auto" style="width: 95%" />
                 <div class="col-md-12 px-5">
                     <h5 class="fw-bold mb-2" style="font-family: var(--bs-font-sans-serif);">Item Description</h5>
-                    <p class="fw-light" style="font-family: var(--bs-font-sans-serif)">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non consectetur nunc. Integer bibendum volutpat justo porttitor aliquet. Cras sagittis dolor ut nisl finibus efficitur. Sed ullamcorper sapien viverra elit bibendum fringilla. Nam in vehicula velit. Vestibulum a vulputate nisi, ut blandit dolor. Donec scelerisque lacus sed arcu scelerisque, non lacinia justo cursus. Vivamus lacinia, orci nec finibus accumsan, odio dolor consequat velit, vel ultrices nisi lacus condimentum eros. Quisque tincidunt malesuada dui id euismod. Maecenas auctor massa nulla. Pellentesque dignissim et dui nec mattis. Suspendisse sit amet sollicitudin mauris. Mauris consequat purus sagittis nisi cursus dapibus. </p>
+                    <p runat="server" id="pdtDesc" class="fw-light" style="font-family: var(--bs-font-sans-serif)"></p>
                 </div>
 
                 <hr class="mx-auto" style="width: 95%" />
@@ -98,8 +109,9 @@
                     <asp:Repeater ID="PdtReviewRepeater" runat="server">
                         <ItemTemplate>
                             <p class="fw-light" style="font-family: var(--bs-font-sans-serif)">
-                                <% for (int i = 0; i < int.Parse(Eval("Rating").ToString()); i++) { %>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                <% for (int i = 0; i < int.Parse(Eval("Rating").ToString()); i++)
+                                    { %>
+                                <i class="fa fa-star" aria-hidden="true"></i>
                                 <% } %>
                                 <br />
                                 <%# Eval("Content") %>

@@ -1,6 +1,26 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Site.Master" AutoEventWireup="true" CodeBehind="AllProduct.aspx.cs" Inherits="_888MarketplaceApp.Views.AllProduct" %>
 
 <asp:Content runat="server" ID="bodyCT" ContentPlaceHolderID="bodyContent">
+    <style>
+        .product__item__pic__hover li:last-child {
+            margin-right: 0;
+        }
+
+        .product__item__pic__hover li:hover a {
+            background: #38d39f;
+            border-color: #38d39f;
+        }
+
+        .product__item__pic__hover li:nth-child(2):hover a {
+            background: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+        .product__item__pic__hover li:last-child:hover a {
+            background: #dc3545;
+            border-color: #dc3545;
+        }
+    </style>
     <section class="product spad">
         <div class="container">
             <div class="row">
@@ -63,11 +83,11 @@
                             <ItemTemplate>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item" onclick="window.location.href = '/Product?Id=<%# Eval("Id") %>'">
-                                        <div class="product__item__pic set-bg" data-setbg="<%#Eval("ImagePaths").ToString().Split(';')[0] %>" style='background-image:url(&quot;' + <%# Eval("ImagePaths").ToString().Split(';')[0] %> + '&quot;)'>
+                                        <div class="product__item__pic set-bg" data-setbg="<%# Eval("ImagePaths").ToString().Split(';')[0] %>" style='background-image:url("<%# Eval("ImagePaths").ToString().Split(';')[0] %>")'>
                                             <ul class="product__item__pic__hover">
-                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-trash"></i></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">

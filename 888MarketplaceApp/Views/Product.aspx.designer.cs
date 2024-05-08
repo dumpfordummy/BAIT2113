@@ -15,6 +15,15 @@ namespace _888MarketplaceApp.Views
     {
 
         /// <summary>
+        /// prgPdtMap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prgPdtMap;
+
+        /// <summary>
         /// imgPdt control.
         /// </summary>
         /// <remarks>
@@ -51,13 +60,49 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.Label lblPdtPrice;
 
         /// <summary>
-        /// lblPdtQty control.
+        /// lblStockQty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPdtQty;
+        protected global::System.Web.UI.WebControls.Label lblStockQty;
+
+        /// <summary>
+        /// lblPurchaseQty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPurchaseQty;
+
+        /// <summary>
+        /// inPurchaseQty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox inPurchaseQty;
+
+        /// <summary>
+        /// purchaseQtyVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator purchaseQtyVal;
+
+        /// <summary>
+        /// pdtDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pdtDesc;
 
         /// <summary>
         /// lblPdtReview control.
