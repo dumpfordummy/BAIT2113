@@ -10,7 +10,7 @@
                     <div class="form-group">
                         <h5 class="fw-bold mb-2">Product Images</h5>
                         <img id="imgPdt" src="#" style="display: none" /><br/>
-                        <asp:FileUpload ID="imageUpl" runat="server" onchange="updateImage(event)" />
+                        <asp:FileUpload ID="imageUpl" runat="server" AllowMultiple="true" onchange="updateImage(event)" />
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group mt-3">
                     <asp:Label ID="lblPdtPrice" runat="server" Text="Price (RM): " ></asp:Label>
-                    <asp:TextBox ID="inPdtNo" type="number" runat="server" CssClass="form-control mt-2" style="width: 30%" ></asp:TextBox>
+                    <asp:TextBox ID="inPdtPrice" type="number" step="0.01" runat="server" CssClass="form-control mt-2" style="width: 30%" ></asp:TextBox>
                 </div>
                 <div class="form-group mt-3">
                     <asp:Label ID="lblPdtQty" runat="server" Text="Stock Quantity (Unit): " ></asp:Label>
@@ -34,13 +34,12 @@
                 <div class="form-group mt-3">
                     <asp:Label ID="lblPdtCatg" runat="server" Text="Category: " ></asp:Label>
                     <select id="selPdtCatg" runat="server" class="form-control mt-2">
-                        <option>Clothing & Apparel</option>
-                        <option>Electronic Devices/Accessories</option>
+                        
                     </select>
                 </div>
                 <br />
                 <div class="form-group mt-5">
-                    <button type="submit" class=" btn btn-primary" value="addProduct">Add Product</button>
+                    <asp:Button runat="server" OnClick="AddProductToDB" Text="Add Product" CssClass="btn btn-primary" />
                 </div>
             </div>
         </div>

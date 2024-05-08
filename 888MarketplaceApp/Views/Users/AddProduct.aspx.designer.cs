@@ -69,13 +69,13 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.Label lblPdtPrice;
 
         /// <summary>
-        /// inPdtNo control.
+        /// inPdtPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inPdtNo;
+        protected global::System.Web.UI.WebControls.TextBox inPdtPrice;
 
         /// <summary>
         /// lblPdtQty control.

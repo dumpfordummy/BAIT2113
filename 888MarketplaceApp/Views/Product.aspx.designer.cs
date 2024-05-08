@@ -24,22 +24,13 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.Image imgPdt;
 
         /// <summary>
-        /// imgBtnPdt1 control.
+        /// imgBtnRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgBtnPdt1;
-
-        /// <summary>
-        /// imgBtnPdt2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgBtnPdt2;
+        protected global::System.Web.UI.WebControls.Repeater imgBtnRepeater;
 
         /// <summary>
         /// lblPdtName control.
@@ -69,15 +60,6 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.Label lblPdtQty;
 
         /// <summary>
-        /// inPdtQty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inPdtQty;
-
-        /// <summary>
         /// lblPdtReview control.
         /// </summary>
         /// <remarks>
@@ -94,5 +76,14 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPdtReview;
+
+        /// <summary>
+        /// PdtReviewRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater PdtReviewRepeater;
     }
 }
