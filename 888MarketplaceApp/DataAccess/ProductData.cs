@@ -38,6 +38,12 @@ namespace _888MarketplaceApp.DataAccess
             return result;
         }
 
+        public List<Product> GetProductsBySellerId(int sellerId)
+        {
+            var result = _products.Where(c => c.SellerId == sellerId).ToList();
+            return result;
+        }
+
         public Product CreateProduct(Product product)
         {
             var result = _products.Add(product);
@@ -63,9 +69,15 @@ namespace _888MarketplaceApp.DataAccess
 
         public Product DeleteProduct(Product product)
         {
-            var result = _products.Remove(product);
-            _db.SaveChanges();
-            return result;
+            var target = _products.Find(product.Id);
+            if (target != null)
+            {
+                var result = _products.Remove(target);
+                _db.SaveChanges();
+                return result;
+            }
+
+            return null;
         }
     }
 }

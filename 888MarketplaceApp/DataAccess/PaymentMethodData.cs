@@ -59,9 +59,15 @@ namespace _888MarketplaceApp.DataAccess
 
         public PaymentMethod DeletePaymentMethod(PaymentMethod paymentMethod)
         {
-            var result = _paymentMethods.Remove(paymentMethod);
-            _db.SaveChanges();
-            return result;
+            var target = _paymentMethods.Find(paymentMethod.Id);
+
+            if (target != null)
+            {
+                var result = _paymentMethods.Remove(target);
+                _db.SaveChanges();
+                return result;
+            }
+            return null;
         }
     }
 }

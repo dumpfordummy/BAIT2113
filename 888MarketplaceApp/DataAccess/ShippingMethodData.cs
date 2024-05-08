@@ -59,9 +59,15 @@ namespace _888MarketplaceApp.DataAccess
 
         public ShippingMethod DeleteShippingMethod(ShippingMethod shippingMethod)
         {
-            var result = _shippingMethods.Remove(shippingMethod);
-            _db.SaveChanges();
-            return result;
+            var target = _shippingMethods.Find(shippingMethod.Id);
+
+            if (target != null)
+            {
+                var result = _shippingMethods.Remove(target);
+                _db.SaveChanges();
+                return result;
+            }
+            return null;
         }
     }
 }

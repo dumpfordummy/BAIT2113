@@ -1,4 +1,5 @@
 ﻿using _888MarketplaceApp.Models;
+using _888MarketplaceApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -54,9 +55,15 @@ namespace _888MarketplaceApp.DataAccess
 
         public Product_Order DeleteProductOrder(Product_Order productOrder)
         {
-            var result = _productOrders.Remove(productOrder);
-            _db.SaveChanges();
-            return result;
+            var target = _productOrders.Find(productOrder.Id);
+            if (target != null)
+            {
+                var result = _productOrders.Remove(target);
+                _db.SaveChanges();
+                return result;
+            }
+
+            return null;
         }
     }
 }

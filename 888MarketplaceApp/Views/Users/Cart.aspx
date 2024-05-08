@@ -40,6 +40,7 @@
                             <tbody>
                                 <asp:Repeater ID="CartRepeater" runat="server">
                                     <ItemTemplate>
+                                        <asp:HiddenField runat="server" ID="ProductId" Value='<%# Eval("Product.Id") %>' />
                                         <tr>
                                             <td class="shoping__cart__item">
                                                 <img src="img/cart/cart-2.jpg" alt="">
@@ -51,7 +52,7 @@
                                             <td class="shoping__cart__quantity">
                                                 <div class="quantity">
                                                     <div class="pro-qty">
-                                                        <asp:TextBox runat="server" type="text" value='<%# Eval("CartQuantity") %>' ID="qty" />
+                                                        <asp:TextBox runat="server" type="SingleLine" Text='<%# Eval("CartQuantity") %>' ID="qty" />
                                                     </div>
                                                 </div>
                                             </td>
@@ -59,7 +60,7 @@
                                                 <%# Eval("CartAmount") %>
                                             </td>
                                             <td class="shoping__cart__item__close">
-                                                <asp:Button runat="server" OnClick="DeleteCartItem" Text="Delete" CommandArgument='<%# Eval("Product.Id") %>'/>
+                                                <asp:Button runat="server" OnClick="DeleteCartItem" Text="Delete" CommandArgument='<%# Eval("Product.Id") %>' />
                                             </td>
                                         </tr>
                                     </ItemTemplate>
@@ -68,6 +69,7 @@
                         </table>
                     </div>
                 </div>
+                <asp:Label ID="Result" CssClass="text-danger" runat="server" />
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -80,10 +82,8 @@
                     <div class="shoping__continue">
                         <div class="shoping__discount">
                             <h5>Discount Codes</h5>
-                            <form action="#">
-                                <asp:TextBox runat="server" ID="Coupon" placeholder="Enter your coupon code" CssClass="form-control" />
-                                <asp:Button runat="server" Text="APPLY COUPON" CssClass="site-btn" ForeColor="White" />
-                            </form>
+                            <asp:TextBox runat="server" ID="Coupon" placeholder="Enter your coupon code" CssClass="form-control" />
+                            <asp:Button runat="server" Text="APPLY COUPON" CssClass="site-btn" ForeColor="White" />
                         </div>
                     </div>
                 </div>

@@ -38,18 +38,43 @@ namespace _888MarketplaceApp.Views
             int productId = int.Parse(closeButton.CommandArgument);
             SessionManager sessionManager = SessionManager.Instance;
             User user = sessionManager.GetLoggedInUser(Request.Cookies);
+            UserData userDataAccess = new UserData();
+            user = userDataAccess.GetUser(user.Id);
 
             Models.Cart userCart = user.Carts.FirstOrDefault();
             Cart_Product cartProduct = userCart.Cart_Product.Where(cp => cp.ProductId == productId).FirstOrDefault();
             CartProductData dataAccess = new CartProductData();
-            Cart_Product cartProductInDb = dataAccess.GetCartProduct(cartProduct.Id);
-            dataAccess.DeleteCartProduct(cartProductInDb);
-            Response.Redirect("/Views/Users/CartDeleteConfirmation.aspx");
+            dataAccess.DeleteCartProduct(cartProduct);
+            Response.Redirect("/Views/Users/CartConfirmation.aspx");
         }
 
         protected void UpdateCart(object sender, EventArgs e)
         {
-            Response.Redirect(HttpContext.Current.Request.Url.AbsolutePath);
+            SessionManager sessionManager = SessionManager.Instance;
+            User user = sessionManager.GetLoggedInUser(Request.Cookies);
+            UserData userDataAccess = new UserData();
+            user = userDataAccess.GetUser(user.Id);
+
+            Models.Cart userCart = user.Carts.FirstOrDefault();
+            CartRepeater.DataBind();
+            foreach (RepeaterItem item in CartRepeater.Items)
+            {
+                TextBox quantityTextBox = (TextBox)item.FindControl("qty");
+                HiddenField productIdHiddenField = (HiddenField)item.FindControl("ProductId");
+
+                int newQuantity;
+                if (!int.TryParse(quantityTextBox.Text, out newQuantity))
+                {
+                    Result.Text = "Invalid Character";
+                    return;
+                }
+                Result.Text = "";
+                int productId = int.Parse(productIdHiddenField.Value);
+                Cart_Product cartProduct = userCart.Cart_Product.Where(cp => cp.ProductId == productId).FirstOrDefault();
+                CartProductData cartDataAccess = new CartProductData();
+                cartDataAccess.UpdateCartProduct(cartProduct);
+            }
+            Response.Redirect("/Views/Users/CartConfirmation.aspx");
         }
     }
 }

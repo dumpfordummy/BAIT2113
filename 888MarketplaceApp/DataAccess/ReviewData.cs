@@ -53,9 +53,15 @@ namespace _888MarketplaceApp.DataAccess
 
         public Review DeleteReview(Review review)
         {
-            var result = _reviews.Remove(review);
-            _db.SaveChanges();
-            return result;
+            var target = _reviews.Find(review.Id);
+
+            if (target != null)
+            {
+                var result = _reviews.Remove(target);
+                _db.SaveChanges();
+                return result;
+            }
+            return null;
         }
     }
 }

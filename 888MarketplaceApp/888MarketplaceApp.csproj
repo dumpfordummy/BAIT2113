@@ -378,7 +378,7 @@
     <Content Include="Views\Admin\AdminDashboard.aspx" />
     <Content Include="Views\AllProduct.aspx" />
     <Content Include="Views\Users\Cart.aspx" />
-    <Content Include="Views\Users\CartDeleteConfirmation.aspx" />
+    <Content Include="Views\Users\CartConfirmation.aspx" />
     <Content Include="Views\Users\ChangePassword.aspx" />
     <Content Include="Views\Users\Checkout.aspx" />
     <Content Include="Views\Default.aspx" />
@@ -564,12 +564,12 @@
     <Compile Include="Views\AllProduct.aspx.designer.cs">
       <DependentUpon>AllProduct.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Users\CartDeleteConfirmation.aspx.cs">
-      <DependentUpon>CartDeleteConfirmation.aspx</DependentUpon>
+    <Compile Include="Views\Users\CartConfirmation.aspx.cs">
+      <DependentUpon>CartConfirmation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Users\CartDeleteConfirmation.aspx.designer.cs">
-      <DependentUpon>CartDeleteConfirmation.aspx</DependentUpon>
+    <Compile Include="Views\Users\CartConfirmation.aspx.designer.cs">
+      <DependentUpon>CartConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Users\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>

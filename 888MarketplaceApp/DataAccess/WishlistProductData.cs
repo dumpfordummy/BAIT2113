@@ -60,9 +60,15 @@ namespace _888MarketplaceApp.DataAccess
 
         public Wishlist_Product DeleteWishlistProduct(Wishlist_Product wishlistProduct)
         {
-            var result = _wishlistProducts.Remove(wishlistProduct);
-            _db.SaveChanges();
-            return result;
+            var target = _wishlistProducts.Find(wishlistProduct.Id);
+
+            if (target != null)
+            {
+                var result = _wishlistProducts.Remove(target);
+                _db.SaveChanges();
+                return result;
+            }
+            return null;
         }
     }
 }

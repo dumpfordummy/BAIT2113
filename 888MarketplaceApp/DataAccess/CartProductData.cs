@@ -60,9 +60,15 @@ namespace _888MarketplaceApp.DataAccess
 
         public Cart_Product DeleteCartProduct(Cart_Product cartProduct)
         {
-            var result = _cartProducts.Remove(cartProduct);
-            _db.SaveChanges();
-            return result;
+            var target = _cartProducts.Find(cartProduct.Id);
+
+            if (target != null)
+            {
+                var result = _cartProducts.Remove(target);
+                _db.SaveChanges();
+                return result;
+            }
+            return null;
         }
     }
 }
