@@ -7,6 +7,7 @@ DROP TABLE [dbo].[Payment]
 DROP TABLE [dbo].[Product]
 DROP TABLE [dbo].[Cart]
 DROP TABLE [dbo].[Wishlist]
+DROP TABLE [dbo].[Voucher_Redemption]
 DROP TABLE [dbo].[User]
 DROP TABLE [dbo].[ShippingMethod]
 DROP TABLE [dbo].[PaymentMethod]
@@ -14,12 +15,23 @@ DROP TABLE [dbo].[Category]
 DROP TABLE [dbo].[Userrole]
 DROP TABLE [dbo].[Review]
 DROP TABLE [dbo].[Voucher]
+DROP TABLE [dbo].[Billing]
 
+
+CREATE TABLE [dbo].[Billing] (
+    [Id]                 INT           IDENTITY (1, 1) NOT NULL,
+    [Email]              VARCHAR (50)  NOT NULL,
+    [FirstName]          VARCHAR (50)  NOT NULL,
+    [LastName]           VARCHAR (50)  NOT NULL,
+    [Phone]              VARCHAR (50)  NOT NULL,
+    [Address]            VARCHAR (MAX) NOT NULL,
+    CONSTRAINT [PK_Billing] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
 
 CREATE TABLE [dbo].[Voucher] (
     [Id]     INT        IDENTITY (1, 1) NOT NULL,
     [Code]   CHAR (15)  NOT NULL,
-    [Amount] FLOAT (53) NULL,
+    [Amount] FLOAT (53) NOT NULL,
     CONSTRAINT [PK_Voucher] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
@@ -75,6 +87,15 @@ CREATE TABLE [dbo].[User] (
     [VerificationExpire] DATETIME2 (7) NULL,
     CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_User_Userrole] FOREIGN KEY ([Userrole]) REFERENCES [dbo].[Userrole] ([Id])
+);
+
+CREATE TABLE [dbo].[Voucher_Redemption] (
+    [Id]        INT IDENTITY (1, 1) NOT NULL,
+    [VoucherId] INT NOT NULL,
+    [BuyerId]   INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Voucher_VoucherId] FOREIGN KEY ([VoucherId]) REFERENCES [dbo].[Voucher] ([Id]),
+    CONSTRAINT [FK_Voucher_BuyerId] FOREIGN KEY ([BuyerId]) REFERENCES [dbo].[User] ([Id])
 );
 
 CREATE TABLE [dbo].[Wishlist]
@@ -135,7 +156,7 @@ CREATE TABLE [dbo].[Payment] (
     [Id]              INT           IDENTITY (1, 1) NOT NULL,
     [PaymentMethodId] INT           NOT NULL,
     [PaymentAmount]   FLOAT (53)    NOT NULL,
-    [PaymentDate]     DATETIME2 (7) NOT NULL,
+    [PaymentDate]     DATETIME2 (7) NOT NULL
     CONSTRAINT [PK_Payment] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Payment_PaymentMethodId] FOREIGN KEY ([PaymentMethodId]) REFERENCES [dbo].[PaymentMethod] ([Id])
 );
@@ -146,6 +167,8 @@ CREATE TABLE [dbo].[Delivery] (
     [Date]                  DATETIME2 (7) NOT NULL,
     [ShippingMethodId]      INT           NOT NULL,
     [EstimatedDeliveryDate] DATETIME2 (7) NOT NULL,
+    [Amount]                FLOAT (53)    NOT NULL,
+    [ActualDeliveryDate] DATETIME2 NULL, 
     CONSTRAINT [PK_Delivery] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Delivery_ShippingMethodId] FOREIGN KEY ([ShippingMethodId]) REFERENCES [dbo].[ShippingMethod] ([Id])
 );
@@ -160,11 +183,13 @@ CREATE TABLE [dbo].[Order] (
     [PaymentId]  INT           NOT NULL,
     [DeliveryId] INT           NOT NULL,
     [VoucherId]  INT           NULL,
+    [BillingId] INT NOT NULL, 
     CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Order_PaymentId] FOREIGN KEY ([PaymentId]) REFERENCES [dbo].[Payment] ([Id]),
     CONSTRAINT [FK_Order_DeliveryId] FOREIGN KEY ([DeliveryId]) REFERENCES [dbo].[Delivery] ([Id]),
     CONSTRAINT [FK_Order_VoucherId] FOREIGN KEY ([VoucherId]) REFERENCES [dbo].[Voucher] ([Id]),
-    CONSTRAINT [FK_Order_BuyerId] FOREIGN KEY ([BuyerId]) REFERENCES [dbo].[User] ([Id])
+    CONSTRAINT [FK_Order_BuyerId] FOREIGN KEY ([BuyerId]) REFERENCES [dbo].[User] ([Id]),
+    CONSTRAINT [FK_Order_BillingId] FOREIGN KEY ([BillingId]) REFERENCES [dbo].[Billing] ([Id])
 );
 
 CREATE TABLE [dbo].[Product_Order] (
@@ -179,25 +204,6 @@ CREATE TABLE [dbo].[Product_Order] (
     CONSTRAINT [FK_Product_Order_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [dbo].[Order] ([Id])
 );
 
-TRUNCATE TABLE [dbo].[Product_Order];
-TRUNCATE TABLE [dbo].[Cart_Product];
-TRUNCATE TABLE [dbo].[Wishlist_Product];
-TRUNCATE TABLE [dbo].[Order];
-TRUNCATE TABLE [dbo].[Delivery];
-TRUNCATE TABLE [dbo].[Payment];
-TRUNCATE TABLE [dbo].[Product];
-TRUNCATE TABLE [dbo].[Cart];
-TRUNCATE TABLE [dbo].[Wishlist];
-DELETE FROM [dbo].[User];  -- Since [User] is a reserved keyword, use DELETE instead of TRUNCATE
-TRUNCATE TABLE [dbo].[Review];
-TRUNCATE TABLE [dbo].[ShippingMethod];
-TRUNCATE TABLE [dbo].[PaymentMethod];
-TRUNCATE TABLE [dbo].[Category];
-TRUNCATE TABLE [dbo].[Userrole];
-TRUNCATE TABLE [dbo].[Voucher];
-
-INSERT INTO [dbo].[Userrole] VALUES ('Member');
-INSERT INTO [dbo].[Userrole] VALUES ('Admin');
 
 DBCC CHECKIDENT ('Voucher', RESEED, 0)
 GO

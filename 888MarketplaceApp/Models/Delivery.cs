@@ -25,6 +25,8 @@ namespace _888MarketplaceApp.Models
         public System.DateTime Date { get; set; }
         public int ShippingMethodId { get; set; }
         public System.DateTime EstimatedDeliveryDate { get; set; }
+        public double Amount { get; set; }
+        public Nullable<System.DateTime> ActualDeliveryDate { get; set; }
     
         public virtual ShippingMethod ShippingMethod { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

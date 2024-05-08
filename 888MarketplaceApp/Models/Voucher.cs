@@ -18,13 +18,16 @@ namespace _888MarketplaceApp.Models
         public Voucher()
         {
             this.Orders = new HashSet<Order>();
+            this.Voucher_Redemption = new HashSet<Voucher_Redemption>();
         }
     
         public int Id { get; set; }
         public string Code { get; set; }
-        public Nullable<double> Amount { get; set; }
+        public double Amount { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Voucher_Redemption> Voucher_Redemption { get; set; }
     }
 }

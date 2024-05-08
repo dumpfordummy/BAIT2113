@@ -40,25 +40,5 @@ namespace _888MarketplaceApp.Models
         public virtual ICollection<Cart_Product> Cart_Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Wishlist_Product> Wishlist_Product { get; set; }
-
-        public List<string> GetImagePathList()
-        {
-            List<string> imagePaths = new List<string>();
-
-            if (!string.IsNullOrEmpty(ImagePaths))
-            {
-                string[] paths = ImagePaths.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-
-                foreach (string path in paths)
-                {
-                    string trimmedPath = path.Trim();
-
-                    imagePaths.Add(trimmedPath);
-                }
-            }
-
-            return imagePaths;
-        }
-
     }
 }

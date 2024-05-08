@@ -29,6 +29,7 @@ namespace _888MarketplaceApp.Models
         public int DeliveryId { get; set; }
         public Nullable<int> VoucherId { get; set; }
         public string Status { get; set; }
+        public int BillingId { get; set; }
     
         public virtual Delivery Delivery { get; set; }
         public virtual Payment Payment { get; set; }
@@ -36,5 +37,6 @@ namespace _888MarketplaceApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Order> Product_Order { get; set; }
         public virtual Voucher Voucher { get; set; }
+        public virtual Billing Billing { get; set; }
     }
 }

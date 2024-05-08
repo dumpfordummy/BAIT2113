@@ -78,4 +78,16 @@ namespace _888MarketplaceApp.Models
     {
 
     }
+
+    public partial class PaymentMethod
+    {
+        public static string CreditCard = "Credit Card";
+        public static string Paypal = "Paypal";
+    }
+
+    public partial class ShippingMethod
+    {
+        public static string Express = "Express";
+        public static string Standard = "Standard";
+    }
 }

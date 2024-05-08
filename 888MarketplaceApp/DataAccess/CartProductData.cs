@@ -32,9 +32,9 @@ namespace _888MarketplaceApp.DataAccess
             return result;
         }
 
-        public Cart_Product GetCartProductByCartId(int cartId)
+        public List<Cart_Product> GetCartProductsByCartId(int cartId)
         {
-            var result = _cartProducts.FirstOrDefault(c => c.CartId == cartId);
+            var result = _cartProducts.Where(c => c.CartId == cartId).ToList();
             return result;
         }
 

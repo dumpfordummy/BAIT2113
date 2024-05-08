@@ -39,6 +39,11 @@
         <AssociationConnector Association="DBModel.FK_Wishlist_Product_WishlistId" />
         <AssociationConnector Association="DBModel.FK_Cart_BuyerId" />
         <AssociationConnector Association="DBModel.FK_Wishlist_BuyerId" />
+        <EntityTypeShape EntityType="DBModel.Voucher_Redemption" Width="1.5" PointX="5.25" PointY="5.5" />
+        <AssociationConnector Association="DBModel.FK_Voucher_BuyerId" />
+        <AssociationConnector Association="DBModel.FK_Voucher_VoucherId" />
+        <EntityTypeShape EntityType="DBModel.Billing" Width="1.5" PointX="10.375" PointY="0.75" />
+        <AssociationConnector Association="DBModel.FK_Order_BillingId" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -41,5 +41,7 @@ namespace _888MarketplaceApp.Models
         public virtual DbSet<Voucher> Vouchers { get; set; }
         public virtual DbSet<Wishlist> Wishlists { get; set; }
         public virtual DbSet<Wishlist_Product> Wishlist_Product { get; set; }
+        public virtual DbSet<Voucher_Redemption> Voucher_Redemption { get; set; }
+        public virtual DbSet<Billing> Billings { get; set; }
     }
 }

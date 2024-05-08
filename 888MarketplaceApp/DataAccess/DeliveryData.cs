@@ -44,8 +44,13 @@ namespace _888MarketplaceApp.DataAccess
             if (target != null)
             {
                 target.Address = delivery.Address;
+                target.Date = delivery.Date;
                 target.ShippingMethodId = delivery.ShippingMethodId;
                 target.EstimatedDeliveryDate = delivery.EstimatedDeliveryDate;
+                if(delivery.ActualDeliveryDate != null)
+                {
+                    target.ActualDeliveryDate = delivery.ActualDeliveryDate;
+                }
                 _db.SaveChanges();
             }
         }

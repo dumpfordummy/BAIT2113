@@ -52,12 +52,14 @@
                                             <td class="shoping__cart__quantity">
                                                 <div class="quantity">
                                                     <div class="pro-qty">
-                                                        <asp:TextBox runat="server" type="SingleLine" Text='<%# Eval("CartQuantity") %>' ID="qty" />
+                                                        <asp:Button runat="server" ID="btnPlus" Text="-" OnClick="DecreaseQuantity_Click" CommandArgument='<%# Eval("Product.Id") + "," + Eval("CartQuantity") %>' />
+                                                        <asp:TextBox runat="server" ID="ItemQuantity" type="SingleLine" Text='<%# Eval("CartQuantity") %>' Enabled="false"></asp:TextBox>
+                                                        <asp:Button runat="server" ID="btnMinus" Text="+" OnClick="IncreaseQuantity_Click" CommandArgument='<%# Eval("Product.Id") + "," + Eval("CartQuantity") %>' />
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="shoping__cart__total">
-                                                <%# Eval("CartAmount") %>
+                                                <asp:Label ID="CartItemTotal" Text='<%# Eval("CartAmount") %>' runat="server" ></asp:Label>
                                             </td>
                                             <td class="shoping__cart__item__close">
                                                 <asp:Button runat="server" OnClick="DeleteCartItem" Text="Delete" CommandArgument='<%# Eval("Product.Id") %>' />
@@ -75,7 +77,6 @@
                 <div class="col-lg-12">
                     <div class="shoping__cart__btns">
                         <asp:HyperLink runat="server" NavigateUrl="/Views/LandingPage.aspx" Text="CONTINUE SHOPPING" CssClass="primary-btn cart-btn" />
-                        <asp:Button runat="server" OnClick="UpdateCart" Text="Update Cart" CssClass="primary-btn cart-btn cart-btn-right" />
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -83,7 +84,8 @@
                         <div class="shoping__discount">
                             <h5>Discount Codes</h5>
                             <asp:TextBox runat="server" ID="Coupon" placeholder="Enter your coupon code" CssClass="form-control" />
-                            <asp:Button runat="server" Text="APPLY COUPON" CssClass="site-btn" ForeColor="White" />
+                            <br />
+                            <asp:Button runat="server" Text="APPLY COUPON" OnClick="ApplyCoupon_Click" CssClass="site-btn" ForeColor="White" />
                         </div>
                     </div>
                 </div>
@@ -91,8 +93,10 @@
                     <div class="shoping__checkout">
                         <h5>Cart Total</h5>
                         <ul>
-                            <li>Subtotal <span>$219.89</span></li>
-                            <li>Total <span>$219.89</span></li>
+                            <li>Subtotal <asp:Label runat="server" ID="SubTotal"></asp:Label></li>
+                            <li>Delivery Fee<asp:Label runat="server" ID="DeliveryFee"></asp:Label></li>
+                            <li><asp:Label runat="server" ID="VoucherDiscount" Visible="false"></asp:Label></li>
+                            <li>Total <asp:Label runat="server" ID="Total"></asp:Label></li>
                         </ul>
                         <asp:HyperLink ID="lnkChkOut" class="primary-btn" NavigateUrl="~/Views/Users/Checkout.aspx" runat="server">PROCEED TO CHECKOUT</asp:HyperLink>
                     </div>

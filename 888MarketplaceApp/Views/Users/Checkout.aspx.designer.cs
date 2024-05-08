@@ -24,6 +24,15 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox Firstname;
 
         /// <summary>
+        /// FirstNameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator FirstNameValidator;
+
+        /// <summary>
         /// Lastname control.
         /// </summary>
         /// <remarks>
@@ -33,22 +42,13 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox Lastname;
 
         /// <summary>
-        /// ddlCountries control.
+        /// LastNameValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCountries;
-
-        /// <summary>
-        /// ddlState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlState;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator LastNameValidator;
 
         /// <summary>
         /// Address control.
@@ -60,31 +60,13 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox Address;
 
         /// <summary>
-        /// Address2 control.
+        /// AddressValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Address2;
-
-        /// <summary>
-        /// Town control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Town;
-
-        /// <summary>
-        /// Postcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Postcode;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator AddressValidator;
 
         /// <summary>
         /// Phone control.
@@ -96,6 +78,15 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox Phone;
 
         /// <summary>
+        /// phoneValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator phoneValidator;
+
+        /// <summary>
         /// Email control.
         /// </summary>
         /// <remarks>
@@ -103,6 +94,15 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Email;
+
+        /// <summary>
+        /// EmailValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator EmailValidator;
 
         /// <summary>
         /// radioDeliStd control.
@@ -123,13 +123,49 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.RadioButton radioDeliExp;
 
         /// <summary>
-        /// Promo control.
+        /// ProductCheckoutRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Promo;
+        protected global::System.Web.UI.WebControls.Repeater ProductCheckoutRepeater;
+
+        /// <summary>
+        /// SubTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SubTotal;
+
+        /// <summary>
+        /// DeliveryFee control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DeliveryFee;
+
+        /// <summary>
+        /// VoucherDiscount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label VoucherDiscount;
+
+        /// <summary>
+        /// Total control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Total;
 
         /// <summary>
         /// radioCard control.
@@ -150,12 +186,21 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.RadioButton radioPaypal;
 
         /// <summary>
-        /// PlaceOrd control.
+        /// Result control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink PlaceOrd;
+        protected global::System.Web.UI.WebControls.Label Result;
+
+        /// <summary>
+        /// PlaceOrderBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button PlaceOrderBtn;
     }
 }

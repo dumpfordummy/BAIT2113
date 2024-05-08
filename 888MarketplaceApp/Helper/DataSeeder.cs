@@ -15,6 +15,7 @@ namespace _888MarketplaceApp.Helper
 
         public static void Seed()
         {
+            SeedBilling();
             SeedVouchers();
             SeedUserroles();
             SeedCategories();
@@ -126,8 +127,8 @@ namespace _888MarketplaceApp.Helper
 
             var shippingMethods = new List<ShippingMethod>
             {
-                new ShippingMethod { Name = "Standard", Description = "Standard shipping" },
-                new ShippingMethod { Name = "Express", Description = "Express shipping" }
+                new ShippingMethod { Name = ShippingMethod.Standard, Description = "Standard shipping" },
+                new ShippingMethod { Name = ShippingMethod.Express, Description = "Express shipping" }
             };
 
             foreach (var shippingMethod in shippingMethods)
@@ -215,7 +216,8 @@ namespace _888MarketplaceApp.Helper
                     BuyerId = 3,
                     PaymentId = 1,
                     DeliveryId = 1,
-                    VoucherId = null
+                    VoucherId = null,
+                    BillingId = 1
                 }
             };
 
@@ -235,8 +237,8 @@ namespace _888MarketplaceApp.Helper
 
             var paymentMethods = new List<PaymentMethod>
             {
-                new PaymentMethod { Name = "Credit Card", Description = "Payment via credit card" },
-                new PaymentMethod { Name = "PayPal", Description = "Payment via PayPal" }
+                new PaymentMethod { Name = PaymentMethod.CreditCard, Description = "Payment via credit card" },
+                new PaymentMethod { Name = PaymentMethod.Paypal, Description = "Payment via PayPal" }
             };
 
             foreach (var paymentMethod in paymentMethods)
@@ -342,7 +344,8 @@ namespace _888MarketplaceApp.Helper
                     Address = "Sample address",
                     Date = DateTime.Now,
                     ShippingMethodId = 1,
-                    EstimatedDeliveryDate = DateTime.Now.AddDays(5)
+                    EstimatedDeliveryDate = DateTime.Now.AddDays(5),
+                    Amount = 10
                 }
             };
 
@@ -366,8 +369,7 @@ namespace _888MarketplaceApp.Helper
                 {
                     PaymentAmount = 99.99,
                     PaymentDate = DateTime.Now,
-                    PaymentMethodId = 1,
-
+                    PaymentMethodId = 1
                 }
             };
 
@@ -466,6 +468,31 @@ namespace _888MarketplaceApp.Helper
             foreach (var wish in wishlistProduct)
             {
                 dataAccess.CreateWishlistProduct(wish);
+            }
+        }
+
+        private static void SeedBilling()
+        {
+            BillingData dataAccess = new BillingData();
+            if (dataAccess.hasExistingData)
+            {
+                return;
+            }
+
+            var billings = new List<Billing>
+            {
+                new Billing
+                {
+                    FirstName = "CY",
+                    LastName = "Hoo",
+                    Email = "cyhoo0528@gmail.com",
+                    Address = "PV15 Setapak",
+                    Phone = "0192009289"
+                }
+            };
+            foreach (var bill in billings)
+            {
+                dataAccess.CreateBilling(bill);
             }
         }
     }
