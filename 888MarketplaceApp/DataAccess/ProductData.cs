@@ -56,6 +56,7 @@ namespace _888MarketplaceApp.DataAccess
                 target.Price = product.Price;
                 target.Quantity = product.Quantity;
                 target.CategoryId = product.CategoryId;
+                target.ImagePaths = product.ImagePaths;
                 _db.SaveChanges();
             }
         }

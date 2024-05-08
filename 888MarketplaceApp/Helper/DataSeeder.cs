@@ -174,7 +174,8 @@ namespace _888MarketplaceApp.Helper
                     Price = 999.99,
                     Quantity = 10,
                     SellerId = 2,
-                    CategoryId = 1
+                    CategoryId = 1,
+                    ImagePaths = "/Content/Images/ProductImage/1_1.jpg;/Content/Images/ProductImage/1_2.jpg"
                 },
                 new Product
                 {
@@ -184,7 +185,8 @@ namespace _888MarketplaceApp.Helper
                     Price = 19.99,
                     Quantity = 50,
                     SellerId = 2,
-                    CategoryId = 2
+                    CategoryId = 2,
+                    ImagePaths = "/Content/Images/ProductImage/2_1.jpg;/Content/Images/ProductImage/2_2.jpg"
                 }
             };
 

@@ -82,6 +82,7 @@
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="SellerId" Type="int" Nullable="false" />
           <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="ImagePaths" Type="varchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Product_Order">
           <Key>
@@ -547,6 +548,7 @@
           <NavigationProperty Name="Product_Order" Relationship="DBModel.FK_Product_Order_ProductId" FromRole="Product" ToRole="Product_Order" />
           <NavigationProperty Name="Cart_Product" Relationship="DBModel.FK_Cart_Product_ProductId" FromRole="Product" ToRole="Cart_Product" />
           <NavigationProperty Name="Wishlist_Product" Relationship="DBModel.FK_Wishlist_Product_ProductId" FromRole="Product" ToRole="Wishlist_Product" />
+          <Property Name="ImagePaths" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Product_Order">
           <Key>
@@ -1030,6 +1032,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="DBModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ImagePaths" ColumnName="ImagePaths" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
