@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteConfirmation.aspx.cs" Inherits="_888MarketplaceApp.Views.Admin.DeleteConfirmation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="DeleteConfirmation.aspx.cs" Inherits="_888MarketplaceApp.Views.Admin.DeleteConfirmation"%>
 
 <!DOCTYPE html>
 
