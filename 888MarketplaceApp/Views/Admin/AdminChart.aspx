@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content runat="server" ID="bodyCT" ContentPlaceHolderID="bodyContent">
-    <div class="container-scroller">
+    <div class="container-scroller" id="content">
 
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
@@ -41,7 +41,7 @@
                                     <h4 class="font-weight-bold mb-0">Chart Sales Report</h4>
                                 </div>
                                 <div>
-                                    <button type="button" class="btn btnGreen btn-icon-text btn-rounded">
+                                    <button type="button" class="btn btnGreen btn-icon-text btn-rounded" onclick="printContent()">
                                         <i class="ti-printer btn-icon-prepend"></i>Print
                                     </button>
                                 </div>
@@ -107,6 +107,11 @@
         <script src="/Scripts/App/Admin/todolist.js"></script>
         <!-- endinject -->
         <!-- Custom js for this page-->
+        <script>
+            function printContent() {
+                window.print();
+            }
+        </script>
         <script type="text/javascript">
             $(function () {
                 /* ChartJS

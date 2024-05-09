@@ -1,5 +1,6 @@
 ﻿using _888MarketplaceApp.DataAccess;
 using _888MarketplaceApp.Models;
+using _888MarketplaceApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace _888MarketplaceApp
         {
             if (!IsPostBack) {
                 ProductData pd = new ProductData();
-                List<Product> allProduct = pd.GetProducts().Where(p => !p.IsBan).ToList();
+                List<Models.Product> allProduct = pd.GetProducts().Where(p => !p.IsBan).ToList();
 
                 AdminTableRepeater.DataSource = allProduct;
                 AdminTableRepeater.DataBind();
@@ -36,10 +37,22 @@ namespace _888MarketplaceApp
             ProductData pd = new ProductData();
             Button banBtn = (Button)sender;
             int ProductId = int.Parse(banBtn.CommandArgument);
-            Product product = pd.GetProduct(ProductId);
+            Models.Product product = pd.GetProduct(ProductId);
             product.IsBan = true;
             pd.UpdateProduct(product);
             Response.Redirect(HttpContext.Current.Request.Url.AbsolutePath);
+        }
+
+        protected void search(object sender, EventArgs e)
+        {
+            String userInput = searchBox.Text;
+
+            ProductData pd = new ProductData();
+            List<Models.Product> productName = pd.GetProductsBySimilarName(userInput);
+
+            AdminTableRepeater.DataSource = productName;
+            AdminTableRepeater.DataBind();
+
         }
     }
 }

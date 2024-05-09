@@ -41,8 +41,8 @@
                                 <div class="card-body">
                                     <div>
                                         <h3 class="font-weight-bold mb-0" style="width: 55%; display: inline-block;">Product Listing Table</h3>
-                                        <asp:TextBox CssClas="searchTxt" runat="server" Style="margin-left: 20%;">Search Product</asp:TextBox>
-                                        <asp:Button CssClass="btn btnGreen btn-icon-text btn-rounded" runat="server" Text="Search" />
+                                        <asp:TextBox ID="searchBox" CssClas="searchTxt" runat="server" Style="margin-left: 20%;"></asp:TextBox>
+                                        <asp:Button CssClass="btn btnGreen btn-icon-text btn-rounded" runat="server" Text="Search" OnClick="search" />
 
 
                                     </div>
@@ -87,12 +87,6 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <div class="product__pagination">
-                                            <a href="#">1</a>
-                                            <a href="#">2</a>
-                                            <a href="#">3</a>
-                                            <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
