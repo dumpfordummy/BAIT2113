@@ -52,6 +52,10 @@ namespace _888MarketplaceApp.Views
                 categoryPopularityCount.Add(count.ToString());
             }
 
+            List<Models.Product> allProduct = productData.GetProducts().Where(p => !p.IsBan).ToList();
+            AdminDashboardRepeater.DataSource = allProduct.Take(10);
+            AdminDashboardRepeater.DataBind();
+
             // Register the array declaration
             ClientScript.RegisterArrayDeclaration("productCategories", ConvertStringArrayToString(productCategories));
             ClientScript.RegisterArrayDeclaration("productCount", ConvertStringArrayToString(productCount));
