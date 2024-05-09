@@ -198,10 +198,19 @@ namespace _888MarketplaceApp.Views
             string[] values = btn.CommandArgument.Split(',');
             int productId = int.Parse(values[0]);
             int newQuantity = int.Parse(values[1]) + 1;
+            ProductData productData = new ProductData();
+
+            if (productData.GetProduct(productId).Quantity < newQuantity)
+            {
+                return;
+            }
+
             SessionManager sessionManager = SessionManager.Instance;
             User user = sessionManager.GetLoggedInUser(Request.Cookies);
             UserData userDataAccess = new UserData();
             user = userDataAccess.GetUser(user.Id);
+            
+
 
             Models.Cart userCart = user.Carts.FirstOrDefault();
             Cart_Product cartProduct = userCart.Cart_Product.Where(cp => cp.ProductId == productId && !cp.Product.IsBan).FirstOrDefault();

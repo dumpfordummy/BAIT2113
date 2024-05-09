@@ -236,7 +236,14 @@ namespace _888MarketplaceApp.Views
                 productOrder.Quantity = product.ProductQuantity;
                 ProductOrderData poDataAccess = new ProductOrderData();
                 poDataAccess.CreateProductOrder(productOrder);
+
+                ProductData pDataAccess = new ProductData();
+                var targetProd = pDataAccess.GetProduct(product.Product.Id);
+                targetProd.Quantity -= product.ProductQuantity;
+                pDataAccess.UpdateProduct(targetProd);
             }
+
+
 
             Models.Cart cart = new Models.Cart();
             cart = cartDataAccess.GetCartByBuyerId(user.Id);
