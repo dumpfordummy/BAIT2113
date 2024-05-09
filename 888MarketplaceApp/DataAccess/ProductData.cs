@@ -63,6 +63,7 @@ namespace _888MarketplaceApp.DataAccess
                 target.Quantity = product.Quantity;
                 target.CategoryId = product.CategoryId;
                 target.ImagePaths = product.ImagePaths;
+                target.IsBan = product.IsBan;
                 _db.SaveChanges();
             }
         }

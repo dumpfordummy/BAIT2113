@@ -123,7 +123,8 @@ CREATE TABLE [dbo].[Product] (
     [Quantity]    INT           NOT NULL,
     [SellerId]    INT           NOT NULL,
     [CategoryId]  INT           NOT NULL,
-    [ImagePaths] VARCHAR(MAX) NOT NULL, 
+    [ImagePaths]  VARCHAR (MAX) NOT NULL,
+    [IsBan] BIT NOT NULL, 
     CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Product_SellerId] FOREIGN KEY ([SellerId]) REFERENCES [dbo].[User] ([Id]),
     CONSTRAINT [FK_Product_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [dbo].[Category] ([Id])

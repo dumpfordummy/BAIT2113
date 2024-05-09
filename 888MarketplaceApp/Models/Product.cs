@@ -31,6 +31,7 @@ namespace _888MarketplaceApp.Models
         public int SellerId { get; set; }
         public int CategoryId { get; set; }
         public string ImagePaths { get; set; }
+        public bool IsBan { get; set; }
     
         public virtual User User { get; set; }
         public virtual Category Category { get; set; }

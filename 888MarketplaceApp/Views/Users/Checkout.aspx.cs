@@ -35,7 +35,7 @@ namespace _888MarketplaceApp.Views
                 cp.Product,
                 ProductQuantity = cp.Quantity,
                 Amount = "RM" + (cp.Product.Price * cp.Quantity).ToString()
-            }).ToList();
+            }).Where(cp => !cp.Product.IsBan).ToList();
 
             ProductCheckoutRepeater.DataSource = customCartProductsDataSource;
             ProductCheckoutRepeater.DataBind();
@@ -226,7 +226,7 @@ namespace _888MarketplaceApp.Views
             {
                 cp.Product,
                 ProductQuantity = cp.Quantity
-            }).ToList();
+            }).Where(cp => !cp.Product.IsBan).ToList();
 
             foreach (var product in customCartProduct)
             {

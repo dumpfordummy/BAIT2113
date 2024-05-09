@@ -15,7 +15,7 @@ namespace _888MarketplaceApp
         {
             if (!IsPostBack) {
                 ProductData pd = new ProductData();
-                List<Product> allProduct = pd.GetProducts();
+                List<Product> allProduct = pd.GetProducts().Where(p => !p.IsBan).ToList();
 
                 AdminTableRepeater.DataSource = allProduct;
                 AdminTableRepeater.DataBind();
@@ -36,12 +36,10 @@ namespace _888MarketplaceApp
             ProductData pd = new ProductData();
             Button banBtn = (Button)sender;
             int ProductId = int.Parse(banBtn.CommandArgument);
-            Product Id = pd.GetProduct(ProductId);
-            Product product = pd.DeleteProduct(Id);
+            Product product = pd.GetProduct(ProductId);
+            product.IsBan = true;
             pd.UpdateProduct(product);
             Response.Redirect(HttpContext.Current.Request.Url.AbsolutePath);
         }
-
-
     }
 }

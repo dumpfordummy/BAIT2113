@@ -27,7 +27,7 @@ namespace _888MarketplaceApp.Views
                     ImagePath = wp.Product.GetImagePathList()[0],
                     WishlistQuantity = wp.Quantity,
                     WishlistAmount = "RM" + (wp.Product.Price * wp.Quantity).ToString()
-                }).ToList();
+                }).Where(wp => !wp.Product.IsBan).ToList();
 
                 WishlistRepeater.DataSource = customWishlistProductsDataSource;
                 WishlistRepeater.DataBind();

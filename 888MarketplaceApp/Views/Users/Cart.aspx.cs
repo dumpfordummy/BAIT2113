@@ -32,7 +32,7 @@ namespace _888MarketplaceApp.Views
                 ImagePath = cp.Product.GetImagePathList()[0],
                 CartQuantity = cp.Quantity,
                 CartAmount = "RM" + (cp.Product.Price * cp.Quantity).ToString()
-            }).ToList();
+            }).Where(cp => !cp.Product.IsBan).ToList();
 
             CartRepeater.DataSource = customCartProductsDataSource;
             CartRepeater.DataBind();
@@ -176,7 +176,7 @@ namespace _888MarketplaceApp.Views
             user = userDataAccess.GetUser(user.Id);
 
             Models.Cart userCart = user.Carts.FirstOrDefault();
-            Cart_Product cartProduct = userCart.Cart_Product.Where(cp => cp.ProductId == productId).FirstOrDefault();
+            Cart_Product cartProduct = userCart.Cart_Product.Where(cp => cp.ProductId == productId && !cp.Product.IsBan).FirstOrDefault();
             cartProduct.Quantity = newQuantity;
             CartProductData dataAccess = new CartProductData();
 
@@ -204,7 +204,7 @@ namespace _888MarketplaceApp.Views
             user = userDataAccess.GetUser(user.Id);
 
             Models.Cart userCart = user.Carts.FirstOrDefault();
-            Cart_Product cartProduct = userCart.Cart_Product.Where(cp => cp.ProductId == productId).FirstOrDefault();
+            Cart_Product cartProduct = userCart.Cart_Product.Where(cp => cp.ProductId == productId && !cp.Product.IsBan).FirstOrDefault();
             cartProduct.Quantity = newQuantity;
             CartProductData dataAccess = new CartProductData();
             dataAccess.UpdateCartProduct(cartProduct);

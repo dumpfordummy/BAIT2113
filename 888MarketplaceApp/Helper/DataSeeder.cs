@@ -176,7 +176,8 @@ namespace _888MarketplaceApp.Helper
                     Quantity = 10,
                     SellerId = 2,
                     CategoryId = 1,
-                    ImagePaths = "/Content/Images/ProductImage/1_1.jpg;/Content/Images/ProductImage/1_2.jpg"
+                    ImagePaths = "/Content/Images/ProductImage/1_1.jpg;/Content/Images/ProductImage/1_2.jpg",
+                    IsBan = false
                 },
                 new Product
                 {
@@ -187,7 +188,8 @@ namespace _888MarketplaceApp.Helper
                     Quantity = 50,
                     SellerId = 2,
                     CategoryId = 2,
-                    ImagePaths = "/Content/Images/ProductImage/2_1.jpg;/Content/Images/ProductImage/2_2.jpg"
+                    ImagePaths = "/Content/Images/ProductImage/2_1.jpg;/Content/Images/ProductImage/2_2.jpg",
+                    IsBan = false
                 }
             };
 
