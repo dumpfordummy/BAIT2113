@@ -162,6 +162,9 @@ namespace _888MarketplaceApp.Helper
 
         public User GetLoggedInUser(HttpCookieCollection cookies)
         {
+            HttpCookie cookie = cookies[TokenName];
+            if (cookie == null)
+                return User.empty;
             var authToken = cookies[TokenName].Value;
             if (TryAuthenticateToken(authToken, out var sessionData))
             {
