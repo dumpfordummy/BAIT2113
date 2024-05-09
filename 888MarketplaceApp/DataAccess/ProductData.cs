@@ -38,6 +38,12 @@ namespace _888MarketplaceApp.DataAccess
             return result;
         }
 
+        public List<Product> GetProductsBySimilarName(string name)
+        {
+            var result = _products.Where(c => c.Name.Contains(name)).ToList();
+            return result;
+        }
+
         public List<Product> GetProductsBySellerId(int sellerId)
         {
             var result = _products.Where(c => c.SellerId == sellerId).ToList();
