@@ -19,10 +19,18 @@ namespace _888MarketplaceApp.Views
             CategoryRepeater.DataSource = catList;
             CategoryRepeater.DataBind();
 
-            ProductData pd = new ProductData();
-            List<Models.Product> prodList = pd.GetProducts();
-            ProductsRepeater.DataSource = prodList;
-            ProductsRepeater.DataBind();
+            if (Session["MatchedProducts"] == null)
+            {
+                ProductData pd = new ProductData();
+                List<Models.Product> prodList = pd.GetProducts();
+                ProductsRepeater.DataSource = prodList;
+                ProductsRepeater.DataBind();
+            }
+            else {
+                List<Models.Product> prodList = (List<Models.Product>)Session["MatchedProducts"];
+                ProductsRepeater.DataSource = prodList;
+                ProductsRepeater.DataBind();
+            }
 
         }
     }

@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Caching;
 using static _888MarketplaceApp.Models.User;
 using static System.Collections.Specialized.BitVector32;
 
@@ -165,7 +166,8 @@ namespace _888MarketplaceApp.Helper
             HttpCookie cookie = cookies[TokenName];
             if (cookie == null)
                 return User.empty;
-            var authToken = cookies[TokenName].Value;
+
+            var authToken = cookie.Value;
             if (TryAuthenticateToken(authToken, out var sessionData))
             {
                 return sessionData;

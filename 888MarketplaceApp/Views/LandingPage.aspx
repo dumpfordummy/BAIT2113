@@ -4,49 +4,34 @@
     <style>
         body {
             font-family: "Cairo", sans-serif !important;
-            font-size:1rem;
-            font-weight:400;
-            line-height:1.5;
-            color:#212529;
-            text-align:left;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
         }
 
         ul {
             margin-bottom: 0;
         }
 
-        .footer{
+        .footer {
             font-family: "Cairo", sans-serif !important;
         }
 
-        a { text-decoration: none !important; }
+        a {
+            text-decoration: none !important;
+        }
     </style>
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>All departments</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Shoes</a></li>
-                            <li><a href="#">Clothing & Apparel</a></li>
-                            <li><a href="#">Electronic Devices</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Hats</a></li>
-                            <li><a href="#">Watches</a></li>
-                            <li><a href="#">Snacks</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                                <input type="text" placeholder="What are you looking for?" />
-                                <button id="btnSearch" class="site-btn" type="submit" runat="server">SEARCH</button>
+                            <input runat="server" id="txtSearch" type="text" placeholder="What are you looking for?" />
+                            <button id="btnSearch" class="site-btn" runat="server" onserverclick="searchProducts">SEARCH</button>
                         </div>
                         <div class="hero__search__phone">
                             <div class="hero__search__phone__icon">
@@ -61,7 +46,9 @@
                     <div class="hero__item set-bg" data-setbg="../Images/orange_shoe_banner.jpg" style="background-size: 100% 100%;">
                         <div class="hero__text">
                             <span style="color: #ff7400;">LATEST DESIGN</span>
-                            <h2>AMIBAS NUKE 5 <br />STRE4MLIN3</h2>
+                            <h2>AMIBAS NUKE 5
+                                <br />
+                                STRE4MLIN3</h2>
                             <p>Free Pickup and Delivery Available</p>
                             <asp:HyperLink runat="server" CssClass="primary-btn" Text="SHOP NOW" NavigateUrl="~/Views/AllProduct.aspx"></asp:HyperLink>
                         </div>
@@ -71,32 +58,6 @@
         </div>
     </section>
     <!-- Hero Section End -->
-
-    <!-- Categories Section Begin -->
-    <section class="categories">
-        <div class="container">
-            <div class="row">
-                <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../Images/red_shoe.jpg">
-                            <h5><a href="#">Shoes</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../Images/grey_suit.jpg">
-                            <h5><a href="#">Shirts</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../Images/black_pants.jpg">
-                            <h5><a href="#">Pants</a></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Categories Section End -->
 
     <!-- Featured Section Begin -->
     <section class="featured spad">
@@ -109,30 +70,36 @@
                     <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".bottle">Bottles</li>
-                            <li data-filter=".shoes">Shoes</li>
-                            <li data-filter=".pants">Pants</li>
-                            <li data-filter=".clothes">Clothes</li>
+                            <asp:Repeater runat="server" ID="featCtrlRepeater">
+                                <ItemTemplate>
+                                    <li data-filter=".Cat<%# Eval("Id") %>"><%# Eval("Name") %></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row featured__filter">
-                <div class="col-lg-3 col-md-4 col-sm-6 mix bottle">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="../Images/705_tin_bottle.jpg" >
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
-                                <li><a href="#"><i class="fa fa-trash"></i></a></li>
-                            </ul>
+                <asp:Repeater runat="server" ID="featProdRepeater">
+                    <ItemTemplate>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mix Cat<%# Eval("Product.CategoryId") %>">
+                            <div class="featured__item">
+                                <div class="featured__item__pic set-bg" data-setbg="<%# Eval("Product.ImagePaths").ToString().Split(';')[0] %>">
+                                    <ul class="featured__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li runat="server" visible='<%# Eval("ShouldDisplay") %>'><a href="#"><i class="fa fa-pencil-square-o"></i></a></li>
+                                        <li runat="server" visible='<%# Eval("ShouldDisplay") %>'><a href="#"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="featured__item__text">
+                                    <h6><a href="#"><%# Eval("Product.Name") %></a></h6>
+                                    <h5>RM <%# Eval("Product.Price") %></h5>
+                                </div>
+                            </div>
                         </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Product Name</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+
                 <div class="col-lg-3 col-md-4 col-sm-6 mix bottle">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="../Images/black_rubber_bottle.jpg">

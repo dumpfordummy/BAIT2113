@@ -65,7 +65,7 @@ namespace _888MarketplaceApp.Views
             imgPdt.ImageUrl = imgUrl;
         }
 
-        protected void AddProductToCart()
+        protected void AddProductToCart(object sender, EventArgs e)
         {
             string productID = Request.QueryString["id"];
 

@@ -79,11 +79,11 @@
                                 <div class="checkout__input__checkbox">
                                     <div class="form-group">
                                         <asp:RadioButton runat="server" ID="radioDeliStd" GroupName="deliMethod" />
-                                        <asp:Label runat="server" AssociatedControlID="radioDeliStd">Standard (1 - 2 weeks)</asp:Label>
+                                        <asp:Label runat="server" AssociatedControlID="radioDeliStd">DHL</asp:Label>
                                     </div>
                                     <div class="form-group">
                                         <asp:RadioButton runat="server" ID="radioDeliExp" GroupName="deliMethod" />
-                                        <asp:Label runat="server" AssociatedControlID="radioDeliExp">Express (1 - 4 days)</asp:Label>
+                                        <asp:Label runat="server" AssociatedControlID="radioDeliExp">FedEx</asp:Label>
                                     </div>
                                 </div>
                             </div>

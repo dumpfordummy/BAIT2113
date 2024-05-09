@@ -109,4 +109,8 @@
             </div>
         </div>
     </section>
+    <script>
+        var target = document.getElementsByClassName("product__item__pic__hover")[0];
+
+    </script>
 </asp:Content>

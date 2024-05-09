@@ -79,9 +79,9 @@
                         <div class="header__cart">
                             <ul>
                                 <li>
-                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Views/Users/Wishlist.aspx"><i class="fa fa-heart"></i><span>3</span></asp:HyperLink></li>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Views/Users/Wishlist.aspx"><i class="fa fa-heart"></i><span runat="server" id="wishlistCount"></span></asp:HyperLink></li>
                                 <li>
-                                    <asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/Views/Users/Cart.aspx"><i class="fa fa-shopping-bag"></i><span>3</span></asp:HyperLink></li>
+                                    <asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/Views/Users/Cart.aspx"><i class="fa fa-shopping-bag"></i><span runat="server" id="cartItemCount"></span></asp:HyperLink></li>
                             </ul>
                             &nbsp;&nbsp;&nbsp;
                 <div class="header__cart__price">item: <span>$0.00</span></div>

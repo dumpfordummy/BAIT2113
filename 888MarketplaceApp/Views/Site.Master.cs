@@ -1,4 +1,5 @@
-﻿using _888MarketplaceApp.Helper;
+﻿using _888MarketplaceApp.DataAccess;
+using _888MarketplaceApp.Helper;
 using _888MarketplaceApp.Models;
 using System;
 using System.Collections.Generic;
@@ -80,6 +81,22 @@ namespace _888MarketplaceApp.Views
             }
 
             lnkAccount.NavigateUrl = "~/Views/Users/Account";
+
+            if (user.Id != 0)
+            {
+                Models.Cart userCart = user.Carts.FirstOrDefault();
+                CartData dataAccess = new CartData();
+                Models.Cart userCartInDb = dataAccess.GetCart(userCart.Id);
+                cartItemCount.InnerText = userCartInDb.Cart_Product.Count.ToString();
+
+                Models.Wishlist wishlist = user.Wishlists.FirstOrDefault();
+                WishlistData wishlistData = new WishlistData();
+                Models.Wishlist userWishlistInDb = wishlistData.GetWishlist(wishlist.Id);
+                wishlistCount.InnerText = userWishlistInDb.Wishlist_Product.Count.ToString();
+            } else {
+                wishlistCount.InnerText = "0";
+                cartItemCount.InnerText = "0";
+            }
         }
 
         protected void LoggingOut(object sender, LoginCancelEventArgs e)
