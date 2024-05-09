@@ -45,12 +45,12 @@
                         <div class="col-md-3 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="card-title text-md-center text-xl-left">Total Gross Merchandise Volume</p>
+                                    <p class="card-title text-md-center text-xl-left">Total Product Ordered</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">8888</h3>
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
+                                            <asp:Label runat="server" ID="OrderCount"></asp:Label></h3>
                                         <i class="ti-shopping-cart icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
-                                    <p class="mb-0 mt-2 text-success">0.12% <span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
                             </div>
                         </div>
@@ -59,10 +59,10 @@
                                 <div class="card-body">
                                     <p class="card-title text-md-center text-xl-left">Total Product Sold (RM)</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">5123</h3>
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
+                                            <asp:Label runat="server" ID="ProductSoldAmount"></asp:Label></h3>
                                         <i class="ti-money icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
-                                    <p class="mb-0 mt-2 text-success">0.47% <span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
                             </div>
                         </div>
@@ -71,10 +71,10 @@
                                 <div class="card-body">
                                     <p class="card-title text-md-center text-xl-left">Total Product Listed</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">50</h3>
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
+                                            <asp:Label runat="server" ID="ProductListedCount"></asp:Label></h3>
                                         <i class="ti-server icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
-                                    <p class="mb-0 mt-2 text-success">+ 1 Product <span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
                             </div>
                         </div>
@@ -83,10 +83,10 @@
                                 <div class="card-body">
                                     <p class="card-title text-md-center text-xl-left">Total number of Existing User</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">200</h3>
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
+                                            <asp:Label runat="server" ID="UserCount"></asp:Label></h3>
                                         <i class="ti-user icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
-                                    <p class="mb-0 mt-2 text-success">+ 20 Users <span class="text-black ms-1"><small>(30 days)</small></span></p>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
 
                                                 </tr>
                                             </thead>
-<%--                                            <tbody>
+                                            <%--                                            <tbody>
                                                 <asp:Repeater ID="AdminDashboardRepeater" runat="server">
                                                     <ItemTemplate>
                                                         <tr>
@@ -240,30 +240,121 @@
                             </div>
                         </div>
                     </div>
-                                                            </div>
+                </div>
                 <!-- content-wrapper ends -->
-                                                            </div>
+            </div>
             <!-- main-panel ends -->
-                                                            </div>
+        </div>
         <!-- page-body-wrapper ends -->
-                                                            </div>
+    </div>
     <!-- container-scroller -->
 
-                                                            <!-- plugins:js -->
-                                                            <script src="/Content/App/admin/vendors/base/vendor.bundle.base.js"></script>
-                                                            <!-- endinject -->
-                                                            <!-- Plugin js for this page-->
-                                                            <script src="/Content/App/admin/vendors/chart.js/Chart.min.js"></script>
-                                                            <script src="/Scripts/App/Admin/jquery.cookie.js" type="text/javascript"></script>
-                                                            <!-- End plugin js for this page-->
-                                                            <!-- inject:js -->
-                                                            <script src="/Scripts/App/Admin/off-canvas.js"></script>
-                                                            <script src="/Scripts/App/Admin/hoverable-collapse.js"></script>
-                                                            <script src="/Scripts/App/Admin/template.js"></script>
-                                                            <script src="/Scripts/App/Admin/todolist.js"></script>
-                                                            <!-- endinject -->
-                                                            <!-- Custom js for this page-->
-                                                            <script src="/Scripts/App/Admin/dashboard.js"></script>
-                                                            <script src="/Scripts/App/Admin/chart.js"></script>
-                                                            <!-- End custom js for this page-->
+    <!-- plugins:js -->
+    <script src="/Content/App/admin/vendors/base/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="/Content/App/admin/vendors/chart.js/Chart.min.js"></script>
+    <script src="/Scripts/App/Admin/jquery.cookie.js" type="text/javascript"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="/Scripts/App/Admin/off-canvas.js"></script>
+    <script src="/Scripts/App/Admin/hoverable-collapse.js"></script>
+    <script src="/Scripts/App/Admin/template.js"></script>
+    <script src="/Scripts/App/Admin/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="/Scripts/App/Admin/dashboard.js"></script>
+    <%--<script src="/Scripts/App/Admin/chart.js"></script>--%>
+
+    <script type="text/javascript">
+        $(function () {
+            /* ChartJS
+             * -------
+             * Data and config for chartjs
+             */
+            'use strict';
+
+            var doughnutPieData = {
+                datasets: [{
+                    data: productCount,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                }],
+
+                // These labels appear in the legend and in the tooltips when hovering different arcs
+                labels: productCategories
+            };
+
+            var PieData = {
+                datasets: [{
+                    data: popularityCount,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                }],
+
+                // These labels appear in the legend and in the tooltips when hovering different arcs
+                labels: productCategories
+            };
+
+            var doughnutPieOptions = {
+                responsive: true,
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            };
+
+
+
+            if ($("#doughnutChart").length) {
+                var doughnutChartCanvas = $("#doughnutChart").get(0).getContext("2d");
+                var doughnutChart = new Chart(doughnutChartCanvas, {
+                    type: 'doughnut',
+                    data: doughnutPieData,
+                    options: doughnutPieOptions
+                });
+            }
+
+            if ($("#pieChart").length) {
+                var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
+                var pieChart = new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: PieData,
+                    options: doughnutPieOptions
+                });
+            }
+
+        });
+
+    </script>
+
+    <!-- End custom js for this page-->
 </asp:Content>
