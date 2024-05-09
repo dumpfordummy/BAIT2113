@@ -190,6 +190,128 @@ namespace _888MarketplaceApp.Helper
                     CategoryId = 2,
                     ImagePaths = "/Content/Images/ProductImage/2_1.jpg;/Content/Images/ProductImage/2_2.jpg",
                     IsBan = false
+                },
+
+                new Product
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Apple MacBook Pro 16-inch",
+                    Description = "Professional laptop",
+                    Price = 2399.99,
+                    Quantity = 15,
+                    SellerId = 2,
+                    CategoryId = 1,
+                    ImagePaths = "/Content/Images/ProductImage/3-1.jpg;/Content/Images/ProductImage/3-2.jpg",
+                    IsBan = false
+                },
+
+                new Product
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Nike Air Zoom Pegasus 38",
+                    Description = "Running shoes",
+                    Price = 129.99,
+                    Quantity = 25,
+                    SellerId = 2,
+                    CategoryId = 2,
+                    ImagePaths = "/Content/Images/ProductImage/4-1.jpg;/Content/Images/ProductImage/4-2.jpg",
+                    IsBan = false
+                },
+                new Product
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Canon EOS R5",
+                    Description = "Mirrorless camera",
+                    Price = 3899.99,
+                    Quantity = 10,
+                    SellerId = 3,
+                    CategoryId = 1,
+                    ImagePaths = "/Content/Images/ProductImage/5-1.jpg;/Content/Images/ProductImage/5-2.jpg",
+                    IsBan = false
+                },
+                new Product
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Amazon Echo Dot (4th Gen)",
+                    Description = "Smart speaker with Alexa",
+                    Price = 49.99,
+                    Quantity = 40,
+                    SellerId = 2,
+                    CategoryId = 1,
+                    ImagePaths = "/Content/Images/ProductImage/6-1.jpg;/Content/Images/ProductImage/6-2.jpg",
+                    IsBan = false
+                },
+                new Product
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Dell UltraSharp U2720Q",
+                    Description = "27-inch 4K monitor",
+                    Price = 649.99,
+                    Quantity = 20,
+                    SellerId = 1,
+                    CategoryId = 1,
+                    ImagePaths = "/Content/Images/ProductImage/7-1.jpg;/Content/Images/ProductImage/7-2.jpg",
+                    IsBan = false
+                },
+                new Product
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Cuisinart DCC-3200",
+                    Description = "Programmable coffee maker",
+                    Price = 89.99,
+                    Quantity = 30,
+                    SellerId = 2,
+                    CategoryId = 1,
+                    ImagePaths = "/Content/Images/ProductImage/8-1.jpg;/Content/Images/ProductImage/8-2.jpg",
+                    IsBan = false
+                },
+                new Product
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Logitech MX Master 3",
+                    Description = "Wireless mouse",
+                    Price = 99.99,
+                    Quantity = 35,
+                    SellerId = 2,
+                    CategoryId = 1,
+                    ImagePaths = "/Content/Images/ProductImage/9-1.jpg;/Content/Images/ProductImage/9-2.jpg",
+                    IsBan = false
+                },
+                new Product
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Instant Pot Duo Evo Plus",
+                    Description = "10-in-1 pressure cooker",
+                    Price = 119.99,
+                    Quantity = 25,
+                    SellerId = 2,
+                    CategoryId = 1,
+                    ImagePaths = "/Content/Images/ProductImage/10-1.jpg;/Content/Images/ProductImage/10-2.jpg",
+                    IsBan = false
+                },
+                new Product
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Fujifilm Instax Mini 11",
+                    Description = "Instant camera",
+                    Price = 69.99,
+                    Quantity = 15,
+                    SellerId = 1,
+                    CategoryId = 1,
+                    ImagePaths = "/Content/Images/ProductImage/11-1.jpg;/Content/Images/ProductImage/11-2.jpg",
+                    IsBan = false
+                },
+                new Product
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Apple Watch Series 7",
+                    Description = "Smartwatch",
+                    Price = 399.99,
+                    Quantity = 20,
+                    SellerId = 3,
+                    CategoryId = 1,
+                    ImagePaths = "/Content/Images/ProductImage/12-1.jpg;/Content/Images/ProductImage/12-2.jpg",
+                    IsBan = false
                 }
             };
 

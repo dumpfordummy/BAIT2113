@@ -243,6 +243,7 @@ namespace _888MarketplaceApp.Views
             CartProductData productDataAccess = new CartProductData();
             List<Cart_Product> cartProducts = productDataAccess.GetCartProductsByCartId(cart.Id);
             cartProducts.ForEach(cartProduct => { productDataAccess.DeleteCartProduct(cartProduct); });
+            Response.Redirect("/Views/Users/PaymentSucc.aspx");
         }
 
         protected void PhoneValidator(object sender, ServerValidateEventArgs e)
