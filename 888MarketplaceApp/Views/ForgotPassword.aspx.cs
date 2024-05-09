@@ -41,7 +41,7 @@ namespace _888MarketplaceApp.Views
             user.VerificationExpire = DateTime.Now.AddMinutes(VerificationTokenManager.VerificationExpireMinute);
             userAccess.UpdateUser(user);
 
-            RegisterAsyncTask(new PageAsyncTask(() => EmailSender.SendForgotVerificationAsync(user, url)));
+            EmailSender.SendForgotVerification(user, url);
             Result.Text = "A verification link has been sent, please check your email";
 
 

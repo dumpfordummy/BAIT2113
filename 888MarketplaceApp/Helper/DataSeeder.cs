@@ -97,7 +97,7 @@ namespace _888MarketplaceApp.Helper
                 new User
                 {
                     Username = "dumpfordummy",
-                    Email = "cyhoo0528@example.com",
+                    Email = "cyhoocsgo@gmail.com",
                     PasswordHash = PasswordHelper.HashPassword("asdf1234"),
                     DateCreated = DateTime.Now,
                     FirstName = "Chun Yuan",

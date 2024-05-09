@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace _888MarketplaceApp.Services
 {
     public class EmailSender
     {
-        public static async Task SendForgotVerificationAsync(User user, string url)
+        public static void SendForgotVerification(User user, string url)
         {
             var options = new RestClientOptions("https://43n43n.api.infobip.com")
             {
@@ -22,10 +23,11 @@ namespace _888MarketplaceApp.Services
             request.AddHeader("Accept", "application/json");
             request.AlwaysMultipartFormData = true;
             request.AddParameter("from", "888 Marketplace <hoocy-wm21@student.tarc.edu.my>");
-            request.AddParameter("subject", "Forgot password");
+            request.AddParameter("subject", "Email Verification");
             request.AddParameter("to", $"{{\"to\":\"{user.Email}\",\"placeholders\":{{\"fullName\":\"{user.FirstName + user.LastName}\"}}}}");
             request.AddParameter("text", "Hi {{fullName}}, your 888 Marketplace account password reset link:" + url + " . It will expire in " + VerificationTokenManager.VerificationExpireMinute + " minutes.");
-            RestResponse response = await client.ExecuteAsync(request);
+            RestResponse response = client.Execute(request);
+            Debug.WriteLine(response.Content.ToString());
         }
     }
 }

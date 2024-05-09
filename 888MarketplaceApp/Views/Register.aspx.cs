@@ -87,8 +87,7 @@ namespace _888MarketplaceApp.Views
             };
             WishlistData wishlistDataAccess = new WishlistData();
             wishlistDataAccess.CreateWishlist(wishlist);
-
-            RegisterAsyncTask(new PageAsyncTask(() => EmailSender.SendForgotVerificationAsync(user, url)));
+            EmailSender.SendForgotVerification(user, url);
 
             RegisterSuccess();
 
