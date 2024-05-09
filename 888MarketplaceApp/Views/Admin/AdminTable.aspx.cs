@@ -33,7 +33,13 @@ namespace _888MarketplaceApp
 
         protected void banClick(object sender, EventArgs e)
         {
-
+            ProductData pd = new ProductData();
+            Button banBtn = (Button)sender;
+            int ProductId = int.Parse(banBtn.CommandArgument);
+            Product Id = pd.GetProduct(ProductId);
+            Product product = pd.DeleteProduct(Id);
+            pd.UpdateProduct(product);
+            Response.Redirect(HttpContext.Current.Request.Url.AbsolutePath);
         }
 
 
