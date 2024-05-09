@@ -72,9 +72,7 @@
                         <asp:Label ID="lblPurchaseQty" runat="server" Text="Quantity (Unit): "></asp:Label>
                         <asp:TextBox ID="inPurchaseQty" runat="server" CssClass="form-control mt-2" type="number" min="1" max='' step="1" Style="width: 30%; display: inline"></asp:TextBox>
                         <br />
-                        <asp:RangeValidator runat="server" ID="purchaseQtyVal" ControlToValidate="inPurchaseQty" Type="Integer"
-                            ErrorMessage="Invalid input number. Input is unrealistic or exceeding stock quantity."
-                            MinimumValue="1" ForeColor="Red"></asp:RangeValidator>
+                        <asp:RequiredFieldValidator runat="server" ID="purchaseQtyVal" ControlToValidate="inPurchaseQty" ErrorMessage="Purchase quantity cannot be empty." ForeColor="Red" />
                     </div>
                     <div class="form-group mt-5">
                         <asp:Button runat="server" OnClick="AddProductToCart" Text="Add to Cart" CssClass="site-btn btn btn-primary" />
@@ -87,38 +85,6 @@
                     <p runat="server" id="pdtDesc" class="fw-light" style="font-family: var(--bs-font-sans-serif)"></p>
                 </div>
 
-                <hr class="mx-auto" style="width: 95%" />
-                <div class="col-md-12 px-5">
-                    <h5 class="fw-bold mb-2" style="font-family: var(--bs-font-sans-serif);">Reviews</h5>
-                    <asp:Label ID="lblPdtReview" runat="server" Text="Leave your reviews here: "></asp:Label>
-                    <br />
-                    <div class="rate">
-                        <input type="radio" id="v2_star5" name="rate2" value="5" />
-                        <label for="v2_star5" title="text">5 stars</label>
-                        <input type="radio" id="v2_star4" name="rate2" value="4" />
-                        <label for="v2_star4" title="text">4 stars</label>
-                        <input type="radio" id="v2_star3" name="rate2" value="3" />
-                        <label for="v2_star3" title="text">3 stars</label>
-                        <input type="radio" id="v2_star2" name="rate2" value="2" />
-                        <label for="v2_star2" title="text">2 stars</label>
-                        <input type="radio" id="v2_star1" name="rate2" value="1" />
-                        <label for="v2_star1" title="text">1 star</label>
-                    </div>
-                    <asp:TextBox runat="server" ID="txtPdtReview" TextMode="MultiLine" CssClass="form-control" Rows="4"></asp:TextBox>
-                    <br />
-                    <asp:Repeater ID="PdtReviewRepeater" runat="server">
-                        <ItemTemplate>
-                            <p class="fw-light" style="font-family: var(--bs-font-sans-serif)">
-                                <% for (int i = 0; i < int.Parse(Eval("Rating").ToString()); i++)
-                                    { %>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <% } %>
-                                <br />
-                                <%# Eval("Content") %>
-                            </p>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </div>
             </div>
         </div>
     </div>
