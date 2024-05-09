@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _888MarketplaceApp.DataAccess;
+using _888MarketplaceApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,17 +13,29 @@ namespace _888MarketplaceApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack) {
+                ProductData pd = new ProductData();
+                List<Product> allProduct = pd.GetProducts();
 
+                AdminTableRepeater.DataSource = allProduct;
+                AdminTableRepeater.DataBind();
+            }
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void viewClick(object sender, EventArgs e)
+        {
+            Button viewBtn = (Button)sender;
+            String ProductId = viewBtn.CommandArgument;
+
+            String Destination = $"/Product?Id={ProductId}";
+            Response.Redirect(Destination);
+        }
+
+        protected void banClick(object sender, EventArgs e)
         {
 
         }
 
-        protected void TextBox1_TextChanged1(object sender, EventArgs e)
-        {
 
-        }
     }
 }
