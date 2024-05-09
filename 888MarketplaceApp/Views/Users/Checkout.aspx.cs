@@ -4,6 +4,7 @@ using _888MarketplaceApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
@@ -68,7 +69,7 @@ namespace _888MarketplaceApp.Views
             return (phoneValidator.IsValid && AddressValidator.IsValid && EmailValidator.IsValid && FirstNameValidator.IsValid && LastNameValidator.IsValid && (radioDeliStd.Checked || radioDeliExp.Checked) && (radioCard.Checked || radioPaypal.Checked));
         }
 
-        private void ProcessSubTotal()
+        private double GetItemAmountSubtotal()
         {
             double subTotal = 0;
 
@@ -81,6 +82,12 @@ namespace _888MarketplaceApp.Views
                     subTotal += totals;
                 }
             }
+            return subTotal;
+        }
+
+        private void ProcessSubTotal()
+        {
+            double subTotal = GetItemAmountSubtotal();
 
             double voucherAmount = 0;
             if (IsUserHasVoucher(Request.Cookies))
@@ -177,6 +184,7 @@ namespace _888MarketplaceApp.Views
             deliveryDataAccess.CreateDelivery(delivery);
 
             Order order = new Order();
+            order.Amount = GetItemAmountSubtotal();
             order.Date = DateTime.Now;
             order.BuyerId = user.Id;
             order.BillingId = billing.Id;
@@ -189,18 +197,26 @@ namespace _888MarketplaceApp.Views
 
             if (ShouldHaveVoucherDiscount)
             {
-                Voucher voucher = new Voucher();
-                string voucherCode = Request.Cookies["vouchercode"].Value;
-                VoucherData voucherDataAccess = new VoucherData();
-                voucher = voucherDataAccess.GetVoucherByCode(voucherCode);
-                order.VoucherId = voucher.Id;
-                Voucher_Redemption vr = new Voucher_Redemption
+                HttpCookie cookie = Request.Cookies["vouchercode"];
+                if (cookie == null)
                 {
-                    BuyerId = user.Id,
-                    VoucherId = voucher.Id
-                };
-                VoucherRedemptionData vrDataAccess = new VoucherRedemptionData();
-                vrDataAccess.CreateVoucherRedemption(vr);
+                    ShouldHaveDeliveryFee = false;
+                } else
+                {
+                    Voucher voucher = new Voucher();
+                    string voucherCode = cookie.Value;
+                    VoucherData voucherDataAccess = new VoucherData();
+                    voucher = voucherDataAccess.GetVoucherByCode(voucherCode);
+                    order.VoucherId = voucher.Id;
+                    Voucher_Redemption vr = new Voucher_Redemption
+                    {
+                        BuyerId = user.Id,
+                        VoucherId = voucher.Id
+                    };
+                    VoucherRedemptionData vrDataAccess = new VoucherRedemptionData();
+                    vrDataAccess.CreateVoucherRedemption(vr);
+                }
+                
             }
 
             Models.Cart userCart = user.Carts.FirstOrDefault();
