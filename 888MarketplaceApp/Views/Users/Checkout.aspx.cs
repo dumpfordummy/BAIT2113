@@ -146,11 +146,11 @@ namespace _888MarketplaceApp.Views
 
             if (radioDeliStd.Checked)
             {
-                shippingMethod = shippingMethodDataAccess.GetShippingMethodByName(ShippingMethod.Standard);
+                shippingMethod = shippingMethodDataAccess.GetShippingMethodByName(ShippingMethod.DHL);
             }
             else
             {
-                shippingMethod = shippingMethodDataAccess.GetShippingMethodByName(ShippingMethod.Express);
+                shippingMethod = shippingMethodDataAccess.GetShippingMethodByName(ShippingMethod.Fedex);
             }
 
             SessionManager sessionManager = SessionManager.Instance;

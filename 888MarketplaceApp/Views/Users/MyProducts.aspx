@@ -7,7 +7,7 @@
             <div class="card mx-auto" tabindex="-1" aria-hidden="true" style="width: 60%">
                 <asp:HiddenField runat="server" ID="delProductID" Value="" />
                 <div class="m-3">
-                    <div class="d-flex flex-column" >
+                    <div class="d-flex flex-column">
                         <div class="modal-header p-3">
                             <h4 class="modal-title">Product Delete Confirmation</h4>
                         </div>
@@ -46,14 +46,14 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link acc-nav-item-active acc-nav-link-active" href="/Views/User/MyPurchases">
-                                        <i class="ti-view-list-alt menu-icon acc-nav-link-active"></i>
+                                    <a class="nav-link" href="/Views/Users/MyPurchases">
+                                        <i class="ti-view-list-alt menu-icon"></i>
                                         <span class="menu-title">My Purchase</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Views/Users/MyProducts">
-                                        <i class="fa fa-archive menu-icon"></i>
+                                    <a class="nav-link acc-nav-item-active acc-nav-link-active" href="/Views/Users/MyProducts">
+                                        <i class="ti-view-list-alt menu-icon acc-nav-link-active"></i>
                                         <span class="menu-title">My Products</span>
                                     </a>
                                 </li>
@@ -72,6 +72,13 @@
 
                                     <div class="card-content">
                                         <a class="btn btn-primary site-btn mb-5" runat="server" href="/Views/Users/AddProduct.aspx">Add product</a>
+
+                                        <% if (IsUserAdmin)
+                                            { %>
+                                        <a class="btn btn-primary site-btn mb-5" runat="server" href="/Views/Admin/AddCategory.aspx">Add category</a>
+
+
+                                        <%} %>
                                         <asp:Repeater runat="server" ID="myProdList">
                                             <ItemTemplate>
                                                 <div class="col-lg-3 col-md-4 col-sm-6 mix Cat<%# Eval("Product.CategoryId") %>">

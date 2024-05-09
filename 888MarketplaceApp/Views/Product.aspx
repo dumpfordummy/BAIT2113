@@ -74,10 +74,11 @@
                         <br />
                         <asp:RangeValidator runat="server" ID="purchaseQtyVal" ControlToValidate="inPurchaseQty" Type="Integer"
                             ErrorMessage="Invalid input number. Input is unrealistic or exceeding stock quantity."
-                            MinimumValue="1" ForeColor="Red"></asp:RangeValidator>
+                            MinimumValue="0" ForeColor="Red"></asp:RangeValidator>
                     </div>
                     <div class="form-group mt-5">
-                        <asp:Button runat="server" OnClick="AddProductToCart" Text="Add to Cart" CssClass="site-btn btn btn-primary" />
+                        <asp:Label ID="Result" runat="server" CssClass="text-danger"></asp:Label>
+                        <asp:Button runat="server" ID="AddToCartBtn" OnClick="AddProductToCart" Text="Add to Cart" CssClass="site-btn btn btn-primary" />
                     </div>
                 </div>
 

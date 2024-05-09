@@ -127,8 +127,8 @@ namespace _888MarketplaceApp.Helper
 
             var shippingMethods = new List<ShippingMethod>
             {
-                new ShippingMethod { Name = ShippingMethod.Standard, Description = "Standard shipping" },
-                new ShippingMethod { Name = ShippingMethod.Express, Description = "Express shipping" }
+                new ShippingMethod { Name = ShippingMethod.DHL, Description = "DHL shipping" },
+                new ShippingMethod { Name = ShippingMethod.Fedex, Description = "Fedex shipping" }
             };
 
             foreach (var shippingMethod in shippingMethods)

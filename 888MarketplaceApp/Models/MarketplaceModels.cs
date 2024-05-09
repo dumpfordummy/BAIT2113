@@ -105,7 +105,7 @@ namespace _888MarketplaceApp.Models
 
     public partial class ShippingMethod
     {
-        public static string Express = "Express";
-        public static string Standard = "Standard";
+        public static string Fedex = "FEDEX";
+        public static string DHL = "DHL";
     }
 }

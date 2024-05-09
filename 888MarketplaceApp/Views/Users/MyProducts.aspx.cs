@@ -13,6 +13,8 @@ namespace _888MarketplaceApp.Views.Users
 {
     public partial class MyProducts : System.Web.UI.Page
     {
+        public bool IsUserAdmin = false;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -21,7 +23,7 @@ namespace _888MarketplaceApp.Views.Users
             }
             SessionManager sessionManager = SessionManager.Instance;
             User user = sessionManager.GetLoggedInUser(Request.Cookies);
-            
+            IsUserAdmin = user.IsUserAdmin();
             ProductData pd = new ProductData();
             List<Models.Product> prodList = pd.GetProducts();
             var customProductList = prodList.Where(p => p.SellerId == user.Id).Select(p => new

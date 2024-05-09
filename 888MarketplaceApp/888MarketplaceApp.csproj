@@ -170,6 +170,7 @@
       <DependentUpon>MarketplaceDb.edmx</DependentUpon>
       <LastGenOutput>MarketplaceDb.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Admin\AddCategory.aspx" />
     <Content Include="Views\Admin\AdminTable.aspx" />
     <Content Include="App_Data\888DB.mdf" />
     <Content Include="App_Data\888DB_log.ldf">
@@ -492,6 +493,13 @@
     </Compile>
     <Compile Include="Services\EmailSender.cs" />
     <Compile Include="Services\VerificationTokenManager.cs" />
+    <Compile Include="Views\Admin\AddCategory.aspx.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AddCategory.aspx.designer.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\AdminTable.aspx.cs">
       <DependentUpon>AdminTable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

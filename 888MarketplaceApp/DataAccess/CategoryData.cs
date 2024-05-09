@@ -56,6 +56,17 @@ namespace _888MarketplaceApp.DataAccess
             }
         }
 
+        public Category DeleteCategory(Category category)
+        {
+            var target = _categories.Find(category.Id);
 
+            if (target != null)
+            {
+                var result = _categories.Remove(category);
+                _db.SaveChanges();
+                return result;
+            }
+            return null;
+        }
     }
 }

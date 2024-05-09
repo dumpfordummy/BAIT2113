@@ -16,6 +16,12 @@ namespace _888MarketplaceApp.Views
         {
             string productID = Request.QueryString["id"];
 
+            SessionManager sm = SessionManager.Instance;
+            if (!sm.GetUserLoginState(Request.Cookies))
+            {
+                AddToCartBtn.Visible = false;
+            }
+
             if (!IsPostBack)
             {
                 if (productID != string.Empty && productID != null)
@@ -27,6 +33,11 @@ namespace _888MarketplaceApp.Views
                     lblStockQty.Text += product.Quantity.ToString();
                     pdtDesc.InnerText = product.Description;
                     purchaseQtyVal.MaximumValue = product.Quantity.ToString();
+
+                    if (product.Quantity <= 0)
+                    {
+                        AddToCartBtn.Visible = false;
+                    }
 
                     List<string> imgPathList = product.GetImagePathList();
                     imgPdt.ImageUrl = imgPathList[0];
@@ -70,6 +81,11 @@ namespace _888MarketplaceApp.Views
         {
             string productID = Request.QueryString["id"];
 
+            if (!purchaseQtyVal.IsValid)
+            {
+                return;
+            }
+
             CartData cartData = new CartData();
             CartProductData cpData = new CartProductData();
 
@@ -78,7 +94,8 @@ namespace _888MarketplaceApp.Views
 
             Models.Cart cart = cartData.GetCartByBuyerId(user.Id);
 
-            Cart_Product cartProd = new Cart_Product {
+            Cart_Product cartProd = new Cart_Product
+            {
                 CartId = cart.Id,
                 ProductId = int.Parse(productID),
                 Quantity = int.Parse(inPurchaseQty.Text)

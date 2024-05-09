@@ -86,7 +86,7 @@
                             <div class="featured__item">
                                 <div class="featured__item__pic set-bg" data-setbg="<%# Eval("Product.ImagePaths").ToString().Split(';')[0] %>">
                                     <ul class="featured__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a href="/Views/Product?Id=<%# Eval("Product.Id") %>"><i class="fa fa-shopping-cart"></i></a></li>
                                         <li runat="server" visible='<%# Eval("ShouldDisplay") %>'><a href="/Views/Users/EditProduct?Id=<%# Eval("Product.Id") %>"><i class="fa fa-pencil-square-o"></i></a></li>
                                     </ul>
                                 </div>
