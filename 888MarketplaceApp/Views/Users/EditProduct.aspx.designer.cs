@@ -96,6 +96,15 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox txtPdtName;
 
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
         /// lblPdtDesc control.
         /// </summary>
         /// <remarks>
@@ -132,6 +141,15 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.TextBox inPdtPrice;
 
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
         /// lblPdtQty control.
         /// </summary>
         /// <remarks>
@@ -148,6 +166,15 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox inPdtQty;
+
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
         /// lblPdtCatg control.

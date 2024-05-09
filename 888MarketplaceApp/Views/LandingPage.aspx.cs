@@ -24,6 +24,7 @@ namespace _888MarketplaceApp.Views
             SessionManager sessionManager = SessionManager.Instance;
             User user = sessionManager.GetLoggedInUser(Request.Cookies);
             bool shouldDisplayEdit = false;
+            bool shouldDisplayATC = false;
             if (user != Models.User.empty)
                 shouldDisplayEdit = true;
             ProductData pd = new ProductData();
@@ -32,7 +33,7 @@ namespace _888MarketplaceApp.Views
             {
                 Product = p,
                 ShouldDisplay = p.SellerId == user.Id && shouldDisplayEdit,
-
+                ShouldDisplayATC = sessionManager.GetUserLoginState(Request.Cookies),
             });
             featProdRepeater.DataSource = customProductList;
             featProdRepeater.DataBind();
@@ -46,6 +47,30 @@ namespace _888MarketplaceApp.Views
 
             Session["MatchedProducts"] = matchedProducts;
             Response.Redirect("/Views/AllProduct.aspx");
+        }
+
+        protected void AddProductToCart(object sender, EventArgs e)
+        {
+            LinkButton toggleModalBtn = (LinkButton)sender;
+            int productID = int.Parse(toggleModalBtn.CommandArgument);
+            CartData cartData = new CartData();
+            CartProductData cpData = new CartProductData();
+
+            SessionManager session = SessionManager.Instance;
+            User user = session.GetLoggedInUser(Request.Cookies);
+
+            Models.Cart cart = cartData.GetCartByBuyerId(user.Id);
+
+            Cart_Product cartProd = new Cart_Product
+            {
+                CartId = cart.Id,
+                ProductId = productID,
+                Quantity = 1
+            };
+
+            cpData.CreateCartProduct(cartProd);
+
+            Response.Redirect(HttpContext.Current.Request.Url.AbsolutePath);
         }
     }
 }

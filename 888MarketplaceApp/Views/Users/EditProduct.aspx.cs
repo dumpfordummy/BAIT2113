@@ -52,6 +52,12 @@ namespace _888MarketplaceApp.Views
             string productID = hiddenProdID.Value;
             ProductData pd = new ProductData();
             Models.Product product = pd.GetProduct(int.Parse(productID));
+            if (inPdtQty.Text == string.Empty)
+            {
+                RequiredFieldValidator3.IsValid = false;
+                return;
+            }
+
 
             string fileNames = string.Empty;
             foreach (HttpPostedFile postedFile in imageUpl.PostedFiles)
@@ -82,13 +88,13 @@ namespace _888MarketplaceApp.Views
                 pd.UpdateProduct(product);
 
                 actionMessages.Visible = true;
-                cardActionMessage.Attributes.Add("style", "background-color: #29E275; border: none; padding: 10px; width: 60%");
+                cardActionMessage.Attributes.Add("style", "background-color: #29E275; border: none; padding: 10px; width: 80%");
                 resultMessage.Text = "Product is edited successfully!";
                 resultMessage.ForeColor = System.Drawing.Color.White;
                 
             } catch {
                 actionMessages.Visible = true;
-                cardActionMessage.Attributes.Add("style", "background-color: #29E275; border: none; padding: 10px; width: 60%");
+                cardActionMessage.Attributes.Add("style", "background-color: #29E275; border: none; padding: 10px; width: 80%");
                 resultMessage.Text = "Error! Product is not edited.";
                 resultMessage.ForeColor = System.Drawing.Color.White;
             }
