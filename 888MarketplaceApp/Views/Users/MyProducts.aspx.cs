@@ -56,7 +56,21 @@ namespace _888MarketplaceApp.Views.Users
 
             ProductData productData = new ProductData();
             Models.Product product = productData.GetProduct(productID);
-            productData.DeleteProduct(product);
+            try
+            {
+                productData.DeleteProduct(product);
+                actionMessages.Visible = true;
+                cardActionMessage.Attributes.Add("style", "background-color: #29E275; border: none; padding: 10px; width: 80%");
+                resultMessage.Text = "Product is added successfully!";
+                resultMessage.ForeColor = System.Drawing.Color.White;
+            }
+            catch
+            {
+                actionMessages.Visible = true;
+                cardActionMessage.Attributes.Add("style", "background-color: #29E275; border: none; padding: 10px; width: 80%");
+                resultMessage.Text = "Error! Product is not added!";
+                resultMessage.ForeColor = System.Drawing.Color.White;
+            }
 
             Response.Redirect(HttpContext.Current.Request.Url.AbsolutePath);
         }

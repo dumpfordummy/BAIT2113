@@ -32,7 +32,7 @@ namespace _888MarketplaceApp.Views
                     lblPdtPrice.Text += product.Price.ToString("0.00");
                     lblStockQty.Text += product.Quantity.ToString();
                     pdtDesc.InnerText = product.Description;
-                    purchaseQtyVal.MaximumValue = product.Quantity.ToString();
+                    
 
                     if (product.Quantity <= 0)
                     {
@@ -44,7 +44,7 @@ namespace _888MarketplaceApp.Views
                     imgBtnRepeater.DataSource = imgPathList;
                     imgBtnRepeater.DataBind();
 
-                    prgPdtMap.InnerText = "Category > " + product.Category.Name + "> " + product.Name;
+                    prgPdtMap.InnerText = "Category > " + product.Category.Name + " > " + product.Name;
 
                     ReviewData rd = new ReviewData();
                     List<Review> reviewsList = rd.GetReviews();
@@ -102,6 +102,7 @@ namespace _888MarketplaceApp.Views
             };
 
             cpData.CreateCartProduct(cartProd);
+        
         }
     }
 }

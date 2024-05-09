@@ -49,6 +49,7 @@
                     <div class="form-group">
                         <asp:Label ID="lblPdtName" runat="server" Text="Name: "></asp:Label>
                         <asp:TextBox ID="txtPdtName" runat="server" CssClass="form-control mt-2" placeholder="Product Name" value=""></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPdtName" ErrorMessage="Product name cannot be empty." ForeColor="Red" />
                     </div>
                     <div class="form-group mt-3">
                         <asp:Label ID="lblPdtDesc" runat="server" Text="Description: "></asp:Label>
@@ -57,10 +58,12 @@
                     <div class="form-group mt-3">
                         <asp:Label ID="lblPdtPrice" runat="server" Text="Price (RM): "></asp:Label>
                         <asp:TextBox ID="inPdtPrice" type="number" runat="server" CssClass="form-control mt-2" Style="width: 30%" step="0.01" value=""></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="inPdtPrice" ErrorMessage="Product price cannot be empty." ForeColor="Red" />
                     </div>
                     <div class="form-group mt-3">
                         <asp:Label ID="lblPdtQty" runat="server" Text="Stock Quantity (Unit): "></asp:Label>
                         <asp:TextBox ID="inPdtQty" type="number" runat="server" CssClass="form-control mt-2" Style="width: 30%" value=""></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="inPdtQty" ErrorMessage="Product quantity cannot be empty." ForeColor="Red" />
                     </div>
                     <div class="form-group mt-3">
                         <asp:Label ID="lblPdtCatg" runat="server" Text="Category: "></asp:Label>

@@ -40,7 +40,7 @@ namespace _888MarketplaceApp
             Models.Product product = pd.GetProduct(ProductId);
             product.IsBan = true;
             pd.UpdateProduct(product);
-            Response.Redirect(HttpContext.Current.Request.Url.AbsolutePath);
+            Response.Redirect("DeleteConfirmation");
         }
 
         protected void search(object sender, EventArgs e)

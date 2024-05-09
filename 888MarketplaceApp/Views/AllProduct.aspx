@@ -6,14 +6,14 @@
             margin-right: 0;
         }
 
-        .product__item__pic__hover li:hover a {
-            background: #38d39f;
-            border-color: #38d39f;
+        .product__item__pic__hover li:first-child:hover a {
+            background: #38d39f !important;
+            border-color: #38d39f !important;
         }
 
         .product__item__pic__hover li:nth-child(2):hover a {
-            background: #0d6efd;
-            border-color: #0d6efd;
+            background: #0d6efd !important;
+            border-color: #0d6efd !important;
         }
 
         .product__item__pic__hover li:last-child:hover a {

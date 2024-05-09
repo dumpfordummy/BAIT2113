@@ -93,7 +93,7 @@ namespace _888MarketplaceApp.Views
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator purchaseQtyVal;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator purchaseQtyVal;
 
         /// <summary>
         /// Result control.
@@ -121,32 +121,5 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl pdtDesc;
-
-        /// <summary>
-        /// lblPdtReview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPdtReview;
-
-        /// <summary>
-        /// txtPdtReview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPdtReview;
-
-        /// <summary>
-        /// PdtReviewRepeater control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater PdtReviewRepeater;
     }
 }

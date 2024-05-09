@@ -82,11 +82,12 @@
             <div class="row featured__filter">
                 <asp:Repeater runat="server" ID="featProdRepeater">
                     <ItemTemplate>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mix Cat<%# Eval("Product.CategoryId") %>">
-                            <div class="featured__item">
+                        <div onclick="window.location.href = '/Product?Id=<%# Eval("Product.Id") %>'" class="col-lg-3 col-md-4 col-sm-6 mix Cat<%# Eval("Product.CategoryId") %>" >
+                            <div class="featured__item" >
                                 <div class="featured__item__pic set-bg" data-setbg="<%# Eval("Product.ImagePaths").ToString().Split(';')[0] %>">
                                     <ul class="featured__item__pic__hover">
                                         <li><a href="/Views/Product?Id=<%# Eval("Product.Id") %>"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li runat="server" visible='<%# Eval("ShouldDisplayATC") %>'><asp:LinkButton runat="server" ID="addtoCartBtn" OnClick="AddProductToCart" Text='<i class="fa fa-shopping-cart"></i>' CommandArgument='<%# Eval("Product.Id") %>' /></li>
                                         <li runat="server" visible='<%# Eval("ShouldDisplay") %>'><a href="/Views/Users/EditProduct?Id=<%# Eval("Product.Id") %>"><i class="fa fa-pencil-square-o"></i></a></li>
                                     </ul>
                                 </div>

@@ -23,6 +23,13 @@
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
+    <asp:UpdatePanel runat="server" ID="actionMessages">
+        <ContentTemplate>
+            <div class="card mx-auto" runat="server" id="cardActionMessage" tabindex="-1" aria-hidden="true" style="width: 60%">
+                <asp:Label runat="server" ID="resultMessage"></asp:Label>
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 
     <div class="container-scroller">
         <div class="container-fluid page-body-wrapper">
@@ -82,7 +89,7 @@
                                         <asp:Repeater runat="server" ID="myProdList">
                                             <ItemTemplate>
                                                 <div class="col-lg-3 col-md-4 col-sm-6 mix Cat<%# Eval("Product.CategoryId") %>">
-                                                    <div class="featured__item">
+                                                    <div class="featured__item" onclick="window.location.href = '/Product?Id=<%# Eval("Product.Id") %>'>
                                                         <div class="featured__item__pic set-bg" data-setbg="<%# Eval("Product.ImagePaths").ToString().Split(';')[0] %>">
                                                             <ul class="featured__item__pic__hover">
                                                                 <li><a href="/Views/Users/EditProduct?Id=<%# Eval("Product.Id") %> "><i class="fa fa-pencil-square-o"></i></a></li>
@@ -95,9 +102,9 @@
                                                             <h5>RM <%# Eval("Product.Price") %></h5>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </ItemTemplate>
-                                        </asp:Repeater>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

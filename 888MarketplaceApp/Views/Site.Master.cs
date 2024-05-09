@@ -82,6 +82,13 @@ namespace _888MarketplaceApp.Views
 
             lnkAccount.NavigateUrl = "~/Views/Users/Account";
 
+            updateWishlistAndCart();
+        }
+
+        protected void updateWishlistAndCart()
+        {
+            var sessionManager = SessionManager.Instance;
+            User user = sessionManager.GetLoggedInUser(Request.Cookies);
             if (user.Id != 0)
             {
                 Models.Cart userCart = user.Carts.FirstOrDefault();
@@ -93,7 +100,9 @@ namespace _888MarketplaceApp.Views
                 WishlistData wishlistData = new WishlistData();
                 Models.Wishlist userWishlistInDb = wishlistData.GetWishlist(wishlist.Id);
                 wishlistCount.InnerText = userWishlistInDb.Wishlist_Product.Count.ToString();
-            } else {
+            }
+            else
+            {
                 wishlistCount.InnerText = "0";
                 cartItemCount.InnerText = "0";
             }

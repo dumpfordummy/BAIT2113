@@ -26,6 +26,12 @@ namespace _888MarketplaceApp.Views
         protected void AddProductToDB(object sender, EventArgs e)
         {
             string fileNames = string.Empty;
+            if (inPdtQty.Text == string.Empty)
+            {
+                RequiredFieldValidator3.IsValid = false;
+                return;
+            }
+
             foreach (HttpPostedFile postedFile in imageUpl.PostedFiles)
             {
                 string fileName = Path.GetFileName(postedFile.FileName);
@@ -61,16 +67,15 @@ namespace _888MarketplaceApp.Views
                 pd.CreateProduct(product);
 
                 actionMessages.Visible = true;
-                cardActionMessage.Attributes.Add("style", "background-color: #29E275;");
+                cardActionMessage.Attributes.Add("style", "background-color: #29E275; border: none; padding: 10px; width: 80%");
                 resultMessage.Text = "Product is added successfully!";
                 resultMessage.ForeColor = System.Drawing.Color.White;
             } catch {
                 actionMessages.Visible = true;
-                cardActionMessage.Attributes.Add("style", "background-color: #FF1E1E;");
+                cardActionMessage.Attributes.Add("style", "background-color: #29E275; border: none; padding: 10px; width: 80%");
                 resultMessage.Text = "Error! Product is not added!";
                 resultMessage.ForeColor = System.Drawing.Color.White;
             }
-            
         }
     }
 }
