@@ -38,11 +38,6 @@
                                 <div>
                                     <h4 class="font-weight-bold mb-0">Admin Dashboard</h4>
                                 </div>
-                                <div>
-                                    <button type="button" class="btn btnGreen btn-icon-text btn-rounded">
-                                        <i class="ti-clipboard btn-icon-prepend"></i>Report
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -131,43 +126,26 @@
 
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>P1000</td>
-                                                    <td>Twisties Cheddar Cheese 60g</td>
-                                                    <td>5.00</td>
-                                                    <td>10</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>P1001</td>
-                                                    <td>Nike AirForce</td>
-                                                    <td>305.00</td>
-                                                    <td>2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>P1002</td>
-                                                    <td>Team Victor T-Shirt (Black)</td>
-                                                    <td>50.00</td>
-                                                    <td>1</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>P1003</td>
-                                                    <td>Apple Watch Series 9 Aluminium Case with Sport Band GPS Only</td>
-                                                    <td>1898.00 </td>
-                                                    <td>20</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td>P1004</td>
-                                                    <td>NEW ERA MLB NY New York Yankees Baseball Cap</td>
-                                                    <td>80.00 </td>
-                                                    <td>12</td>
-                                                </tr>
-                                            </tbody>
+<%--                                            <tbody>
+                                                <asp:Repeater ID="AdminDashboardRepeater" runat="server">
+                                                    <ItemTemplate>
+                                                        <tr>
+                                                            <td class="adminNumber">
+                                                                <%# Container.ItemIndex + 1 %>
+                                                            </td>
+                                                            <td class="adminProductID">
+                                                                <%# Eval("Id") %>
+                                                            </td>
+                                                            <td class="adminProductName">
+                                                                <%# Eval("Name") %>                                          
+                                                            </td>
+                                                            <td class="adminProductPrice">
+                                                                <%# Eval("Price") %>  
+                                                            </td>
+                                                            <td class="adminProductQuantity">
+                                                                <%# Eval("Quantity") %>  
+                                                            </td>
+                                                            </tbody>--%>
                                         </table>
                                     </div>
                                 </div>
@@ -262,30 +240,30 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                                                            </div>
                 <!-- content-wrapper ends -->
-            </div>
+                                                            </div>
             <!-- main-panel ends -->
-        </div>
+                                                            </div>
         <!-- page-body-wrapper ends -->
-    </div>
+                                                            </div>
     <!-- container-scroller -->
 
-    <!-- plugins:js -->
-    <script src="/Content/App/admin/vendors/base/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <script src="/Content/App/admin/vendors/chart.js/Chart.min.js"></script>
-    <script src="/Scripts/App/Admin/jquery.cookie.js" type="text/javascript"></script>
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <script src="/Scripts/App/Admin/off-canvas.js"></script>
-    <script src="/Scripts/App/Admin/hoverable-collapse.js"></script>
-    <script src="/Scripts/App/Admin/template.js"></script>
-    <script src="/Scripts/App/Admin/todolist.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="/Scripts/App/Admin/dashboard.js"></script>
-    <script src="/Scripts/App/Admin/chart.js"></script>
-    <!-- End custom js for this page-->
+                                                            <!-- plugins:js -->
+                                                            <script src="/Content/App/admin/vendors/base/vendor.bundle.base.js"></script>
+                                                            <!-- endinject -->
+                                                            <!-- Plugin js for this page-->
+                                                            <script src="/Content/App/admin/vendors/chart.js/Chart.min.js"></script>
+                                                            <script src="/Scripts/App/Admin/jquery.cookie.js" type="text/javascript"></script>
+                                                            <!-- End plugin js for this page-->
+                                                            <!-- inject:js -->
+                                                            <script src="/Scripts/App/Admin/off-canvas.js"></script>
+                                                            <script src="/Scripts/App/Admin/hoverable-collapse.js"></script>
+                                                            <script src="/Scripts/App/Admin/template.js"></script>
+                                                            <script src="/Scripts/App/Admin/todolist.js"></script>
+                                                            <!-- endinject -->
+                                                            <!-- Custom js for this page-->
+                                                            <script src="/Scripts/App/Admin/dashboard.js"></script>
+                                                            <script src="/Scripts/App/Admin/chart.js"></script>
+                                                            <!-- End custom js for this page-->
 </asp:Content>
