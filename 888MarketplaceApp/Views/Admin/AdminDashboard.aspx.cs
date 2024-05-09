@@ -13,14 +13,25 @@ namespace _888MarketplaceApp.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                //ProductData pd = new ProductData();
-                //List<Product> allProduct = pd.GetProducts();
+            string[] colors = { "red", "green", "blue", "yellow" };
 
-                //AdminDashboardRepeater.DataSource = allProduct;
-                //AdminDashboardRepeater.DataBind();
+            // Register the array declaration
+            ClientScript.RegisterArrayDeclaration("colorArray", ConvertStringArrayToString(colors));
+        }
+
+        private string ConvertStringArrayToString(string[] arr)
+        {
+            string result = "";
+            for(int i = 0; i < arr.Length; i++)
+            {
+                result += $"\"{arr[i]}\"";
+                if(i != arr.Length - 1)
+                {
+                    result += ", ";
+                }
             }
+
+            return result;
         }
     }
 }

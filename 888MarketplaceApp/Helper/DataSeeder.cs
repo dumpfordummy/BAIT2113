@@ -210,7 +210,7 @@ namespace _888MarketplaceApp.Helper
                 new Order
                 {
                     Date = DateTime.Now,
-                    Amount = 199.99,
+                    Amount = 2019.97,
                     Note = Order.CompletedNote,
                     Status = Order.Completed,
                     BuyerId = 3,

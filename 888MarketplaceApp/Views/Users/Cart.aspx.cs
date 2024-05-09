@@ -63,10 +63,18 @@ namespace _888MarketplaceApp.Views
             double voucherAmount = 0;
             if (IsUserHasVoucher(Request.Cookies))
             {
-                voucherAmount = ShouldHaveDeliveryFee ? GetUserVoucherAmount(Request.Cookies) : 0;
-                string voucherCode = Request.Cookies["vouchercode"].Value;
-                VoucherDiscount.Text = $"Voucher {voucherCode} -RM{voucherAmount}";
-                VoucherDiscount.Visible = true;
+                HttpCookie cookie = Request.Cookies["vouchercode"];
+                if (cookie == null)
+                {
+                    ShouldHaveDeliveryFee = false;
+                } else
+                {
+                    voucherAmount = ShouldHaveDeliveryFee ? GetUserVoucherAmount(cookie) : 0;
+                    string voucherCode = cookie.Value;
+                    VoucherDiscount.Text = $"Voucher {voucherCode} -RM{voucherAmount}";
+                    VoucherDiscount.Visible = true;
+                }
+                
             }
 
             double deliveryFee = ShouldHaveDeliveryFee ? 10 : 0;
@@ -81,9 +89,9 @@ namespace _888MarketplaceApp.Views
             Total.Text = $"RM{total}";
         }
 
-        public double GetUserVoucherAmount(HttpCookieCollection cookies)
+        public double GetUserVoucherAmount(HttpCookie cookie)
         {
-            string voucherCode = cookies["vouchercode"].Value;
+            string voucherCode = cookie.Value;
             VoucherData dataAccess = new VoucherData();
             return dataAccess.GetVoucherByCode(voucherCode).Amount;
         }
