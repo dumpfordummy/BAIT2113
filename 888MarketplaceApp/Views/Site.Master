@@ -45,12 +45,15 @@
                             <div class="header__top__right">
                                 <% if (IsUserLoggedIn && IsUserAdmin)
                                 { %>
-                                <asp:HyperLink ID="lnkAdmin" NavigateUrl="/Views/Admin/AdminDashboard.aspx" runat="server"> Admin </asp:HyperLink>
+                                <asp:HyperLink ID="lnkAdmin" NavigateUrl="/Views/Admin/AdminDashboard.aspx" runat="server"> Admin Dashboard </asp:HyperLink>
                                 <% }%>
                                 <div class="header__top__right__auth">
                                     <% if (IsUserLoggedIn)
                                         { %>
+
                                     <asp:HyperLink ID="lnkAccount" runat="server"><i class="fa fa-user"></i> Welcome! <%= loggedInUser.Username  %></asp:HyperLink>
+                                    <asp:HyperLink ID="logout" runat="server" NavigateUrl="/Views/Logout.aspx"> Logout</asp:HyperLink>
+                                   
                                     <% }
                                         else
                                         { %>

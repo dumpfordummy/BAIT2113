@@ -371,6 +371,7 @@
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Error.aspx" />
+    <Content Include="Views\Logout.aspx" />
     <Content Include="Views\Unauthorized.aspx" />
     <Content Include="Views\Users\Account.aspx" />
     <Content Include="Views\Users\AddProduct.aspx" />
@@ -522,6 +523,13 @@
     </Compile>
     <Compile Include="Views\Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Unauthorized.aspx.cs">
       <DependentUpon>Unauthorized.aspx</DependentUpon>

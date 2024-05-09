@@ -33,15 +33,9 @@
                             </div>
 
                             <div class="d-flex mb-5 align-items-center">
-                                <div class="control control--checkbox mb-0">
-                                    <span class="ml-auto">
-                                        <asp:Label runat="server" AssociatedControlID="RememberMe">Remember me?</asp:Label>
-                                    </span>
-                                    <asp:CheckBox runat="server" ID="RememberMe" Checked="true" />
-                                    <div class="control__indicator"></div>
-                                </div>
                                 <span class="ml-auto">
-                                    <asp:HyperLink ID="Forgot" CssClass="forgot-pass" runat="server" NavigateUrl="/Forgotpassword">Forgot Password</asp:HyperLink></span>
+                                    <asp:HyperLink ID="Forgot" CssClass="forgot-pass" runat="server" NavigateUrl="/Forgotpassword">Forgot Password</asp:HyperLink>
+                                </span>
                             </div>
 
                             <asp:Label runat="server" ID="Result" CssClass="text-danger"></asp:Label>

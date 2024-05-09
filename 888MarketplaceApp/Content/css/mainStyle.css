@@ -62,7 +62,7 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #ffffff;
+	/*color: #ffffff;*/
 }
 
 ul,
@@ -202,7 +202,7 @@ ol {
 }
 
 	.header__top__right__auth a {
-		display: block;
+		/*display: block;*/
 		font-size: 18px;
 		color: #1c1c1c;
 	}
@@ -3031,9 +3031,10 @@ input[type="submit"].btn-block {
 	padding: 0;
 }
 
-.lnkAdmin, .lnkAdmin:hover {
-	font-size: 18px;
-	color: #1c1c1c !important;
+#lnkAdmin, #lnkAdmin:hover {
+	margin-right: 20px;
 }
 
-
+#logout {
+	margin-left: 10px;
+}

@@ -174,5 +174,10 @@ namespace _888MarketplaceApp.Helper
             }
             return User.empty;
         }
+
+        internal void CloseSession(string value, out HttpCookie cookie)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
