@@ -81,8 +81,9 @@ namespace _888MarketplaceApp.Views
         {
             string productID = Request.QueryString["id"];
 
-            if (!purchaseQtyVal.IsValid)
+            if (inPurchaseQty.Text == string.Empty)
             {
+                purchaseQtyVal.IsValid = false;
                 return;
             }
 
@@ -91,7 +92,7 @@ namespace _888MarketplaceApp.Views
 
             SessionManager session = SessionManager.Instance;
             User user = session.GetLoggedInUser(Request.Cookies);
-
+            
             Models.Cart cart = cartData.GetCartByBuyerId(user.Id);
 
             Cart_Product cartProd = new Cart_Product
@@ -100,6 +101,14 @@ namespace _888MarketplaceApp.Views
                 ProductId = int.Parse(productID),
                 Quantity = int.Parse(inPurchaseQty.Text)
             };
+
+            CartProductData cartProductData = new CartProductData();
+            
+            if(cartProductData.GetCartProducts().Any(x => x.CartId == cart.Id && x.ProductId == int.Parse(productID)))
+            {
+                Result.Text = "Item already in cart";
+                return;
+            }
 
             cpData.CreateCartProduct(cartProd);
         

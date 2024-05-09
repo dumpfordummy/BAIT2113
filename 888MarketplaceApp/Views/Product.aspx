@@ -72,9 +72,7 @@
                         <asp:Label ID="lblPurchaseQty" runat="server" Text="Quantity (Unit): "></asp:Label>
                         <asp:TextBox ID="inPurchaseQty" runat="server" CssClass="form-control mt-2" type="number" min="1" max='' step="1" Style="width: 30%; display: inline"></asp:TextBox>
                         <br />
-                        <asp:RangeValidator runat="server" ID="purchaseQtyVal" ControlToValidate="inPurchaseQty" Type="Integer"
-                            ErrorMessage="Invalid input number. Input is unrealistic or exceeding stock quantity."
-                            MinimumValue="0" ForeColor="Red"></asp:RangeValidator>
+                        <asp:RequiredFieldValidator runat="server" ID="purchaseQtyVal" ControlToValidate="inPurchaseQty" ErrorMessage="Purchase quantity cannot be empty." ForeColor="Red" />
                     </div>
                     <div class="form-group mt-5">
                         <asp:Label ID="Result" runat="server" CssClass="text-danger"></asp:Label>
