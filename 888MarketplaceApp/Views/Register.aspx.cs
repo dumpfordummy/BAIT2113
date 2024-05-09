@@ -56,10 +56,25 @@ namespace _888MarketplaceApp.Views
             if (IsInputValid() && userCreated != null)
             {
                 string token = VerificationTokenManager.GenerateToken();
+                token = Regex.Replace(token, "[^a-zA-Z]", "");
                 string url = $"{Request.Url.GetLeftPart(UriPartial.Authority)}/Views/RegisterConfirmation?id={user.Id}&token={token}";
                 user.VerificationToken = token;
                 user.VerificationExpire = DateTime.Now.AddMinutes(VerificationTokenManager.VerificationExpireMinute);
                 userAccess.UpdateUser(user);
+
+                Models.Cart cart = new Models.Cart
+                {
+                    BuyerId = user.Id
+                };
+                CartData cartDataAccess = new CartData();
+                cartDataAccess.CreateCart(cart);
+
+                Models.Wishlist wishlist = new Models.Wishlist
+                {
+                    BuyerId = user.Id,
+                };
+                WishlistData wishlistDataAccess = new WishlistData(); 
+                wishlistDataAccess.CreateWishlist(wishlist);
 
                 RegisterAsyncTask(new PageAsyncTask(() => EmailSender.SendForgotVerificationAsync(user, url)));
 
