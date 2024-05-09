@@ -3030,3 +3030,10 @@ input[type="submit"].btn-block {
 	cursor: pointer;
 	padding: 0;
 }
+
+.lnkAdmin, .lnkAdmin:hover {
+	font-size: 18px;
+	color: #1c1c1c !important;
+}
+
+

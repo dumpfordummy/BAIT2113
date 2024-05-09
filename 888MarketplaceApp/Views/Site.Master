@@ -43,6 +43,10 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="header__top__right">
+                                <% if (IsUserLoggedIn && IsUserAdmin)
+                                { %>
+                                <asp:HyperLink ID="lnkAdmin" NavigateUrl="/Views/Admin/AdminDashboard.aspx" runat="server"> Admin </asp:HyperLink>
+                                <% }%>
                                 <div class="header__top__right__auth">
                                     <% if (IsUserLoggedIn)
                                         { %>
@@ -89,7 +93,7 @@
                 else
                 { %>
 
-            <div style="margin-bottom:50px"></div>
+            <div style="margin-bottom: 50px"></div>
 
             <% } %>
         </header>

@@ -17,6 +17,7 @@ namespace _888MarketplaceApp.Views
         private string _antiXsrfTokenValue;
 
         public bool IsUserLoggedIn = false;
+        public bool IsUserAdmin = false;
         public User loggedInUser = User.empty;
 
         protected void Page_Init(object sender, EventArgs e)
@@ -67,9 +68,13 @@ namespace _888MarketplaceApp.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             var sessionManager = SessionManager.Instance;
-
+            User user = sessionManager.GetLoggedInUser(Request.Cookies);
             if (sessionManager.GetUserLoginState(Request.Cookies))
             {
+                if(user.IsUserAdmin())
+                {
+                    IsUserAdmin = true; 
+                }
                 IsUserLoggedIn = true;
                 loggedInUser = sessionManager.GetLoggedInUser(Request.Cookies);
             }
