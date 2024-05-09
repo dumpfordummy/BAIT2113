@@ -65,6 +65,8 @@ namespace _888MarketplaceApp.Views
                 return;
             }
 
+            userAccess.CreateUser(user);
+
             string token = VerificationTokenManager.GenerateToken();
             token = Regex.Replace(token, "[^a-zA-Z]", "");
             string url = $"{Request.Url.GetLeftPart(UriPartial.Authority)}/Views/RegisterConfirmation?id={user.Id}&token={token}";
