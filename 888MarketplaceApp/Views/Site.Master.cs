@@ -96,14 +96,14 @@ namespace _888MarketplaceApp.Views
                 Models.Cart userCartInDb = dataAccess.GetCart(userCart.Id);
                 cartItemCount.InnerText = userCartInDb.Cart_Product.Count.ToString();
 
-                Models.Wishlist wishlist = user.Wishlists.FirstOrDefault();
-                WishlistData wishlistData = new WishlistData();
-                Models.Wishlist userWishlistInDb = wishlistData.GetWishlist(wishlist.Id);
-                wishlistCount.InnerText = userWishlistInDb.Wishlist_Product.Count.ToString();
+                //Models.Wishlist wishlist = user.Wishlists.FirstOrDefault();
+                //WishlistData wishlistData = new WishlistData();
+                //Models.Wishlist userWishlistInDb = wishlistData.GetWishlist(wishlist.Id);
+                //wishlistCount.InnerText = userWishlistInDb.Wishlist_Product.Count.ToString();
             }
             else
             {
-                wishlistCount.InnerText = "0";
+                //wishlistCount.InnerText = "0";
                 cartItemCount.InnerText = "0";
             }
         }

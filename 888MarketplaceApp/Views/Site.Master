@@ -81,8 +81,8 @@
                     <div class="col-lg-3">
                         <div class="header__cart">
                             <ul>
-                                <li>
-                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Views/Users/Wishlist.aspx"><i class="fa fa-heart"></i><span runat="server" id="wishlistCount"></span></asp:HyperLink></li>
+                                <%--<li>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Views/Users/Wishlist.aspx"><i class="fa fa-heart"></i><span runat="server" id="wishlistCount"></span></asp:HyperLink></li>--%>
                                 <li>
                                     <asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/Views/Users/Cart.aspx"><i class="fa fa-shopping-bag"></i><span runat="server" id="cartItemCount"></span></asp:HyperLink></li>
                             </ul>

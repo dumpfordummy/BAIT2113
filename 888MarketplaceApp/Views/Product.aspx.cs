@@ -15,7 +15,7 @@ namespace _888MarketplaceApp.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             string productID = Request.QueryString["id"];
-
+            Result.Text = "";
             SessionManager sm = SessionManager.Instance;
             if (!sm.GetUserLoginState(Request.Cookies))
             {
@@ -101,6 +101,14 @@ namespace _888MarketplaceApp.Views
                 ProductId = int.Parse(productID),
                 Quantity = int.Parse(inPurchaseQty.Text)
             };
+
+            ProductData productData = new ProductData();
+
+            if (productData.GetProduct(int.Parse(productID)).Quantity < int.Parse(inPurchaseQty.Text))
+            {
+                Result.Text = "Invalid quantity";
+                return;
+            }
 
             CartProductData cartProductData = new CartProductData();
             
