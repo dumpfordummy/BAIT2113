@@ -15,13 +15,49 @@ namespace _888MarketplaceApp.Views
     {
 
         /// <summary>
-        /// upPdtImg control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image upPdtImg;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
+        /// actionMessages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel actionMessages;
+
+        /// <summary>
+        /// cardActionMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cardActionMessage;
+
+        /// <summary>
+        /// resultMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label resultMessage;
+
+        /// <summary>
+        /// imgRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater imgRepeater;
 
         /// <summary>
         /// imageUpl control.
@@ -31,6 +67,15 @@ namespace _888MarketplaceApp.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload imageUpl;
+
+        /// <summary>
+        /// hiddenProdID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hiddenProdID;
 
         /// <summary>
         /// lblPdtName control.
@@ -78,13 +123,13 @@ namespace _888MarketplaceApp.Views
         protected global::System.Web.UI.WebControls.Label lblPdtPrice;
 
         /// <summary>
-        /// inPdtNo control.
+        /// inPdtPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inPdtNo;
+        protected global::System.Web.UI.WebControls.TextBox inPdtPrice;
 
         /// <summary>
         /// lblPdtQty control.

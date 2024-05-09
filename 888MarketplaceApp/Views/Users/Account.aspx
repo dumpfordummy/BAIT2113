@@ -23,9 +23,15 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Views/Users/Mypurchases">
+                                    <a class="nav-link" href="/Views/Users/MyPurchases">
                                         <i class="ti-view-list-alt menu-icon"></i>
                                         <span class="menu-title">My Purchase</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Views/Users/MyProducts">
+                                        <i class="fa fa-archive menu-icon"></i>
+                                        <span class="menu-title">My Products</span>
                                     </a>
                                 </li>
                             </ul>

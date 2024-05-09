@@ -54,7 +54,8 @@ namespace _888MarketplaceApp.Views
                 }
                 else
                 {
-                    throw new HttpException(404, "Not found");
+                    Session["ErrorMessage"] = "Product not found.";
+                    Response.Redirect("/Views/Error.aspx");
                 }
             }
         }

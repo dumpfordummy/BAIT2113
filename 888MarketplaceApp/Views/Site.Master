@@ -37,7 +37,6 @@
                             <div class="header__top__left">
                                 <ul>
                                     <li><i class="fa fa-envelope"></i>888market@email.com</li>
-                                    <li>Free Shipping for all Order over RM99</li>
                                 </ul>
                             </div>
                         </div>
@@ -87,7 +86,6 @@
                                     <asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/Views/Users/Cart.aspx"><i class="fa fa-shopping-bag"></i><span runat="server" id="cartItemCount"></span></asp:HyperLink></li>
                             </ul>
                             &nbsp;&nbsp;&nbsp;
-                <div class="header__cart__price">item: <span>$0.00</span></div>
                         </div>
                     </div>
                 </div>
@@ -122,16 +120,6 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-12 offset-md-2">
-                        <div class="footer__widget">
-                            <h6>Join Our Newsletter Now</h6>
-                            <p>Get E-mail updates about our latest shop and special offers.</p>
-                            <div>
-                                <asp:TextBox ID="txtEmailSub" placeholder="Enter your e-mail" runat="server"></asp:TextBox>
-                                <button id="btnSubscribe" type="submit" class="site-btn" runat="server">Subscribe</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">

@@ -26,6 +26,10 @@
         $(this).css('background-image', 'url(' + bg + ')');
     });
 
+    $(document).ready(function () {
+        $("#deleteConfirmModal").modal();
+    });
+
     /*-----------------------
         Categories Slider
     ------------------------*/

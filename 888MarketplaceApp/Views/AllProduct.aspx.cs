@@ -1,4 +1,5 @@
 ﻿using _888MarketplaceApp.DataAccess;
+using _888MarketplaceApp.Helper;
 using _888MarketplaceApp.Models;
 using System;
 using System.Collections.Generic;
@@ -19,16 +20,35 @@ namespace _888MarketplaceApp.Views
             CategoryRepeater.DataSource = catList;
             CategoryRepeater.DataBind();
 
+            SessionManager sessionManager = SessionManager.Instance;
+            User user = sessionManager.GetLoggedInUser(Request.Cookies);
+            bool shouldDisplayEdit = false;
+            if (user != Models.User.empty)
+                shouldDisplayEdit = true;
+
             if (Session["MatchedProducts"] == null)
             {
                 ProductData pd = new ProductData();
                 List<Models.Product> prodList = pd.GetProducts();
-                ProductsRepeater.DataSource = prodList;
+                var customProductList = prodList.Select(p => new
+                {
+                    Product = p,
+                    ShouldDisplay = p.SellerId == user.Id && shouldDisplayEdit,
+
+                });
+                ProductsRepeater.DataSource = customProductList;
                 ProductsRepeater.DataBind();
             }
-            else {
+            else
+            {
                 List<Models.Product> prodList = (List<Models.Product>)Session["MatchedProducts"];
-                ProductsRepeater.DataSource = prodList;
+                var customProductList = prodList.Select(p => new
+                {
+                    Product = p,
+                    ShouldDisplay = p.SellerId == user.Id && shouldDisplayEdit,
+
+                });
+                ProductsRepeater.DataSource = customProductList;
                 ProductsRepeater.DataBind();
             }
 

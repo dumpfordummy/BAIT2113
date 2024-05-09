@@ -77,7 +77,7 @@
                             MinimumValue="1" ForeColor="Red"></asp:RangeValidator>
                     </div>
                     <div class="form-group mt-5">
-                        <asp:Button runat="server" OnClick="AddProductToCart" Text="Add to Cart" CssClass="btn btn-primary" />
+                        <asp:Button runat="server" OnClick="AddProductToCart" Text="Add to Cart" CssClass="site-btn btn btn-primary" />
                     </div>
                 </div>
 

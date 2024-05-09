@@ -29,7 +29,7 @@ namespace _888MarketplaceApp.Views
             foreach (HttpPostedFile postedFile in imageUpl.PostedFiles)
             {
                 string fileName = Path.GetFileName(postedFile.FileName);
-                string folderUrl = "~/Content/Images/ProductImage/";
+                string folderUrl = "/Content/Images/ProductImage/";
                 postedFile.SaveAs(Server.MapPath(folderUrl) + fileName);
                 fileNames += folderUrl + fileName + ";";
             }
@@ -56,7 +56,21 @@ namespace _888MarketplaceApp.Views
             };
 
             ProductData pd = new ProductData();
-            pd.CreateProduct(product);
+            try
+            {
+                pd.CreateProduct(product);
+
+                actionMessages.Visible = true;
+                cardActionMessage.Attributes.Add("style", "background-color: #29E275;");
+                resultMessage.Text = "Product is added successfully!";
+                resultMessage.ForeColor = System.Drawing.Color.White;
+            } catch {
+                actionMessages.Visible = true;
+                cardActionMessage.Attributes.Add("style", "background-color: #FF1E1E;");
+                resultMessage.Text = "Error! Product is not added!";
+                resultMessage.ForeColor = System.Drawing.Color.White;
+            }
+            
         }
     }
 }

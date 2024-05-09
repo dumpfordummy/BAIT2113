@@ -387,6 +387,7 @@
     <Content Include="Views\ForgotPassword.aspx" />
     <Content Include="Views\LandingPage.aspx" />
     <Content Include="Views\Login.aspx" />
+    <Content Include="Views\Users\MyProducts.aspx" />
     <Content Include="Views\Users\MyPurchases.aspx" />
     <Content Include="Views\Product.aspx" />
     <Content Include="Views\Register.aspx" />
@@ -635,6 +636,13 @@
     </Compile>
     <Compile Include="Views\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\MyProducts.aspx.cs">
+      <DependentUpon>MyProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Users\MyProducts.aspx.designer.cs">
+      <DependentUpon>MyProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Users\MyPurchases.aspx.cs">
       <DependentUpon>MyPurchases.aspx</DependentUpon>

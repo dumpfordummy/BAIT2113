@@ -17,15 +17,21 @@
                                     </a>
                                     <div class="collapse" id="auth">
                                         <ul class="nav flex-column sub-menu">
-                                            <li class="nav-item"><a class="nav-link" href="/Views/User/Account">Profile</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="/Views/User/ChangePassword">Change Password</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="/Views/Users/Account">Profile</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="/Views/Users/ChangePassword">Change Password</a></li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link acc-nav-item-active acc-nav-link-active" href="/Views/User/Mypurchases">
+                                    <a class="nav-link acc-nav-item-active acc-nav-link-active" href="/Views/Users/MyPurchases">
                                         <i class="ti-view-list-alt menu-icon acc-nav-link-active"></i>
                                         <span class="menu-title">My Purchase</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Views/Users/MyProducts">
+                                        <i class="fa fa-archive menu-icon"></i>
+                                        <span class="menu-title">My Products</span>
                                     </a>
                                 </li>
                             </ul>
@@ -98,7 +104,7 @@
                                                 <div class="order-item-action">
                                                     <asp:Button runat='server' OnClick='CancelOrder' Visible='<%# Eval("Status").ToString() == _888MarketplaceApp.Models.Order.Processing  %>' meta:bind='<% DataBind(); %>' Text='Cancel Order' CssClass='btn text-white btn-primary-green' CommandArgument='<%# Eval("Id")  %>' />
                                                     <asp:Button runat='server' OnClick='RefundOrder' Visible='<%# Eval("Status").ToString() == _888MarketplaceApp.Models.Order.Completed  %>' meta:bind='<% DataBind(); %>' Text='Refund' CssClass='btn text-white btn-primary-green' CommandArgument='<%# Eval("Id")  %>' />
-                                                    <asp:Button runat='server' OnClick='OrderReceive' Visible='<%# Eval("Status").ToString() == _888MarketplaceApp.Models.Order.Delivering  %>' meta:bind='<% DataBind(); %>' Text='Order Receive' CssClass='btn text-white btn-primary-green' CommandArgument='<%# Eval("Id")  %>'/>
+                                                    <asp:Button runat='server' OnClick='OrderReceive' Visible='<%# Eval("Status").ToString() == _888MarketplaceApp.Models.Order.Delivering  %>' meta:bind='<% DataBind(); %>' Text='Order Receive' CssClass='btn text-white btn-primary-green' CommandArgument='<%# Eval("Id")  %>' />
                                                 </div>
 
                                             </div>
