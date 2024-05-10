@@ -15,17 +15,13 @@ namespace _888MarketplaceApp.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CategoryData cd = new CategoryData();
-            List<Category> catList = cd.GetCategories();
-            CategoryRepeater.DataSource = catList;
-            CategoryRepeater.DataBind();
-
             SessionManager sessionManager = SessionManager.Instance;
             User user = sessionManager.GetLoggedInUser(Request.Cookies);
             bool shouldDisplayEdit = false;
             if (user != Models.User.empty)
                 shouldDisplayEdit = true;
 
+            
             totalProductCount.Text = "";
 
             if (Session["MatchedProducts"] == null)
@@ -38,7 +34,7 @@ namespace _888MarketplaceApp.Views
                     ShouldDisplay = p.SellerId == user.Id && shouldDisplayEdit,
 
                 });
-                totalProductCount.Text = customProductList.Count();
+                totalProductCount.Text = customProductList.Count().ToString();
                 ProductsRepeater.DataSource = customProductList;
                 ProductsRepeater.DataBind();
             }
@@ -51,7 +47,7 @@ namespace _888MarketplaceApp.Views
                     ShouldDisplay = p.SellerId == user.Id && shouldDisplayEdit,
 
                 });
-                totalProductCount.Text = customProductList.Count();
+                totalProductCount.Text = customProductList.Count().ToString();
                 ProductsRepeater.DataSource = customProductList;
                 ProductsRepeater.DataBind();
             }

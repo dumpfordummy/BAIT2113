@@ -24,21 +24,7 @@
     <section class="product spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-5">
-                    <div class="sidebar__main">
-                        <div class="sidebar__item">
-                            <h4>Categories</h4>
-                            <ul>
-                                <asp:Repeater ID="CategoryRepeater" runat="server">
-                                    <ItemTemplate>
-                                        <li><a href="#"><%# Eval("Name") %></li>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-7">
+                <div class="col-lg-12 col-md-7">
                     <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-6 col-md-6"></div>
@@ -69,12 +55,6 @@
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
-                    </div>
-                    <div class="product__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
