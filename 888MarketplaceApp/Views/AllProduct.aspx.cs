@@ -26,6 +26,8 @@ namespace _888MarketplaceApp.Views
             if (user != Models.User.empty)
                 shouldDisplayEdit = true;
 
+            totalProductCount.Text = "";
+
             if (Session["MatchedProducts"] == null)
             {
                 ProductData pd = new ProductData();
@@ -36,6 +38,7 @@ namespace _888MarketplaceApp.Views
                     ShouldDisplay = p.SellerId == user.Id && shouldDisplayEdit,
 
                 });
+                totalProductCount.Text = customProductList.Count();
                 ProductsRepeater.DataSource = customProductList;
                 ProductsRepeater.DataBind();
             }
@@ -48,6 +51,7 @@ namespace _888MarketplaceApp.Views
                     ShouldDisplay = p.SellerId == user.Id && shouldDisplayEdit,
 
                 });
+                totalProductCount.Text = customProductList.Count();
                 ProductsRepeater.DataSource = customProductList;
                 ProductsRepeater.DataBind();
             }
