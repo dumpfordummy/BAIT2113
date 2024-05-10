@@ -48,7 +48,6 @@ namespace _888MarketplaceApp.DataAccess
             {
                 target.Quantity = productOrder.Quantity;
                 target.ProductId = productOrder.ProductId;
-                target.ReviewId = productOrder.ReviewId;
                 _db.SaveChanges();
             }
         }

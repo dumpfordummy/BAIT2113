@@ -396,7 +396,6 @@
     <Content Include="Views\ResetPassword.aspx" />
     <Content Include="Views\ResetPasswordConfirmation.aspx" />
     <Content Include="Views\Users\PaymentSucc.aspx" />
-    <Content Include="Views\Users\Wishlist.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -408,16 +407,13 @@
     <Compile Include="DataAccess\VoucherData.cs" />
     <Compile Include="DataAccess\PaymentMethodData.cs" />
     <Compile Include="DataAccess\ShippingMethodData.cs" />
-    <Compile Include="DataAccess\ReviewData.cs" />
     <Compile Include="DataAccess\DeliveryData.cs" />
     <Compile Include="DataAccess\VoucherRedemptionData.cs" />
-    <Compile Include="DataAccess\WishlistData.cs" />
     <Compile Include="DataAccess\CartData.cs" />
     <Compile Include="DataAccess\ProductData.cs" />
     <Compile Include="DataAccess\PaymentData.cs" />
     <Compile Include="DataAccess\OrderData.cs" />
     <Compile Include="DataAccess\UserroleData.cs" />
-    <Compile Include="DataAccess\WishlistProductData.cs" />
     <Compile Include="Helper\DataSeeder.cs" />
     <Compile Include="Helper\PasswordHelper.cs" />
     <Compile Include="Helper\SessionManager.cs" />
@@ -467,9 +463,6 @@
     <Compile Include="Models\Product_Order.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Review.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ShippingMethod.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
@@ -483,12 +476,6 @@
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Voucher_Redemption.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Wishlist.cs">
-      <DependentUpon>MarketplaceDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Wishlist_Product.cs">
       <DependentUpon>MarketplaceDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\EmailSender.cs" />
@@ -707,13 +694,6 @@
     </Compile>
     <Compile Include="Views\Users\PaymentSucc.aspx.designer.cs">
       <DependentUpon>PaymentSucc.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Users\Wishlist.aspx.cs">
-      <DependentUpon>Wishlist.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Users\Wishlist.aspx.designer.cs">
-      <DependentUpon>Wishlist.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

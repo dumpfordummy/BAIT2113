@@ -1,19 +1,16 @@
 ﻿DROP TABLE [dbo].[Product_Order]
-DROP TABLE [dbo].[Wishlist_Product]
 DROP TABLE [dbo].[Cart_Product]
 DROP TABLE [dbo].[Order]
 DROP TABLE [dbo].[Delivery]
 DROP TABLE [dbo].[Payment]
 DROP TABLE [dbo].[Product]
 DROP TABLE [dbo].[Cart]
-DROP TABLE [dbo].[Wishlist]
 DROP TABLE [dbo].[Voucher_Redemption]
 DROP TABLE [dbo].[User]
 DROP TABLE [dbo].[ShippingMethod]
 DROP TABLE [dbo].[PaymentMethod]
 DROP TABLE [dbo].[Category]
 DROP TABLE [dbo].[Userrole]
-DROP TABLE [dbo].[Review]
 DROP TABLE [dbo].[Voucher]
 DROP TABLE [dbo].[Billing]
 
@@ -62,15 +59,6 @@ CREATE TABLE [dbo].[ShippingMethod] (
     CONSTRAINT [PK_ShippingMethod] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-CREATE TABLE [dbo].[Review] (
-    [Id]      INT  IDENTITY(1, 1) NOT NULL,
-    [Rating]  INT  NOT NULL,
-    [Content] TEXT NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [CHK_Rating] CHECK ([Rating] >= (1)
-                                       AND [Rating] <= (5))
-);
-
 CREATE TABLE [dbo].[User] (
     [Id]                 INT           IDENTITY (1, 1) NOT NULL,
     [Username]           VARCHAR (50)  NOT NULL,
@@ -98,14 +86,6 @@ CREATE TABLE [dbo].[Voucher_Redemption] (
     CONSTRAINT [FK_Voucher_BuyerId] FOREIGN KEY ([BuyerId]) REFERENCES [dbo].[User] ([Id])
 );
 
-CREATE TABLE [dbo].[Wishlist]
-(
-	[Id] INT IDENTITY (1, 1) NOT NULL, 
-    [BuyerId] INT NOT NULL,
-    CONSTRAINT [PK_Wishlist] PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_Wishlist_BuyerId] FOREIGN KEY ([BuyerId]) REFERENCES [dbo].[User] ([Id]),
-);
-
 CREATE TABLE [dbo].[Cart]
 (
 	[Id] INT IDENTITY (1, 1) NOT NULL, 
@@ -128,18 +108,6 @@ CREATE TABLE [dbo].[Product] (
     CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Product_SellerId] FOREIGN KEY ([SellerId]) REFERENCES [dbo].[User] ([Id]),
     CONSTRAINT [FK_Product_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [dbo].[Category] ([Id])
-);
-
-
-
-CREATE TABLE [dbo].[Wishlist_Product] (
-    [Id]         INT IDENTITY (1, 1) NOT NULL,
-    [WishlistId] INT NOT NULL,
-    [ProductId]  INT NOT NULL,
-    [Quantity]   INT NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_Wishlist_Product_WishlistId] FOREIGN KEY ([WishlistId]) REFERENCES [dbo].[Wishlist] ([Id]),
-    CONSTRAINT [FK_Wishlist_Product_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [dbo].[Product] ([Id])
 );
 
 CREATE TABLE [dbo].[Cart_Product] (
@@ -197,11 +165,9 @@ CREATE TABLE [dbo].[Product_Order] (
     [Id]        INT IDENTITY (1, 1) NOT NULL,
     [OrderId]   INT NOT NULL,
     [ProductId] INT NOT NULL,
-    [Quantity]  INT NOT NULL,
-    [ReviewId]  INT NULL,
+    [Quantity]  INT NOT NULL
     CONSTRAINT [PK_Product_Order] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Product_Order_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [dbo].[Product] ([Id]),
-    CONSTRAINT [FK_ReviewId] FOREIGN KEY ([ReviewId]) REFERENCES [dbo].[Review] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT [FK_Product_Order_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [dbo].[Order] ([Id])
 );
 

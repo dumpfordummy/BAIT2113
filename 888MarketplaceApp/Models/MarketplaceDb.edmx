@@ -107,15 +107,6 @@
           <Property Name="OrderId" Type="int" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
-          <Property Name="ReviewId" Type="int" />
-        </EntityType>
-        <EntityType Name="Review">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Rating" Type="int" Nullable="false" />
-          <Property Name="Content" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="ShippingMethod">
           <Key>
@@ -165,22 +156,6 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="VoucherId" Type="int" Nullable="false" />
           <Property Name="BuyerId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Wishlist">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BuyerId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Wishlist_Product">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="WishlistId" Type="int" Nullable="false" />
-          <Property Name="ProductId" Type="int" Nullable="false" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Cart_BuyerId">
           <End Role="User" Type="Self.User" Multiplicity="1" />
@@ -350,20 +325,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ReviewId">
-          <End Role="Review" Type="Self.Review" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Product_Order" Type="Self.Product_Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Review">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Product_Order">
-              <PropertyRef Name="ReviewId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_User_Userrole">
           <End Role="Userrole" Type="Self.Userrole" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -400,42 +361,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Wishlist_BuyerId">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="Wishlist" Type="Self.Wishlist" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Wishlist">
-              <PropertyRef Name="BuyerId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Wishlist_Product_ProductId">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
-          <End Role="Wishlist_Product" Type="Self.Wishlist_Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Wishlist_Product">
-              <PropertyRef Name="ProductId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Wishlist_Product_WishlistId">
-          <End Role="Wishlist" Type="Self.Wishlist" Multiplicity="1" />
-          <End Role="Wishlist_Product" Type="Self.Wishlist_Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Wishlist">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Wishlist_Product">
-              <PropertyRef Name="WishlistId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DBModelStoreContainer">
           <EntitySet Name="Billing" EntityType="Self.Billing" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
@@ -447,14 +372,11 @@
           <EntitySet Name="PaymentMethod" EntityType="Self.PaymentMethod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product_Order" EntityType="Self.Product_Order" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShippingMethod" EntityType="Self.ShippingMethod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Userrole" EntityType="Self.Userrole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Voucher" EntityType="Self.Voucher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Voucher_Redemption" EntityType="Self.Voucher_Redemption" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Wishlist" EntityType="Self.Wishlist" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Wishlist_Product" EntityType="Self.Wishlist_Product" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Cart_BuyerId" Association="Self.FK_Cart_BuyerId">
             <End Role="User" EntitySet="User" />
             <End Role="Cart" EntitySet="Cart" />
@@ -511,10 +433,6 @@
             <End Role="User" EntitySet="User" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK_ReviewId" Association="Self.FK_ReviewId">
-            <End Role="Review" EntitySet="Review" />
-            <End Role="Product_Order" EntitySet="Product_Order" />
-          </AssociationSet>
           <AssociationSet Name="FK_User_Userrole" Association="Self.FK_User_Userrole">
             <End Role="Userrole" EntitySet="Userrole" />
             <End Role="User" EntitySet="User" />
@@ -526,18 +444,6 @@
           <AssociationSet Name="FK_Voucher_VoucherId" Association="Self.FK_Voucher_VoucherId">
             <End Role="Voucher" EntitySet="Voucher" />
             <End Role="Voucher_Redemption" EntitySet="Voucher_Redemption" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Wishlist_BuyerId" Association="Self.FK_Wishlist_BuyerId">
-            <End Role="User" EntitySet="User" />
-            <End Role="Wishlist" EntitySet="Wishlist" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Wishlist_Product_ProductId" Association="Self.FK_Wishlist_Product_ProductId">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Wishlist_Product" EntitySet="Wishlist_Product" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Wishlist_Product_WishlistId" Association="Self.FK_Wishlist_Product_WishlistId">
-            <End Role="Wishlist" EntitySet="Wishlist" />
-            <End Role="Wishlist_Product" EntitySet="Wishlist_Product" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -624,7 +530,6 @@
           <NavigationProperty Name="Category" Relationship="DBModel.FK_Product_CategoryId" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Product_Order" Relationship="DBModel.FK_Product_Order_ProductId" FromRole="Product" ToRole="Product_Order" />
           <NavigationProperty Name="Cart_Product" Relationship="DBModel.FK_Cart_Product_ProductId" FromRole="Product" ToRole="Cart_Product" />
-          <NavigationProperty Name="Wishlist_Product" Relationship="DBModel.FK_Wishlist_Product_ProductId" FromRole="Product" ToRole="Wishlist_Product" />
           <Property Name="ImagePaths" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="IsBan" Type="Boolean" Nullable="false" />
         </EntityType>
@@ -637,8 +542,6 @@
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="DBModel.FK_Product_Order_OrderId" FromRole="Product_Order" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="DBModel.FK_Product_Order_ProductId" FromRole="Product_Order" ToRole="Product" />
-          <Property Name="ReviewId" Type="Int32" />
-          <NavigationProperty Name="Review" Relationship="DBModel.FK_ReviewId" FromRole="Product_Order" ToRole="Review" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="ShippingMethod">
@@ -749,16 +652,9 @@
             <End Role="Userrole" EntitySet="Userroles" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
-          <EntitySet Name="Reviews" EntityType="DBModel.Review" />
-          <AssociationSet Name="FK_ReviewId" Association="DBModel.FK_ReviewId">
-            <End Role="Review" EntitySet="Reviews" />
-            <End Role="Product_Order" EntitySet="Product_Order" />
-          </AssociationSet>
           <EntitySet Name="Carts" EntityType="DBModel.Cart" />
           <EntitySet Name="Cart_Product" EntityType="DBModel.Cart_Product" />
           <EntitySet Name="Vouchers" EntityType="DBModel.Voucher" />
-          <EntitySet Name="Wishlists" EntityType="DBModel.Wishlist" />
-          <EntitySet Name="Wishlist_Product" EntityType="DBModel.Wishlist_Product" />
           <AssociationSet Name="FK_Cart_Product_CartId" Association="DBModel.FK_Cart_Product_CartId">
             <End Role="Cart" EntitySet="Carts" />
             <End Role="Cart_Product" EntitySet="Cart_Product" />
@@ -771,21 +667,9 @@
             <End Role="Voucher" EntitySet="Vouchers" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Wishlist_Product_ProductId" Association="DBModel.FK_Wishlist_Product_ProductId">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="Wishlist_Product" EntitySet="Wishlist_Product" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Wishlist_Product_WishlistId" Association="DBModel.FK_Wishlist_Product_WishlistId">
-            <End Role="Wishlist" EntitySet="Wishlists" />
-            <End Role="Wishlist_Product" EntitySet="Wishlist_Product" />
-          </AssociationSet>
           <AssociationSet Name="FK_Cart_BuyerId" Association="DBModel.FK_Cart_BuyerId">
             <End Role="User" EntitySet="Users" />
             <End Role="Cart" EntitySet="Carts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Wishlist_BuyerId" Association="DBModel.FK_Wishlist_BuyerId">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Wishlist" EntitySet="Wishlists" />
           </AssociationSet>
           <EntitySet Name="Voucher_Redemption" EntityType="DBModel.Voucher_Redemption" />
           <AssociationSet Name="FK_Voucher_BuyerId" Association="DBModel.FK_Voucher_BuyerId">
@@ -822,7 +706,6 @@
           <Property Name="Userrole" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Userrole1" Relationship="DBModel.FK_User_Userrole" FromRole="User" ToRole="Userrole" />
           <NavigationProperty Name="Carts" Relationship="DBModel.FK_Cart_BuyerId" FromRole="User" ToRole="Cart" />
-          <NavigationProperty Name="Wishlists" Relationship="DBModel.FK_Wishlist_BuyerId" FromRole="User" ToRole="Wishlist" />
           <Property Name="AccountVerified" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Voucher_Redemption" Relationship="DBModel.FK_Voucher_BuyerId" FromRole="User" ToRole="Voucher_Redemption" />
         </EntityType>
@@ -906,29 +789,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Review">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Rating" Type="Int32" Nullable="false" />
-          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Product_Order" Relationship="DBModel.FK_ReviewId" FromRole="Review" ToRole="Product_Order" />
-        </EntityType>
-        <Association Name="FK_ReviewId">
-          <End Type="DBModel.Review" Role="Review" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="DBModel.Product_Order" Role="Product_Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Review">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Product_Order">
-              <PropertyRef Name="ReviewId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="Id" />
@@ -958,26 +818,6 @@
           <Property Name="Amount" Type="Double" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="DBModel.FK_Order_VoucherId" FromRole="Voucher" ToRole="Order" />
           <NavigationProperty Name="Voucher_Redemption" Relationship="DBModel.FK_Voucher_VoucherId" FromRole="Voucher" ToRole="Voucher_Redemption" />
-        </EntityType>
-        <EntityType Name="Wishlist">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BuyerId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Wishlist_Product" Relationship="DBModel.FK_Wishlist_Product_WishlistId" FromRole="Wishlist" ToRole="Wishlist_Product" />
-          <NavigationProperty Name="User" Relationship="DBModel.FK_Wishlist_BuyerId" FromRole="Wishlist" ToRole="User" />
-        </EntityType>
-        <EntityType Name="Wishlist_Product">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="WishlistId" Type="Int32" Nullable="false" />
-          <Property Name="ProductId" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="DBModel.FK_Wishlist_Product_ProductId" FromRole="Wishlist_Product" ToRole="Product" />
-          <NavigationProperty Name="Wishlist" Relationship="DBModel.FK_Wishlist_Product_WishlistId" FromRole="Wishlist_Product" ToRole="Wishlist" />
         </EntityType>
         <Association Name="FK_Cart_Product_CartId">
           <End Type="DBModel.Cart" Role="Cart" Multiplicity="1" />
@@ -1015,30 +855,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Wishlist_Product_ProductId">
-          <End Type="DBModel.Product" Role="Product" Multiplicity="1" />
-          <End Type="DBModel.Wishlist_Product" Role="Wishlist_Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Wishlist_Product">
-              <PropertyRef Name="ProductId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Wishlist_Product_WishlistId">
-          <End Type="DBModel.Wishlist" Role="Wishlist" Multiplicity="1" />
-          <End Type="DBModel.Wishlist_Product" Role="Wishlist_Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Wishlist">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Wishlist_Product">
-              <PropertyRef Name="WishlistId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Cart_BuyerId">
           <End Type="DBModel.User" Role="User" Multiplicity="1" />
           <End Type="DBModel.Cart" Role="Cart" Multiplicity="*" />
@@ -1047,18 +863,6 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Cart">
-              <PropertyRef Name="BuyerId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Wishlist_BuyerId">
-          <End Type="DBModel.User" Role="User" Multiplicity="1" />
-          <End Type="DBModel.Wishlist" Role="Wishlist" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Wishlist">
               <PropertyRef Name="BuyerId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1204,7 +1008,6 @@
             <EntityTypeMapping TypeName="DBModel.Product_Order">
               <MappingFragment StoreEntitySet="Product_Order">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
@@ -1247,15 +1050,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Reviews">
-            <EntityTypeMapping TypeName="DBModel.Review">
-              <MappingFragment StoreEntitySet="Review">
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="Rating" ColumnName="Rating" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Carts">
             <EntityTypeMapping TypeName="DBModel.Cart">
               <MappingFragment StoreEntitySet="Cart">
@@ -1279,24 +1073,6 @@
               <MappingFragment StoreEntitySet="Voucher">
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Wishlists">
-            <EntityTypeMapping TypeName="DBModel.Wishlist">
-              <MappingFragment StoreEntitySet="Wishlist">
-                <ScalarProperty Name="BuyerId" ColumnName="BuyerId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Wishlist_Product">
-            <EntityTypeMapping TypeName="DBModel.Wishlist_Product">
-              <MappingFragment StoreEntitySet="Wishlist_Product">
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="WishlistId" ColumnName="WishlistId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

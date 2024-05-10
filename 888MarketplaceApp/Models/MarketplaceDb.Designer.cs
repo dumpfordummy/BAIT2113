@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\CY\Desktop\RSW\Y2S3\web\Assignment\BAIT2113\888MarketplaceApp\Models\MarketplaceDb.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\armed\OneDrive\Documents\GitHub\BAIT2113\888MarketplaceApp\Models\MarketplaceDb.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

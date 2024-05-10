@@ -21,12 +21,9 @@ namespace _888MarketplaceApp.Helper
             SeedCategories();
             SeedPaymentMethods();
             SeedShippingMethods();
-            SeedReviews();
             SeedUsers();
-            SeedWishlists();
             SeedCarts();
             SeedProducts();
-            SeedWishlistProducts();
             SeedCartProducts();
             SeedPayment();
             SeedDeliveries();
@@ -391,47 +388,7 @@ namespace _888MarketplaceApp.Helper
             }
         }
 
-        private static void SeedWishlists()
-        {
-            WishlistData dataAccess = new WishlistData();
-            if (dataAccess.hasExistingData)
-            {
-                return;
-            }
-
-            var wishlists = new List<Wishlist>
-            {
-                new Wishlist { BuyerId = 1 },
-                new Wishlist { BuyerId = 2 },
-                new Wishlist { BuyerId = 3 }
-            };
-
-            foreach (var wish in wishlists)
-            {
-                dataAccess.CreateWishlist(wish);
-            }
-
-        }
-
-        private static void SeedReviews()
-        {
-            ReviewData dataAccess = new ReviewData();
-            if (dataAccess.hasExistingData)
-            {
-                return;
-            }
-
-            var reviews = new List<Review>
-            {
-                new Review { Rating = 5, Content = "Great product! Very satisfied" },
-                new Review { Rating = 4, Content = "Nice product but a bit unsatisfied!" }
-            };
-
-            foreach (var review in reviews)
-            {
-                dataAccess.CreateReview(review);
-            }
-        }
+       
 
         private static void SeedCarts()
         {
@@ -517,15 +474,13 @@ namespace _888MarketplaceApp.Helper
                 {
                     OrderId = 1,
                     ProductId = 1,
-                    Quantity = 2,
-                    ReviewId = 1,
+                    Quantity = 2
                 },
                 new Product_Order
                 {
                     OrderId = 1,
                     ProductId = 2,
-                    Quantity = 1,
-                    ReviewId = 2,
+                    Quantity = 1
                 }
             };
 
@@ -562,36 +517,6 @@ namespace _888MarketplaceApp.Helper
             foreach (var cartProduct in cartProducts)
             {
                 dataAccess.CreateCartProduct(cartProduct);
-            }
-        }
-
-        private static void SeedWishlistProducts()
-        {
-            WishlistProductData dataAccess = new WishlistProductData();
-            if (dataAccess.hasExistingData)
-            {
-                return;
-            }
-
-            var wishlistProduct = new List<Wishlist_Product>
-            {
-                new Wishlist_Product
-                {
-                    WishlistId = 3,
-                    ProductId = 1,
-                    Quantity = 1
-                },
-                new Wishlist_Product
-                {
-                    WishlistId = 3,
-                    ProductId = 2,
-                    Quantity = 2
-                }
-            };
-
-            foreach (var wish in wishlistProduct)
-            {
-                dataAccess.CreateWishlistProduct(wish);
             }
         }
 

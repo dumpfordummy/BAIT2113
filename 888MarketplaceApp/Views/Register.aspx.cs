@@ -81,12 +81,6 @@ namespace _888MarketplaceApp.Views
             CartData cartDataAccess = new CartData();
             cartDataAccess.CreateCart(cart);
 
-            Models.Wishlist wishlist = new Models.Wishlist
-            {
-                BuyerId = user.Id,
-            };
-            WishlistData wishlistDataAccess = new WishlistData();
-            wishlistDataAccess.CreateWishlist(wishlist);
             EmailSender.SendForgotVerification(user, url);
 
             RegisterSuccess();

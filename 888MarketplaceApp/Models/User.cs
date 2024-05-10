@@ -20,7 +20,6 @@ namespace _888MarketplaceApp.Models
             this.Orders = new HashSet<Order>();
             this.Products = new HashSet<Product>();
             this.Carts = new HashSet<Cart>();
-            this.Wishlists = new HashSet<Wishlist>();
             this.Voucher_Redemption = new HashSet<Voucher_Redemption>();
         }
     
@@ -45,8 +44,6 @@ namespace _888MarketplaceApp.Models
         public virtual Userrole Userrole1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Wishlist> Wishlists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Voucher_Redemption> Voucher_Redemption { get; set; }
     }

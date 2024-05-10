@@ -45,23 +45,6 @@ namespace _888MarketplaceApp.Views
                     imgBtnRepeater.DataBind();
 
                     prgPdtMap.InnerText = "Category > " + product.Category.Name + " > " + product.Name;
-
-                    ReviewData rd = new ReviewData();
-                    List<Review> reviewsList = rd.GetReviews();
-                    List<Review> currentPdtRev = new List<Review>();
-                    ProductOrderData pod = new ProductOrderData();
-                    List<Product_Order> product_OrdersList = pod.GetProductOrders();
-
-                    foreach (Product_Order po in product_OrdersList)
-                    {
-                        foreach (Review r in reviewsList)
-                        {
-                            if (po.ReviewId == r.Id && po.ProductId == int.Parse(productID))
-                            {
-                                currentPdtRev.Add(r);
-                            }
-                        }
-                    }
                 }
                 else
                 {
