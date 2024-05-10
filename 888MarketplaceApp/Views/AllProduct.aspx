@@ -60,7 +60,7 @@
                             <div class="col-lg-6 col-md-6"></div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="filter__found">
-                                    <h6><span>16</span> Products found</h6>
+                                    <h6><asp:Label runat="server" ID="totalProductCount" ></asp:Label> Products found</h6>
                                 </div>
                             </div>
                         </div>
