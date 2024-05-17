@@ -35,7 +35,6 @@
         <div class="container-fluid page-body-wrapper">
             <div class="acc-main-panel max-width">
                 <div class="acc-content-wrapper center-form">
-
                     <div class="nav-panel">
                         <nav class="acc-sidebar acc-sidebar-offcanvas" id="sidebar">
                             <ul class="nav">
@@ -86,20 +85,22 @@
 
 
                                         <%} %>
-                                        <asp:Repeater runat="server" ID="myProdList">
-                                            <ItemTemplate>
-                                                <div class="col-lg-3 col-md-4 col-sm-6 mix Cat<%# Eval("Product.CategoryId") %>">
-                                                    <div class="featured__item" onclick="window.location.href = '/Product?Id=<%# Eval("Product.Id") %>'>
-                                                        <div class="featured__item__pic set-bg" data-setbg="<%# Eval("Product.ImagePaths").ToString().Split(';')[0] %>">
-                                                            <ul class="featured__item__pic__hover">
-                                                                <li><a href="/Views/Users/EditProduct?Id=<%# Eval("Product.Id") %> "><i class="fa fa-pencil-square-o"></i></a></li>
-                                                                <li>
-                                                                    <asp:LinkButton runat="server" ID="toggleModalBtn" OnClick="toggleModalOn" Text='<i class="fa fa-trash"></i>' CommandArgument='<%# Eval("Product.Id") %>' CssClass="btn-danger" /></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="featured__item__text">
-                                                            <h6><a href="#"><%# Eval("Product.Name") %></a></h6>
-                                                            <h5>RM <%# Eval("Product.Price") %></h5>
+                                        <div class="row">
+                                            <asp:Repeater runat="server" ID="myProdList">
+                                                <ItemTemplate>
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mix Cat<%# Eval("Product.CategoryId") %>">
+                                                        <div class="featured__item" onclick='window.location.href = "/Product?Id=<%# Eval("Product.Id") %>"'>
+                                                            <div class="featured__item__pic set-bg" data-setbg='<%# Eval("Product.ImagePaths").ToString().Split(';')[0] %>' style='background-image: url("<%# Eval("Product.ImagePaths").ToString().Split(';')[0] %>")'>
+                                                                <ul class="featured__item__pic__hover">
+                                                                    <li><a href="/Views/Users/EditProduct?Id=<%# Eval("Product.Id") %> "><i class="fa fa-pencil-square-o"></i></a></li>
+                                                                    <li>
+                                                                        <asp:LinkButton runat="server" ID="toggleModalBtn" OnClick="toggleModalOn" Text='<i class="fa fa-trash"></i>' CommandArgument='<%# Eval("Product.Id") %>' CssClass="btn-danger" /></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="featured__item__text">
+                                                                <h6><a href="#"><%# Eval("Product.Name") %></a></h6>
+                                                                <h5>RM <%# Eval("Product.Price") %></h5>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </ItemTemplate>
